@@ -104,7 +104,7 @@ const PLANS = [
 // that accepts a POST with a JSON body. When set, submissions POST there
 // instead of only saving locally.
 // ---------------------------------------------------------------------------
-const WAITLIST_ENDPOINT = "";
+const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
 const CONTACT_ENDPOINT = "";
 
 function isValidEmail(email: string): boolean {
