@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import LegalPages from "./LegalPages";
 
 const NAV_LINKS = [
   { label: "Product", href: "#product" },
@@ -600,7 +601,7 @@ type ModalState =
   | { type: "legal"; title: string; body: string }
   | null;
 
-export default function App() {
+function HomePage() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -926,8 +927,8 @@ export default function App() {
           <span className="font-display text-lg font-semibold">Vant</span>
           <p className="text-white/25 text-xs font-mono">© 2026 VANT. Intelligence. In action.</p>
           <div className="flex gap-6">
-            <button onClick={() => openLegal("Privacy Policy", "This is a placeholder. Replace this with your real privacy policy before launch — cover what data you collect (like waitlist emails), how it's stored, and how people can ask you to delete it.")} className="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy</button>
-            <button onClick={() => openLegal("Terms of Service", "This is a placeholder. Replace this with your real terms before launch — covering acceptable use, your service's current beta status, and liability.")} className="text-white/30 hover:text-white/60 text-xs transition-colors">Terms</button>
+            <a href="/privacy" className="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy</a>
+            <a href="/terms" className="text-white/30 hover:text-white/60 text-xs transition-colors">Terms</a>
             <button onClick={openContact} className="text-white/30 hover:text-white/60 text-xs transition-colors">Contact</button>
           </div>
         </div>
@@ -938,4 +939,12 @@ export default function App() {
       {modal?.type === "legal" && <LegalModal title={modal.title} body={modal.body} onClose={() => setModal(null)} />}
     </div>
   );
+}
+
+
+export default function App() {
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+  if (pathname === "/privacy") return <LegalPages page="privacy" />;
+  if (pathname === "/terms") return <LegalPages page="terms" />;
+  return <HomePage />;
 }
