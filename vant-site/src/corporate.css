@@ -167,3 +167,60 @@
   .vt-hero{padding-top:100px}
   .vt-intelligence-scene{margin-top:-22px;transform:none}
 }
+
+
+/* VANT Intelligence Engine — subtle code and architecture detail */
+.vt-intelligence-scene::before,
+.vt-intelligence-scene::after{
+  position:absolute;z-index:2;pointer-events:none;
+  font:500 9px/1.7 'Space Grotesk',monospace;
+  letter-spacing:.14em;text-transform:uppercase;
+  white-space:pre;color:rgba(137,202,244,.66);
+  text-shadow:0 0 16px rgba(103,201,255,.18);
+}
+.vt-intelligence-scene::before{
+  content:"{ system: active }\A 01 / CORE ENGINE\A < architecture /> ";
+  top:16%;left:7%;
+  padding:10px 13px;
+  border-left:1px solid rgba(103,201,255,.45);
+  background:linear-gradient(90deg,rgba(9,23,38,.44),transparent);
+  transform:rotate(-8deg);
+}
+.vt-intelligence-scene::after{
+  content:"NODE_07  ───  LINK_OK\A 0x01  ·  0xA4  ·  0xFF";
+  right:5%;bottom:17%;
+  padding:9px 12px;
+  color:rgba(215,184,117,.72);
+  border-right:1px solid rgba(215,184,117,.45);
+  text-align:right;
+  background:linear-gradient(270deg,rgba(29,25,17,.34),transparent);
+  transform:rotate(-7deg);
+}
+.vt-intel-core{box-shadow:0 0 54px rgba(103,201,255,.16),0 0 110px rgba(103,201,255,.06),inset 0 0 42px rgba(103,201,255,.11)}
+.vt-intel-core::before{
+  content:"";
+  position:absolute;inset:-12%;
+  border:1px dashed rgba(103,201,255,.28);
+  transform:rotate(14deg);
+  animation:vt-intel-orbit 34s linear infinite;
+}
+.vt-intel-core::after{
+  content:"";
+  position:absolute;inset:-25%;
+  border:1px solid rgba(215,184,117,.17);
+  transform:rotate(-18deg) scaleY(.72);
+  pointer-events:none;
+}
+.vt-intel-node{width:4px;height:4px}
+.vt-intel-caption{z-index:3}
+@media(max-width:1050px){
+ .vt-intelligence-scene::before{top:9%;left:5%;font-size:8px}
+ .vt-intelligence-scene::after{right:3%;bottom:13%;font-size:8px}
+}
+@media(max-width:760px){
+ .vt-intelligence-scene::before{top:6%;left:4%;font-size:6px;padding:6px 7px;letter-spacing:.08em}
+ .vt-intelligence-scene::after{right:2%;bottom:10%;font-size:6px;padding:5px 6px;letter-spacing:.08em}
+}
+@media(prefers-reduced-motion:reduce){
+ .vt-intel-core::before{animation:none}
+}
