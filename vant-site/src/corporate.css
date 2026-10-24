@@ -609,7 +609,7 @@
 .vt-architecture-readout-a{left:12%;bottom:24%}.vt-architecture-readout-b{right:6%;bottom:17%}
 .vt-architecture-scanline{position:absolute;left:13%;right:8%;top:62%;height:1px;background:linear-gradient(90deg,transparent,rgba(101,192,255,.23),transparent);animation:vt-architecture-scan 8s ease-in-out infinite}
 @keyframes vt-architecture-drift{0%,100%{transform:translate3d(0,0,0) rotateX(0deg)}50%{transform:translate3d(0,-7px,0) rotateX(1deg)}}
-@keyframes vt-architecture-card-float{0%,100%{translate:0 0;rotateY(-2deg)}50%{translate:0 -9px;rotateY(2deg)}}
+@keyframes vt-architecture-card-float{0%,100%{translate:0 0;transform:rotateY(-2deg)}50%{translate:0 -9px;transform:rotateY(2deg)}}
 @keyframes vt-architecture-pulse{0%,100%{opacity:.45;scale:.8}50%{opacity:1;scale:1.2}}
 @keyframes vt-architecture-scan{0%,100%{opacity:.12;translate:-2% 0}50%{opacity:.75;translate:2% 0}}
 @media(max-width:1050px){.vt-architecture-node{scale:.88}.vt-architecture-node-work{left:18%}.vt-architecture-node-core{left:43%}.vt-architecture-node-learn{right:2%}.vt-architecture-readout-a{left:6%}.vt-architecture-readout-b{right:2%}}
