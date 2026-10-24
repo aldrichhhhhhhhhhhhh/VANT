@@ -543,3 +543,42 @@
 @keyframes vt-trail-sweep-c{0%,100%{translate:0 8px;opacity:.18;scale:.88 1}50%{translate:4% -10px;opacity:.82;scale:1.08 1}}
 @media(max-width:760px){.vt-light-trails{inset:7% -65% 0 -16%;opacity:.63}.vt-trail{width:180%}.vt-trail-cloud{width:140%;height:72%}}
 @media(prefers-reduced-motion:reduce){.vt-trail-sweep-a,.vt-trail-sweep-b,.vt-trail-sweep-c,.vt-trail-cloud{animation:none!important}}
+
+
+/* Corporate ecosystem structure */
+.vt-nav-signin{border:1px solid rgba(216,181,107,.55);padding:10px 16px;color:#f2f4f8!important}
+.vt-core-section{background:#080d16;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.vt-core-grid{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:7vw;margin-top:54px}
+.vt-core-copy h2{font:500 clamp(36px,5vw,64px)/1.05 'Manrope',sans-serif;letter-spacing:-.06em;margin:0 0 24px}
+.vt-core-copy h2 em{font-style:normal;color:#80c8ff}
+.vt-core-copy p{max-width:460px;color:#a7b3c4;line-height:1.8;font-size:15px;margin:0 0 26px}
+.vt-core-diagram{height:410px;position:relative;isolation:isolate;background:radial-gradient(ellipse at center,rgba(26,104,183,.16),transparent 66%);overflow:hidden}
+.vt-core-ring{position:absolute;left:50%;top:50%;width:300px;height:300px;border:1px solid rgba(104,191,255,.22);border-radius:50%;transform:translate(-50%,-50%);animation:vt-core-ring 24s linear infinite}
+.vt-core-ring::before{content:"";position:absolute;inset:28px;border:1px dashed rgba(216,181,107,.24);border-radius:50%}
+.vt-core-ring-b{width:220px;height:220px;border-color:rgba(216,181,107,.3);animation-direction:reverse;animation-duration:31s}
+.vt-core-node{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(8,17,31,.94);border:1px solid rgba(105,190,255,.4);box-shadow:0 0 26px rgba(32,126,222,.1);backdrop-filter:blur(10px);color:#edf5ff}
+.vt-core-node b{font-size:10px;letter-spacing:.12em}.vt-core-node small{font-size:8px;color:#9cacc0;letter-spacing:.08em}
+.vt-core-main{left:50%;top:50%;width:142px;height:142px;border-radius:50%;transform:translate(-50%,-50%);border-color:rgba(216,181,107,.68);box-shadow:0 0 45px rgba(48,145,232,.2),inset 0 0 30px rgba(48,145,232,.08)}
+.vt-core-main span{font:500 36px 'Manrope',sans-serif;color:#d8b56b}.vt-core-work,.vt-core-edu,.vt-core-business{width:100px;height:74px;border-radius:12px}
+.vt-core-work{left:calc(50% - 50px);top:2%}.vt-core-edu{left:2%;bottom:7%}.vt-core-business{right:2%;bottom:7%}
+.vt-core-link{position:absolute;left:50%;top:50%;width:1px;height:145px;background:linear-gradient(rgba(104,191,255,.55),rgba(104,191,255,.02));transform-origin:top;z-index:1}
+.vt-core-link-a{transform:rotate(0deg) translateY(62px)}.vt-core-link-b{transform:rotate(125deg) translateY(62px)}.vt-core-link-c{transform:rotate(235deg) translateY(62px)}
+.vt-status{display:inline-flex;align-items:center;gap:6px;font-size:8px;letter-spacing:.12em;padding:5px 8px;border-radius:30px}
+.vt-status-live{color:#9ce7c1;background:rgba(66,190,131,.1);border:1px solid rgba(66,190,131,.26)}
+.vt-status-soon{color:#f0d38b;background:rgba(216,181,107,.1);border:1px solid rgba(216,181,107,.28)}
+.vt-product-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.vt-product-meta>span:nth-child(2){margin-right:auto}
+.vt-partner-card{background:radial-gradient(ellipse at 80% 10%,rgba(35,112,187,.14),transparent 48%),#0b111c;border-color:rgba(104,191,255,.18)}
+.vt-partner-symbol{background:#0d1d31;color:#d8b56b;border-color:rgba(104,191,255,.3)}
+.vt-partner-wordmark{color:#f3f6fb}
+.vt-partner-wordmark span{color:#8ca7c5}
+@keyframes vt-core-ring{to{rotate:360deg}}
+@media(max-width:760px){
+ .vt-core-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}
+ .vt-core-diagram{height:340px}
+ .vt-core-ring{width:250px;height:250px}.vt-core-ring-b{width:185px;height:185px}
+ .vt-core-main{width:120px;height:120px}
+ .vt-core-work,.vt-core-edu,.vt-core-business{width:88px;height:66px}
+ .vt-core-work{top:0}.vt-core-edu{left:0;bottom:5%}.vt-core-business{right:0;bottom:5%}
+}
+@media(prefers-reduced-motion:reduce){.vt-core-ring{animation:none}}
