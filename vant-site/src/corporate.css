@@ -724,3 +724,64 @@
  .vt-header{background:rgba(7,8,7,.94)}
  .vt-about,.vt-partners,.vt-core-section,.vt-products,.vt-journey,.vt-contact{background:linear-gradient(145deg,#080907,#10110d 62%,#060706)}
 }
+
+
+/* Final brand restraint: neutral VANT base, no gold treatment; hero blue remains atmospheric only. */
+.vt-site{--vt-bg:#070807;--vt-panel:#10120f;--vt-text:#f3f1e9;--vt-muted:#a09f95;--vt-gold:#e8e7e1;--vt-line:rgba(235,235,230,.13);background:#070807;color:#f3f1e9}
+.vt-header{border-bottom-color:rgba(255,255,255,.08)}
+.vt-nav>a:hover{color:#f3f1e9}
+.vt-nav-signin{border-color:rgba(255,255,255,.25)!important;background:rgba(255,255,255,.025)}
+.vt-hero{background:radial-gradient(ellipse at 78% 47%,rgba(80,125,175,.075),transparent 36%),linear-gradient(120deg,#090a08 0%,#090b09 55%,#10110d 100%)}
+.vt-eyebrow,.vt-section-kicker{color:#b6b6ad}
+.vt-eyebrow-line{background:rgba(238,238,230,.7)}
+.vt-hero h1 span{color:#f0efe9;text-shadow:none}
+.vt-button-primary{background:#f0efe9;color:#11120f!important;box-shadow:none}
+.vt-button-primary:hover{background:#fff}
+.vt-button-primary .vt-arrow,.vt-arrow{color:inherit}
+.vt-hero-foot .vt-eyebrow-line{background:#a7a79f}
+.vt-live-dot{background:#b7b8b4;box-shadow:0 0 8px rgba(230,230,220,.2)}
+.vt-about h2 em,.vt-section-heading h2 em,.vt-partners h2 em,.vt-journey h2 em,.vt-contact h2 em{color:#d4d4ce;text-shadow:none}
+.vt-about .vt-inline-link,.vt-partners .vt-inline-link{border-bottom-color:rgba(235,235,230,.2)}
+.vt-principles>div>span{color:#b9b9b1}
+.vt-status-live,.vt-status-soon{color:#deded7!important;border-color:rgba(230,230,220,.24)!important;background:rgba(255,255,255,.035)}
+.vt-tags span{border-color:rgba(235,235,230,.16);background:rgba(255,255,255,.025);color:#c9c9c1}
+.vt-product-link .vt-arrow{color:#deded7}
+.vt-product-visual{background:radial-gradient(ellipse at 50% 45%,rgba(110,130,150,.08),transparent 67%),linear-gradient(145deg,#11130f,#080907)}
+.vt-app-window,.vt-study-card{border-color:rgba(235,235,230,.17)}
+.vt-mini-mark{background:#e8e7e1;color:#11120f}
+.vt-app-status{color:#d7d7d0}
+.vt-app-sidebar i{background:rgba(235,235,230,.17)}
+.vt-app-main>small,.vt-app-mini-grid small,.vt-study-card small{color:#aaa99f}
+.vt-app-prompt{border-color:rgba(235,235,230,.16);background:rgba(255,255,255,.025)}
+.vt-app-prompt span,.vt-study-card span{color:#e5e4de}
+.vt-study-orb{background:radial-gradient(circle at 35% 30%,#d9d9d2,#72756e 45%,#282b26 75%);box-shadow:0 0 55px rgba(220,220,210,.08)}
+.vt-study-bars i{background:#c5c5bd}
+.vt-future-note>span{color:#deded7}
+.vt-partner-symbol{background:#e8e7e1;color:#11120f}
+.vt-partner-divider{background:rgba(235,235,230,.14)}
+.vt-journey-stages span{color:#d0d0c8}
+.vt-contact-email{color:#e1e0d9;border-bottom-color:rgba(235,235,230,.24)}
+.vt-access-label{color:#d6d6cf}
+.vt-waitlist-form input{border-color:rgba(235,235,230,.2)}
+.vt-waitlist-form button{background:#e8e7e1;color:#11120f}
+.vt-form-success{color:#d6d6cf}
+.vt-footer{border-top-color:rgba(235,235,230,.12)}
+.vt-footer-links a:hover{color:#f3f1e9}
+.vt-footer .vt-brand-mark{border-color:rgba(235,235,230,.4)}
+.vt-core-diagram{background:radial-gradient(ellipse at center,rgba(100,125,150,.045),transparent 68%)}
+.vt-core-ring{border-color:rgba(235,235,230,.12)}
+.vt-core-node{border-color:rgba(235,235,230,.19);box-shadow:0 10px 35px rgba(0,0,0,.28)}
+.vt-core-main{border-color:rgba(235,235,230,.38);box-shadow:0 0 24px rgba(220,220,210,.045)}
+.vt-core-main>span{background:#e8e7e1;color:#11120f}
+.vt-core-link{background:linear-gradient(90deg,rgba(235,235,230,.08),rgba(235,235,230,.45),rgba(235,235,230,.08));box-shadow:none}
+/* Neutralize metallic accents on the architecture overlay. Cool tones remain part of hero light trails only. */
+.vt-architecture-label,.vt-architecture-node small,.vt-architecture-readout small{color:rgba(232,232,225,.7)}
+.vt-architecture-live,.vt-architecture-readout b span{background:#d7d8d4;box-shadow:0 0 7px rgba(220,225,230,.3)}
+.vt-architecture-node{border-color:rgba(235,235,230,.2);box-shadow:0 16px 44px rgba(0,0,0,.28)}
+.vt-architecture-node-core{border-color:rgba(235,235,230,.38);box-shadow:0 0 24px rgba(220,220,210,.05)}
+.vt-architecture-node-icon{background:#e8e7e1;color:#11120f}
+.vt-architecture-glyph{color:#d6d6cf}
+.vt-architecture-connector{background:linear-gradient(90deg,transparent,rgba(220,220,215,.4),transparent)}
+.vt-architecture-readout{border-color:rgba(235,235,230,.16)}
+.vt-architecture-scanline{background:linear-gradient(90deg,transparent,rgba(190,200,210,.14),transparent)}
+@media(max-width:760px){.vt-about,.vt-partners,.vt-core-section,.vt-products,.vt-journey,.vt-contact{background:linear-gradient(145deg,#080907,#10110d 62%,#060706)}}
