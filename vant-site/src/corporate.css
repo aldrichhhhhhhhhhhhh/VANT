@@ -283,3 +283,88 @@
 @keyframes vt-flow-particle{0%{left:18%;opacity:0}15%{opacity:.8}85%{opacity:.8}100%{left:96%;opacity:0}}
 @media(max-width:760px){.vt-intelligence-scene::after{display:none}.vt-intelligence-scene::before{font-size:5px;opacity:.55}.vt-intel-flow{width:62%;opacity:.38}}
 @media(prefers-reduced-motion:reduce){.vt-intel-flow,.vt-intel-flow i{animation:none}.vt-intel-flow{opacity:.3}}
+
+
+/* Hero concept refinement — centered engine, quieter labels, restrained orbital motion */
+.vt-intelligence-scene{
+  background:
+    radial-gradient(ellipse at 54% 50%,rgba(18,88,143,.24),transparent 52%),
+    radial-gradient(ellipse at 58% 52%,rgba(215,184,117,.045),transparent 63%);
+}
+.vt-intel-halo{
+  left:53%;
+  width:88%;
+  opacity:.82;
+}
+.vt-intel-halo-two{
+  width:72%;
+  opacity:.72;
+}
+.vt-intel-orbit{
+  left:53%;
+  width:76%;
+  height:76%;
+  border-color:rgba(103,201,255,.18);
+  animation-duration:36s;
+}
+.vt-intel-orbit-two{
+  width:59%;
+  height:59%;
+  border-color:rgba(215,184,117,.24);
+  animation-duration:29s;
+}
+.vt-intel-core{
+  left:53%;
+  width:clamp(175px,22vw,285px);
+  border-color:rgba(215,184,117,.8);
+  box-shadow:0 0 66px rgba(103,201,255,.18),0 0 118px rgba(103,201,255,.07),inset 0 0 48px rgba(103,201,255,.13);
+}
+.vt-intel-core i{inset:12%;border-color:rgba(103,201,255,.62)}
+.vt-intel-core b{inset:27%;border-color:rgba(215,184,117,.76)}
+.vt-intel-core span{inset:40%;border-color:rgba(220,240,255,.55)}
+.vt-intel-beam{opacity:.68}
+.vt-intel-beam-two{opacity:.55}
+.vt-intelligence-scene::before{
+  opacity:.46;
+  font-size:7px;
+  color:rgba(137,202,244,.46);
+  background:linear-gradient(90deg,rgba(9,23,38,.3),transparent);
+}
+.vt-intelligence-scene::after{
+  opacity:.3;
+  font-size:6px;
+  color:rgba(215,184,117,.4);
+  background:linear-gradient(270deg,rgba(29,25,17,.22),transparent);
+}
+.vt-intel-floater{
+  width:62px;
+  height:54px;
+  background:linear-gradient(145deg,rgba(8,22,38,.74),rgba(6,12,22,.38));
+  border-color:rgba(103,201,255,.24);
+  box-shadow:0 0 20px rgba(61,160,225,.06),inset 0 0 14px rgba(103,201,255,.025);
+  backdrop-filter:blur(5px);
+}
+.vt-intel-floater span{font-size:18px}
+.vt-intel-floater small{font-size:5px;letter-spacing:.1em}
+.vt-floater-architecture{border-color:rgba(215,184,117,.29)}
+.vt-floater-node{width:50px;height:46px}
+.vt-intel-caption{left:12%;bottom:6%;opacity:.78}
+@media(max-width:1050px){
+  .vt-intel-core{width:clamp(165px,25vw,245px)}
+  .vt-intelligence-scene::before{font-size:6px}
+}
+@media(max-width:760px){
+  .vt-intel-core{width:clamp(145px,42vw,195px)}
+  .vt-intel-halo{width:96%}
+  .vt-intel-halo-two{width:78%}
+  .vt-intel-orbit{width:88%;height:76%}
+  .vt-intel-orbit-two{width:68%;height:60%}
+  .vt-intel-floater{width:44px;height:40px}
+  .vt-intel-floater span{font-size:13px}
+  .vt-intel-floater small{font-size:4px}
+  .vt-intelligence-scene::before{font-size:5px;opacity:.42}
+  .vt-intel-caption{left:7%;bottom:4%;opacity:.72}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-intel-orbit,.vt-intel-orbit-two{animation:none}
+}
