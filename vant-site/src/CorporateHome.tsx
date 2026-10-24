@@ -75,14 +75,12 @@ function CorporateHomeView() {
   const closeMenu = () => setMenuOpen(false);
   return <div className="vt-site">
     <header className="vt-header">
-      <a className="vt-brand" href="#top" onClick={closeMenu} aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
+      <a className="vt-brand vt-brand-reference" href="#top" onClick={closeMenu} aria-label="VANT Technologies home"><span>VANT<span className="vt-brand-period">.</span></span></a>
       <button className="vt-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
       <nav className={menuOpen ? "vt-nav vt-nav-open" : "vt-nav"} aria-label="Main navigation">
-        <a href="#about" onClick={closeMenu}>About</a>
-        <a href="#products" onClick={closeMenu}>Products <span className="vt-nav-caret">⌄</span></a>
-        <a href="#partners" onClick={closeMenu}>Powered by VANT</a>
-        <a href="#journey" onClick={closeMenu}>Our Journey</a>
-        <a className="vt-nav-cta" href="#contact" onClick={closeMenu}>Let's connect <Arrow diagonal /></a>
+        <a href="#products" onClick={closeMenu}>Ecosystem</a>
+        <a href="#about" onClick={closeMenu}>Our Thinking</a>
+        <a href="#contact" onClick={closeMenu}>Contact <span className="vt-nav-external">↗</span></a>
       </nav>
     </header>
 
@@ -92,8 +90,8 @@ function CorporateHomeView() {
           <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> INDEPENDENT TECHNOLOGY COMPANY</div>
           <h1>VANT<br /><span>TECHNOLOGIES</span></h1>
           <p className="vt-hero-lede">Intelligence that moves possibility forward. Building connected tools for the way we work, learn, and create what comes next.</p>
-          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#about">Discover VANT <Arrow diagonal /></a></div>
-          <div className="vt-hero-foot"><span className="vt-live-dot" /> INTELLIGENCE · SYSTEMS · POSSIBILITY</div>
+          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#about">Our point of view ↓</a></div>
+          <div className="vt-hero-foot"><span className="vt-eyebrow-line" /> INTELLIGENCE · SYSTEMS · POSSIBILITY</div>
         </div>
         <WindowScene />
         <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
