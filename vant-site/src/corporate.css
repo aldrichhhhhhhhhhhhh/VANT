@@ -817,3 +817,17 @@
 .vt-contact-email{color:#e7e8e3;border-bottom-color:rgba(240,240,236,.24)}
 .vt-footer{background:#080908;border-top-color:rgba(240,240,236,.12)}
 .vt-footer-links a:hover{color:#fff}
+
+
+/* Hero light trails: replace electric blue with monochrome silver-white light. */
+.vt-hero{background:radial-gradient(ellipse at 76% 48%,rgba(205,210,215,.055),transparent 38%),linear-gradient(120deg,#080908 0%,#0b0c0b 58%,#111211 100%)}
+.vt-hero::before{background-image:linear-gradient(rgba(240,240,236,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(240,240,236,.018) 1px,transparent 1px)}
+.vt-light-trails{filter:grayscale(1) saturate(0)!important;background:radial-gradient(ellipse at 66% 49%,rgba(225,229,232,.11),transparent 56%)}
+.vt-light-trails::before{background:radial-gradient(ellipse at 72% 50%,rgba(230,233,236,.12),transparent 31%),radial-gradient(ellipse at 52% 52%,rgba(150,155,160,.1),transparent 50%)}
+.vt-trail-cloud{background:radial-gradient(ellipse,rgba(205,210,215,.12),rgba(18,20,21,0) 67%)}
+.vt-trail{background:linear-gradient(90deg,transparent 0%,rgba(210,215,220,0) 9%,rgba(215,220,225,.08) 24%,rgba(225,230,235,.42) 37%,rgba(250,250,248,.98) 49%,rgba(205,210,215,.62) 57%,rgba(160,165,170,.16) 74%,transparent 100%);filter:blur(.15px) drop-shadow(0 0 7px rgba(225,230,235,.6)) drop-shadow(0 0 25px rgba(180,185,190,.35)}
+.vt-trail-c{background:linear-gradient(90deg,transparent,rgba(210,215,220,.03),rgba(220,225,230,.32),rgba(250,250,248,.92),rgba(185,190,195,.14),transparent)}
+.vt-trail-f{background:linear-gradient(90deg,transparent,rgba(190,195,200,.04),rgba(235,238,240,.58),rgba(180,185,190,.12),transparent);filter:drop-shadow(0 0 8px rgba(220,225,230,.32))}
+.vt-trail-glow{background:radial-gradient(ellipse,rgba(220,225,230,.16),rgba(90,95,100,.05) 48%,transparent 72%)}
+.vt-trail-particle{background:#f1f2ef;box-shadow:0 0 15px 5px rgba(225,230,235,.35)}
+@media(max-width:760px){.vt-hero{background:radial-gradient(ellipse at 68% 42%,#17191b 0%,#080908 70%)}}
