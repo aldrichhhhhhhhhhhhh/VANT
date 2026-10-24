@@ -15,27 +15,29 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   return (
-    <div className="vt-scene" aria-label="Abstract illustration of a person working beside a window, surrounded by floating business insights">
-      <div className="vt-scene-grid" />
-      <div className="vt-window">
-        <div className="vt-window-glow" />
-        <div className="vt-window-pane pane-one" />
-        <div className="vt-window-pane pane-two" />
-        <div className="vt-window-pane pane-three" />
-        <div className="vt-window-pane pane-four" />
-        <div className="vt-city city-one" /><div className="vt-city city-two" /><div className="vt-city city-three" />
+    <div className="vt-scene vt-penthouse-scene" aria-label="A cinematic penthouse office with a person working at a desk in front of a panoramic city window">
+      <div className="vt-room-ceiling" />
+      <div className="vt-room-wall vt-room-wall-left" />
+      <div className="vt-room-wall vt-room-wall-right" />
+      <div className="vt-pano-window">
+        <div className="vt-city-sky" />
+        <div className="vt-city-horizon" />
+        <div className="vt-skyline skyline-back"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
+        <div className="vt-skyline skyline-front"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
+        <div className="vt-city-lights" />
+        <div className="vt-window-frame vt-frame-vertical" />
+        <div className="vt-window-frame vt-frame-horizontal" />
+        <div className="vt-window-reflection" />
       </div>
-      <div className="vt-desk" />
-      <div className="vt-person">
-        <div className="vt-head" />
-        <div className="vt-neck" />
-        <div className="vt-body" />
-        <div className="vt-arm arm-left" />
-        <div className="vt-arm arm-right" />
-        <div className="vt-laptop"><span /></div>
-        <div className="vt-chair" />
+      <div className="vt-room-floor" />
+      <div className="vt-floor-glow" />
+      <div className="vt-desk-shadow" />
+      <div className="vt-penthouse-desk"><div className="vt-desk-top" /><div className="vt-desk-leg desk-leg-left" /><div className="vt-desk-leg desk-leg-right" /><div className="vt-laptop vt-penthouse-laptop"><span /></div><div className="vt-desk-lamp"><i/><b/></div></div>
+      <div className="vt-penthouse-chair"><i/><b/></div>
+      <div className="vt-worker">
+        <div className="vt-worker-head" /><div className="vt-worker-neck" /><div className="vt-worker-body" /><div className="vt-worker-arm worker-arm-left" /><div className="vt-worker-arm worker-arm-right" />
       </div>
-      <div className="vt-orbit orbit-one" /><div className="vt-orbit orbit-two" />
+      <div className="vt-perspective-line perspective-left" /><div className="vt-perspective-line perspective-right" />
       <div className="vt-data-card card-sales"><span className="vt-card-icon">↗</span><span className="vt-card-label">SALES MOMENTUM</span><strong>+18.6%</strong><small>Performance trend</small><div className="vt-sparkline"><i/><i/><i/><i/><i/><i/><i/><i/></div></div>
       <div className="vt-data-card card-project"><span className="vt-live-dot" /><span className="vt-card-label">PROJECTS</span><strong>12 <em>in motion</em></strong><div className="vt-progress"><span /></div></div>
       <div className="vt-data-card card-insight"><span className="vt-card-label">VANT INTELLIGENCE</span><strong>One clear next step.</strong><small>Signals connected · Priorities surfaced</small></div>
