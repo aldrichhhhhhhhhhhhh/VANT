@@ -785,3 +785,35 @@
 .vt-architecture-readout{border-color:rgba(235,235,230,.16)}
 .vt-architecture-scanline{background:linear-gradient(90deg,transparent,rgba(190,200,210,.14),transparent)}
 @media(max-width:760px){.vt-about,.vt-partners,.vt-core-section,.vt-products,.vt-journey,.vt-contact{background:linear-gradient(145deg,#080907,#10110d 62%,#060706)}}
+
+
+/* VANT monochrome refinement: black, graphite, grey and white lead. */
+:root{
+  --vt-ink:#080908;
+  --vt-charcoal:#111211;
+  --vt-graphite:#1b1c1b;
+  --vt-silver:#b9bbb8;
+  --vt-paper:#f0f0ec;
+}
+.vt-site,.vt-main,.vt-page{color:#f0f0ec;background:#080908}
+.vt-header{background:rgba(8,9,8,.88);border-bottom-color:rgba(240,240,236,.1)}
+.vt-section-kicker,.vt-eyebrow,.vt-muted,.vt-section-description{color:#a5a7a3}
+.vt-button-primary,.vt-hero .vt-cta-primary,.vt-waitlist-form button{background:#f0f0ec;color:#101110;border-color:#f0f0ec}
+.vt-button-primary:hover,.vt-hero .vt-cta-primary:hover,.vt-waitlist-form button:hover{background:#d7d8d4;border-color:#d7d8d4;color:#080908}
+.vt-button-secondary,.vt-hero .vt-cta-secondary{border-color:rgba(240,240,236,.28);color:#f0f0ec;background:rgba(240,240,236,.025)}
+.vt-button-secondary:hover,.vt-hero .vt-cta-secondary:hover{border-color:rgba(240,240,236,.55);background:rgba(240,240,236,.07)}
+.vt-about,.vt-partners,.vt-core-section,.vt-products,.vt-journey,.vt-contact{background:linear-gradient(145deg,#080908,#111211 62%,#090a09)}
+.vt-card,.vt-product-card,.vt-partner-card,.vt-journey-card,.vt-contact-panel{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border-color:rgba(240,240,236,.12)}
+.vt-card:hover,.vt-product-card:hover,.vt-partner-card:hover{border-color:rgba(240,240,236,.28)}
+.vt-hero:before,.vt-hero:after{opacity:.62;filter:saturate(.45)}
+.vt-light-trails{filter:saturate(.55)}
+.vt-architecture-node-icon,.vt-partner-symbol,.vt-core-main>span{background:#e6e7e2;color:#111211}
+.vt-architecture-label,.vt-architecture-node small,.vt-architecture-readout small,.vt-core-label{color:#c4c6c1}
+.vt-architecture-live,.vt-architecture-readout b span{background:#d8dad5;box-shadow:0 0 6px rgba(235,238,232,.22)}
+.vt-core-diagram{background:radial-gradient(ellipse at center,rgba(205,210,205,.035),transparent 68%)}
+.vt-core-ring{border-color:rgba(235,238,232,.13)}
+.vt-core-link{background:linear-gradient(90deg,rgba(235,238,232,.06),rgba(235,238,232,.32),rgba(235,238,232,.06))}
+.vt-journey-stages span,.vt-access-label,.vt-form-success{color:#c4c6c1}
+.vt-contact-email{color:#e7e8e3;border-bottom-color:rgba(240,240,236,.24)}
+.vt-footer{background:#080908;border-top-color:rgba(240,240,236,.12)}
+.vt-footer-links a:hover{color:#fff}
