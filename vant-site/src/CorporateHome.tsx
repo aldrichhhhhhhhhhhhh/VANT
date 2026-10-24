@@ -28,6 +28,19 @@ function WindowScene() {
       <div className="vt-trail-particle vt-particle-b" />
       <div className="vt-trail-particle vt-particle-c" />
       <div className="vt-trail-particle vt-particle-d" />
+      <div className="vt-architecture-system">
+        <div className="vt-architecture-label"><span className="vt-architecture-live" /> VANT INTELLIGENCE / SYSTEM MAP</div>
+        <div className="vt-architecture-node vt-architecture-node-core"><span className="vt-architecture-node-icon">V</span><b>VANT CORE</b><small>INTELLIGENCE LAYER</small><i className="vt-architecture-node-pulse" /></div>
+        <div className="vt-architecture-node vt-architecture-node-work"><span className="vt-architecture-glyph">↗</span><b>WORK</b><small>PRODUCTIVITY</small></div>
+        <div className="vt-architecture-node vt-architecture-node-learn"><span className="vt-architecture-glyph">⌘</span><b>LEARNING</b><small>EDUCATION</small></div>
+        <div className="vt-architecture-node vt-architecture-node-build"><span className="vt-architecture-glyph">⌁</span><b>INTEGRATIONS</b><small>BUSINESS SYSTEMS</small></div>
+        <i className="vt-architecture-connector vt-architecture-connector-a" />
+        <i className="vt-architecture-connector vt-architecture-connector-b" />
+        <i className="vt-architecture-connector vt-architecture-connector-c" />
+        <div className="vt-architecture-readout vt-architecture-readout-a"><small>CORE STATUS</small><b><span /> OPERATIONAL</b></div>
+        <div className="vt-architecture-readout vt-architecture-readout-b"><small>DESIGN PRINCIPLE</small><b>ONE CORE / MANY PATHS</b></div>
+        <div className="vt-architecture-scanline" />
+      </div>
     </div>
   );
 }
