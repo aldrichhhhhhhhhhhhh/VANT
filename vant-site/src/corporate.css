@@ -368,3 +368,49 @@
 @media(prefers-reduced-motion:reduce){
   .vt-intel-orbit,.vt-intel-orbit-two{animation:none}
 }
+
+
+/* Center the geometric hierarchy inside the right-side hero stage */
+.vt-intelligence-scene{
+  margin-left:-14vw;
+  margin-right:-4vw;
+  transform:scale(1.08);
+  transform-origin:50% 48%;
+}
+.vt-intel-halo,
+.vt-intel-halo-two,
+.vt-intel-orbit,
+.vt-intel-orbit-two,
+.vt-intel-core,
+.vt-intel-beam{
+  left:50%;
+}
+.vt-intel-core{
+  top:50%;
+  transform:translate(-50%,-50%) rotate(45deg) rotateX(57deg);
+}
+.vt-intel-orbit{
+  top:50%;
+  transform:translate(-50%,-50%) rotate(45deg) scaleY(.62);
+}
+.vt-intel-orbit-two{
+  top:50%;
+  transform:translate(-50%,-50%) rotate(-45deg) scaleY(.7);
+}
+.vt-intel-halo{top:50%;transform:translate(-50%,-50%) rotate(-24deg) scaleY(.65)}
+.vt-intel-halo-two{top:50%;transform:translate(-50%,-50%) rotate(48deg) scaleY(.72)}
+.vt-intel-beam{top:50%;transform:translate(-50%,-50%) rotate(-28deg)}
+.vt-intel-beam-two{transform:translate(-50%,-50%) rotate(34deg)}
+.vt-intel-beam-three{transform:translate(-50%,-50%) rotate(78deg)}
+.vt-intel-floater{left:50%;top:50%}
+@media(max-width:1050px){
+  .vt-intelligence-scene{margin:0 auto;transform:scale(1.02);transform-origin:center}
+}
+@media(max-width:760px){
+  .vt-intelligence-scene{margin:0 -12px;width:calc(100% + 24px);transform:none}
+  .vt-intel-core{left:50%;top:50%}
+  .vt-intel-halo,.vt-intel-halo-two,.vt-intel-orbit,.vt-intel-orbit-two,.vt-intel-beam{left:50%}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-intel-core{transform:translate(-50%,-50%) rotate(45deg) rotateX(57deg)}
+}
