@@ -615,3 +615,112 @@
 @media(max-width:1050px){.vt-architecture-node{scale:.88}.vt-architecture-node-work{left:18%}.vt-architecture-node-core{left:43%}.vt-architecture-node-learn{right:2%}.vt-architecture-readout-a{left:6%}.vt-architecture-readout-b{right:2%}}
 @media(max-width:760px){.vt-architecture-system{inset:5% -10% 0 -15%;opacity:.7}.vt-architecture-label,.vt-architecture-readout{display:none}.vt-architecture-node{scale:.72;padding:10px;min-width:112px}.vt-architecture-node-core{left:45%;top:35%;min-width:132px;min-height:94px}.vt-architecture-node-work{left:7%;top:24%}.vt-architecture-node-learn{right:0;top:43%}.vt-architecture-node-build{left:35%;bottom:13%}.vt-architecture-connector-a{left:27%;top:31%;width:22%}.vt-architecture-connector-b{left:62%;top:45%;width:21%}.vt-architecture-connector-c{left:49%;top:57%;width:21%}.vt-architecture-scanline{top:66%}}
 @media(prefers-reduced-motion:reduce){.vt-architecture-system,.vt-architecture-node,.vt-architecture-live,.vt-architecture-scanline{animation:none!important}}
+
+
+/* Brand balance pass: VANT black + gold everywhere; cool light stays subtle in hero only. */
+.vt-site{
+  --vt-bg:#070807;--vt-panel:#10120f;--vt-text:#f3f1e9;--vt-muted:#a09f95;--vt-gold:#d7b875;--vt-line:rgba(235,226,203,.13);
+  background:var(--vt-bg);color:var(--vt-text);
+}
+.vt-header{background:rgba(7,8,7,.88);border-bottom-color:rgba(235,226,203,.09)}
+.vt-nav{color:#c3c1b7}
+.vt-nav>a:hover{color:var(--vt-gold)}
+.vt-nav-signin{border-color:rgba(215,184,117,.4)!important;background:rgba(215,184,117,.04)}
+.vt-hero{background:radial-gradient(ellipse at 78% 47%,rgba(173,138,70,.09),transparent 36%),linear-gradient(120deg,#090a08 0%,#090b09 55%,#10110d 100%)}
+.vt-hero::before{background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px)}
+.vt-eyebrow,.vt-section-kicker{color:#b4aa8f}
+.vt-eyebrow-line{background:var(--vt-gold)}
+.vt-hero h1 span{color:var(--vt-gold);text-shadow:0 0 32px rgba(215,184,117,.1)}
+.vt-hero-lede{color:#b5b4aa}
+.vt-button-primary{background:var(--vt-gold);color:#11110d!important;box-shadow:none}
+.vt-button-primary:hover{background:#ead39f}
+.vt-button-primary .vt-arrow,.vt-arrow{color:var(--vt-gold)}
+.vt-hero-foot,.vt-hero-bottom{color:#77796e}
+.vt-hero-foot .vt-eyebrow-line{background:var(--vt-gold)}
+.vt-live-dot{background:#b9a06c;box-shadow:0 0 10px rgba(215,184,117,.35)}
+/* Consistent black surfaces, with warm light typography and restrained gold details. */
+.vt-core-section,.vt-products,.vt-journey{background:linear-gradient(135deg,#080907,#0d0f0b 58%,#090a08);color:var(--vt-text)}
+.vt-about,.vt-partners{background:linear-gradient(135deg,#11120f,#171811 55%,#10110e);color:var(--vt-text)}
+.vt-contact{background:linear-gradient(135deg,#070807,#10110d 65%,#080907);color:var(--vt-text)}
+.vt-about .vt-section-kicker,.vt-partners .vt-section-kicker{color:#b4aa8f}
+.vt-about h2,.vt-section-heading h2,.vt-partners h2,.vt-journey h2,.vt-contact h2{color:#f3f1e9}
+.vt-about h2 em,.vt-section-heading h2 em,.vt-partners h2 em,.vt-journey h2 em,.vt-contact h2 em{color:var(--vt-gold);text-shadow:none}
+.vt-about-copy p,.vt-partners-grid>div>p,.vt-journey-copy>p,.vt-contact-grid>div>p{color:#aaa99e}
+.vt-about .vt-inline-link,.vt-partners .vt-inline-link{color:#e1ded2!important;border-bottom-color:rgba(215,184,117,.25)}
+.vt-principles{border-top-color:rgba(235,226,203,.16)}
+.vt-principles>div>span{color:var(--vt-gold)}
+.vt-principles strong{color:#f0eee5}
+.vt-principles p{color:#a09f95}
+.vt-section-heading>p{color:#a09f95}
+.vt-product{background:linear-gradient(110deg,#12140f,#0b0d0a 70%);border-color:var(--vt-line);box-shadow:none}
+.vt-product-meta{color:#a09f95}
+.vt-status-live{color:#d6c18e!important;border-color:rgba(215,184,117,.38)!important;background:rgba(215,184,117,.07)}
+.vt-status-soon{color:#d6c18e!important;border-color:rgba(215,184,117,.28)!important;background:rgba(215,184,117,.045)}
+.vt-product h3{color:#f3f1e9}
+.vt-product h4{color:#d5d0c3}
+.vt-product-copy>p,.vt-product-link{color:#a09f95}
+.vt-tags span{border-color:rgba(215,184,117,.18);background:rgba(215,184,117,.035);color:#c9c3b5}
+.vt-product-link .vt-arrow{color:var(--vt-gold)}
+.vt-product-visual{background:radial-gradient(ellipse at 50% 45%,rgba(173,138,70,.09),transparent 67%),linear-gradient(145deg,#11130f,#080907)}
+.vt-app-window,.vt-study-card{background:rgba(13,15,12,.94);border-color:rgba(215,184,117,.22);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.vt-app-top{border-bottom-color:rgba(215,184,117,.16);color:#b6b2a5}
+.vt-mini-mark{background:var(--vt-gold);color:#11110d}
+.vt-app-status{color:#d6c18e}
+.vt-app-sidebar{border-right-color:rgba(215,184,117,.12)}
+.vt-app-sidebar i{background:rgba(215,184,117,.2)}
+.vt-app-main>small,.vt-app-mini-grid small,.vt-study-card small{color:#a79b7d}
+.vt-app-main>strong,.vt-app-mini-grid b,.vt-study-card b{color:#eee9dc}
+.vt-app-prompt{border-color:rgba(215,184,117,.2);background:rgba(215,184,117,.045);color:#bcb8ab}
+.vt-app-prompt span,.vt-study-card span{color:var(--vt-gold)}
+.vt-study-orb{background:radial-gradient(circle at 35% 30%,#f0dba6,#9a793e 45%,#302619 75%);box-shadow:0 0 65px rgba(215,184,117,.14)}
+.vt-study-bars i{background:var(--vt-gold)}
+.vt-edu-label,.vt-future-note{color:#a09f95}
+.vt-future-note>span{color:var(--vt-gold)}
+.vt-partner-card,.vt-access-card{background:linear-gradient(145deg,rgba(22,23,18,.96),rgba(10,11,9,.98));border-color:rgba(215,184,117,.2);box-shadow:0 25px 80px rgba(0,0,0,.2)}
+.vt-partner-symbol{background:var(--vt-gold);color:#11110d;border-radius:0}
+.vt-partner-status,.vt-partner-wordmark span,.vt-partner-card p,.vt-partner-bottom{color:#a09f95}
+.vt-partner-divider{background:rgba(215,184,117,.18)}
+.vt-partner-bottom a{color:#e1ded2}
+.vt-disclaimer,.vt-journey-copy small{color:#858479}
+.vt-journey-stages{border-top-color:rgba(235,226,203,.16)}
+.vt-journey-stages>div{border-bottom-color:rgba(235,226,203,.12)}
+.vt-journey-stages span{color:var(--vt-gold)}
+.vt-journey-stages p{color:#c3c0b5}
+.vt-contact-glow{background:radial-gradient(ellipse at 72% 35%,rgba(173,138,70,.09),transparent 60%)}
+.vt-contact-email{color:#e1d0a7;border-bottom-color:rgba(215,184,117,.3)}
+.vt-access-label{color:var(--vt-gold)}
+.vt-access-card h3{color:#f3f1e9}
+.vt-access-card>p,.vt-access-card>small{color:#a09f95}
+.vt-waitlist-form input{background:rgba(3,4,3,.72);border-color:rgba(215,184,117,.25);color:#f3f1e9}
+.vt-waitlist-form input::placeholder{color:#858479}
+.vt-waitlist-form button{background:var(--vt-gold);color:#11110d}
+.vt-form-success{color:#d7c28f}
+.vt-form-error{color:#e6a6a0}
+.vt-footer{background:#050605;border-top:1px solid rgba(235,226,203,.12);color:#a09f95}
+.vt-footer .vt-brand{color:#f3f1e9}
+.vt-footer .vt-brand-mark{background:transparent;border-color:rgba(215,184,117,.65)}
+.vt-footer-links a:hover{color:var(--vt-gold)}
+.vt-copyright{color:#77796e}
+/* The Core diagram echoes the architecture, not a new blue brand palette. */
+.vt-core-diagram{background:radial-gradient(ellipse at center,rgba(173,138,70,.08),transparent 68%)}
+.vt-core-ring{border-color:rgba(215,184,117,.16)}
+.vt-core-node{background:linear-gradient(145deg,rgba(29,29,22,.96),rgba(8,9,7,.98));border-color:rgba(215,184,117,.28);box-shadow:0 10px 35px rgba(0,0,0,.28),0 0 20px rgba(215,184,117,.035)}
+.vt-core-node b{color:#eee9dc}
+.vt-core-node small{color:#aaa18d}
+.vt-core-main{border-color:rgba(215,184,117,.52);box-shadow:0 0 30px rgba(215,184,117,.09),inset 0 0 20px rgba(215,184,117,.035)}
+.vt-core-main>span{background:var(--vt-gold);color:#11110d}
+.vt-core-link{background:linear-gradient(90deg,rgba(215,184,117,.12),rgba(215,184,117,.65),rgba(215,184,117,.12));box-shadow:0 0 10px rgba(215,184,117,.18)}
+/* Keep blue/cool tones contained to the hero's cinematic light-trail treatment. */
+.vt-architecture-label,.vt-architecture-node small,.vt-architecture-readout small{color:rgba(226,215,190,.72)}
+.vt-architecture-live,.vt-architecture-readout b span{background:#d7b875;box-shadow:0 0 9px rgba(215,184,117,.55)}
+.vt-architecture-node{border-color:rgba(215,184,117,.27);background:rgba(8,9,7,.82);box-shadow:0 16px 44px rgba(0,0,0,.28),inset 0 0 22px rgba(215,184,117,.035)}
+.vt-architecture-node-core{border-color:rgba(215,184,117,.58);box-shadow:0 0 34px rgba(215,184,117,.1),inset 0 0 20px rgba(215,184,117,.04)}
+.vt-architecture-node-icon{background:var(--vt-gold);color:#11110d}
+.vt-architecture-glyph{color:var(--vt-gold)}
+.vt-architecture-connector{background:linear-gradient(90deg,transparent,rgba(215,184,117,.6),transparent)}
+.vt-architecture-readout{border-color:rgba(215,184,117,.2);background:rgba(7,8,7,.72)}
+.vt-architecture-scanline{background:linear-gradient(90deg,transparent,rgba(215,184,117,.22),transparent)}
+@media(max-width:760px){
+ .vt-header{background:rgba(7,8,7,.94)}
+ .vt-about,.vt-partners,.vt-core-section,.vt-products,.vt-journey,.vt-contact{background:linear-gradient(145deg,#080907,#10110d 62%,#060706)}
+}
