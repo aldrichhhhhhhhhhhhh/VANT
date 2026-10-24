@@ -76,8 +76,10 @@ function CorporateHomeView() {
       <button className="vt-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
       <nav className={menuOpen ? "vt-nav vt-nav-open" : "vt-nav"} aria-label="Main navigation">
         <a href="#products" onClick={closeMenu}>Ecosystem</a>
+        <a href="#partners" onClick={closeMenu}>Partners</a>
         <a href="#about" onClick={closeMenu}>Our Thinking</a>
-        <a href="#contact" onClick={closeMenu}>Contact <span className="vt-nav-external">↗</span></a>
+        <a href="#contact" onClick={closeMenu}>Contact</a>
+        <a className="vt-nav-signin" href="https://vant-ai.vercel.app/">Sign in <span className="vt-nav-external">↗</span></a>
       </nav>
     </header>
 
@@ -86,12 +88,28 @@ function CorporateHomeView() {
         <div className="vt-hero-copy">
           <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> INDEPENDENT TECHNOLOGY COMPANY</div>
           <h1>VANT<br /><span>TECHNOLOGIES</span></h1>
-          <p className="vt-hero-lede">Intelligence that moves possibility forward. Building connected tools for the way we work, learn, and create what comes next.</p>
-          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#about">Our point of view ↓</a></div>
+          <p className="vt-hero-lede">One AI core powering products for work, learning, and business.</p>
+          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#partners">Partner with us <Arrow diagonal /></a></div>
           <div className="vt-hero-foot"><span className="vt-eyebrow-line" /> INTELLIGENCE · SYSTEMS · POSSIBILITY</div>
         </div>
         <WindowScene />
         <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </section>
+
+
+      <section id="core" className="vt-core-section vt-section">
+        <div className="vt-section-kicker vt-reveal"><span>01</span> / THE VANT CORE</div>
+        <div className="vt-core-grid">
+          <div className="vt-core-copy vt-reveal"><h2>One core.<br/><em>Many possibilities.</em></h2><p>VANT is building a shared intelligence layer designed to support a growing family of products and tailored business integrations. Each experience serves a different need, connected by a common technology vision.</p><a className="vt-inline-link" href="#products">Explore the ecosystem <Arrow /></a></div>
+          <div className="vt-core-diagram vt-reveal" aria-label="Diagram showing VANT AI core connected to work platform, education, and business integrations">
+            <div className="vt-core-ring vt-core-ring-a"/><div className="vt-core-ring vt-core-ring-b"/>
+            <div className="vt-core-node vt-core-main"><span>V</span><b>VANT AI CORE</b><small>SHARED INTELLIGENCE</small></div>
+            <div className="vt-core-node vt-core-work"><b>WORK</b><small>Platform</small></div>
+            <div className="vt-core-node vt-core-edu"><b>LEARN</b><small>Education</small></div>
+            <div className="vt-core-node vt-core-business"><b>BUILD</b><small>Integrations</small></div>
+            <i className="vt-core-link vt-core-link-a"/><i className="vt-core-link vt-core-link-b"/><i className="vt-core-link vt-core-link-c"/>
+          </div>
+        </div>
       </section>
 
       <section id="about" className="vt-about vt-section">
@@ -106,7 +124,7 @@ function CorporateHomeView() {
       <section id="products" className="vt-products vt-section">
         <div className="vt-section-heading vt-reveal"><div><div className="vt-section-kicker"><span>02</span> / THE APPLICATIONS</div><h2>Built by VANT.<br /><em>Made for momentum.</em></h2></div><p>Different experiences. One shared belief: technology should help you do more with what matters.</p></div>
         <div className="vt-product-list">{products.map(product => <article key={product.number} className={"vt-product vt-product-" + product.tone + " vt-reveal"}>
-          <div className="vt-product-copy"><div className="vt-product-meta"><span>{product.number}</span><span>{product.label}</span></div><h3>{product.name}</h3><h4>{product.description}</h4><p>{product.detail}</p><div className="vt-tags">{product.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="vt-product-link" href={product.href}>{product.number === "01" ? "Explore VANT AI" : "Discover VANT Education"} <Arrow diagonal /></a></div>
+          <div className="vt-product-copy"><div className="vt-product-meta"><span>{product.number}</span><span>{product.label}</span><span className={"vt-status vt-status-" + (product.number === "01" ? "live" : "soon")}>{product.number === "01" ? "LIVE" : "WAITLIST OPEN"}</span></div><h3>{product.name}</h3><h4>{product.description}</h4><p>{product.detail}</p><div className="vt-tags">{product.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="vt-product-link" href={product.href}>{product.number === "01" ? "Launch Work Platform" : "Join the waitlist"} <Arrow diagonal /></a></div>
           <div className="vt-product-visual">{product.number === "01" ? <div className="vt-app-window"><div className="vt-app-top"><span className="vt-mini-mark">V</span><span>VANT WORKSPACE</span><span className="vt-app-status">● READY</span></div><div className="vt-app-layout"><div className="vt-app-sidebar"><i/><i/><i/><i/><i/></div><div className="vt-app-main"><small>YOUR WORKSPACE</small><strong>Good work starts<br/>with a clear next step.</strong><div className="vt-app-prompt">What would you like to move forward today? <span>↗</span></div><div className="vt-app-mini-grid"><div><small>PROJECTS</small><b>03 active</b></div><div><small>AI ASSISTANCE</small><b>Ready when you are</b></div></div></div></div></div> : <div className="vt-education-visual"><div className="vt-study-orb">V<span>EDU</span></div><div className="vt-study-card study-card-a"><small>STUDY SESSION</small><b>Biology · Cell structure</b><span>＋ 12 flashcards ready</span></div><div className="vt-study-card study-card-b"><small>YOUR LEARNING PATH</small><b>One step at a time.</b><div className="vt-study-bars"><i/><i/><i/><i/><i/></div></div><div className="vt-edu-label">LEARN WITH INTENTION</div></div>}</div>
         </article>)}</div>
         <p className="vt-future-note vt-reveal"><span>+</span> The ecosystem is growing. More VANT applications will be introduced as they are ready.</p>
@@ -114,7 +132,7 @@ function CorporateHomeView() {
 
       <section id="partners" className="vt-partners vt-section">
         <div className="vt-section-kicker vt-reveal"><span>03</span> / POWERED BY VANT</div>
-        <div className="vt-partners-grid"><div className="vt-reveal"><h2>Good technology<br />goes <em>beyond itself.</em></h2><p>We see a future where VANT intelligence can support experiences beyond our own products. Through selected collaborations, we aim to help partners bring more capable, more thoughtful technology to the people they serve.</p><a className="vt-inline-link" href="#contact">Explore a partnership <Arrow /></a></div><article className="vt-partner-card vt-reveal"><div className="vt-partner-top"><span className="vt-partner-symbol">S</span><span className="vt-partner-status">ECOSYSTEM SPOTLIGHT</span></div><div className="vt-partner-wordmark">SELLSPACE<span>COMMERCE, REIMAGINED.</span></div><p>A separate commerce venture exploring a more intelligent everyday marketplace, with VANT technology envisioned as part of its future AI capabilities.</p><div className="vt-partner-divider"/><div className="vt-partner-bottom"><span><i className="vt-live-dot"/> FUTURE INTEGRATION</span><a href="https://sellspace-corporate.vercel.app/" target="_blank" rel="noreferrer">Visit SELLSPACE <Arrow diagonal /></a></div></article></div>
+        <div className="vt-partners-grid"><div className="vt-reveal"><h2>Good technology<br />goes <em>beyond itself.</em></h2><p>We work with businesses to design and build tailored integrations around real workflows and needs. We are now onboarding our first pilot partners and exploring practical ways VANT technology can support their operations.</p><a className="vt-inline-link" href="#contact">Become a partner <Arrow /></a></div><article className="vt-partner-card vt-reveal"><div className="vt-partner-top"><span className="vt-partner-symbol">V</span><span className="vt-partner-status">PILOT PARTNERS</span></div><div className="vt-partner-wordmark">BUILD WITH VANT<span>CUSTOM AI INTEGRATIONS.</span></div><p>Collaborate with VANT Technologies on tailored AI and software experiences designed around your business, your people, and your workflows.</p><div className="vt-partner-divider"/><div className="vt-partner-bottom"><span><i className="vt-live-dot"/> NOW ONBOARDING</span><a href="#contact">Start a conversation <Arrow diagonal /></a></div></article></div>
         <p className="vt-disclaimer vt-reveal">Partnership and integration details are presented transparently. Planned capabilities are identified as future integrations and are not represented as live services.</p>
       </section>
 
@@ -124,7 +142,7 @@ function CorporateHomeView() {
 
       <section id="contact" className="vt-contact vt-section"><div className="vt-contact-glow"/><div className="vt-section-kicker vt-reveal"><span>05</span> / THE NEXT CONVERSATION</div><div className="vt-contact-grid"><div className="vt-reveal"><h2>Have something<br />in <em>mind?</em></h2><p>Whether you're exploring our products, considering a collaboration, or curious about what we're building, we'd like to hear from you.</p><a className="vt-contact-email" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM <Arrow diagonal /></a></div><div className="vt-access-card vt-reveal"><span className="vt-access-label">STAY CLOSE TO WHAT'S NEXT</span><h3>Be part of the next chapter.</h3><p>Request early access and follow the evolution of VANT's applications.</p><WaitlistForm/><small>Product access and availability may vary by application.</small></div></div></section>
     </main>
-    <footer className="vt-footer"><a className="vt-brand" href="#top"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.</p><div className="vt-footer-links"><a href="#about">About</a><a href="#products">Applications</a><a href="#partners">Partnerships</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div><span className="vt-copyright">© {new Date().getFullYear()} VANT TECHNOLOGIES</span></footer>
+    <footer className="vt-footer"><a className="vt-brand" href="#top"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.</p><div className="vt-footer-links"><a href="#about">Our Thinking</a><a href="#products">Ecosystem</a><a href="#partners">Partners</a><a href="https://vant-ai.vercel.app/">Sign in</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div><span className="vt-copyright">© {new Date().getFullYear()} VANT TECHNOLOGIES</span></footer>
   </div>;
 }
 
