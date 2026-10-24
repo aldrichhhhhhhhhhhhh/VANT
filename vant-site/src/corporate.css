@@ -615,3 +615,111 @@
 @media(max-width:1050px){.vt-architecture-node{scale:.88}.vt-architecture-node-work{left:18%}.vt-architecture-node-core{left:43%}.vt-architecture-node-learn{right:2%}.vt-architecture-readout-a{left:6%}.vt-architecture-readout-b{right:2%}}
 @media(max-width:760px){.vt-architecture-system{inset:5% -10% 0 -15%;opacity:.7}.vt-architecture-label,.vt-architecture-readout{display:none}.vt-architecture-node{scale:.72;padding:10px;min-width:112px}.vt-architecture-node-core{left:45%;top:35%;min-width:132px;min-height:94px}.vt-architecture-node-work{left:7%;top:24%}.vt-architecture-node-learn{right:0;top:43%}.vt-architecture-node-build{left:35%;bottom:13%}.vt-architecture-connector-a{left:27%;top:31%;width:22%}.vt-architecture-connector-b{left:62%;top:45%;width:21%}.vt-architecture-connector-c{left:49%;top:57%;width:21%}.vt-architecture-scanline{top:66%}}
 @media(prefers-reduced-motion:reduce){.vt-architecture-system,.vt-architecture-node,.vt-architecture-live,.vt-architecture-scanline{animation:none!important}}
+
+
+/* VANT TECHNOLOGIES — unified cinematic identity across every section */
+.vt-site{
+  --vt-bg:#050914;--vt-panel:#0a1224;--vt-text:#f3f7ff;--vt-muted:#9aaac7;
+  --vt-gold:#7cc7ff;--vt-line:rgba(126,184,255,.18);
+  background:#050914;color:#f3f7ff;
+}
+.vt-header{background:rgba(5,9,20,.82);border-bottom-color:rgba(120,177,255,.14)}
+.vt-brand-mark{border-color:rgba(91,166,255,.6);color:#9bd5ff;transform:none;border-radius:9px}
+.vt-brand-period{color:#62b6ff}
+.vt-nav{color:#b8c9e7}
+.vt-nav-cta,.vt-nav-signin{border-color:rgba(105,178,255,.38)!important;background:rgba(33,103,191,.08)}
+.vt-nav>a:hover{color:#82caff}
+.vt-hero{background:radial-gradient(ellipse at 77% 45%,rgba(28,109,235,.19),transparent 42%),linear-gradient(115deg,#050914 0%,#071126 55%,#081a34 100%)}
+.vt-hero::before{background-image:linear-gradient(rgba(114,173,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(114,173,255,.035) 1px,transparent 1px)}
+.vt-eyebrow,.vt-section-kicker{color:#9eb9e4}
+.vt-eyebrow-line{background:#4ba7ff}
+.vt-hero h1 span{color:#8bcaff;text-shadow:0 0 38px rgba(45,139,255,.18)}
+.vt-hero-lede{color:#b2c1dc}
+.vt-button-primary{background:linear-gradient(110deg,#d6efff,#66b6ff);color:#061020!important;box-shadow:0 8px 28px rgba(36,129,255,.17)}
+.vt-button-primary:hover{background:#e6f6ff}
+.vt-button-primary .vt-arrow,.vt-arrow{color:#77c4ff}
+.vt-text-link,.vt-inline-link{color:#d9e8ff!important}
+.vt-hero-foot,.vt-hero-bottom{color:#7d91b4}
+.vt-live-dot{background:#60b9ff;box-shadow:0 0 12px rgba(65,159,255,.8)}
+/* Carry the hero's midnight-blue atmosphere through every content band. */
+.vt-core-section,.vt-products,.vt-journey{background:linear-gradient(135deg,#070d1c,#08142a 58%,#071020);color:#eef5ff}
+.vt-about,.vt-partners{background:linear-gradient(135deg,#0a1427,#0a1a32 55%,#091326);color:#eef5ff}
+.vt-contact{background:linear-gradient(135deg,#050a16,#081b38 65%,#071126);color:#eef5ff}
+.vt-about .vt-section-kicker,.vt-partners .vt-section-kicker{color:#9eb9e4}
+.vt-about h2,.vt-section-heading h2,.vt-partners h2,.vt-journey h2,.vt-contact h2{color:#f1f6ff}
+.vt-about h2 em,.vt-section-heading h2 em,.vt-partners h2 em,.vt-journey h2 em,.vt-contact h2 em{color:#86c8ff;text-shadow:0 0 30px rgba(50,137,255,.13)}
+.vt-about-copy p,.vt-partners-grid>div>p,.vt-journey-copy>p,.vt-contact-grid>div>p{color:#a9bbd9}
+.vt-about .vt-inline-link,.vt-partners .vt-inline-link{color:#e2efff!important;border-bottom-color:rgba(129,189,255,.3)}
+.vt-principles{border-top-color:rgba(130,184,255,.22)}
+.vt-principles>div>span{color:#70bfff}
+.vt-principles strong{color:#e5efff}
+.vt-principles p{color:#9fb1d0}
+.vt-section-heading>p{color:#a9bbd9}
+.vt-product{background:linear-gradient(115deg,rgba(14,29,54,.94),rgba(7,15,30,.98) 72%);border-color:rgba(105,169,255,.2);box-shadow:inset 0 1px rgba(255,255,255,.025)}
+.vt-product-meta{color:#91a9ce}
+.vt-status-live{color:#87d5ff!important;border-color:rgba(85,183,255,.4)!important;background:rgba(35,135,255,.1)}
+.vt-status-soon{color:#b2caff!important;border-color:rgba(124,167,255,.35)!important;background:rgba(78,110,220,.1)}
+.vt-product h3{color:#f0f6ff}
+.vt-product h4{color:#c5d8f6}
+.vt-product-copy>p,.vt-product-link{color:#9fb2d2}
+.vt-tags span{border-color:rgba(119,177,255,.22);background:rgba(42,95,164,.13);color:#c3d7f5}
+.vt-product-link .vt-arrow{color:#81caff}
+.vt-product-visual{background:radial-gradient(ellipse at 50% 45%,rgba(28,113,230,.18),transparent 67%),linear-gradient(145deg,#0a1730,#071020)}
+.vt-app-window,.vt-study-card{background:rgba(6,14,29,.92);border-color:rgba(107,179,255,.27);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.vt-app-top{border-bottom-color:rgba(107,179,255,.18);color:#a8c2e8}
+.vt-mini-mark{background:#75c5ff;color:#061020}
+.vt-app-status{color:#80d8ff}
+.vt-app-sidebar{border-right-color:rgba(107,179,255,.14)}
+.vt-app-sidebar i{background:rgba(114,183,255,.25)}
+.vt-app-main>small,.vt-app-mini-grid small,.vt-study-card small{color:#86a7d6}
+.vt-app-main>strong,.vt-app-mini-grid b,.vt-study-card b{color:#e4efff}
+.vt-app-prompt{border-color:rgba(107,179,255,.24);background:rgba(23,58,103,.26);color:#a9c3e6}
+.vt-app-prompt span{color:#7bc8ff}
+.vt-study-orb{background:radial-gradient(circle at 35% 30%,#8bd3ff,#245bb5 45%,#0b1b3c 75%);box-shadow:0 0 80px rgba(42,134,255,.3)}
+.vt-study-card span{color:#8fcaff}
+.vt-study-bars i{background:#54a9ff}
+.vt-edu-label,.vt-future-note{color:#9db4d9}
+.vt-future-note>span{color:#78c7ff}
+.vt-partner-card,.vt-access-card{background:linear-gradient(145deg,rgba(16,37,69,.92),rgba(7,16,33,.97));border-color:rgba(111,177,255,.24);box-shadow:0 25px 80px rgba(0,0,0,.2)}
+.vt-partner-symbol{background:linear-gradient(135deg,#d6f0ff,#4a9eff);color:#061020;border-radius:10px}
+.vt-partner-status,.vt-partner-wordmark span,.vt-partner-card p,.vt-partner-bottom{color:#a8bfdf}
+.vt-partner-divider{background:rgba(125,184,255,.2)}
+.vt-partner-bottom a{color:#e1efff}
+.vt-disclaimer,.vt-journey-copy small{color:#8198bc}
+.vt-journey-stages{border-top-color:rgba(125,184,255,.2)}
+.vt-journey-stages>div{border-bottom-color:rgba(125,184,255,.14)}
+.vt-journey-stages span{color:#75c4ff}
+.vt-journey-stages p{color:#c1d2ed}
+.vt-contact-glow{background:radial-gradient(ellipse at 72% 35%,rgba(30,118,255,.2),transparent 60%)}
+.vt-contact-email{color:#c8e4ff;border-bottom-color:rgba(126,190,255,.35)}
+.vt-access-label{color:#85c7ff}
+.vt-access-card h3{color:#f0f6ff}
+.vt-access-card>p,.vt-access-card>small{color:#a4b9d9}
+.vt-waitlist-form input{background:rgba(3,9,20,.72);border-color:rgba(119,180,255,.3);color:#eff7ff}
+.vt-waitlist-form input::placeholder{color:#8298bc}
+.vt-waitlist-form button{background:linear-gradient(110deg,#d6efff,#66b6ff);color:#061020}
+.vt-form-success{color:#8bd9ff}
+.vt-form-error{color:#ffaaa9}
+.vt-footer{background:#040812;border-top:1px solid rgba(112,174,255,.16);color:#a4b7d7}
+.vt-footer .vt-brand{color:#f1f6ff}
+.vt-footer .vt-brand-mark{background:rgba(43,130,231,.12)}
+.vt-footer-links a:hover{color:#82caff}
+.vt-copyright{color:#7286a8}
+/* Recolor the shared intelligence diagrams to echo the hero's luminous system map. */
+.vt-core-diagram{background:radial-gradient(ellipse at center,rgba(26,110,236,.17),transparent 68%)}
+.vt-core-ring{border-color:rgba(86,167,255,.2)}
+.vt-core-node{background:linear-gradient(145deg,rgba(18,43,79,.96),rgba(6,15,31,.98));border-color:rgba(108,180,255,.32);box-shadow:0 10px 35px rgba(0,0,0,.28),0 0 24px rgba(44,132,255,.07)}
+.vt-core-node b{color:#e6f3ff}
+.vt-core-node small{color:#8fb0db}
+.vt-core-main{border-color:rgba(111,202,255,.62);box-shadow:0 0 40px rgba(41,140,255,.17),inset 0 0 25px rgba(56,140,255,.08)}
+.vt-core-main>span{background:linear-gradient(135deg,#d7f2ff,#4d9eff);color:#061020}
+.vt-core-link{background:linear-gradient(90deg,rgba(61,146,255,.15),rgba(95,195,255,.8),rgba(61,146,255,.15));box-shadow:0 0 12px rgba(63,153,255,.3)}
+@media(max-width:760px){
+ .vt-header{background:rgba(5,9,20,.94)}
+ .vt-hero{background:radial-gradient(ellipse at 55% 65%,rgba(28,109,235,.2),transparent 48%),linear-gradient(145deg,#050914,#08172e)}
+ .vt-about,.vt-partners,.vt-core-section,.vt-products,.vt-journey,.vt-contact{background:linear-gradient(145deg,#071020,#09172c 62%,#050b18)}
+ .vt-principles{border-top-color:rgba(130,184,255,.2)}
+}
+@media(prefers-reduced-motion:reduce){
+ .vt-site .vt-trail,.vt-site .vt-trail-cloud,.vt-site .vt-trail-glow,.vt-site .vt-trail-particle,.vt-site .vt-architecture-system,.vt-site .vt-architecture-node,.vt-site .vt-architecture-scanline{animation:none!important}
+}
