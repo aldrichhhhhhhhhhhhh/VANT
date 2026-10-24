@@ -499,3 +499,26 @@
  .vt-hero-bottom span:first-child{display:none}
 }
 @media(prefers-reduced-motion:reduce){.vt-intelligence-scene .vt-intel-core,.vt-intelligence-scene .vt-intel-beam,.vt-intelligence-scene .vt-intel-node,.vt-hero::before{animation:none!important}}
+
+
+/* VANT Technologies new identity: flowing cinematic light trails, no legacy geometric centerpiece */
+.vt-light-trails{position:absolute;inset:0 0 0 33%;z-index:1;width:auto;height:auto;margin:0!important;overflow:hidden;pointer-events:none;transform:none!important;background:radial-gradient(ellipse at 64% 48%,rgba(10,67,122,.32),transparent 48%)}
+.vt-light-trails::before{content:"";position:absolute;inset:-20%;background:radial-gradient(ellipse at 70% 48%,rgba(16,102,194,.18),transparent 36%),radial-gradient(ellipse at 54% 60%,rgba(25,80,153,.12),transparent 45%);animation:vt-trail-atmosphere 10s ease-in-out infinite alternate}
+.vt-trail-cloud{position:absolute;left:22%;top:20%;width:90%;height:62%;border-radius:50%;background:radial-gradient(ellipse,rgba(13,83,155,.16),rgba(4,12,26,0) 68%);filter:blur(35px)}
+.vt-trail{position:absolute;left:-10%;top:50%;width:125%;height:2px;transform-origin:center;background:linear-gradient(90deg,transparent 0%,rgba(34,126,255,0) 10%,rgba(55,150,255,.12) 27%,rgba(91,188,255,.95) 47%,rgba(22,110,255,.55) 62%,rgba(32,112,255,.08) 82%,transparent 100%);filter:drop-shadow(0 0 5px rgba(49,154,255,.85)) drop-shadow(0 0 18px rgba(29,110,255,.55));opacity:.8;animation:vt-trail-flow 8s cubic-bezier(.45,0,.25,1) infinite}
+.vt-trail-a{transform:translateY(-90px) rotate(-16deg) scaleX(.9);animation-delay:-1s}
+.vt-trail-b{height:1px;transform:translateY(-35px) rotate(-7deg) scaleX(1.1);animation-delay:-4s;opacity:.55}
+.vt-trail-c{height:3px;transform:translateY(25px) rotate(5deg) scaleX(.85);animation-delay:-2.4s;background:linear-gradient(90deg,transparent,rgba(49,141,255,.05),rgba(89,183,255,.85),rgba(33,113,255,.2),transparent)}
+.vt-trail-d{height:1px;transform:translateY(85px) rotate(15deg) scaleX(1.15);animation-delay:-5.5s;opacity:.45}
+.vt-trail-e{height:1px;transform:translateY(-155px) rotate(-23deg) scaleX(.7);animation-delay:-3.1s;opacity:.35}
+.vt-trail-f{height:2px;transform:translateY(150px) rotate(21deg) scaleX(.8);animation-delay:-6.2s;opacity:.42;background:linear-gradient(90deg,transparent,rgba(50,128,255,.08),rgba(216,181,107,.8),rgba(50,128,255,.12),transparent);filter:drop-shadow(0 0 8px rgba(216,181,107,.55))}
+.vt-trail-glow{position:absolute;left:35%;top:50%;width:40%;height:42%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(ellipse,rgba(15,97,191,.22),rgba(8,24,48,.08) 45%,transparent 72%);filter:blur(25px);animation:vt-trail-glow 6s ease-in-out infinite}
+.vt-trail-particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#8ed4ff;box-shadow:0 0 12px 4px rgba(69,166,255,.55);animation:vt-trail-pulse 3s ease-in-out infinite}
+.vt-particle-a{left:28%;top:28%}.vt-particle-b{left:77%;top:34%;animation-delay:-1.2s}.vt-particle-c{left:62%;top:70%;animation-delay:-2.1s}.vt-particle-d{left:42%;top:79%;animation-delay:-.7s}
+.vt-light-trails .vt-intel-halo,.vt-light-trails .vt-intel-orbit,.vt-light-trails .vt-intel-core,.vt-light-trails .vt-intel-flow,.vt-light-trails .vt-intel-floater,.vt-light-trails .vt-intel-beam,.vt-light-trails .vt-intel-node,.vt-light-trails .vt-intel-caption,.vt-light-trails .vt-intel-index{display:none!important}
+@keyframes vt-trail-flow{0%,100%{translate:-3% -5px;opacity:.35;scale:.9 1}50%{translate:3% 8px;opacity:.95;scale:1.06 1}}
+@keyframes vt-trail-atmosphere{0%{transform:translate3d(-2%,1%,0) scale(.96);opacity:.6}100%{transform:translate3d(2%,-1%,0) scale(1.05);opacity:1}}
+@keyframes vt-trail-glow{0%,100%{opacity:.45;scale:.85}50%{opacity:.95;scale:1.15}}
+@keyframes vt-trail-pulse{0%,100%{opacity:.25;transform:scale(.65)}50%{opacity:1;transform:scale(1.5)}}
+@media(max-width:760px){.vt-light-trails{inset:12% -45% 0 -2%;opacity:.7}.vt-trail{width:160%}.vt-hero{background:radial-gradient(ellipse at 68% 42%,#0a172a 0%,#05070d 70%)}}
+@media(prefers-reduced-motion:reduce){.vt-trail,.vt-trail-glow,.vt-trail-cloud,.vt-light-trails::before,.vt-trail-particle{animation:none!important}}
