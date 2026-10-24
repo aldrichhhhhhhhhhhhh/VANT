@@ -272,3 +272,14 @@
  .vt-floater-engine{left:74%;top:76%}
  .vt-floater-node{left:26%;top:75%}
 }
+
+/* Focus the hero hierarchy and connect copy to the engine */
+.vt-intelligence-scene::before{opacity:.62;color:rgba(137,202,244,.48);font-size:8px}
+.vt-intelligence-scene::after{opacity:.45;color:rgba(215,184,117,.45);font-size:7px}
+.vt-intel-core{border-color:rgba(215,184,117,.72);box-shadow:0 0 68px rgba(103,201,255,.2),0 0 128px rgba(103,201,255,.08),inset 0 0 48px rgba(103,201,255,.14)}
+.vt-intel-flow{position:absolute;z-index:2;left:-8%;top:51%;width:67%;height:1px;pointer-events:none;transform:rotate(-13deg);transform-origin:left center;background:linear-gradient(90deg,transparent,rgba(215,184,117,.1) 34%,rgba(215,184,117,.68) 76%,rgba(215,184,117,.04));opacity:.55;animation:vt-flow-breathe 7s ease-in-out infinite}
+.vt-intel-flow i{position:absolute;left:35%;top:-2px;width:4px;height:4px;border-radius:50%;background:#e5c67f;box-shadow:0 0 8px 2px rgba(215,184,117,.28);animation:vt-flow-particle 5s ease-in-out infinite}
+@keyframes vt-flow-breathe{0%,100%{opacity:.24}50%{opacity:.62}}
+@keyframes vt-flow-particle{0%{left:18%;opacity:0}15%{opacity:.8}85%{opacity:.8}100%{left:96%;opacity:0}}
+@media(max-width:760px){.vt-intelligence-scene::after{display:none}.vt-intelligence-scene::before{font-size:5px;opacity:.55}.vt-intel-flow{width:62%;opacity:.38}}
+@media(prefers-reduced-motion:reduce){.vt-intel-flow,.vt-intel-flow i{animation:none}.vt-intel-flow{opacity:.3}}
