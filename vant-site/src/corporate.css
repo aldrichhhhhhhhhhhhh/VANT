@@ -134,3 +134,36 @@
 @media(max-width:1050px){.vt-intelligence-scene{width:min(100%,760px);height:clamp(380px,54vw,500px);margin:0 auto;transform:none;overflow:hidden}}
 @media(max-width:760px){.vt-intelligence-scene{width:calc(100% + 24px);height:340px;margin:0 -12px;transform:none;overflow:hidden}.vt-hero h1{font-family:'Space Grotesk',Manrope,sans-serif}}
 @media(max-width:380px){.vt-intelligence-scene{height:295px}}
+
+
+/* Seamless cinematic header: navigation and intelligence scene share one canvas */
+.vt-header{
+  position:absolute;top:0;left:0;right:0;
+  height:86px;
+  background:transparent;
+  border-bottom:0;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.vt-hero{
+  min-height:100svh;
+  padding-top:110px;
+  overflow:hidden;
+}
+.vt-intelligence-scene{
+  z-index:1;
+  margin-top:-64px;
+  transform:scale(1.12);
+  transform-origin:50% 42%;
+}
+.vt-hero-copy{z-index:4}
+.vt-hero::before{z-index:0}
+@media(max-width:1050px){
+  .vt-hero{padding-top:120px}
+  .vt-intelligence-scene{margin-top:-48px;transform:scale(1.04)}
+}
+@media(max-width:760px){
+  .vt-header{height:70px}
+  .vt-hero{padding-top:100px}
+  .vt-intelligence-scene{margin-top:-22px;transform:none}
+}
