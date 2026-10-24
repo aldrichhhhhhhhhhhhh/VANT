@@ -15,27 +15,19 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   return (
-    <div className="vt-scene vt-intelligence-scene" aria-label="Abstract VANT-inspired geometric structure with electric-blue and gold light signals moving through a dark architectural space">
-      <div className="vt-intel-halo vt-intel-halo-one" />
-      <div className="vt-intel-halo vt-intel-halo-two" />
-      <div className="vt-intel-orbit vt-intel-orbit-one" />
-      <div className="vt-intel-orbit vt-intel-orbit-two" />
-      <div className="vt-intel-core"><i /><b /><span /></div>
-      <div className="vt-intel-flow" aria-hidden="true"><i /></div>
-      <div className="vt-intel-floater vt-floater-code"><span>{"</>"}</span><small>CODE / 01</small></div>
-      <div className="vt-intel-floater vt-floater-architecture"><span>{"{ }"}</span><small>ARCH / 02</small></div>
-      <div className="vt-intel-floater vt-floater-engine"><span>01</span><small>ENGINE / 03</small></div>
-      <div className="vt-intel-floater vt-floater-node"><span>↗</span><small>LINK / 04</small></div>
-      <div className="vt-intel-beam vt-intel-beam-one" />
-      <div className="vt-intel-beam vt-intel-beam-two" />
-      <div className="vt-intel-beam vt-intel-beam-three" />
-      <div className="vt-intel-node intel-node-one" />
-      <div className="vt-intel-node intel-node-two" />
-      <div className="vt-intel-node intel-node-three" />
-      <div className="vt-intel-node intel-node-four" />
-      <div className="vt-intel-node intel-node-five" />
-      <div className="vt-intel-caption"><span className="vt-live-dot" /> SYSTEMS CONNECTED <i /> POSSIBILITY IN MOTION</div>
-      <div className="vt-intel-index">V / 001</div>
+    <div className="vt-scene vt-intelligence-scene vt-light-trails" aria-hidden="true">
+      <div className="vt-trail-cloud" />
+      <div className="vt-trail vt-trail-a" />
+      <div className="vt-trail vt-trail-b" />
+      <div className="vt-trail vt-trail-c" />
+      <div className="vt-trail vt-trail-d" />
+      <div className="vt-trail vt-trail-e" />
+      <div className="vt-trail vt-trail-f" />
+      <div className="vt-trail-glow" />
+      <div className="vt-trail-particle vt-particle-a" />
+      <div className="vt-trail-particle vt-particle-b" />
+      <div className="vt-trail-particle vt-particle-c" />
+      <div className="vt-trail-particle vt-particle-d" />
     </div>
   );
 }
