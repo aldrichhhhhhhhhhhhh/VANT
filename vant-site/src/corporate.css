@@ -100,3 +100,5 @@
 @media(max-width:1050px){.vt-intelligence-scene{height:440px;width:min(100%,680px)}}
 @media(max-width:760px){.vt-hero{background:radial-gradient(ellipse at 70% 54%,rgba(21,105,174,.17),transparent 44%),linear-gradient(145deg,#05070d,#080d16)}.vt-hero h1{font-size:clamp(56px,14vw,82px)}.vt-hero h1 span{font-size:.68em;letter-spacing:-.065em}.vt-intelligence-scene{height:320px;margin:0 -12px;width:calc(100% + 24px)}.vt-intel-core{width:clamp(145px,42vw,200px)}.vt-intel-caption{left:7%;bottom:4%;font-size:6px;letter-spacing:.11em}.vt-intel-index{right:5%;top:8%;font-size:7px}}
 @media(max-width:380px){.vt-intelligence-scene{height:285px}.vt-intel-caption{gap:5px;font-size:5px}.vt-intel-caption i{width:14px}}
+
+/* Preview build trigger: ensure the complete approved hero commit is deployed. */
