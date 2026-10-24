@@ -414,3 +414,31 @@
 @media(prefers-reduced-motion:reduce){
   .vt-intel-core{transform:translate(-50%,-50%) rotate(45deg) rotateX(57deg)}
 }
+
+
+/* Screenshot-driven correction: move the engine left within the right hero column */
+.vt-intelligence-scene{
+  margin-left:0 !important;
+  margin-right:0 !important;
+  transform:none !important;
+  transform-origin:center center;
+}
+.vt-intel-halo,
+.vt-intel-halo-two,
+.vt-intel-orbit,
+.vt-intel-orbit-two,
+.vt-intel-core,
+.vt-intel-beam{
+  left:43% !important;
+}
+.vt-intel-floater{
+  left:43% !important;
+}
+@media(max-width:1050px){
+  .vt-intelligence-scene{margin-left:auto !important;margin-right:auto !important;transform:none !important}
+  .vt-intel-halo,.vt-intel-halo-two,.vt-intel-orbit,.vt-intel-orbit-two,.vt-intel-core,.vt-intel-beam,.vt-intel-floater{left:50% !important}
+}
+@media(max-width:760px){
+  .vt-intelligence-scene{margin:0 -12px !important;width:calc(100% + 24px) !important}
+  .vt-intel-halo,.vt-intel-halo-two,.vt-intel-orbit,.vt-intel-orbit-two,.vt-intel-core,.vt-intel-beam,.vt-intel-floater{left:50% !important}
+}
