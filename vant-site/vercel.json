@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/privacy",
+      "destination": "/"
+    },
+    {
+      "source": "/terms",
+      "destination": "/"
+    }
+  ]
+}
