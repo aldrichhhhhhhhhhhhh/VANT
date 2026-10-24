@@ -102,3 +102,24 @@
 @media(max-width:380px){.vt-intelligence-scene{height:285px}.vt-intel-caption{gap:5px;font-size:5px}.vt-intel-caption i{width:14px}}
 
 /* Preview build trigger: ensure the complete approved hero commit is deployed. */
+
+/* Reference-aligned VANT Technologies navigation and hero proportions */
+.vt-header{height:86px;padding-inline:clamp(28px,5.8vw,92px);background:rgba(5,8,14,.78);border-bottom:1px solid rgba(163,194,224,.09);backdrop-filter:blur(16px)}
+.vt-brand-reference{font-size:17px;letter-spacing:.24em;color:#f0f3fa;gap:0}
+.vt-brand-reference>span:last-child{display:block}
+.vt-brand-period{color:#d7b875}
+.vt-nav{gap:clamp(24px,3vw,44px);font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#b8c4d4}
+.vt-nav>a:not(.vt-nav-cta){padding:12px 0}
+.vt-nav-external{font-size:12px;color:#d7b875;padding-left:4px}
+.vt-hero{min-height:min(790px,calc(100svh - 86px));grid-template-columns:minmax(0,1.04fr) minmax(350px,.96fr);gap:1vw;padding-top:72px;padding-bottom:96px;background:radial-gradient(ellipse at 78% 48%,rgba(21,105,174,.18),transparent 34%),radial-gradient(ellipse at 63% 55%,rgba(215,184,117,.055),transparent 30%),linear-gradient(120deg,#05070d 0%,#070c15 58%,#080d16 100%)}
+.vt-hero-copy{max-width:700px}
+.vt-hero h1{font-size:clamp(58px,6.8vw,102px);line-height:.94;margin-top:36px;margin-bottom:27px}
+.vt-hero h1 span{font-size:.77em;letter-spacing:-.072em}
+.vt-hero-lede{max-width:490px;line-height:1.85}
+.vt-hero-actions{gap:28px;margin-top:38px}
+.vt-hero-foot{margin-top:62px;color:#8594a8;font-size:9px;letter-spacing:.16em}
+.vt-hero-bottom{left:clamp(28px,5.8vw,92px);right:clamp(28px,5.8vw,92px)}
+.vt-intelligence-scene{max-width:790px;height:clamp(430px,45vw,610px);width:100%;justify-self:end}
+@media(max-width:1050px){.vt-hero{grid-template-columns:1fr;gap:16px;padding-top:64px}.vt-hero-copy{max-width:700px}.vt-intelligence-scene{height:clamp(340px,52vw,470px);justify-self:center}.vt-hero-foot{margin-top:35px}}
+@media(max-width:760px){.vt-header{height:70px;padding:0 22px}.vt-brand-reference{font-size:16px;letter-spacing:.22em}.vt-nav{top:69px;gap:0;letter-spacing:.14em}.vt-nav>a{font-size:11px}.vt-nav>a:not(.vt-nav-cta){padding:16px 0}.vt-hero{min-height:auto;padding:57px 22px 80px;gap:12px}.vt-hero h1{font-size:clamp(55px,14vw,82px);line-height:.96;margin-top:27px;margin-bottom:21px}.vt-hero h1 span{font-size:.68em;letter-spacing:-.065em;white-space:normal}.vt-hero-lede{font-size:15px;line-height:1.8}.vt-hero-actions{margin-top:27px;gap:17px}.vt-hero-foot{margin-top:32px;font-size:7px;letter-spacing:.1em}.vt-intelligence-scene{height:320px;margin:0 -12px;width:calc(100% + 24px)}.vt-hero-bottom{left:22px;right:22px}}
+@media(max-width:380px){.vt-hero h1{font-size:53px}.vt-hero-actions{align-items:flex-start;flex-direction:column;gap:15px}.vt-intelligence-scene{height:285px}}
