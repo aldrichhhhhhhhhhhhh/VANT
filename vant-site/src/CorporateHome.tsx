@@ -74,7 +74,7 @@ function WaitlistForm() {
   </form>;
 }
 
-function CorporateHome() {
+function CorporateHomeView() {
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     document.title = "VANT Technologies — Intelligence in motion";
@@ -149,29 +149,5 @@ export default function CorporateHome() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/privacy" || path === "/privacy-policy") return <LegalPages page="privacy" />;
   if (path === "/terms" || path === "/terms-of-service") return <LegalPages page="terms" />;
-  return <CorporateHomeContent />;
-}
-
-function CorporateHomeContent() {
   return <CorporateHomeView />;
-}
-
-function CorporateHomeView() {
-  return <CorporateHomeInner />;
-}
-
-function CorporateHomeInner() {
-  return <CorporateHomePage />;
-}
-
-function CorporateHomePage() {
-  return <CorporateHomeMain />;
-}
-
-function CorporateHomeMain() {
-  return <CorporateHomeRenderer />;
-}
-
-function CorporateHomeRenderer() {
-  return <CorporateHome />;
 }
