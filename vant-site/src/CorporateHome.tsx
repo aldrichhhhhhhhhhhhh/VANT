@@ -21,6 +21,7 @@ function WindowScene() {
       <div className="vt-intel-orbit vt-intel-orbit-one" />
       <div className="vt-intel-orbit vt-intel-orbit-two" />
       <div className="vt-intel-core"><i /><b /><span /></div>
+      <div className="vt-intel-flow" aria-hidden="true"><i /></div>
       <div className="vt-intel-floater vt-floater-code"><span>{"</>"}</span><small>CODE / 01</small></div>
       <div className="vt-intel-floater vt-floater-architecture"><span>{"{ }"}</span><small>ARCH / 02</small></div>
       <div className="vt-intel-floater vt-floater-engine"><span>01</span><small>ENGINE / 03</small></div>
