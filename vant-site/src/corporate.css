@@ -224,3 +224,51 @@
 @media(prefers-reduced-motion:reduce){
  .vt-intel-core::before{animation:none}
 }
+
+
+/* Orbiting technical floaters: independent paths create layered depth */
+.vt-intelligence-scene{--vt-floater-radius:clamp(110px,17vw,235px)}
+.vt-intel-floater{
+ position:absolute;left:50%;top:50%;z-index:4;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+ width:68px;height:58px;
+ color:rgba(157,216,250,.9);
+ border:1px solid rgba(103,201,255,.3);
+ background:linear-gradient(145deg,rgba(9,25,42,.78),rgba(6,12,22,.48));
+ box-shadow:0 0 26px rgba(61,160,225,.09),inset 0 0 16px rgba(103,201,255,.04);
+ backdrop-filter:blur(8px);
+ transform:translate(-50%,-50%);
+ animation:vt-floater-drift 8s ease-in-out infinite;
+}
+.vt-intel-floater span{font:600 19px/1 'Space Grotesk',monospace;letter-spacing:-.06em}
+.vt-intel-floater small{font:500 6px/1 'Space Grotesk',monospace;letter-spacing:.12em;color:rgba(188,202,220,.68)}
+.vt-floater-code{--orbit-radius:var(--vt-floater-radius);--orbit-start:-24deg;animation:vt-floater-orbit 26s linear infinite}
+.vt-floater-architecture{--orbit-radius:calc(var(--vt-floater-radius) * .83);--orbit-start:72deg;animation:vt-floater-orbit 33s linear infinite reverse;border-color:rgba(215,184,117,.34);color:rgba(236,207,147,.9)}
+.vt-floater-architecture small{color:rgba(236,207,147,.7)}
+.vt-floater-engine{--orbit-radius:calc(var(--vt-floater-radius) * 1.12);--orbit-start:158deg;animation:vt-floater-orbit 39s linear infinite}
+.vt-floater-node{--orbit-radius:calc(var(--vt-floater-radius) * .72);--orbit-start:248deg;animation:vt-floater-orbit 22s linear infinite reverse;width:52px;height:48px;border-radius:50%;border-color:rgba(215,184,117,.3);color:#e3c17e}
+@keyframes vt-floater-orbit{
+ from{transform:translate(-50%,-50%) rotate(var(--orbit-start)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--orbit-start)))}
+ to{transform:translate(-50%,-50%) rotate(calc(var(--orbit-start) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--orbit-start) + 360deg)))}
+}
+@keyframes vt-floater-drift{0%,100%{margin-top:0}50%{margin-top:-7px}}
+@media(max-width:1050px){
+ .vt-intel-floater{width:56px;height:48px}
+ .vt-intel-floater span{font-size:16px}
+ .vt-intel-floater small{font-size:5px}
+ .vt-intelligence-scene{--vt-floater-radius:clamp(95px,20vw,170px)}
+}
+@media(max-width:760px){
+ .vt-intelligence-scene{--vt-floater-radius:clamp(76px,24vw,120px)}
+ .vt-intel-floater{width:44px;height:40px;gap:3px;background:rgba(7,15,27,.8);backdrop-filter:none}
+ .vt-intel-floater span{font-size:13px}
+ .vt-intel-floater small{font-size:4px;letter-spacing:.05em}
+ .vt-floater-engine{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .vt-intel-floater{animation:none;transform:translate(-50%,-50%)}
+ .vt-floater-code{left:28%;top:24%}
+ .vt-floater-architecture{left:76%;top:28%}
+ .vt-floater-engine{left:74%;top:76%}
+ .vt-floater-node{left:26%;top:75%}
+}
