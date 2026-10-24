@@ -15,39 +15,25 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   return (
-    <div className="vt-scene vt-penthouse-scene" aria-label="A cinematic penthouse office with a person working at a desk in front of a panoramic city window">
-      <div className="vt-room-ceiling" />
-      <div className="vt-room-wall vt-room-wall-left" />
-      <div className="vt-room-wall vt-room-wall-right" />
-      <div className="vt-pano-window">
-        <div className="vt-city-sky" />
-        <div className="vt-city-horizon" />
-        <div className="vt-skyline skyline-back"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
-        <div className="vt-skyline skyline-front"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
-        <div className="vt-city-lights" />
-        <div className="vt-window-frame vt-frame-vertical" />
-        <div className="vt-window-frame vt-frame-horizontal" />
-        <div className="vt-window-reflection" />
-      </div>
-      <div className="vt-room-floor" />
-      <div className="vt-floor-glow" />
-      <div className="vt-desk-shadow" />
-      <div className="vt-penthouse-desk"><div className="vt-desk-top" /><div className="vt-desk-leg desk-leg-left" /><div className="vt-desk-leg desk-leg-right" /><div className="vt-laptop vt-penthouse-laptop"><span /></div><div className="vt-desk-lamp"><i/><b/></div></div>
-      <div className="vt-penthouse-chair"><i/><b/></div>
-      <div className="vt-worker">
-        <div className="vt-worker-head" /><div className="vt-worker-neck" /><div className="vt-worker-body" /><div className="vt-worker-arm worker-arm-left" /><div className="vt-worker-arm worker-arm-right" />
-      </div>
-      <div className="vt-perspective-line perspective-left" /><div className="vt-perspective-line perspective-right" />
-      <div className="vt-data-card card-sales"><span className="vt-card-icon">↗</span><span className="vt-card-label">SALES MOMENTUM</span><strong>+18.6%</strong><small>Performance trend</small><div className="vt-sparkline"><i/><i/><i/><i/><i/><i/><i/><i/></div></div>
-      <div className="vt-data-card card-project"><span className="vt-live-dot" /><span className="vt-card-label">PROJECTS</span><strong>12 <em>in motion</em></strong><div className="vt-progress"><span /></div></div>
-      <div className="vt-data-card card-insight"><span className="vt-card-label">VANT INTELLIGENCE</span><strong>One clear next step.</strong><small>Signals connected · Priorities surfaced</small></div>
-      <div className="vt-float-chip chip-growth">＋ Growth identified</div>
-      <div className="vt-float-chip chip-focus">＋ Focus regained</div>
-      <div className="vt-scene-caption"><span className="vt-live-dot" /> WORK MOVES FORWARD <span>·</span> DAY INTO NIGHT</div>
+    <div className="vt-scene vt-intelligence-scene" aria-label="Abstract VANT-inspired geometric structure with electric-blue and gold light signals moving through a dark architectural space">
+      <div className="vt-intel-halo vt-intel-halo-one" />
+      <div className="vt-intel-halo vt-intel-halo-two" />
+      <div className="vt-intel-orbit vt-intel-orbit-one" />
+      <div className="vt-intel-orbit vt-intel-orbit-two" />
+      <div className="vt-intel-core"><i /><b /><span /></div>
+      <div className="vt-intel-beam vt-intel-beam-one" />
+      <div className="vt-intel-beam vt-intel-beam-two" />
+      <div className="vt-intel-beam vt-intel-beam-three" />
+      <div className="vt-intel-node intel-node-one" />
+      <div className="vt-intel-node intel-node-two" />
+      <div className="vt-intel-node intel-node-three" />
+      <div className="vt-intel-node intel-node-four" />
+      <div className="vt-intel-node intel-node-five" />
+      <div className="vt-intel-caption"><span className="vt-live-dot" /> SYSTEMS CONNECTED <i /> POSSIBILITY IN MOTION</div>
+      <div className="vt-intel-index">V / 001</div>
     </div>
   );
 }
-
 function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -103,11 +89,11 @@ function CorporateHomeView() {
     <main id="top">
       <section className="vt-hero">
         <div className="vt-hero-copy">
-          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> INDEPENDENT TECHNOLOGY. CONNECTED POSSIBILITY.</div>
-          <h1>Intelligence<br />in <span>motion.</span></h1>
-          <p className="vt-hero-lede">We build technology that helps people work smarter, learn further, and move ideas into action.</p>
+          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> INDEPENDENT TECHNOLOGY COMPANY</div>
+          <h1>VANT<br /><span>TECHNOLOGIES</span></h1>
+          <p className="vt-hero-lede">Intelligence that moves possibility forward. Building connected tools for the way we work, learn, and create what comes next.</p>
           <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#about">Discover VANT <Arrow diagonal /></a></div>
-          <div className="vt-hero-foot"><span className="vt-live-dot" /> A growing ecosystem of applications and intelligence</div>
+          <div className="vt-hero-foot"><span className="vt-live-dot" /> INTELLIGENCE · SYSTEMS · POSSIBILITY</div>
         </div>
         <WindowScene />
         <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
