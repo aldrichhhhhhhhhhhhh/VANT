@@ -582,3 +582,36 @@
  .vt-core-work{top:0}.vt-core-edu{left:0;bottom:5%}.vt-core-business{right:0;bottom:5%}
 }
 @media(prefers-reduced-motion:reduce){.vt-core-ring{animation:none}}
+
+
+/* Floating architecture system — layered HUD around the cinematic light trails */
+.vt-architecture-system{position:absolute;inset:0;z-index:4;pointer-events:none;perspective:1100px;animation:vt-architecture-drift 11s ease-in-out infinite}
+.vt-architecture-label{position:absolute;top:13%;right:8%;font:8px 'DM Sans',sans-serif;letter-spacing:.2em;color:rgba(172,204,235,.66);display:flex;align-items:center;gap:9px;white-space:nowrap}
+.vt-architecture-live{width:5px;height:5px;border-radius:50%;background:#79d7ff;box-shadow:0 0 12px #3ca9ff;animation:vt-architecture-pulse 2s ease-in-out infinite}
+.vt-architecture-node{position:absolute;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;padding:13px 15px;min-width:130px;border:1px solid rgba(119,190,247,.3);background:linear-gradient(135deg,rgba(13,31,52,.78),rgba(5,12,23,.56));box-shadow:0 14px 42px rgba(0,0,0,.16),inset 0 0 25px rgba(72,153,226,.035);backdrop-filter:blur(12px);transform-style:preserve-3d;animation:vt-architecture-card-float 7s ease-in-out infinite}
+.vt-architecture-node b{font-size:9px;letter-spacing:.13em;font-weight:600;color:#e6f3ff}
+.vt-architecture-node small{font-size:7px;letter-spacing:.14em;color:rgba(158,187,216,.7)}
+.vt-architecture-node-core{left:48%;top:36%;min-width:164px;min-height:112px;border-color:rgba(216,181,107,.65);box-shadow:0 0 45px rgba(30,132,235,.14),inset 0 0 30px rgba(216,181,107,.06);animation-delay:-2s}
+.vt-architecture-node-icon{display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(216,181,107,.75);color:#e3c783;font:500 15px 'Manrope',sans-serif;margin-bottom:3px}
+.vt-architecture-node-pulse{position:absolute;right:13px;top:14px;width:5px;height:5px;border-radius:50%;background:#7ce3bd;box-shadow:0 0 10px rgba(124,227,189,.7)}
+.vt-architecture-node-work{left:25%;top:22%;animation-delay:-1.7s}
+.vt-architecture-node-learn{right:7%;top:37%;animation-delay:-4.2s}
+.vt-architecture-node-build{left:39%;bottom:17%;animation-delay:-3.1s}
+.vt-architecture-glyph{font-size:18px;line-height:1;color:#7dcaff;margin-bottom:2px}
+.vt-architecture-connector{position:absolute;height:1px;transform-origin:left center;background:linear-gradient(90deg,rgba(101,192,255,.02),rgba(101,192,255,.65),rgba(101,192,255,.04));box-shadow:0 0 8px rgba(45,151,255,.28);opacity:.65}
+.vt-architecture-connector-a{left:36%;top:29%;width:16%;transform:rotate(23deg)}
+.vt-architecture-connector-b{left:61%;top:44%;width:17%;transform:rotate(-7deg)}
+.vt-architecture-connector-c{left:53%;top:57%;width:18%;transform:rotate(115deg)}
+.vt-architecture-readout{position:absolute;padding:10px 12px;border-left:1px solid rgba(216,181,107,.55);background:linear-gradient(90deg,rgba(7,16,28,.65),transparent);display:flex;flex-direction:column;gap:6px}
+.vt-architecture-readout small{font-size:7px;letter-spacing:.17em;color:rgba(155,182,210,.68)}
+.vt-architecture-readout b{font-size:8px;font-weight:500;letter-spacing:.1em;color:rgba(219,233,248,.88);white-space:nowrap}
+.vt-architecture-readout b span{display:inline-block;width:5px;height:5px;border-radius:50%;background:#7ce3bd;margin-right:5px}
+.vt-architecture-readout-a{left:12%;bottom:24%}.vt-architecture-readout-b{right:6%;bottom:17%}
+.vt-architecture-scanline{position:absolute;left:13%;right:8%;top:62%;height:1px;background:linear-gradient(90deg,transparent,rgba(101,192,255,.23),transparent);animation:vt-architecture-scan 8s ease-in-out infinite}
+@keyframes vt-architecture-drift{0%,100%{transform:translate3d(0,0,0) rotateX(0deg)}50%{transform:translate3d(0,-7px,0) rotateX(1deg)}}
+@keyframes vt-architecture-card-float{0%,100%{translate:0 0;rotateY(-2deg)}50%{translate:0 -9px;rotateY(2deg)}}
+@keyframes vt-architecture-pulse{0%,100%{opacity:.45;scale:.8}50%{opacity:1;scale:1.2}}
+@keyframes vt-architecture-scan{0%,100%{opacity:.12;translate:-2% 0}50%{opacity:.75;translate:2% 0}}
+@media(max-width:1050px){.vt-architecture-node{scale:.88}.vt-architecture-node-work{left:18%}.vt-architecture-node-core{left:43%}.vt-architecture-node-learn{right:2%}.vt-architecture-readout-a{left:6%}.vt-architecture-readout-b{right:2%}}
+@media(max-width:760px){.vt-architecture-system{inset:5% -10% 0 -15%;opacity:.7}.vt-architecture-label,.vt-architecture-readout{display:none}.vt-architecture-node{scale:.72;padding:10px;min-width:112px}.vt-architecture-node-core{left:45%;top:35%;min-width:132px;min-height:94px}.vt-architecture-node-work{left:7%;top:24%}.vt-architecture-node-learn{right:0;top:43%}.vt-architecture-node-build{left:35%;bottom:13%}.vt-architecture-connector-a{left:27%;top:31%;width:22%}.vt-architecture-connector-b{left:62%;top:45%;width:21%}.vt-architecture-connector-c{left:49%;top:57%;width:21%}.vt-architecture-scanline{top:66%}}
+@media(prefers-reduced-motion:reduce){.vt-architecture-system,.vt-architecture-node,.vt-architecture-live,.vt-architecture-scanline{animation:none!important}}
