@@ -182,3 +182,24 @@
   .mote-speech { animation: none; }
   .mote-mood-error .mote-figure { animation: none; }
 }
+
+
+/* Idle is a real resting expression, not just the calm state dimmed down. */
+.mote-mood-idle .mote-eye-shape {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: translateY(7px) scaleY(.22);
+  transition: transform .5s cubic-bezier(.2,.75,.25,1);
+}
+.mote-mood-idle .mote-eye-pupil { opacity: 0; }
+.mote-mood-calm .mote-eye-shape,
+.mote-mood-thinking .mote-eye-shape,
+.mote-mood-error .mote-eye-shape {
+  transform: translateY(0) scaleY(1);
+  transition: transform .28s ease-out;
+}
+.mote-mood-calm .mote-eye-pupil,
+.mote-mood-thinking .mote-eye-pupil,
+.mote-mood-error .mote-eye-pupil { opacity: 1; }
+.mote-mood-idle .mote-scan-lines { opacity: .12; }
+.mote-mood-idle .mote-coordinate-a { color: #59616d; }
