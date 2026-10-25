@@ -13,7 +13,7 @@ function MoteFigure() {
     event.currentTarget.style.setProperty("--mote-tilt-y", `${y * -6}deg`);\n    event.currentTarget.style.setProperty("--mote-eye-x", `${x * 4}px`);\n    event.currentTarget.style.setProperty("--mote-eye-y", `${y * 2}px`);
   }
 
-  function resetPointer(event: React.PointerEvent<HTMLDivElement>) {
+  function resetPointer(event: PointerEvent<HTMLDivElement>) {
     event.currentTarget.style.setProperty("--mote-follow-x", "0px");
     event.currentTarget.style.setProperty("--mote-follow-y", "0px");
     event.currentTarget.style.setProperty("--mote-tilt-x", "0deg");
