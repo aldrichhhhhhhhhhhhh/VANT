@@ -10,14 +10,14 @@ function MoteFigure() {
     event.currentTarget.style.setProperty("--mote-follow-x", `${x * 10}px`);
     event.currentTarget.style.setProperty("--mote-follow-y", `${y * 8}px`);
     event.currentTarget.style.setProperty("--mote-tilt-x", `${x * 7}deg`);
-    event.currentTarget.style.setProperty("--mote-tilt-y", `${y * -6}deg`);
+    event.currentTarget.style.setProperty("--mote-tilt-y", `${y * -6}deg`);\n    event.currentTarget.style.setProperty("--mote-eye-x", `${x * 4}px`);\n    event.currentTarget.style.setProperty("--mote-eye-y", `${y * 2}px`);
   }
 
   function resetPointer(event: React.PointerEvent<HTMLDivElement>) {
     event.currentTarget.style.setProperty("--mote-follow-x", "0px");
     event.currentTarget.style.setProperty("--mote-follow-y", "0px");
     event.currentTarget.style.setProperty("--mote-tilt-x", "0deg");
-    event.currentTarget.style.setProperty("--mote-tilt-y", "0deg");
+    event.currentTarget.style.setProperty("--mote-tilt-y", "0deg");\n    event.currentTarget.style.setProperty("--mote-eye-x", "0px");\n    event.currentTarget.style.setProperty("--mote-eye-y", "0px");
   }
   return (
     <div className="mote-stage" aria-label="Animated MOTE.EXE mascot. Move your cursor around the character to interact." role="img" onPointerMove={trackPointer} onPointerLeave={resetPointer}>
@@ -48,7 +48,7 @@ function MoteFigure() {
           <polygon points="156,100 178,36 128,80" fill="#0b0c0f" stroke="#aeb4bf" strokeWidth="2.5" />
           <circle cx="120" cy="136" r="58" fill="url(#moteOrb)" stroke="#d6d9de" strokeWidth="3" />
           <polygon points="76,130 164,120 152,150 92,154" fill="#f4f5f7" />
-          <rect x="115" y="126" width="10" height="26" fill="#050608" />
+          <rect className="mote-eye-pupil" x="115" y="126" width="10" height="26" fill="#050608" />
           <path d="M66 112 L110 130" fill="none" stroke="#0b0c0f" strokeWidth="9" />
           <path d="M174 104 L130 126" fill="none" stroke="#0b0c0f" strokeWidth="9" />
         </g>
