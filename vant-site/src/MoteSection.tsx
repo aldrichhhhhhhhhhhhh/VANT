@@ -1,13 +1,30 @@
 import "./mote.css";
 
 function MoteFigure() {
+  function trackPointer(event: React.PointerEvent<HTMLDivElement>) {
+    if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+    event.currentTarget.style.setProperty("--mote-follow-x", `${x * 10}px`);
+    event.currentTarget.style.setProperty("--mote-follow-y", `${y * 8}px`);
+    event.currentTarget.style.setProperty("--mote-tilt-x", `${x * 7}deg`);
+    event.currentTarget.style.setProperty("--mote-tilt-y", `${y * -6}deg`);
+  }
+
+  function resetPointer(event: React.PointerEvent<HTMLDivElement>) {
+    event.currentTarget.style.setProperty("--mote-follow-x", "0px");
+    event.currentTarget.style.setProperty("--mote-follow-y", "0px");
+    event.currentTarget.style.setProperty("--mote-tilt-x", "0deg");
+    event.currentTarget.style.setProperty("--mote-tilt-y", "0deg");
+  }
   return (
-    <div className="mote-stage" aria-label="Animated MOTE.EXE mascot" role="img">
+    <div className="mote-stage" aria-label="Animated MOTE.EXE mascot. Move your cursor around the character to interact." role="img" onPointerMove={trackPointer} onPointerLeave={resetPointer}>
       <div className="mote-aura" />
       <div className="mote-ring mote-ring-outer" />
       <div className="mote-ring mote-ring-inner" />
       <div className="mote-scan-lines" aria-hidden="true"><i /><i /><i /><i /><i /></div>
-      <svg className="mote-figure" viewBox="0 0 240 250" aria-hidden="true">
+      <div className="mote-follow"><svg className="mote-figure" viewBox="0 0 240 250" aria-hidden="true">
         <defs>
           <radialGradient id="moteGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#f4f5f7" stopOpacity=".3" />
