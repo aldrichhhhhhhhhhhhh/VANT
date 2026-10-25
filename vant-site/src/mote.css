@@ -1,0 +1,46 @@
+@keyframes mote-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
+@keyframes mote-spin { to { transform: rotate(360deg); } }
+@keyframes mote-spin-reverse { to { transform: rotate(-360deg); } }
+@keyframes mote-breathe { 0%,100% { opacity: .45; transform: scale(.96); } 50% { opacity: .9; transform: scale(1.04); } }
+@keyframes mote-glitch { 0%,88%,100% { transform: translateX(0); opacity: .65; } 91% { transform: translateX(4px); opacity: 1; } 94% { transform: translateX(-3px); opacity: .25; } 97% { transform: translateX(2px); opacity: .8; } }
+@keyframes mote-dash { to { stroke-dashoffset: -28; } }
+.mote-section { position: relative; overflow: hidden; background: #050608; border-top: 1px solid rgba(214,217,222,.1); border-bottom: 1px solid rgba(214,217,222,.1); }
+.mote-section::before { content:""; position:absolute; inset:0; pointer-events:none; background: radial-gradient(ellipse at 76% 48%, rgba(214,217,222,.075), transparent 42%), linear-gradient(110deg, transparent 40%, rgba(255,255,255,.018), transparent 72%); }
+.mote-section-top { position:relative; display:flex; justify-content:space-between; align-items:center; gap:20px; padding-bottom:clamp(28px,4vw,52px); border-bottom:1px solid rgba(214,217,222,.13); }
+.mote-live-label,.mote-overline,.mote-coordinate,.mote-specs span,.mote-visual-caption,.mote-footerline { font-family:"JetBrains Mono",monospace; letter-spacing:.13em; text-transform:uppercase; }
+.mote-live-label { display:flex; align-items:center; gap:9px; color:#9299a4; font-size:10px; }
+.mote-live-label i { display:inline-block; width:6px; height:6px; border-radius:50%; background:#d6d9de; box-shadow:0 0 12px rgba(214,217,222,.45); }
+.mote-grid { position:relative; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(28px,7vw,108px); align-items:center; padding:clamp(46px,7vw,92px) 0 clamp(36px,5vw,68px); }
+.mote-copy { max-width:540px; }
+.mote-overline { margin:0 0 20px; font-size:10px; color:#9da4ae; }
+.mote-copy h2 { margin:0; color:#f4f5f7; font-size:clamp(48px,7vw,92px); line-height:.91; letter-spacing:-.075em; font-weight:500; }
+.mote-copy h2 em { color:#9299a4; font-style:normal; }
+.mote-description { max-width:430px; margin:28px 0 0; color:#a4aab4; font-size:15px; line-height:1.8; }
+.mote-specs { margin-top:32px; border-top:1px solid rgba(214,217,222,.15); }
+.mote-specs div { display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid rgba(214,217,222,.12); }
+.mote-specs span { color:#747c88; font-size:9px; }
+.mote-specs b { color:#d6d9de; font-size:12px; font-weight:500; text-align:right; }
+.mote-link { display:inline-flex; align-items:center; gap:22px; margin-top:28px; padding-bottom:9px; border-bottom:1px solid rgba(214,217,222,.5); color:#f4f5f7; text-decoration:none; font-size:12px; transition:gap .25s ease,border-color .25s ease; }
+.mote-link:hover { gap:30px; border-color:#f4f5f7; }
+.mote-link span { font-size:17px; }
+.mote-visual { min-width:0; border:1px solid rgba(214,217,222,.15); border-radius:4px; background:linear-gradient(145deg,rgba(255,255,255,.025),transparent 45%),#07080a; }
+.mote-stage { position:relative; min-height:430px; display:flex; justify-content:center; align-items:center; overflow:hidden; isolation:isolate; }
+.mote-stage::before,.mote-stage::after { content:""; position:absolute; width:70%; height:1px; background:linear-gradient(90deg,transparent,rgba(214,217,222,.22),transparent); }
+.mote-stage::before { top:18%; } .mote-stage::after { bottom:18%; }
+.mote-aura { position:absolute; width:min(72%,350px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(214,217,222,.13),rgba(214,217,222,.025) 45%,transparent 70%); animation:mote-breathe 5s ease-in-out infinite; }
+.mote-ring { position:absolute; width:min(68%,320px); aspect-ratio:1; border-radius:50%; border:1px dashed rgba(214,217,222,.22); }
+.mote-ring-outer { animation:mote-spin-reverse 28s linear infinite; }
+.mote-ring-inner { width:min(54%,250px); border-style:solid; border-color:rgba(214,217,222,.15); border-left-color:transparent; border-bottom-color:rgba(214,217,222,.4); animation:mote-spin 18s linear infinite; }
+.mote-figure { position:relative; z-index:2; width:min(80%,340px); overflow:visible; animation:mote-float 5s ease-in-out infinite; filter:drop-shadow(0 18px 35px rgba(0,0,0,.65)); }
+.mote-halo { transform-box:fill-box; transform-origin:center; animation:mote-spin 22s linear infinite; }
+.mote-body { transform-box:fill-box; transform-origin:center; animation:mote-float 5s ease-in-out infinite; }
+.mote-glitch { animation:mote-glitch 5s steps(1,end) infinite; }
+.mote-dash { animation:mote-dash 1.5s linear infinite; }
+.mote-coordinate { position:absolute; z-index:3; color:#727985; font-size:8px; }
+.mote-coordinate-a { top:22px; left:22px; } .mote-coordinate-b { right:22px; bottom:22px; }
+.mote-visual-caption { display:flex; justify-content:space-between; gap:16px; padding:15px 18px; border-top:1px solid rgba(214,217,222,.13); color:#7f8793; font-size:8px; }
+.mote-visual-caption span:first-child { color:#d6d9de; }
+.mote-footerline { position:relative; display:flex; justify-content:space-between; gap:18px; padding-top:19px; border-top:1px solid rgba(214,217,222,.13); color:#717985; font-size:8px; }
+@media (prefers-reduced-motion: reduce) { .mote-aura,.mote-ring,.mote-figure,.mote-halo,.mote-body,.mote-glitch,.mote-dash { animation:none !important; } .mote-link { transition:none; } }
+@media (max-width:760px) { .mote-section-top { align-items:flex-start; flex-direction:column; gap:15px; } .mote-grid { grid-template-columns:1fr; gap:34px; padding-top:42px; } .mote-copy h2 { font-size:clamp(54px,15vw,82px); } .mote-description { font-size:14px; } .mote-stage { min-height:340px; } .mote-visual-caption { flex-wrap:wrap; font-size:7px; } .mote-footerline { flex-wrap:wrap; line-height:1.6; } .mote-footerline span:nth-child(2) { display:none; } }
+@media (max-width:380px) { .mote-stage { min-height:285px; } .mote-coordinate { font-size:7px; } .mote-specs div { align-items:flex-start; flex-direction:column; gap:6px; } .mote-specs b { text-align:left; } }
