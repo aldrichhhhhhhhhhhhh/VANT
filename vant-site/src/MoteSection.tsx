@@ -125,7 +125,7 @@ function MoteFigure() {
           <polygon points="84,100 62,36 112,80" fill="#0b0c0f" stroke="#aeb4bf" strokeWidth="2.5" />
           <polygon points="156,100 178,36 128,80" fill="#0b0c0f" stroke="#aeb4bf" strokeWidth="2.5" />
           <circle cx="120" cy="136" r="58" fill="url(#moteOrb)" stroke="#d6d9de" strokeWidth="3" />
-          <polygon points="76,130 164,120 152,150 92,154" fill="#f4f5f7" />
+          <polygon className="mote-eye-shape" points="76,130 164,120 152,150 92,154" fill="#f4f5f7" />
           <rect className="mote-eye-pupil" x="115" y="126" width="10" height="26" fill="#050608" />
           <path d="M66 112 L110 130" fill="none" stroke="#0b0c0f" strokeWidth="9" />
           <path d="M174 104 L130 126" fill="none" stroke="#0b0c0f" strokeWidth="9" />
@@ -146,7 +146,7 @@ function MoteFigure() {
       <div className="mote-coordinate mote-coordinate-a">M-01 / {moodLabel}</div>
       <div className="mote-coordinate mote-coordinate-b">{mood === "error" ? "SIGNAL: UNSTABLE" : mood === "thinking" ? "SIGNAL: PROCESSING" : "SIGNAL: STABLE"}</div>
       {message && <div className="mote-speech" role="status" aria-live="polite">{message}</div>}
-      <span className="mote-interact-hint" aria-hidden="true">CLICK TO INTERACT</span>
+      <span className="mote-interact-hint" aria-hidden="true">{mood === "idle" ? "WAKE MOTE" : mood === "thinking" ? "PROCESSING" : mood === "error" ? "SIGNAL INTERRUPTED" : "MOTE IS AWARE"}</span>
     </div>
   );
 }
