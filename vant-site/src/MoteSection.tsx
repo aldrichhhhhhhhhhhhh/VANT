@@ -24,7 +24,7 @@ function MoteFigure() {
     if (calmTimer.current !== undefined) window.clearTimeout(calmTimer.current);
     calmTimer.current = window.setTimeout(() => {
       setMood((current) => current === "calm" ? "idle" : current);
-      setMessage((current) => current === "Hello" || current === "I'm Moto..exe" || current === "Created by VANT Technologies" ? "" : current);
+      setMessage((current) => current === "Hello" || current === "I'm Mote" || current === "Created by VANT Technologies" ? "" : current);
     }, 4500);
   }
 
@@ -70,7 +70,7 @@ function MoteFigure() {
 
     setMood("thinking");
     setMessage("Hello");
-    timers.current.push(window.setTimeout(() => setMessage("I'm Moto..exe"), 1000));
+    timers.current.push(window.setTimeout(() => setMessage("I'm Mote"), 1000));
     timers.current.push(window.setTimeout(() => setMessage("Created by VANT Technologies"), 2000));
     timers.current.push(window.setTimeout(() => {
       setMessage("");
