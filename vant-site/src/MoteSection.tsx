@@ -78,15 +78,18 @@ function MoteFigure() {
       "Got a task or idea in mind?",
       "Let VANT Technologies do it for you."
     ];
+    const lineDurationMs = 1000;
+    const pauseBetweenLinesMs = 1000;
+    const stepMs = lineDurationMs + pauseBetweenLinesMs;
     setMessage(introLines[0]);
     introLines.slice(1).forEach((line, index) => {
-      timers.current.push(window.setTimeout(() => setMessage(line), (index + 1) * 1000));
+      timers.current.push(window.setTimeout(() => setMessage(line), (index + 1) * stepMs));
     });
     timers.current.push(window.setTimeout(() => {
       setMessage("");
       setMood("calm");
       calmTimer.current = window.setTimeout(() => setMood("idle"), 4000);
-    }, introLines.length * 1000));
+    }, introLines.length * stepMs));
   }
 
 
