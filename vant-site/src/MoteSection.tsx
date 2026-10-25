@@ -69,14 +69,24 @@ function MoteFigure() {
     }
 
     setMood("thinking");
-    setMessage("Hello");
-    timers.current.push(window.setTimeout(() => setMessage("I'm Mote"), 1000));
-    timers.current.push(window.setTimeout(() => setMessage("Created by VANT Technologies"), 2000));
+    const introLines = [
+      "Hi!",
+      "I'm Mote",
+      "VANT Technologies' latest project",
+      "Created by Founder and CTO Karl Aldrich Uy",
+      "My mission is to make everything CoWork-eligible, no matter where you put me.",
+      "Got a task or idea in mind?",
+      "Let VANT Technologies do it for you."
+    ];
+    setMessage(introLines[0]);
+    introLines.slice(1).forEach((line, index) => {
+      timers.current.push(window.setTimeout(() => setMessage(line), (index + 1) * 1000));
+    });
     timers.current.push(window.setTimeout(() => {
       setMessage("");
       setMood("calm");
       calmTimer.current = window.setTimeout(() => setMood("idle"), 4000);
-    }, 3300));
+    }, introLines.length * 1000));
   }
 
 
