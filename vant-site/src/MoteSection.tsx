@@ -133,7 +133,7 @@ function MoteFigure() {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
-      <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
+      {mood !== "idle" && <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
         {prompts.map((prompt, index) => (
           <button
             key={prompt.label}
@@ -147,7 +147,7 @@ function MoteFigure() {
             {prompt.label}
           </button>
         ))}
-      </div>
+      </div>}
       <div className="mote-aura" />
       <div className="mote-ring mote-ring-outer" />
       <div className="mote-ring mote-ring-inner" />
