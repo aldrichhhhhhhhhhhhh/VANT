@@ -70,26 +70,24 @@ function MoteFigure() {
 
     setMood("thinking");
     const introLines = [
-      "Hi!",
-      "I'm Mote",
-      "VANT Technologies' latest project",
-      "Created by Founder and CTO Karl Aldrich Uy",
-      "My mission is to make everything CoWork-eligible, no matter where you put me.",
-      "Got a task or idea in mind?",
-      "Let VANT Technologies do it for you."
+      { text: "Hi !", duration: 1000 },
+      { text: "I'm Mote", duration: 1000 },
+      { text: "Vant Technologies' Latest Bot Project", duration: 1000 },
+      { text: "Created by Founder and CTO Karl Aldrich Uy", duration: 1000 },
+      { text: "My mission is to Make everything Cowork eligible no matter where you put me..", duration: 2500 },
+      { text: "Got a Task or Idea in my mind ?", duration: 1000 },
+      { text: "Let Vant Technologies' do it for you", duration: 2000 }
     ];
-    const lineDurationMs = 1000;
     const pauseBetweenLinesMs = 1000;
-    const stepMs = lineDurationMs + pauseBetweenLinesMs;
-    setMessage(introLines[0]);
-    introLines.slice(1).forEach((line, index) => {
-      timers.current.push(window.setTimeout(() => setMessage(line), (index + 1) * stepMs));
+    let elapsedMs = 0;
+    introLines.forEach((line, index) => {
+      timers.current.push(window.setTimeout(() => setMessage(line.text), elapsedMs));
+      elapsedMs += line.duration + pauseBetweenLinesMs;
     });
     timers.current.push(window.setTimeout(() => {
       setMessage("");
       setMood("calm");
-      calmTimer.current = window.setTimeout(() => setMood("idle"), 4000);
-    }, introLines.length * stepMs));
+    }, elapsedMs));
   }
 
 
