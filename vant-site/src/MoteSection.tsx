@@ -1,7 +1,8 @@
+import type { PointerEvent } from "react";
 import "./mote.css";
 
 function MoteFigure() {
-  function trackPointer(event: React.PointerEvent<HTMLDivElement>) {
+  function trackPointer(event: PointerEvent<HTMLDivElement>) {
     if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
