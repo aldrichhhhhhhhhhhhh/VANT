@@ -290,3 +290,61 @@
   .mote-speech { top: 8%; max-width: 82%; padding: 12px 14px; }
   .mote-speech-long { top: 6%; max-width: 82%; max-height: 38%; font-size: 11px; }
 }
+
+
+/* Question picker carousel: a dedicated horizontal rail in the marked lower stage area. */
+.mote-prompts {
+  position: absolute;
+  z-index: 6;
+  left: 3%;
+  right: 3%;
+  bottom: 48px;
+  top: auto;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 3px 12px;
+  pointer-events: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214,217,222,.35) transparent;
+  scroll-snap-type: x mandatory;
+}
+.mote-prompt {
+  position: relative;
+  inset: auto !important;
+  flex: 0 0 190px;
+  min-height: 54px;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  white-space: normal;
+  scroll-snap-align: start;
+  background: rgba(7,8,10,.94);
+}
+.mote-prompt::before { flex: 0 0 auto; }
+.mote-prompt-easter { flex-basis: 190px; }
+.mote-speech { top: 7%; }
+.mote-speech-long { top: 6%; }
+@media (max-width: 760px) {
+  .mote-prompts {
+    left: 2%;
+    right: 2%;
+    bottom: 48px;
+    gap: 8px;
+    padding: 6px 2px 10px;
+  }
+  .mote-prompt, .mote-prompt-easter {
+    flex-basis: 155px;
+    min-height: 48px;
+    max-width: none;
+    font-size: 8px;
+  }
+  .mote-speech { top: 6%; }
+  .mote-speech-long { top: 5%; max-height: 38%; }
+}
+@media (max-width: 380px) {
+  .mote-prompt, .mote-prompt-easter { flex-basis: 138px; }
+}
