@@ -23,7 +23,7 @@ function MoteFigure() {
     if (calmTimer.current !== undefined) window.clearTimeout(calmTimer.current);
     calmTimer.current = window.setTimeout(() => {
       setMood((current) => current === "calm" ? "idle" : current);
-      setMessage((current) => current === "Hello" || current === "I'm Moto" ? "" : current);
+      setMessage((current) => current === "Hello" || current === "I'm Moto..exe" || current === "Created by VANT Technologies" ? "" : current);
     }, 4500);
   }
 
@@ -68,15 +68,49 @@ function MoteFigure() {
     }
 
     setMood("thinking");
-    setMessage("...");
-    timers.current.push(window.setTimeout(() => setMessage("Hello"), 550));
-    timers.current.push(window.setTimeout(() => setMessage("I'm Moto"), 1350));
+    setMessage("Hello");
+    timers.current.push(window.setTimeout(() => setMessage("I'm Moto..exe"), 1000));
+    timers.current.push(window.setTimeout(() => setMessage("Created by VANT Technologies"), 2000));
     timers.current.push(window.setTimeout(() => {
       setMessage("");
       setMood("calm");
       calmTimer.current = window.setTimeout(() => setMood("idle"), 4000);
-    }, 2600));
+    }, 3300));
   }
+
+
+  function askMoto(question: string, answer: string) {
+    clearTimers();
+    lastClickAt.current = 0;
+    setMood("thinking");
+    setMessage(answer);
+    timers.current.push(window.setTimeout(() => {
+      setMood("calm");
+      calmTimer.current = window.setTimeout(() => {
+        setMood("idle");
+        setMessage("");
+      }, 5000);
+    }, 6500));
+  }
+
+  const prompts = [
+    {
+      label: "What is VANT?",
+      answer: "VANT Technologies envisions a future where intelligence empowers everyone to build, learn, and achieve more. We strive to turn ambitious ideas into meaningful innovations, making technology more accessible, practical, and impactful for businesses, students, and the people shaping tomorrow."
+    },
+    {
+      label: "Who founded VANT Technologies?",
+      answer: "VANT Technologies was founded by Karl Aldrich Uy, its Founder and Chief Technology Officer. He started VANT with a clear ambition: make AI genuinely useful in everyday work and learning by turning ambitious ideas into practical tools people can actually use."
+    },
+    {
+      label: "What is VANT's vision?",
+      answer: "Our vision is to make practical intelligence more accessible—helping businesses work smarter, helping students learn with confidence, and giving people better tools to turn ideas into real progress."
+    },
+    {
+      label: "Who's Karl Aldrich Uy?",
+      answer: "Now that's a story still being written. Karl Aldrich Uy is the founder behind VANT Technologies—and the person working to turn this little signal into something much bigger. Keep an eye on what comes next."
+    }
+  ];
 
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key === "Enter" || event.key === " ") {
@@ -99,6 +133,21 @@ function MoteFigure() {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
+      <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
+        {prompts.map((prompt, index) => (
+          <button
+            key={prompt.label}
+            type="button"
+            className={`mote-prompt ${index === 3 ? "mote-prompt-easter" : ""}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              askMoto(prompt.label, prompt.answer);
+            }}
+          >
+            {prompt.label}
+          </button>
+        ))}
+      </div>
       <div className="mote-aura" />
       <div className="mote-ring mote-ring-outer" />
       <div className="mote-ring mote-ring-inner" />
