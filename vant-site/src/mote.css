@@ -47,3 +47,68 @@
 @media (prefers-reduced-motion: reduce) { .mote-aura,.mote-ring,.mote-figure,.mote-halo,.mote-body,.mote-glitch,.mote-dash { animation:none !important; } .mote-link,.mote-follow { transition:none; } .mote-follow { transform:none !important; } }
 @media (max-width:760px) { .mote-section-top { align-items:flex-start; flex-direction:column; gap:15px; } .mote-grid { grid-template-columns:1fr; gap:34px; padding-top:42px; } .mote-copy h2 { font-size:clamp(54px,15vw,82px); } .mote-description { font-size:14px; } .mote-stage { min-height:340px; } .mote-visual-caption { flex-wrap:wrap; font-size:7px; } .mote-footerline { flex-wrap:wrap; line-height:1.6; } .mote-footerline span:nth-child(2) { display:none; } }
 @media (max-width:380px) { .mote-stage { min-height:285px; } .mote-coordinate { font-size:7px; } .mote-specs div { align-items:flex-start; flex-direction:column; gap:6px; } .mote-specs b { text-align:left; } }
+
+
+/* MOTE.EXE personality pass: a little more signal, without visual noise. */
+@keyframes mote-scan-sweep {
+  0% { transform: translateY(-150%); opacity: 0; }
+  12% { opacity: .35; }
+  80% { opacity: .18; }
+  100% { transform: translateY(520%); opacity: 0; }
+}
+@keyframes mote-eye-flicker {
+  0%, 94%, 100% { opacity: 1; }
+  95% { opacity: .55; }
+  96% { opacity: 1; }
+  98% { opacity: .75; }
+}
+.mote-stage { --mote-signal: 0; }
+.mote-stage::after {
+  pointer-events: none;
+}
+.mote-scan-lines {
+  position: absolute;
+  z-index: 1;
+  inset: 19% 12%;
+  overflow: hidden;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: .45;
+  mask-image: radial-gradient(ellipse, #000 10%, transparent 72%);
+}
+.mote-scan-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 22%;
+  background: linear-gradient(180deg, transparent, rgba(214,217,222,.12), transparent);
+  animation: mote-scan-sweep 7s ease-in-out infinite;
+}
+.mote-scan-lines i {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: rgba(214,217,222,.12);
+}
+.mote-scan-lines i:nth-child(1) { top: 20%; }
+.mote-scan-lines i:nth-child(2) { top: 35%; }
+.mote-scan-lines i:nth-child(3) { top: 50%; }
+.mote-scan-lines i:nth-child(4) { top: 65%; }
+.mote-scan-lines i:nth-child(5) { top: 80%; }
+.mote-eye-pupil { transform-box: fill-box; transform-origin: center; animation: mote-eye-flicker 8s steps(1,end) infinite; }
+.mote-stage:hover .mote-aura {
+  opacity: 1;
+  filter: brightness(1.25);
+}
+.mote-stage:hover .mote-ring-inner {
+  border-color: rgba(214,217,222,.28);
+  border-left-color: transparent;
+}
+.mote-stage:hover .mote-figure {
+  filter: drop-shadow(0 18px 35px rgba(0,0,0,.65)) drop-shadow(0 0 18px rgba(214,217,222,.14));
+}
+.mote-stage:hover .mote-coordinate-b { color: #d6d9de; }
+@media (prefers-reduced-motion: reduce) {
+  .mote-scan-lines::before, .mote-eye-pupil { animation: none !important; }
+}
