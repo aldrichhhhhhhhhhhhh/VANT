@@ -7,6 +7,7 @@ function MoteFigure() {
   const [mood, setMood] = useState<MoteMood>("idle");
   const [message, setMessage] = useState("");
   const [founderAnswered, setFounderAnswered] = useState(false);
+  const [introCompleted, setIntroCompleted] = useState(false);
   const lastClickAt = useRef(0);
   const timers = useRef<number[]>([]);
   const calmTimer = useRef<number | undefined>(undefined);
@@ -73,9 +74,9 @@ function MoteFigure() {
       { text: "Hi !", duration: 1000 },
       { text: "I'm Mote", duration: 1000 },
       { text: "Vant Technologies' Latest Bot Project", duration: 1000 },
-      { text: "Created by Founder and CTO Karl Aldrich Uy", duration: 1000 },
-      { text: "My mission is to Make everything Cowork eligible no matter where you put me..", duration: 2500 },
-      { text: "Got a Task or Idea in my mind ?", duration: 1000 },
+      { text: "Created by Founder and CTO Karl Aldrich Uy", duration: 2000 },
+      { text: "My mission is to Make everything Cowork eligible no matter where you put me..", duration: 3000 },
+      { text: "Got a Task or Idea in my mind ?", duration: 2000 },
       { text: "Let Vant Technologies' do it for you", duration: 2000 }
     ];
     const pauseBetweenLinesMs = 1000;
@@ -86,6 +87,7 @@ function MoteFigure() {
     });
     timers.current.push(window.setTimeout(() => {
       setMessage("");
+      setIntroCompleted(true);
       setMood("calm");
     }, elapsedMs));
   }
@@ -146,7 +148,7 @@ function MoteFigure() {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
-      {mood !== "idle" && mood !== "thinking" && <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
+      {introCompleted && mood === "calm" && <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
         {prompts.filter((prompt) => prompt.label !== "Who's Karl Aldrich Uy?" || founderAnswered).map((prompt, index) => (
           <button
             key={prompt.label}
