@@ -460,3 +460,24 @@
   .mote-speech { width: 74%; max-width: 74%; }
   .mote-speech-long { width: 72%; max-width: 72%; }
 }
+
+
+/* Fine typography pass: short labels, compact cards, no overflow. */
+.mote-prompt, .mote-prompt-easter {
+  font-size: 6px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.mote-prompt::before { font-size: 6px; margin-right: 4px; }
+@media (max-width: 760px) {
+  .mote-prompt, .mote-prompt-easter {
+    font-size: 5.5px;
+    line-height: 1.25;
+    padding: 5px 6px;
+  }
+}
+@media (max-width: 380px) {
+  .mote-prompt, .mote-prompt-easter { font-size: 5px; }
+}
