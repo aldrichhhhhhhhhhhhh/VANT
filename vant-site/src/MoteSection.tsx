@@ -10,14 +10,18 @@ function MoteFigure() {
     event.currentTarget.style.setProperty("--mote-follow-x", `${x * 10}px`);
     event.currentTarget.style.setProperty("--mote-follow-y", `${y * 8}px`);
     event.currentTarget.style.setProperty("--mote-tilt-x", `${x * 7}deg`);
-    event.currentTarget.style.setProperty("--mote-tilt-y", `${y * -6}deg`);\n    event.currentTarget.style.setProperty("--mote-eye-x", `${x * 4}px`);\n    event.currentTarget.style.setProperty("--mote-eye-y", `${y * 2}px`);
+    event.currentTarget.style.setProperty("--mote-tilt-y", `${y * -6}deg`);
+    event.currentTarget.style.setProperty("--mote-eye-x", `${x * 4}px`);
+    event.currentTarget.style.setProperty("--mote-eye-y", `${y * 2}px`);
   }
 
   function resetPointer(event: PointerEvent<HTMLDivElement>) {
     event.currentTarget.style.setProperty("--mote-follow-x", "0px");
     event.currentTarget.style.setProperty("--mote-follow-y", "0px");
     event.currentTarget.style.setProperty("--mote-tilt-x", "0deg");
-    event.currentTarget.style.setProperty("--mote-tilt-y", "0deg");\n    event.currentTarget.style.setProperty("--mote-eye-x", "0px");\n    event.currentTarget.style.setProperty("--mote-eye-y", "0px");
+    event.currentTarget.style.setProperty("--mote-tilt-y", "0deg");
+    event.currentTarget.style.setProperty("--mote-eye-x", "0px");
+    event.currentTarget.style.setProperty("--mote-eye-y", "0px");
   }
   return (
     <div className="mote-stage" aria-label="Animated MOTE.EXE mascot. Move your cursor around the character to interact." role="img" onPointerMove={trackPointer} onPointerLeave={resetPointer}>
