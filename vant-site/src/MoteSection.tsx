@@ -6,6 +6,7 @@ type MoteMood = "idle" | "calm" | "thinking" | "error";
 function MoteFigure() {
   const [mood, setMood] = useState<MoteMood>("idle");
   const [message, setMessage] = useState("");
+  const [founderAnswered, setFounderAnswered] = useState(false);
   const lastClickAt = useRef(0);
   const timers = useRef<number[]>([]);
   const calmTimer = useRef<number | undefined>(undefined);
@@ -85,6 +86,7 @@ function MoteFigure() {
     setMood("thinking");
     setMessage(answer);
     timers.current.push(window.setTimeout(() => {
+      if (question === "Who founded VANT Technologies?") setFounderAnswered(true);
       setMood("calm");
       calmTimer.current = window.setTimeout(() => {
         setMood("idle");
@@ -134,7 +136,7 @@ function MoteFigure() {
       onKeyDown={handleKeyDown}
     >
       {mood !== "idle" && mood !== "thinking" && <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
-        {prompts.map((prompt, index) => (
+        {prompts.filter((prompt) => prompt.label !== "Who's Karl Aldrich Uy?" || founderAnswered).map((prompt, index) => (
           <button
             key={prompt.label}
             type="button"
