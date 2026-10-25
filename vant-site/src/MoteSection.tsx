@@ -68,7 +68,7 @@ function MoteFigure() {
           <line className="mote-dash" x1="144" y1="0" x2="144" y2="72" />
           <line className="mote-dash" x1="178" y1="0" x2="178" y2="34" />
         </g>
-      </svg>
+      </svg></div>
       <div className="mote-coordinate mote-coordinate-a">M-01 / ACTIVE</div>
       <div className="mote-coordinate mote-coordinate-b">SIGNAL: STABLE</div>
     </div>
