@@ -348,3 +348,33 @@
 @media (max-width: 380px) {
   .mote-prompt, .mote-prompt-easter { flex-basis: 138px; }
 }
+
+
+/* Compact carousel cards: keep the mascot dominant and the prompts secondary. */
+.mote-prompts {
+  left: 4%;
+  right: 4%;
+  bottom: 50px;
+  gap: 8px;
+  padding: 5px 2px 9px;
+}
+.mote-prompt, .mote-prompt-easter {
+  flex: 0 0 154px;
+  min-height: 43px;
+  padding: 9px 11px;
+  font: 8px/1.4 "JetBrains Mono", monospace;
+  letter-spacing: .015em;
+}
+.mote-prompt::before { margin-right: 6px; }
+@media (max-width: 760px) {
+  .mote-prompts { bottom: 49px; gap: 7px; }
+  .mote-prompt, .mote-prompt-easter {
+    flex-basis: 138px;
+    min-height: 40px;
+    padding: 8px 9px;
+    font-size: 7.5px;
+  }
+}
+@media (max-width: 380px) {
+  .mote-prompt, .mote-prompt-easter { flex-basis: 124px; }
+}
