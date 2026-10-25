@@ -203,3 +203,65 @@
 .mote-mood-error .mote-eye-pupil { opacity: 1; }
 .mote-mood-idle .mote-scan-lines { opacity: .12; }
 .mote-mood-idle .mote-coordinate-a { color: #59616d; }
+
+
+/* MOTE.EXE floating conversation starters */
+.mote-prompts {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  pointer-events: none;
+}
+.mote-prompt {
+  position: absolute;
+  max-width: 190px;
+  padding: 10px 13px;
+  border: 1px solid rgba(214,217,222,.24);
+  border-radius: 3px;
+  background: rgba(7,8,10,.88);
+  color: #d6d9de;
+  font: 9px/1.35 "JetBrains Mono", monospace;
+  letter-spacing: .025em;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+  backdrop-filter: blur(8px);
+}
+.mote-prompt::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 7px;
+  color: #8c949f;
+}
+.mote-prompt:hover, .mote-prompt:focus-visible {
+  border-color: rgba(244,245,247,.65);
+  background: rgba(24,26,30,.96);
+  color: #fff;
+  transform: translateY(-2px);
+  outline: none;
+}
+.mote-prompt:focus-visible { outline: 1px solid #d6d9de; outline-offset: 3px; }
+.mote-prompt:nth-child(1) { top: 16%; left: 5%; }
+.mote-prompt:nth-child(2) { top: 27%; right: 4%; }
+.mote-prompt:nth-child(3) { bottom: 24%; left: 3%; }
+.mote-prompt:nth-child(4) { bottom: 15%; right: 4%; }
+.mote-prompt-easter { border-style: dashed; color: #9299a4; }
+.mote-prompt-easter::before { content: "✳"; }
+.mote-speech { max-width: min(84%, 350px); }
+.mote-mood-thinking .mote-speech { max-height: 40%; overflow-y: auto; }
+@media (max-width: 760px) {
+  .mote-prompt { max-width: 145px; padding: 8px 9px; font-size: 8px; }
+  .mote-prompt:nth-child(1) { top: 8%; left: 3%; }
+  .mote-prompt:nth-child(2) { top: 21%; right: 2%; }
+  .mote-prompt:nth-child(3) { bottom: 22%; left: 2%; }
+  .mote-prompt:nth-child(4) { bottom: 9%; right: 2%; }
+  .mote-speech { top: 35%; max-width: 74%; font-size: 11px; }
+}
+@media (max-width: 380px) {
+  .mote-prompt { max-width: 128px; padding: 7px; font-size: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mote-prompt { transition: none; }
+}
