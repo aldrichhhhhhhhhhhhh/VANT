@@ -1,12 +1,38 @@
-import type { PointerEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import "./mote.css";
 
+type MoteMood = "idle" | "calm" | "thinking" | "error";
+
 function MoteFigure() {
+  const [mood, setMood] = useState<MoteMood>("idle");
+  const [message, setMessage] = useState("");
+  const lastClickAt = useRef(0);
+  const timers = useRef<number[]>([]);
+  const calmTimer = useRef<number | undefined>(undefined);
+
+  const clearTimers = () => {
+    timers.current.forEach(window.clearTimeout);
+    timers.current = [];
+    if (calmTimer.current !== undefined) window.clearTimeout(calmTimer.current);
+  };
+
+  useEffect(() => () => clearTimers(), []);
+
+  function setCalm() {
+    setMood((current) => current === "thinking" || current === "error" ? current : "calm");
+    if (calmTimer.current !== undefined) window.clearTimeout(calmTimer.current);
+    calmTimer.current = window.setTimeout(() => {
+      setMood((current) => current === "calm" ? "idle" : current);
+      setMessage((current) => current === "Hello" || current === "I'm Moto" ? "" : current);
+    }, 4500);
+  }
+
   function trackPointer(event: PointerEvent<HTMLDivElement>) {
     if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+    setCalm();
     const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+    const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2));
+    const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2));
     event.currentTarget.style.setProperty("--mote-follow-x", `${x * 10}px`);
     event.currentTarget.style.setProperty("--mote-follow-y", `${y * 8}px`);
     event.currentTarget.style.setProperty("--mote-tilt-x", `${x * 7}deg`);
@@ -23,8 +49,56 @@ function MoteFigure() {
     event.currentTarget.style.setProperty("--mote-eye-x", "0px");
     event.currentTarget.style.setProperty("--mote-eye-y", "0px");
   }
+
+  function handleClick() {
+    const now = Date.now();
+    const rapidDoubleClick = now - lastClickAt.current < 380;
+    lastClickAt.current = now;
+    clearTimers();
+
+    if (rapidDoubleClick) {
+      setMood("error");
+      setMessage("Whoa—easy there! My circuits are getting tangled.");
+      timers.current.push(window.setTimeout(() => {
+        setMood("calm");
+        setMessage("");
+        calmTimer.current = window.setTimeout(() => setMood("idle"), 3500);
+      }, 2400));
+      return;
+    }
+
+    setMood("thinking");
+    setMessage("...");
+    timers.current.push(window.setTimeout(() => setMessage("Hello"), 550));
+    timers.current.push(window.setTimeout(() => setMessage("I'm Moto"), 1350));
+    timers.current.push(window.setTimeout(() => {
+      setMessage("");
+      setMood("calm");
+      calmTimer.current = window.setTimeout(() => setMood("idle"), 4000);
+    }, 2600));
+  }
+
+  function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleClick();
+    }
+  }
+
+  const moodLabel = mood === "idle" ? "IDLE / RESTING" : mood === "calm" ? "CALM / AWARE" : mood === "thinking" ? "THINKING / PROCESSING" : "ERROR / OVERLOADED";
+
   return (
-    <div className="mote-stage" aria-label="Animated MOTE.EXE mascot. Move your cursor around the character to interact." role="img" onPointerMove={trackPointer} onPointerLeave={resetPointer}>
+    <div
+      className={`mote-stage mote-mood-${mood}`}
+      aria-label={`MOTE.EXE mascot, currently ${mood}. Move your cursor over MOTE or click to interact.`}
+      role="button"
+      tabIndex={0}
+      onPointerEnter={(event) => { if (event.pointerType === "touch") setCalm(); else setCalm(); }}
+      onPointerMove={trackPointer}
+      onPointerLeave={resetPointer}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+    >
       <div className="mote-aura" />
       <div className="mote-ring mote-ring-outer" />
       <div className="mote-ring mote-ring-inner" />
@@ -69,8 +143,10 @@ function MoteFigure() {
           <line className="mote-dash" x1="178" y1="0" x2="178" y2="34" />
         </g>
       </svg></div>
-      <div className="mote-coordinate mote-coordinate-a">M-01 / ACTIVE</div>
-      <div className="mote-coordinate mote-coordinate-b">SIGNAL: STABLE</div>
+      <div className="mote-coordinate mote-coordinate-a">M-01 / {moodLabel}</div>
+      <div className="mote-coordinate mote-coordinate-b">{mood === "error" ? "SIGNAL: UNSTABLE" : mood === "thinking" ? "SIGNAL: PROCESSING" : "SIGNAL: STABLE"}</div>
+      {message && <div className="mote-speech" role="status" aria-live="polite">{message}</div>}
+      <span className="mote-interact-hint" aria-hidden="true">CLICK TO INTERACT</span>
     </div>
   );
 }
