@@ -133,7 +133,7 @@ function MoteFigure() {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
-      {mood !== "idle" && <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
+      {mood !== "idle" && mood !== "thinking" && <div className="mote-prompts" aria-label="Ask MOTE.EXE about VANT">
         {prompts.map((prompt, index) => (
           <button
             key={prompt.label}
@@ -194,7 +194,7 @@ function MoteFigure() {
       </svg></div>
       <div className="mote-coordinate mote-coordinate-a">M-01 / {moodLabel}</div>
       <div className="mote-coordinate mote-coordinate-b">{mood === "error" ? "SIGNAL: UNSTABLE" : mood === "thinking" ? "SIGNAL: PROCESSING" : "SIGNAL: STABLE"}</div>
-      {message && <div className="mote-speech" role="status" aria-live="polite">{message}</div>}
+      {message && <div className={`mote-speech ${message.length > 90 ? "mote-speech-long" : ""}`} role="status" aria-live="polite">{message}</div>}
       <span className="mote-interact-hint" aria-hidden="true">{mood === "idle" ? "WAKE MOTE" : mood === "thinking" ? "PROCESSING" : mood === "error" ? "SIGNAL INTERRUPTED" : "MOTE IS AWARE"}</span>
     </div>
   );
