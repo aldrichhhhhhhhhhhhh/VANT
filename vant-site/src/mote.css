@@ -265,3 +265,28 @@
 @media (prefers-reduced-motion: reduce) {
   .mote-prompt { transition: none; }
 }
+
+
+/* Keep MOTE's answers readable: question chips hide while he is speaking. */
+.mote-speech {
+  top: 8%;
+  max-width: min(78%, 390px);
+  padding: 15px 19px;
+  z-index: 8;
+  background: rgba(5,6,8,.97);
+  border-color: rgba(214,217,222,.34);
+  box-shadow: 0 14px 42px rgba(0,0,0,.55);
+}
+.mote-speech-long {
+  top: 7%;
+  max-width: min(76%, 410px);
+  max-height: 36%;
+  overflow-y: auto;
+  text-align: left;
+  line-height: 1.7;
+}
+.mote-mood-thinking .mote-prompts { display: none; }
+@media (max-width: 760px) {
+  .mote-speech { top: 8%; max-width: 82%; padding: 12px 14px; }
+  .mote-speech-long { top: 6%; max-width: 82%; max-height: 38%; font-size: 11px; }
+}
