@@ -186,8 +186,8 @@ function MoteFigure() {
           <circle cx="120" cy="136" r="84" fill="none" stroke="#d6d9de" strokeOpacity=".55" strokeWidth="2" strokeDasharray="15 22 38 18" />
         </g>
         <g className="mote-body">
-          <polygon points="82,101 48,22 79,39 113,82" fill="#d6d9de" stroke="#f4f5f7" strokeWidth="3.5" strokeLinejoin="miter" />
-          <polygon points="158,101 192,22 161,39 127,82" fill="#d6d9de" stroke="#f4f5f7" strokeWidth="3.5" strokeLinejoin="miter" />
+          <polygon points="84,100 62,36 112,80" fill="#0b0c0f" stroke="#aeb4bf" strokeWidth="2.5" />
+          <polygon points="156,100 178,36 128,80" fill="#0b0c0f" stroke="#aeb4bf" strokeWidth="2.5" />
           <circle cx="120" cy="136" r="58" fill="url(#moteOrb)" stroke="#d6d9de" strokeWidth="3" />
           <polygon className="mote-eye-shape" points="76,130 164,120 152,150 92,154" fill="#f4f5f7" />
           <rect className="mote-eye-pupil" x="115" y="126" width="10" height="26" fill="#050608" />
