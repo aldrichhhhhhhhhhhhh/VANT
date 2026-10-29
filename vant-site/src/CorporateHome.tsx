@@ -15,61 +15,75 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 function WindowScene() {
-  const [moteMood, setMoteMood] = useState<"idle" | "curious" | "attentive" | "friendly">("idle");
+  const [moteMood, setMoteMood] = useState<"calm" | "working" | "error" | "idle">("calm");
   const [moteStatus, setMoteStatus] = useState("MOTE IS AWARE");
-  const [moteMessage, setMoteMessage] = useState("M-01 / IDLE / AWARE");
+  const [moteMessage, setMoteMessage] = useState("M-01 / CALM / AWARE");
 
   useEffect(() => {
-    const moods: Array<"idle" | "curious" | "friendly"> = ["idle", "curious", "idle", "friendly"];
+    const states: Array<"calm" | "working" | "idle"> = ["calm", "working", "calm", "idle"];
     let index = 0;
     const interval = window.setInterval(() => {
-      index = (index + 1) % moods.length;
-      setMoteMood((current) => current === "attentive" ? current : moods[index]);
-      setMoteMessage(moods[index] === "curious" ? "M-01 / CURIOUS" : moods[index] === "friendly" ? "M-01 / FRIENDLY" : "M-01 / IDLE / AWARE");
-      setMoteStatus(moods[index] === "curious" ? "SCANNING ENVIRONMENT" : moods[index] === "friendly" ? "READY TO HELP" : "MOTE IS AWARE");
-    }, 6200);
+      index = (index + 1) % states.length;
+      const next = states[index];
+      setMoteMood((current) => current === "error" ? current : next);
+      setMoteMessage(next === "working" ? "M-01 / PROCESSING" : next === "idle" ? "M-01 / IDLE" : "M-01 / CALM / AWARE");
+      setMoteStatus(next === "working" ? "PROCESSING REQUEST" : next === "idle" ? "STANDING BY" : "MOTE IS AWARE");
+    }, 6500);
     return () => window.clearInterval(interval);
   }, []);
 
-  const handleMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
+  const handleMotePointer = (event: PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2));
     const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2));
-    event.currentTarget.style.setProperty("--mote-look-x", `${x * 11}px`);
-    event.currentTarget.style.setProperty("--mote-look-y", `${y * 7}px`);
-    setMoteMood("attentive");
-    setMoteStatus("TRACKING YOUR MOVEMENT");
-    setMoteMessage("M-01 / ATTENTIVE");
+    event.currentTarget.style.setProperty("--mote-look-x", `${x * 5}px`);
+    event.currentTarget.style.setProperty("--mote-look-y", `${y * 3}px`);
   };
 
-  const resetMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
+  const resetMotePointer = (event: PointerEvent<HTMLDivElement>) => {
     event.currentTarget.style.setProperty("--mote-look-x", "0px");
     event.currentTarget.style.setProperty("--mote-look-y", "0px");
-    setMoteMood("idle");
-    setMoteStatus("MOTE IS AWARE");
-    setMoteMessage("M-01 / IDLE / AWARE");
   };
 
   const activateMote = () => {
     setMoteMood((current) => {
-      const next = current === "friendly" ? "curious" : "friendly";
-      setMoteStatus(next === "friendly" ? "HELLO. I'M MOTE." : "WHAT ARE WE EXPLORING?");
-      setMoteMessage(next === "friendly" ? "M-01 / FRIENDLY" : "M-01 / CURIOUS");
+      const next = current === "working" ? "calm" : "working";
+      setMoteStatus(next === "working" ? "PROCESSING REQUEST" : "MOTE IS AWARE");
+      setMoteMessage(next === "working" ? "M-01 / PROCESSING" : "M-01 / CALM / AWARE");
       return next;
     });
   };
 
   return (
-    <div className={`vt-scene vt-mote-hero vt-mote-mood-${moteMood}`} onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE mascot. Mote blinks, tracks your cursor, changes moods, and responds when clicked.">
+    <div className={`vt-scene vt-mote-hero vt-mote-state-${moteMood}`} onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE vector mascot. Move your cursor to engage MOTE or click to toggle its working state.">
       <div className="vt-mote-kit-label">{moteMessage}</div>
-      <div className="vt-mote-render-wrap">
-        <img className="vt-mote-kit-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png" alt="MOTE.EXE — glossy black armored robotic mascot with angular ears and a sharp white visor" />
-        <span className="vt-mote-blink-overlay" aria-hidden="true" />
+      <div className="vt-mote-vector-stage" aria-hidden="true">
+        <div className="vt-mote-vector-aura" />
+        <div className="vt-mote-vector-ring vt-mote-vector-ring-outer" />
+        <div className="vt-mote-vector-ring vt-mote-vector-ring-inner" />
+        <svg className="vt-mote-vector" viewBox="0 0 300 300">
+          <g className="vt-mote-vector-ears" fill="#08090b" stroke="#9da1aa" strokeWidth="2.5" strokeLinejoin="round">
+            <polygon points="103,112 73,35 132,89" />
+            <polygon points="197,112 227,35 168,89" />
+          </g>
+          <circle cx="150" cy="158" r="62" fill="#08090b" stroke="#d5d7dc" strokeWidth="3" />
+          <path d="M94 143 L142 154 L130 173 L108 171 Z" fill="#f4f5f7" />
+          <path d="M206 137 L158 154 L170 173 L192 171 Z" fill="#f4f5f7" />
+          <rect className="vt-mote-vector-pupil" x="145" y="151" width="10" height="24" fill="#08090b" />
+          <path d="M126 191 L137 181 L147 193 L157 181 L168 193 L179 181" fill="none" stroke="#aeb3bc" strokeWidth="2.4" strokeLinejoin="round" />
+          <g className="vt-mote-vector-glitch" stroke="#d8dbe0" strokeWidth="2">
+            <path d="M211 98 h17 M220 87 h13 M229 76 h8" />
+            <path d="M71 191 h13" opacity=".5" />
+          </g>
+          <g className="vt-mote-vector-scan" stroke="#d8dbe0" strokeWidth="1.5" strokeDasharray="3 7" opacity=".65">
+            <path d="M105 25 V72 M130 15 V84 M170 15 V84 M195 25 V72" />
+          </g>
+        </svg>
       </div>
-      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> {moteStatus}</div>
-      <div className="vt-mote-data mote-data-right"><span className="vt-live-dot"/> SIGNAL: <b>STABLE</b></div>
-      <div className="vt-mote-caption"><span className="vt-live-dot"/> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
+      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot" /> {moteStatus}</div>
+      <div className="vt-mote-data mote-data-right"><span className="vt-live-dot" /> SIGNAL: <b>STABLE</b></div>
+      <div className="vt-mote-caption"><span className="vt-live-dot" /> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
     </div>
   );
 }
