@@ -456,3 +456,28 @@
  .vt-mote-orbit-node-card{width:104px}
 }
 @media(prefers-reduced-motion:reduce){.vt-mote-orbit-node,.vt-mote-orbit-node-card{animation:none!important}}
+
+/* Compact one-word channel chips with an uninterrupted, slow solar orbit */
+.vt-mote-orbit-node{animation:vt-mote-channel-orbit 110s linear infinite!important}
+.vt-mote-orbit-node-card{width:auto;min-width:112px;justify-content:center;padding:11px 13px;gap:9px;animation:vt-mote-channel-counter 110s linear infinite!important}
+.vt-mote-orbit-icon{width:17px;height:17px;flex:0 0 17px;fill:none;stroke:#a9823e;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.vt-mote-orbit-node-card>b{font:600 9px 'DM Sans',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#26251f;white-space:nowrap}
+.vt-mote-orbit-node-dot,.vt-mote-orbit-node-copy{display:none!important}
+.vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{min-width:130px}
+.vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card{min-width:115px}
+.vt-mote-state-working .vt-mote-orbit-node{animation-duration:88s!important}
+.vt-mote-state-working .vt-mote-orbit-node-card{animation-duration:88s!important}
+@media(max-width:900px){
+ .vt-mote-orbit-node-card{min-width:100px;padding:9px 10px;gap:7px}
+ .vt-mote-orbit-icon{width:15px;height:15px;flex-basis:15px}
+ .vt-mote-orbit-node-card>b{font-size:8px}
+ .vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{min-width:116px}
+ @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(180px)}to{transform:rotate(360deg) translateX(180px)}}
+}
+@media(max-width:600px){
+ .vt-mote-orbit-node-card{min-width:88px;padding:8px;gap:6px}
+ .vt-mote-orbit-icon{width:14px;height:14px;flex-basis:14px}
+ .vt-mote-orbit-node-card>b{font-size:7px;letter-spacing:.06em}
+ .vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{min-width:102px}
+ @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(140px)}to{transform:rotate(360deg) translateX(140px)}}
+}
