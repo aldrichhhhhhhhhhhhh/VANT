@@ -252,3 +252,16 @@
 .vt-mote-product-page .vt-footer{background:#050607;color:#aeb3bd;border-top:1px solid rgba(255,255,255,.1)}
 .vt-mote-product-page .vt-footer .vt-brand{color:#f4f5f7}
 @media(max-width:760px){.vt-mote-product-page .vt-header{padding-top:16px;padding-bottom:16px}.vt-mote-product-page .vt-header .vt-nav{display:flex;gap:16px}}
+
+/* Keep hero status panels compact; prevent grid/flex stretching. */
+.vt-mote-hero .vt-mote-data{box-sizing:border-box!important;width:max-content!important;max-width:175px!important;height:fit-content!important;min-height:0!important;max-height:82px!important;flex:0 0 auto!important;align-self:flex-start!important;line-height:1.45!important;white-space:nowrap!important;overflow:hidden!important;padding:12px 14px!important}
+.vt-mote-hero .mote-data-left{left:2%!important;top:28%!important;right:auto!important;bottom:auto!important}
+.vt-mote-hero .mote-data-right{right:2%!important;left:auto!important;top:auto!important;bottom:16%!important;align-items:flex-end!important}
+.vt-mote-hero .vt-mote-kit-label{box-sizing:border-box;width:max-content;max-width:190px;height:fit-content;min-height:0;line-height:1.4;padding:10px 13px}
+.vt-mote-hero .vt-mote-kit-image{transform:translate(var(--mote-look-x,0px),var(--mote-look-y,0px));transition:transform .18s ease-out;will-change:transform}
+.vt-mote-hero .vt-mote-caption{height:auto;min-height:0;white-space:nowrap;pointer-events:none}
+.vt-mote-hero{cursor:crosshair}
+.vt-mote-hero .vt-mote-data{transition:box-shadow .2s,border-color .2s}
+.vt-mote-hero:hover .vt-mote-data{box-shadow:0 8px 26px rgba(167,131,61,.08);border-color:rgba(167,131,61,.65)}
+@media(max-width:760px){.vt-mote-hero .vt-mote-data{max-width:132px!important;padding:8px 9px!important;font-size:7px!important}.vt-mote-hero .mote-data-left{left:0!important;top:17%!important}.vt-mote-hero .mote-data-right{right:0!important;bottom:15%!important}}
+@media(prefers-reduced-motion:reduce){.vt-mote-hero .vt-mote-kit-image{transition:none}}
