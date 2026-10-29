@@ -465,8 +465,6 @@
 .vt-mote-orbit-node-dot,.vt-mote-orbit-node-copy{display:none!important}
 .vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{min-width:130px}
 .vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card{min-width:115px}
-.vt-mote-state-working .vt-mote-orbit-node{animation-duration:88s!important}
-.vt-mote-state-working .vt-mote-orbit-node-card{animation-duration:88s!important}
 @media(max-width:900px){
  .vt-mote-orbit-node-card{min-width:100px;padding:9px 10px;gap:7px}
  .vt-mote-orbit-icon{width:15px;height:15px;flex-basis:15px}
