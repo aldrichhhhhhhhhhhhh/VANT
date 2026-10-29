@@ -608,3 +608,73 @@
     letter-spacing:.055em;
   }
 }
+
+
+/* Replace orbiting labels with calm, fixed workflow-status indicators around MOTE. */
+.vt-mote-hero .vt-mote-orbit-channels{display:none!important}
+.vt-mote-hero .vt-mote-status-stack{position:absolute;inset:0;z-index:8;pointer-events:none}
+.vt-mote-hero .vt-mote-status-chip{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:168px;
+  padding:12px 15px;
+  background:rgba(255,252,245,.96);
+  border:1px solid rgba(177,138,66,.34);
+  border-radius:8px;
+  box-shadow:0 12px 28px rgba(38,30,15,.12),0 3px 8px rgba(38,30,15,.06);
+  color:#282720;
+  animation:vt-mote-status-enter .7s ease both;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.vt-mote-hero .vt-mote-status-secured{top:12%;left:8%;animation-delay:.08s}
+.vt-mote-hero .vt-mote-status-cowork{top:14%;right:7%;animation-delay:.2s}
+.vt-mote-hero .vt-mote-status-integration{bottom:19%;left:9%;animation-delay:.32s}
+.vt-mote-hero .vt-mote-status-icon{
+  display:grid;
+  place-items:center;
+  flex:0 0 28px;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:rgba(177,138,66,.13);
+  color:#a77d2d;
+  font-size:19px;
+  font-weight:700;
+  line-height:1;
+}
+.vt-mote-hero .vt-mote-status-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.vt-mote-hero .vt-mote-status-copy b{font-size:10px;letter-spacing:.12em;line-height:1.3}
+.vt-mote-hero .vt-mote-status-copy small{font-size:8px;letter-spacing:.11em;color:#858176;line-height:1.4}
+.vt-mote-hero .vt-mote-status-indicator{
+  margin-left:auto;
+  width:6px;
+  height:6px;
+  flex:0 0 6px;
+  border-radius:50%;
+  background:#4d9a70;
+  box-shadow:0 0 0 3px rgba(77,154,112,.12);
+}
+@keyframes vt-mote-status-enter{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:900px){
+  .vt-mote-hero .vt-mote-status-secured{top:10%;left:2%}
+  .vt-mote-hero .vt-mote-status-cowork{top:11%;right:2%}
+  .vt-mote-hero .vt-mote-status-integration{bottom:18%;left:3%}
+  .vt-mote-hero .vt-mote-status-chip{min-width:145px;padding:9px 10px;gap:8px}
+}
+@media(max-width:600px){
+  .vt-mote-hero .vt-mote-status-chip{min-width:0;padding:7px 8px;gap:6px;border-radius:6px}
+  .vt-mote-hero .vt-mote-status-icon{width:22px;height:22px;flex-basis:22px;font-size:15px}
+  .vt-mote-hero .vt-mote-status-copy b{font-size:7px;letter-spacing:.06em}
+  .vt-mote-hero .vt-mote-status-copy small{font-size:6px;letter-spacing:.05em}
+  .vt-mote-hero .vt-mote-status-indicator{width:5px;height:5px;flex-basis:5px}
+  .vt-mote-hero .vt-mote-status-secured{top:8%;left:0}
+  .vt-mote-hero .vt-mote-status-cowork{top:8%;right:0}
+  .vt-mote-hero .vt-mote-status-integration{bottom:17%;left:0}
+}
+@media(prefers-reduced-motion:reduce){.vt-mote-hero .vt-mote-status-chip{animation:none!important}}
