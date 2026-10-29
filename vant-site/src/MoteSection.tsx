@@ -76,7 +76,7 @@ function MoteFigure() {
       { text: "Vant Technologies' Latest Bot Project", duration: 1000 },
       { text: "Created by Founder and CTO Karl Aldrich Uy", duration: 2000 },
       { text: "My mission is to Make everything Cowork eligible no matter where you put me..", duration: 3000 },
-      { text: "Got a Task or Idea in my mind ?", duration: 2000 },
+      { text: "Got a Task or Idea in your mind?", duration: 2000 },
       { text: "Let Vant Technologies' do it for you", duration: 2000 }
     ];
     const pauseBetweenLinesMs = 1000;
