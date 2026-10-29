@@ -242,3 +242,13 @@
 .vt-mote-kit-image{display:block;position:relative;z-index:1;width:min(88%,470px);height:92%;object-fit:contain;overflow:visible;filter:drop-shadow(0 24px 22px rgba(25,23,17,.24));animation:vt-mote-hover 6s ease-in-out infinite}
 @media(max-width:760px){.vt-mote-kit-image{width:96%;height:84%}}
 @media(prefers-reduced-motion:reduce){.vt-mote-kit-image{animation:none}}
+
+/* Dedicated MOTE.EXE product page shell */
+.vt-mote-product-page{min-height:100vh;background:#050607;color:#f4f5f7}
+.vt-mote-product-page .vt-header{position:relative;top:auto;background:#050607;border-bottom:1px solid rgba(255,255,255,.1)}
+.vt-mote-product-page .vt-header .vt-nav a{color:#d9dce2}
+.vt-mote-product-page .vt-header .vt-brand{color:#f4f5f7}
+.vt-mote-product-page .mote-section{scroll-margin-top:24px}
+.vt-mote-product-page .vt-footer{background:#050607;color:#aeb3bd;border-top:1px solid rgba(255,255,255,.1)}
+.vt-mote-product-page .vt-footer .vt-brand{color:#f4f5f7}
+@media(max-width:760px){.vt-mote-product-page .vt-header{padding-top:16px;padding-bottom:16px}.vt-mote-product-page .vt-header .vt-nav{display:flex;gap:16px}}
