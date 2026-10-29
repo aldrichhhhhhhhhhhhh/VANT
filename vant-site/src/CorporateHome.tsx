@@ -16,18 +16,29 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   return (
-    <div className="vt-scene vt-mote-hero" role="img" aria-label="MOTE.EXE, VANT's watchful black orb intelligence companion">
-      <div className="vt-mote-grid" />
-      <div className="vt-mote-orbit vt-mote-orbit-one" />
-      <div className="vt-mote-orbit vt-mote-orbit-two" />
-      <div className="vt-mote-orbit vt-mote-orbit-three" />
-      <div className="vt-mote-core-wrap">
-        <div className="vt-mote-aura" />
-        <div className="vt-mote-core"><div className="vt-mote-glint" /><div className="vt-mote-eyes"><span /><span /></div><div className="vt-mote-mouth" /></div>
-      </div>
-      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot" /> CORE STATUS <b>ONLINE</b><i /></div>
-      <div className="vt-mote-data mote-data-right">VANT INTELLIGENCE <b>01 / MOTE.EXE</b><i /></div>
-      <div className="vt-mote-caption"><span className="vt-live-dot" /> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
+    <div className="vt-scene vt-mote-hero" role="img" aria-label="MOTE.EXE: black orb mascot with angular horns, a sharp white eye, glitch effects, and animated signal rings">
+      <div className="vt-mote-kit-label">M-01 / CALM / AWARE</div>
+      <svg className="vt-mote-kit-svg" viewBox="0 0 240 250" aria-hidden="true">
+        <defs><radialGradient id="moteAura" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#f4f5f7" stopOpacity=".36"/><stop offset="60%" stopColor="#f4f5f7" stopOpacity=".08"/><stop offset="100%" stopColor="#f4f5f7" stopOpacity="0"/></radialGradient></defs>
+        <circle className="mx-pu" cx="120" cy="136" r="120" fill="url(#moteAura)"/>
+        <circle className="mx-spr" cx="120" cy="136" r="102" fill="none" stroke="#f4f5f7" strokeOpacity=".22" strokeWidth="2" strokeDasharray="2 14"/>
+        <circle className="mx-sp" cx="120" cy="136" r="84" fill="none" stroke="#f4f5f7" strokeOpacity=".4" strokeWidth="2.5" strokeDasharray="14 22 40 18"/>
+        <g stroke="#d6d9de" strokeOpacity=".6" strokeWidth="1.5" strokeDasharray="2 5"><line className="mx-ds" x1="62" y1="0" x2="62" y2="34"/><line className="mx-ds" x1="96" y1="0" x2="96" y2="80"/><line className="mx-ds" x1="120" y1="0" x2="120" y2="84"/><line className="mx-ds" x1="144" y1="0" x2="144" y2="80"/><line className="mx-ds" x1="178" y1="0" x2="178" y2="34"/></g>
+        <g className="mx-fl">
+          <circle className="mx-gh" cx="120" cy="136" r="58" fill="none" stroke="#f4f5f7" strokeOpacity=".35" strokeWidth="2"/>
+          <polygon points="84,100 62,36 112,80" fill="#0b0c0f" stroke="#8b919b" strokeWidth="2.5"/>
+          <polygon points="156,100 178,36 128,80" fill="#0b0c0f" stroke="#8b919b" strokeWidth="2.5"/>
+          <circle cx="120" cy="136" r="58" fill="#0b0c0f" stroke="#d6d9de" strokeWidth="3"/>
+          <g className="mx-fk"><path d="M76 130 L164 120 L152 150 L92 154 Z" fill="none" stroke="#f4f5f7" strokeOpacity=".5" strokeWidth="9"/><polygon points="76,130 164,120 152,150 92,154" fill="#f4f5f7"/><g className="mx-tw"><ellipse cx="120" cy="126" rx="17" ry="7" fill="#050608"/></g></g>
+          <path d="M100 176 L108 166 L116 178 L124 166 L132 178 L140 166" fill="none" stroke="#8b919b" strokeWidth="3"/>
+          <path d="M120 80 L113 104 L122 118 L116 136" fill="none" stroke="#050608" strokeWidth="5"/><path d="M120 80 L113 104 L122 118 L116 136" fill="none" stroke="#f4f5f7" strokeWidth="2"/>
+        </g>
+        <g className="mx-jt"><rect x="56" y="112" width="128" height="3" fill="#050608"/><rect x="56" y="162" width="128" height="2" fill="#050608"/><rect x="104" y="154" width="62" height="6" fill="#f4f5f7" fillOpacity=".55"/></g>
+        <g className="mx-jt2"><rect x="62" y="176" width="116" height="3" fill="#050608"/><rect x="70" y="118" width="40" height="4" fill="#f4f5f7" fillOpacity=".35"/></g>
+      </svg>
+      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> MOTE IS AWARE</div>
+      <div className="vt-mote-data mote-data-right">SIGNAL: <b>STABLE</b></div>
+      <div className="vt-mote-caption"><span className="vt-live-dot"/> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
     </div>
   );
 }
