@@ -83,7 +83,7 @@ function WindowScene() {
           ["memory", "MEMORY", "Context continuity"],
           ["monitoring", "MONITORING", "Status & follow-up"],
         ].map(([id, label, detail], index) => (
-          <div key={id} className={`vt-mote-orbit-node vt-mote-orbit-node-${id}`} style={{ animationDelay: `-${index * 5.3}s` }}>
+          <div key={id} className={`vt-mote-orbit-node vt-mote-orbit-node-${id}`}>
             <div className="vt-mote-orbit-node-card">
               <span className="vt-mote-orbit-node-dot" />
               <span className="vt-mote-orbit-node-copy"><b>{label}</b><small>{detail}</small></span>
