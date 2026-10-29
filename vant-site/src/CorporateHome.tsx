@@ -70,8 +70,6 @@ function WindowScene() {
           <circle cx="120" cy="136" r="58" fill="#08090b" stroke="#d5d7dc" strokeWidth="3" />
           <polygon className="vt-mote-vector-eye" points="76,130 164,120 152,150 92,154" fill="#f4f5f7" />
           <rect className="vt-mote-vector-pupil" x="115" y="126" width="10" height="26" fill="#08090b" />
-          <path d="M66 112 L110 130" fill="none" stroke="#08090b" strokeWidth="9" />
-          <path d="M174 104 L130 126" fill="none" stroke="#08090b" strokeWidth="9" />
           <g className="vt-mote-vector-glitch" stroke="#d8dbe0" strokeWidth="2">
             <path d="M176 75 h23 M185 61 h15 M194 49 h8" />
             <path d="M32 166 h16" opacity=".45" />
