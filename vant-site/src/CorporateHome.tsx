@@ -16,19 +16,18 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   return (
-    <div className="vt-scene vt-intelligence-scene" aria-label="Abstract gold and white intelligence streams forming a subtle V-shaped diamond around a secondary human silhouette">
-      <div className="vt-motion-halo halo-a" /><div className="vt-motion-halo halo-b" />
-      <div className="vt-geometry-plane plane-a" /><div className="vt-geometry-plane plane-b" /><div className="vt-geometry-plane plane-c" />
-      <div className="vt-v-stream stream-left"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
-      <div className="vt-v-stream stream-right"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
-      <div className="vt-diamond-orbit orbit-outer" /><div className="vt-diamond-orbit orbit-inner" />
-      <div className="vt-human-signal"><div className="signal-head"/><div className="signal-neck"/><div className="signal-shoulder"/><div className="signal-torso"/><div className="signal-arm signal-arm-left"/><div className="signal-arm signal-arm-right"/><div className="signal-pixel pixel-a"/><div className="signal-pixel pixel-b"/><div className="signal-pixel pixel-c"/><div className="signal-pixel pixel-d"/><div className="signal-pixel pixel-e"/><div className="signal-pixel pixel-f"/></div>
-      <div className="vt-network-node node-a"/><div className="vt-network-node node-b"/><div className="vt-network-node node-c"/><div className="vt-network-node node-d"/><div className="vt-network-node node-e"/><div className="vt-network-node node-f"/>
-      <div className="vt-signal-line line-a"/><div className="vt-signal-line line-b"/><div className="vt-signal-line line-c"/><div className="vt-signal-line line-d"/>
-      <div className="vt-fragment fragment-one"><span>INTENT DETECTED</span><i/><i/><i/></div>
-      <div className="vt-fragment fragment-two"><span>PATHWAY FOUND</span><b>↗</b><small>Signal aligned</small></div>
-      <div className="vt-fragment fragment-three"><span className="vt-live-dot"/> SYSTEMS IN MOTION</div>
-      <div className="vt-scene-caption"><span className="vt-live-dot" /> INTELLIGENCE, CONNECTED <span>·</span> POSSIBILITY, IN MOTION</div>
+    <div className="vt-scene vt-mote-hero" role="img" aria-label="MOTE.EXE, VANT's watchful black orb intelligence companion">
+      <div className="vt-mote-grid" />
+      <div className="vt-mote-orbit vt-mote-orbit-one" />
+      <div className="vt-mote-orbit vt-mote-orbit-two" />
+      <div className="vt-mote-orbit vt-mote-orbit-three" />
+      <div className="vt-mote-core-wrap">
+        <div className="vt-mote-aura" />
+        <div className="vt-mote-core"><div className="vt-mote-glint" /><div className="vt-mote-eyes"><span /><span /></div><div className="vt-mote-mouth" /></div>
+      </div>
+      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot" /> CORE STATUS <b>ONLINE</b><i /></div>
+      <div className="vt-mote-data mote-data-right">VANT INTELLIGENCE <b>01 / MOTE.EXE</b><i /></div>
+      <div className="vt-mote-caption"><span className="vt-live-dot" /> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
     </div>
   );
 }
