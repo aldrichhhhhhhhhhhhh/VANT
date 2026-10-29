@@ -83,3 +83,90 @@
 @media(max-width:760px){.vt-intelligence-scene{height:350px;margin:3px -8px 0;width:calc(100% + 16px);transform:scale(.96);transform-origin:center}.vt-human-signal{left:38%;top:25%;width:26%;height:52%}.fragment-one{left:0;top:21%;width:105px;padding:8px}.fragment-two{right:0;top:54%;width:110px;padding:8px}.fragment-three{left:19%;bottom:6%;font-size:6px}.vt-intelligence-scene .vt-scene-caption{left:26%;font-size:6px;bottom:0}.vt-geometry-plane.plane-b{width:58%;height:66%}.vt-v-stream{width:46%}}
 @media(max-width:380px){.vt-intelligence-scene{height:310px}.fragment-one{width:90px;font-size:6px}.fragment-two{width:96px;font-size:6px}.vt-fragment small{font-size:7px}.vt-intelligence-scene .vt-scene-caption{left:20%;font-size:5px}.vt-human-signal{left:36%;width:29%}}
 @media(prefers-reduced-motion:reduce){.vt-intelligence-scene,.vt-intelligence-scene *{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+
+/* Phase 01 — VANT Technologies homepage day mode.
+   Keep the existing layouts and motion; change the visual theme only. */
+.vt-site{
+  --vt-bg:#f7f6f2;
+  --vt-panel:#ffffff;
+  --vt-text:#171813;
+  --vt-muted:#62645d;
+  --vt-gold:#a7833d;
+  --vt-line:rgba(31,33,27,.14);
+  background:var(--vt-bg);
+  color:var(--vt-text);
+}
+.vt-header{
+  background:rgba(250,249,246,.88);
+  border-bottom-color:rgba(31,33,27,.11);
+  box-shadow:0 1px 0 rgba(255,255,255,.7);
+}
+.vt-brand i{color:#73736b}
+.vt-brand-mark{border-color:rgba(167,131,61,.65);color:#a7833d}
+.vt-nav{color:#56584f}
+.vt-nav>a:hover{color:#8e6b2d}
+.vt-nav-cta{color:#22231e;border-color:rgba(167,131,61,.5)}
+.vt-nav-cta:hover{background:rgba(167,131,61,.09);border-color:#a7833d}
+.vt-arrow{color:#a7833d}
+.vt-hero{
+  background:
+    radial-gradient(ellipse at 78% 47%,rgba(195,158,91,.15),transparent 37%),
+    linear-gradient(120deg,#fbfaf7 0%,#f6f4ed 56%,#eeece3 100%);
+}
+.vt-hero::before{
+  background-image:linear-gradient(rgba(38,39,31,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(38,39,31,.035) 1px,transparent 1px);
+}
+.vt-eyebrow,.vt-section-kicker{color:#77705e}
+.vt-hero h1{color:#1b1c17}
+.vt-hero h1 span{color:#a7833d}
+.vt-hero-lede{color:#5f6058}
+.vt-button-primary{background:#c5a15c;color:#171813!important}
+.vt-button-primary:hover{background:#d7b979}
+.vt-button-primary .vt-arrow{color:#171813}
+.vt-text-link{color:#33342e!important}
+.vt-hero-foot,.vt-hero-bottom{color:#77786f}
+.vt-live-dot{background:#a7833d;box-shadow:0 0 10px rgba(167,131,61,.28)}
+/* Keep the animated intelligence illustration as a dark, high-contrast focal point. */
+.vt-scene{filter:drop-shadow(0 18px 34px rgba(40,35,22,.10))}
+.vt-about{background:#eeece4;color:#1b1c17}
+.vt-products{background:#f8f7f3;color:#1b1c17}
+.vt-section-heading>p{color:#66675f}
+.vt-product{background:linear-gradient(110deg,#ffffff,#f0eee7 70%);border-color:rgba(36,37,30,.15)}
+.vt-product h3,.vt-product h4,.vt-product-copy{color:#1b1c17}
+.vt-product-meta{color:#777467}
+.vt-product-meta>span:first-child{color:#a7833d}
+.vt-product-copy p,.vt-product-copy .vt-product-description{color:#62635b}
+.vt-product-link{color:#262720!important;border-color:rgba(38,39,32,.25)}
+.vt-product-visual{background:#e9e6dc}
+.vt-app-window{box-shadow:0 18px 55px rgba(28,29,23,.13)}
+.vt-partners{background:#eeece4;color:#1b1c17}
+.vt-partner-card{background:rgba(255,255,255,.72);border-color:rgba(36,37,30,.13)}
+.vt-partner-wordmark{color:#24251f}
+.vt-partner-top,.vt-partner-bottom{color:#62635b}
+.vt-partner-divider{background:rgba(36,37,30,.14)}
+.vt-disclaimer{color:#73746c}
+.vt-journey{background:#f8f7f3;color:#1b1c17}
+.vt-journey-stages>div{border-color:rgba(36,37,30,.15)}
+.vt-journey-stages p,.vt-journey-copy>p{color:#62635b}
+.vt-contact{background:#eeece4;color:#1b1c17}
+.vt-contact-glow{opacity:.12}
+.vt-contact-grid>div>p{color:#62635b}
+.vt-access-card{background:#fff;border-color:rgba(36,37,30,.14);box-shadow:0 18px 55px rgba(28,29,23,.07)}
+.vt-access-card input,.vt-waitlist-form input{background:#fff;color:#1b1c17;border-color:rgba(36,37,30,.2)}
+.vt-waitlist-form input::placeholder{color:#85867d}
+.vt-form-error{color:#a83232}
+.vt-form-success{color:#276746}
+.vt-footer{background:#e7e5dc;color:#24251f;border-top:1px solid rgba(36,37,30,.12)}
+.vt-footer a{color:#4e5047}
+.vt-copyright{color:#74756c}
+.vt-reveal{color:inherit}
+.vt-site a:focus-visible,.vt-site button:focus-visible,.vt-site input:focus-visible{outline-color:#a7833d}
+@media(max-width:760px){
+  .vt-nav{background:#fbfaf7;border:1px solid rgba(31,33,27,.12);box-shadow:0 18px 40px rgba(30,30,24,.10)}
+  .vt-nav>a:not(.vt-nav-cta){color:#34352e}
+  .vt-menu-toggle{color:#292a24}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-site *{scroll-behavior:auto}
+}
