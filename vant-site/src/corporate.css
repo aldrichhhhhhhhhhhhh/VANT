@@ -725,3 +725,156 @@
   .vt-mote-hero .vt-mote-status-integration{bottom:1%!important;right:0!important;left:auto!important}
   .vt-mote-hero .vt-mote-status-chip{min-width:0;padding:7px 8px;gap:6px}
 }
+
+
+/* MOTE.EXE product page sections */
+.vt-mote-product-page .mote-product-section{
+  position:relative;
+  padding:clamp(68px,9vw,124px) clamp(24px,8.8vw,156px);
+  overflow:hidden;
+  color:#f4f5f7;
+  background:#050608;
+  border-top:1px solid rgba(214,217,222,.1);
+}
+.vt-mote-product-page .mp-kicker{
+  margin:0 0 22px;
+  color:#91b9d9;
+  font:10px/1.5 "JetBrains Mono",monospace;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.vt-mote-product-page .mp-section-head{max-width:760px}
+.vt-mote-product-page .mp-section-head h2,
+.vt-mote-product-page .mp-console-copy h2,
+.vt-mote-product-page .mp-ecosystem-copy h2,
+.vt-mote-product-page .mp-final-cta h2{
+  margin:0;
+  color:#f4f5f7;
+  font-size:clamp(38px,5.6vw,72px);
+  font-weight:500;
+  line-height:.98;
+  letter-spacing:-.065em;
+}
+.vt-mote-product-page .mp-section-head h2 em,
+.vt-mote-product-page .mp-console-copy h2 em,
+.vt-mote-product-page .mp-ecosystem-copy h2 em,
+.vt-mote-product-page .mp-final-cta h2 em{color:#9299a4;font-style:normal}
+.vt-mote-product-page .mp-intro{
+  max-width:610px;
+  margin:24px 0 0;
+  color:#a4aab4;
+  font-size:15px;
+  line-height:1.85;
+}
+.vt-mote-product-page .mp-capability-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:54px;
+}
+.vt-mote-product-page .mp-capability{
+  min-height:250px;
+  padding:24px;
+  border:1px solid rgba(214,217,222,.15);
+  background:linear-gradient(145deg,rgba(255,255,255,.035),transparent 65%),#08090c;
+}
+.vt-mote-product-page .mp-index{display:block;color:#6f7884;font:9px "JetBrains Mono",monospace;letter-spacing:.13em}
+.vt-mote-product-page .mp-line-icon{display:block;margin:25px 0 18px;color:#91b9d9;font-size:26px}
+.vt-mote-product-page .mp-capability h3,.vt-mote-product-page .mp-workflow-step h3,.vt-mote-product-page .mp-ecosystem-item h3{
+  margin:0;color:#f4f5f7;font-size:22px;font-weight:500;letter-spacing:-.035em
+}
+.vt-mote-product-page .mp-capability p,.vt-mote-product-page .mp-workflow-step p,.vt-mote-product-page .mp-ecosystem-item p{
+  margin:12px 0 0;color:#9299a4;font-size:13px;line-height:1.8
+}
+.vt-mote-product-page .mp-footnote{margin:20px 0 0;color:#646d79;font-size:10px;line-height:1.7}
+.vt-mote-product-page .mp-console{
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,7vw,100px);align-items:center;
+  background:radial-gradient(ellipse at 88% 48%,rgba(145,185,217,.07),transparent 46%),#08090c
+}
+.vt-mote-product-page .mp-suggestions{display:grid;gap:8px;margin-top:28px}
+.vt-mote-product-page .mp-suggestions button{
+  display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 14px;
+  color:#b8c0cb;background:transparent;border:1px solid rgba(214,217,222,.14);text-align:left;
+  font:10px "JetBrains Mono",monospace;cursor:pointer;transition:border-color .2s,color .2s,background .2s
+}
+.vt-mote-product-page .mp-suggestions button:hover,.vt-mote-product-page .mp-suggestions button:focus-visible{
+  border-color:rgba(145,185,217,.65);color:#fff;background:rgba(145,185,217,.05);outline:none
+}
+.vt-mote-product-page .mp-suggestions button span{color:#91b9d9}
+.vt-mote-product-page .mp-console-panel{min-width:0;border:1px solid rgba(214,217,222,.17);background:rgba(3,4,6,.78)}
+.vt-mote-product-page .mp-console-top,.vt-mote-product-page .mp-console-foot{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:16px 18px;
+  color:#707987;font:9px "JetBrains Mono",monospace;letter-spacing:.1em
+}
+.vt-mote-product-page .mp-console-top{border-bottom:1px solid rgba(214,217,222,.12)}
+.vt-mote-product-page .mp-console-top span:last-child{display:flex;align-items:center;gap:7px}
+.vt-mote-product-page .mp-console-top i{width:6px;height:6px;border-radius:50%;background:#c9a45a;box-shadow:0 0 10px rgba(201,164,90,.4)}
+.vt-mote-product-page .mp-prompt-form{padding:26px 22px}
+.vt-mote-product-page .mp-prompt-form label{display:block;margin-bottom:12px;color:#91b9d9;font:9px "JetBrains Mono",monospace;letter-spacing:.14em}
+.vt-mote-product-page .mp-prompt-row{display:flex;gap:8px}
+.vt-mote-product-page .mp-prompt-row input{
+  min-width:0;flex:1;padding:14px 13px;border:1px solid rgba(214,217,222,.24);border-radius:2px;
+  background:#050608;color:#f4f5f7;font:12px inherit;outline:none
+}
+.vt-mote-product-page .mp-prompt-row input:focus{border-color:#91b9d9}
+.vt-mote-product-page .mp-prompt-row button{
+  width:48px;border:1px solid #91b9d9;background:#91b9d9;color:#050608;font-size:22px;cursor:pointer
+}
+.vt-mote-product-page .mp-prompt-row button:disabled{opacity:.35;cursor:not-allowed}
+.vt-mote-product-page .mp-prompt-form>p{margin:12px 0 0;color:#66707d;font-size:10px;line-height:1.7}
+.vt-mote-product-page .mp-demo-response{margin:0 22px 22px;padding:16px;border:1px solid rgba(145,185,217,.22);background:rgba(145,185,217,.04)}
+.vt-mote-product-page .mp-demo-response span{display:block;color:#91b9d9;font:9px/1.6 "JetBrains Mono",monospace;letter-spacing:.08em;overflow-wrap:anywhere}
+.vt-mote-product-page .mp-demo-response p{margin:12px 0 0;color:#c1c8d1;font-size:12px;line-height:1.8}
+.vt-mote-product-page .mp-console-foot{border-top:1px solid rgba(214,217,222,.12);font-size:8px}
+.vt-mote-product-page .mp-workflow{background:#07080a}
+.vt-mote-product-page .mp-workflow-track{margin-top:48px;border-top:1px solid rgba(214,217,222,.15)}
+.vt-mote-product-page .mp-workflow-step{
+  display:grid;grid-template-columns:54px minmax(0,1fr) 24px;gap:18px;align-items:center;
+  padding:22px 8px;border-bottom:1px solid rgba(214,217,222,.13)
+}
+.vt-mote-product-page .mp-workflow-step>span{color:#91b9d9;font:10px "JetBrains Mono",monospace}
+.vt-mote-product-page .mp-workflow-step h3{font:12px "JetBrains Mono",monospace;letter-spacing:.08em}
+.vt-mote-product-page .mp-workflow-step p{margin-top:7px}
+.vt-mote-product-page .mp-workflow-step>i{color:#727b88;font-style:normal}
+.vt-mote-product-page .mp-ecosystem{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,6vw,80px);align-items:start}
+.vt-mote-product-page .mp-ecosystem-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.vt-mote-product-page .mp-ecosystem-item{
+  display:block;padding:20px 22px;border:1px solid rgba(214,217,222,.15);text-decoration:none;
+  background:rgba(255,255,255,.018);transition:border-color .2s,transform .2s,background .2s
+}
+.vt-mote-product-page .mp-ecosystem-item:hover{border-color:rgba(145,185,217,.55);transform:translateY(-2px);background:rgba(145,185,217,.035)}
+.vt-mote-product-page .mp-ecosystem-item>span{display:block;margin-bottom:12px;color:#77818e;font:9px "JetBrains Mono",monospace;letter-spacing:.12em}
+.vt-mote-product-page .mp-ecosystem-item h3{font-size:20px}
+.vt-mote-product-page .mp-ecosystem-item b{display:inline-block;margin-top:18px;color:#91b9d9;font:9px "JetBrains Mono",monospace;letter-spacing:.08em}
+.vt-mote-product-page .mp-final-cta{
+  text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(145,185,217,.09),transparent 55%),#050608
+}
+.vt-mote-product-page .mp-final-cta h2{font-size:clamp(48px,7vw,86px)}
+.vt-mote-product-page .mp-final-cta>p:not(.mp-kicker){max-width:520px;margin:20px auto 0;color:#9da5b0;font-size:14px;line-height:1.8}
+.vt-mote-product-page .mp-cta-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.vt-mote-product-page .mp-primary-cta,.vt-mote-product-page .mp-secondary-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:46px;padding:0 18px;text-decoration:none;font-size:11px
+}
+.vt-mote-product-page .mp-primary-cta{background:#c9a45a;color:#111;border:1px solid #c9a45a}
+.vt-mote-product-page .mp-secondary-cta{color:#d6d9de;border:1px solid rgba(214,217,222,.25)}
+.vt-mote-product-page .mp-primary-cta:hover,.vt-mote-product-page .mp-secondary-cta:hover{filter:brightness(1.08)}
+@media(max-width:900px){
+  .vt-mote-product-page .mote-product-section{padding:68px 28px}
+  .vt-mote-product-page .mp-capability-grid{gap:10px}
+  .vt-mote-product-page .mp-capability{padding:18px;min-height:240px}
+  .vt-mote-product-page .mp-console,.vt-mote-product-page .mp-ecosystem{grid-template-columns:1fr;gap:34px}
+}
+@media(max-width:600px){
+  .vt-mote-product-page .mote-product-section{padding:58px 20px}
+  .vt-mote-product-page .mp-capability-grid{grid-template-columns:1fr;margin-top:32px}
+  .vt-mote-product-page .mp-capability{min-height:0;padding:20px}
+  .vt-mote-product-page .mp-line-icon{margin:18px 0 12px}
+  .vt-mote-product-page .mp-intro{font-size:13px}
+  .vt-mote-product-page .mp-workflow-step{grid-template-columns:34px minmax(0,1fr) 18px;gap:12px;padding:18px 0}
+  .vt-mote-product-page .mp-prompt-form{padding:20px 14px}
+  .vt-mote-product-page .mp-demo-response{margin:0 14px 16px}
+  .vt-mote-product-page .mp-console-top,.vt-mote-product-page .mp-console-foot{padding:13px 14px;font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-mote-product-page .mp-suggestions button,.vt-mote-product-page .mp-ecosystem-item{transition:none}
+}
