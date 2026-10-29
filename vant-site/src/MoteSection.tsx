@@ -233,7 +233,7 @@ export default function MoteSection() {
             <div><span>HOME</span><b>The VANT ecosystem</b></div>
             <div><span>MODE</span><b>Never offline</b></div>
           </div>
-          <a className="mote-link" href="#products">Explore the VANT ecosystem <span aria-hidden="true">↗</span></a>
+          <a className="mote-link" href="/#products">Explore the VANT ecosystem <span aria-hidden="true">↗</span></a>
         </div>
         <div className="mote-visual vt-reveal">
           <MoteFigure />
