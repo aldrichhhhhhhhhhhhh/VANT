@@ -481,3 +481,25 @@
  .vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{min-width:102px}
  @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(140px)}to{transform:rotate(360deg) translateX(140px)}}
 }
+
+/* Scatter the orbital channel chips around MOTE for a more organic solar-system layout */
+.vt-mote-orbit-node-cowork{margin-top:-28px}
+.vt-mote-orbit-node-integrations{margin-top:18px}
+.vt-mote-orbit-node-safety{margin-top:-12px}
+.vt-mote-orbit-node-deadlines{margin-top:26px}
+.vt-mote-orbit-node-memory{margin-top:-20px}
+.vt-mote-orbit-node-monitoring{margin-top:12px}
+.vt-mote-orbit-node-cowork .vt-mote-orbit-node-card{translate:-12px -8px}
+.vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{translate:14px 10px}
+.vt-mote-orbit-node-safety .vt-mote-orbit-node-card{translate:18px -12px}
+.vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card{translate:-12px 14px}
+.vt-mote-orbit-node-memory .vt-mote-orbit-node-card{translate:-18px -8px}
+.vt-mote-orbit-node-monitoring .vt-mote-orbit-node-card{translate:12px 8px}
+@media(max-width:600px){
+ .vt-mote-orbit-node-cowork .vt-mote-orbit-node-card{translate:-5px -5px}
+ .vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{translate:6px 6px}
+ .vt-mote-orbit-node-safety .vt-mote-orbit-node-card{translate:7px -5px}
+ .vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card{translate:-5px 6px}
+ .vt-mote-orbit-node-memory .vt-mote-orbit-node-card{translate:-7px -5px}
+ .vt-mote-orbit-node-monitoring .vt-mote-orbit-node-card{translate:5px 5px}
+}
