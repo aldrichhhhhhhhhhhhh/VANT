@@ -227,7 +227,7 @@ export default function MoteSection() {
         <div className="mote-copy vt-reveal">
           <p className="mote-overline">INTRODUCING MOTE.EXE</p>
           <h2>A little<br />different.<br /><em>By design.</em></h2>
-          <p className="mote-description">Meet MOTE.EXE — VANT’s digital mascot, built to bring a distinct personality to the technology we create. A small signal from a much bigger system.</p>
+          <p className="mote-description">MOTE.EXE — VANT’s digital guardian, built to bring awareness, clarity, and quiet intelligence to the work happening around you. Always watchful. Always ready.</p>
           <div className="mote-specs">
             <div><span>IDENTITY</span><b>Watchful by design</b></div>
             <div><span>HOME</span><b>The VANT ecosystem</b></div>
