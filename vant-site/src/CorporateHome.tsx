@@ -71,22 +71,22 @@ function WindowScene() {
           </g>
         </svg>
       </div>
-      <div className="vt-mote-orbit-channels" aria-label="MOTE responsibility channels">
-        {[
-          ["cowork", "CoWork", "M12 5v14 M5 12h14 M7 7l10 10 M17 7L7 17"],
-          ["integrations", "Integrations", "M8 12h8 M12 8v8 M7 4H5a1 1 0 0 0-1 1v2 M17 4h2a1 1 0 0 1 1 1v2 M7 20H5a1 1 0 0 1-1-1v-2 M17 20h2a1 1 0 0 0 1-1v-2"],
-          ["safety", "Safety", "M12 3l8 3v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z M8.5 12l2.3 2.3 4.7-5"],
-          ["deadlines", "Deadlines", "M12 7v5l3 2 M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"],
-          ["memory", "Memory", "M5 4h14v16H5z M8 8h8 M8 12h8 M8 16h5"],
-          ["monitoring", "Monitor", "M3 12s3-6 9-6 9 6 9 6-3 6-9 6-9-6-9-6z M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"],
-        ].map(([id, label, iconPath]) => (
-          <div key={id} className={`vt-mote-orbit-node vt-mote-orbit-node-${id}`}>
-            <div className="vt-mote-orbit-node-card" aria-label={label}>
-              <svg className="vt-mote-orbit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={iconPath} /></svg>
-              <b>{label}</b>
-            </div>
-          </div>
-        ))}
+      <div className="vt-mote-status-stack" aria-label="MOTE live workflow status">
+        <div className="vt-mote-status-chip vt-mote-status-secured">
+          <span className="vt-mote-status-icon" aria-hidden="true">✓</span>
+          <span className="vt-mote-status-copy"><b>SECURED</b><small>MFA ACTIVE</small></span>
+          <span className="vt-mote-status-indicator" aria-hidden="true" />
+        </div>
+        <div className="vt-mote-status-chip vt-mote-status-cowork">
+          <span className="vt-mote-status-icon" aria-hidden="true">↗</span>
+          <span className="vt-mote-status-copy"><b>COWORK</b><small>TASK COMPLETE</small></span>
+          <span className="vt-mote-status-indicator" aria-hidden="true" />
+        </div>
+        <div className="vt-mote-status-chip vt-mote-status-integration">
+          <span className="vt-mote-status-icon" aria-hidden="true">↔</span>
+          <span className="vt-mote-status-copy"><b>INTEGRATION</b><small>CONNECTED</small></span>
+          <span className="vt-mote-status-indicator" aria-hidden="true" />
+        </div>
       </div>
       <div className="vt-mote-caption"><span className="vt-live-dot" /> MOTE.EXE <span>·</span> WORKFLOW RESPONSIBILITY CHANNELS</div>
     </div>
