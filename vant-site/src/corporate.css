@@ -435,3 +435,24 @@
 .vt-mote-orbit-node-deadlines,.vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card{animation-delay:-15.99s}
 .vt-mote-orbit-node-memory,.vt-mote-orbit-node-memory .vt-mote-orbit-node-card{animation-delay:-21.32s}
 .vt-mote-orbit-node-monitoring,.vt-mote-orbit-node-monitoring .vt-mote-orbit-node-card{animation-delay:-26.65s}
+
+/* Solar-system motion: MOTE remains the fixed center; channels orbit slowly */
+.vt-mote-vector-stage{position:relative;z-index:4;width:min(100%,390px)}
+.vt-mote-orbit-path{inset:0;z-index:1}
+.vt-mote-orbit-path-two{inset:8%;z-index:1}
+.vt-mote-orbit-node{z-index:3;animation-duration:90s}
+.vt-mote-orbit-node-card{animation-duration:90s}
+@keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(220px)}to{transform:rotate(360deg) translateX(220px)}}
+@keyframes vt-mote-channel-counter{from{rotate:0deg}to{rotate:-360deg}}
+.vt-mote-state-working .vt-mote-orbit-node{animation-duration:70s}
+.vt-mote-state-working .vt-mote-orbit-node-card{animation-duration:70s}
+@media(max-width:900px){
+ .vt-mote-vector-stage{width:min(100%,320px)}
+ @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(180px)}to{transform:rotate(360deg) translateX(180px)}}
+}
+@media(max-width:600px){
+ .vt-mote-vector-stage{width:min(100%,245px)}
+ @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(140px)}to{transform:rotate(360deg) translateX(140px)}}
+ .vt-mote-orbit-node-card{width:104px}
+}
+@media(prefers-reduced-motion:reduce){.vt-mote-orbit-node,.vt-mote-orbit-node-card{animation:none!important}}
