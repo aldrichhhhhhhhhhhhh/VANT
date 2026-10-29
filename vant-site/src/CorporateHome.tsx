@@ -62,22 +62,22 @@ function WindowScene() {
         <div className="vt-mote-vector-aura" />
         <div className="vt-mote-vector-ring vt-mote-vector-ring-outer" />
         <div className="vt-mote-vector-ring vt-mote-vector-ring-inner" />
-        <svg className="vt-mote-vector" viewBox="0 0 300 300">
+        <svg className="vt-mote-vector" viewBox="0 0 240 250">
           <g className="vt-mote-vector-ears" fill="#08090b" stroke="#9da1aa" strokeWidth="2.5" strokeLinejoin="round">
-            <polygon points="103,112 73,35 132,89" />
-            <polygon points="197,112 227,35 168,89" />
+            <polygon points="84,100 62,36 112,80" />
+            <polygon points="156,100 178,36 128,80" />
           </g>
-          <circle cx="150" cy="158" r="62" fill="#08090b" stroke="#d5d7dc" strokeWidth="3" />
-          <path d="M94 143 L142 154 L130 173 L108 171 Z" fill="#f4f5f7" />
-          <path d="M206 137 L158 154 L170 173 L192 171 Z" fill="#f4f5f7" />
-          <rect className="vt-mote-vector-pupil" x="145" y="151" width="10" height="24" fill="#08090b" />
-          <path d="M126 191 L137 181 L147 193 L157 181 L168 193 L179 181" fill="none" stroke="#aeb3bc" strokeWidth="2.4" strokeLinejoin="round" />
+          <circle cx="120" cy="136" r="58" fill="#08090b" stroke="#d5d7dc" strokeWidth="3" />
+          <polygon className="vt-mote-vector-eye" points="76,130 164,120 152,150 92,154" fill="#f4f5f7" />
+          <rect className="vt-mote-vector-pupil" x="115" y="126" width="10" height="26" fill="#08090b" />
+          <path d="M66 112 L110 130" fill="none" stroke="#08090b" strokeWidth="9" />
+          <path d="M174 104 L130 126" fill="none" stroke="#08090b" strokeWidth="9" />
           <g className="vt-mote-vector-glitch" stroke="#d8dbe0" strokeWidth="2">
-            <path d="M211 98 h17 M220 87 h13 M229 76 h8" />
-            <path d="M71 191 h13" opacity=".5" />
+            <path d="M176 75 h23 M185 61 h15 M194 49 h8" />
+            <path d="M32 166 h16" opacity=".45" />
           </g>
-          <g className="vt-mote-vector-scan" stroke="#d8dbe0" strokeWidth="1.5" strokeDasharray="3 7" opacity=".65">
-            <path d="M105 25 V72 M130 15 V84 M170 15 V84 M195 25 V72" />
+          <g className="vt-mote-vector-scan" stroke="#aeb4bf" strokeWidth="1.2" strokeDasharray="2 5" opacity=".65">
+            <path d="M62 0 V34 M96 0 V72 M144 0 V72 M178 0 V34" />
           </g>
         </svg>
       </div>
