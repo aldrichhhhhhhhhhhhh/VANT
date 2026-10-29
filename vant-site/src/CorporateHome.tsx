@@ -18,23 +18,42 @@ function WindowScene() {
   return (
     <div className="vt-scene vt-mote-hero" role="img" aria-label="MOTE.EXE: black orb mascot with angular horns, a sharp white eye, glitch effects, and animated signal rings">
       <div className="vt-mote-kit-label">M-01 / CALM / AWARE</div>
-      <svg className="vt-mote-kit-svg" viewBox="0 0 240 250" aria-hidden="true">
-        <defs><radialGradient id="moteAura" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#f4f5f7" stopOpacity=".36"/><stop offset="60%" stopColor="#f4f5f7" stopOpacity=".08"/><stop offset="100%" stopColor="#f4f5f7" stopOpacity="0"/></radialGradient></defs>
-        <circle className="mx-pu" cx="120" cy="136" r="120" fill="url(#moteAura)"/>
-        <circle className="mx-spr" cx="120" cy="136" r="102" fill="none" stroke="#f4f5f7" strokeOpacity=".22" strokeWidth="2" strokeDasharray="2 14"/>
-        <circle className="mx-sp" cx="120" cy="136" r="84" fill="none" stroke="#f4f5f7" strokeOpacity=".4" strokeWidth="2.5" strokeDasharray="14 22 40 18"/>
-        <g stroke="#d6d9de" strokeOpacity=".6" strokeWidth="1.5" strokeDasharray="2 5"><line className="mx-ds" x1="62" y1="0" x2="62" y2="34"/><line className="mx-ds" x1="96" y1="0" x2="96" y2="80"/><line className="mx-ds" x1="120" y1="0" x2="120" y2="84"/><line className="mx-ds" x1="144" y1="0" x2="144" y2="80"/><line className="mx-ds" x1="178" y1="0" x2="178" y2="34"/></g>
-        <g className="mx-fl">
-          <circle className="mx-gh" cx="120" cy="136" r="58" fill="none" stroke="#f4f5f7" strokeOpacity=".35" strokeWidth="2"/>
-          <polygon points="84,100 62,36 112,80" fill="#0b0c0f" stroke="#8b919b" strokeWidth="2.5"/>
-          <polygon points="156,100 178,36 128,80" fill="#0b0c0f" stroke="#8b919b" strokeWidth="2.5"/>
-          <circle cx="120" cy="136" r="58" fill="#0b0c0f" stroke="#d6d9de" strokeWidth="3"/>
-          <g className="mx-fk"><path d="M76 130 L164 120 L152 150 L92 154 Z" fill="none" stroke="#f4f5f7" strokeOpacity=".5" strokeWidth="9"/><polygon points="76,130 164,120 152,150 92,154" fill="#f4f5f7"/><g className="mx-tw"><ellipse cx="120" cy="126" rx="17" ry="7" fill="#050608"/></g></g>
-          <path d="M100 176 L108 166 L116 178 L124 166 L132 178 L140 166" fill="none" stroke="#8b919b" strokeWidth="3"/>
-          <path d="M120 80 L113 104 L122 118 L116 136" fill="none" stroke="#050608" strokeWidth="5"/><path d="M120 80 L113 104 L122 118 L116 136" fill="none" stroke="#f4f5f7" strokeWidth="2"/>
+      <svg className="vt-mote-kit-svg" viewBox="0 0 420 440" aria-hidden="true">
+        <defs>
+          <radialGradient id="moteShell" cx="32%" cy="22%" r="82%"><stop offset="0%" stopColor="#45464a"/><stop offset="18%" stopColor="#202125"/><stop offset="48%" stopColor="#090a0c"/><stop offset="82%" stopColor="#020203"/><stop offset="100%" stopColor="#17181b"/></radialGradient>
+          <linearGradient id="moteMetal" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#fafafa"/><stop offset="18%" stopColor="#5c6067"/><stop offset="38%" stopColor="#17191d"/><stop offset="57%" stopColor="#a9adb4"/><stop offset="76%" stopColor="#25272c"/><stop offset="100%" stopColor="#050506"/></linearGradient>
+          <linearGradient id="moteEar" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#36383d"/><stop offset="48%" stopColor="#030304"/><stop offset="80%" stopColor="#181a1e"/><stop offset="100%" stopColor="#858991"/></linearGradient>
+          <linearGradient id="moteVisor" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stopColor="#fff"/><stop offset="48%" stopColor="#e8eaee"/><stop offset="100%" stopColor="#9ea3ab"/></linearGradient>
+          <filter id="moteDrop" x="-35%" y="-35%" width="170%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="8"/><feOffset dy="10"/><feComponentTransfer><feFuncA type="linear" slope=".42"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="moteGlow"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+        <ellipse cx="210" cy="405" rx="126" ry="17" fill="#34312a" opacity=".13" filter="url(#moteGlow)"/>
+        <g filter="url(#moteDrop)" strokeLinejoin="round">
+          <path d="M106 150 L55 18 L174 111 L203 139 Z" fill="url(#moteEar)" stroke="url(#moteMetal)" strokeWidth="3"/>
+          <path d="M314 150 L365 18 L246 111 L217 139 Z" fill="url(#moteEar)" stroke="url(#moteMetal)" strokeWidth="3"/>
+          <path d="M78 58 L142 119 L103 126 Z" fill="#090a0c" stroke="#555960" strokeWidth="1.4"/>
+          <path d="M342 58 L278 119 L317 126 Z" fill="#090a0c" stroke="#555960" strokeWidth="1.4"/>
+          <path d="M104 129 Q210 68 316 129 L345 220 Q350 309 291 363 Q250 396 210 398 Q170 396 129 363 Q70 309 75 220 Z" fill="url(#moteShell)" stroke="url(#moteMetal)" strokeWidth="4"/>
+          <path d="M107 143 Q210 88 313 143 L329 207 Q275 183 210 187 Q145 183 91 207 Z" fill="#111216" stroke="#3d4046" strokeWidth="2"/>
+          <path d="M107 146 Q210 92 313 146" fill="none" stroke="#d9dce1" strokeOpacity=".48" strokeWidth="2"/>
+          <path d="M91 208 L156 222 L190 256 L115 244 Z" fill="#020203" stroke="#5b5f66" strokeWidth="2"/>
+          <path d="M329 208 L264 222 L230 256 L305 244 Z" fill="#020203" stroke="#5b5f66" strokeWidth="2"/>
+          <path d="M91 218 L190 249 L179 285 L108 268 Z" fill="#07080a" stroke="url(#moteMetal)" strokeWidth="2.5"/>
+          <path d="M329 218 L230 249 L241 285 L312 268 Z" fill="#07080a" stroke="url(#moteMetal)" strokeWidth="2.5"/>
+          <path d="M100 262 L175 278 L191 302 L128 299 Z" fill="url(#moteVisor)" stroke="#fff" strokeWidth="2"/>
+          <path d="M320 262 L245 278 L229 302 L292 299 Z" fill="url(#moteVisor)" stroke="#fff" strokeWidth="2"/>
+          <path d="M194 257 L210 267 L226 257 L224 306 L210 317 L196 306 Z" fill="#060709" stroke="#858a93" strokeWidth="1.5"/>
+          <path d="M80 225 Q68 286 112 342" fill="none" stroke="#aeb2b9" strokeOpacity=".75" strokeWidth="2"/>
+          <path d="M340 225 Q352 286 308 342" fill="none" stroke="#aeb2b9" strokeOpacity=".55" strokeWidth="2"/>
+          <path d="M128 326 Q210 355 292 326 L270 363 Q210 388 150 363 Z" fill="#08090b" stroke="#555961" strokeWidth="2"/>
+          <path d="M241 348 L278 340 M237 357 L274 349 M233 366 L268 358" stroke="#d4d7dc" strokeWidth="3" strokeLinecap="round"/>
+          <circle cx="89" cy="287" r="17" fill="#07080a" stroke="url(#moteMetal)" strokeWidth="4"/><circle cx="89" cy="287" r="7" fill="#202226" stroke="#969ba3" strokeWidth="2"/>
+          <path d="M126 161 L175 176 M294 161 L245 176" stroke="#aeb2b9" strokeOpacity=".6" strokeWidth="2"/>
+          <path d="M144 119 Q174 94 205 96" fill="none" stroke="#f3f4f6" strokeOpacity=".5" strokeWidth="2"/>
+          <path d="M276 119 Q246 94 215 96" fill="none" stroke="#f3f4f6" strokeOpacity=".35" strokeWidth="2"/>
+          <path d="M112 244 L179 265 M308 244 L241 265" stroke="#020203" strokeWidth="5"/>
+          <path d="M152 376 Q210 392 268 376" fill="none" stroke="#aeb2b9" strokeOpacity=".3" strokeWidth="2"/>
         </g>
-        <g className="mx-jt"><rect x="56" y="112" width="128" height="3" fill="#050608"/><rect x="56" y="162" width="128" height="2" fill="#050608"/><rect x="104" y="154" width="62" height="6" fill="#f4f5f7" fillOpacity=".55"/></g>
-        <g className="mx-jt2"><rect x="62" y="176" width="116" height="3" fill="#050608"/><rect x="70" y="118" width="40" height="4" fill="#f4f5f7" fillOpacity=".35"/></g>
       </svg>
       <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> MOTE IS AWARE</div>
       <div className="vt-mote-data mote-data-right">SIGNAL: <b>STABLE</b></div>
