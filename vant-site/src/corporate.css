@@ -387,3 +387,44 @@
 .vt-mote-state-working .vt-mote-vector-ring-inner{animation-duration:8s}
 @media(max-width:900px){.vt-mote-vector-stage{width:min(100%,390px)}.vt-mote-kit-label{top:3%;left:2%}}
 @media(max-width:600px){.vt-mote-vector-stage{width:min(100%,320px)}.vt-mote-data.mote-data-left{top:23%;left:0}.vt-mote-data.mote-data-right{right:0;bottom:15%}}
+
+/* Responsibility channels orbit MOTE instead of generic floating dashboard cards */
+.vt-mote-hero{overflow:visible}
+.vt-mote-vector-stage{z-index:2;width:min(100%,410px)}
+.vt-mote-vector-ring-outer{inset:8%;border-style:solid;border-color:rgba(184,151,88,.25);animation-duration:48s}
+.vt-mote-vector-ring-inner{inset:17%;border-color:rgba(173,177,186,.22);animation-duration:32s}
+.vt-mote-orbit-path{position:absolute;inset:2%;border:1px solid rgba(177,150,97,.12);border-radius:50%;pointer-events:none}
+.vt-mote-orbit-path-two{inset:12%;border-style:dashed;border-color:rgba(173,177,186,.13);transform:rotate(-18deg)}
+.vt-mote-orbit-channels{position:absolute;inset:0;z-index:5;pointer-events:none}
+.vt-mote-orbit-node{position:absolute;left:50%;top:50%;width:1px;height:1px;animation:vt-mote-channel-orbit 32s linear infinite;transform-origin:0 0;will-change:transform}
+.vt-mote-orbit-node-card{position:absolute;left:0;top:0;display:flex;align-items:center;gap:9px;width:142px;padding:10px 12px;border:1px solid rgba(184,151,88,.2);background:rgba(250,249,245,.88);box-shadow:0 8px 24px rgba(24,22,16,.045);backdrop-filter:blur(9px);transform:translate(-50%,-50%);animation:vt-mote-channel-counter 32s linear infinite}
+.vt-mote-orbit-node-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#b18a42;box-shadow:0 0 10px rgba(177,138,66,.25)}
+.vt-mote-orbit-node-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.vt-mote-orbit-node-copy b{font:600 9px 'DM Sans',sans-serif;letter-spacing:.12em;color:#26251f}
+.vt-mote-orbit-node-copy small{font:400 9px 'DM Sans',sans-serif;color:#89877f;white-space:nowrap}
+.vt-mote-orbit-node-cowork{animation-delay:0s}
+.vt-mote-orbit-node-integrations{animation-delay:-5.33s}
+.vt-mote-orbit-node-safety{animation-delay:-10.66s}
+.vt-mote-orbit-node-deadlines{animation-delay:-15.99s}
+.vt-mote-orbit-node-memory{animation-delay:-21.32s}
+.vt-mote-orbit-node-monitoring{animation-delay:-26.65s}
+@keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(215px)}to{transform:rotate(360deg) translateX(215px)}}
+@keyframes vt-mote-channel-counter{from{rotate:0deg}to{rotate:-360deg}}
+.vt-mote-state-working .vt-mote-orbit-node-dot{animation:vt-mote-node-pulse 1.4s ease-in-out infinite alternate}
+.vt-mote-state-working .vt-mote-orbit-path{border-color:rgba(177,138,66,.28)}
+@keyframes vt-mote-node-pulse{to{opacity:.45;box-shadow:0 0 14px rgba(177,138,66,.55)}}
+.vt-mote-caption{z-index:6}
+@media(max-width:900px){
+ .vt-mote-vector-stage{width:min(100%,340px)}
+ .vt-mote-orbit-node-card{width:126px;padding:8px 9px;gap:7px}
+ .vt-mote-orbit-node-copy b{font-size:8px}.vt-mote-orbit-node-copy small{font-size:8px}
+ @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(175px)}to{transform:rotate(360deg) translateX(175px)}}
+}
+@media(max-width:600px){
+ .vt-mote-hero{min-height:430px}
+ .vt-mote-vector-stage{width:min(100%,270px)}
+ .vt-mote-orbit-node-card{width:112px;padding:7px 8px}
+ .vt-mote-orbit-node-copy b{font-size:7px;letter-spacing:.08em}.vt-mote-orbit-node-copy small{font-size:7px}
+ @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(135px)}to{transform:rotate(360deg) translateX(135px)}}
+}
+@media(prefers-reduced-motion:reduce){.vt-mote-orbit-node,.vt-mote-orbit-node-card{animation:none!important}}
