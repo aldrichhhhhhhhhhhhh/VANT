@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import LegalPages from "./LegalPages";
+import MoteSection from "./MoteSection";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
@@ -96,6 +97,8 @@ function CorporateHomeView() {
         <WindowScene />
         <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
       </section>
+
+      <MoteSection />
 
       <section id="about" className="vt-about vt-section">
         <div className="vt-section-kicker vt-reveal"><span>01</span> / ABOUT VANT TECHNOLOGIES</div>
