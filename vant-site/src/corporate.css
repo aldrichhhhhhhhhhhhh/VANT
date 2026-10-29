@@ -338,3 +338,29 @@
 @media(prefers-reduced-motion:reduce){
  .vt-mote-hero .vt-mote-kit-label,.vt-mote-hero .mote-data-left,.vt-mote-hero .mote-data-right,.vt-mote-render-wrap,.vt-mote-blink-overlay{animation:none!important}
 }
+
+
+/* MOTE homepage hero: original flat vector identity, not a rendered model */
+.vt-mote-hero{cursor:pointer;display:flex;align-items:center;justify-content:center;min-height:470px;animation:none;outline:none}
+.vt-mote-kit-label{position:absolute;top:4%;left:7%;font:9px 'DM Sans',sans-serif;letter-spacing:.16em;color:#9b9da4}
+.vt-mote-vector-stage{position:relative;width:min(100%,490px);aspect-ratio:1;display:grid;place-items:center;transform:translate(var(--mote-look-x,0px),var(--mote-look-y,0px));transition:transform .3s ease}
+.vt-mote-vector-aura{position:absolute;inset:16%;border-radius:50%;background:radial-gradient(circle,rgba(225,228,235,.11),rgba(215,184,117,.035) 45%,transparent 70%);filter:blur(8px);transition:opacity .4s,transform .6s}
+.vt-mote-vector-ring{position:absolute;border:1px dashed rgba(195,199,208,.27);border-radius:50%;pointer-events:none}
+.vt-mote-vector-ring-outer{inset:9%;animation:vt-mote-ring-spin 34s linear infinite}
+.vt-mote-vector-ring-inner{inset:18%;border-style:solid;border-color:rgba(195,199,208,.38);border-left-color:transparent;border-right-color:transparent;animation:vt-mote-ring-spin 19s linear infinite reverse}
+.vt-mote-vector{position:relative;width:75%;max-height:420px;overflow:visible;filter:drop-shadow(0 0 25px rgba(235,238,245,.04));transition:filter .35s}
+.vt-mote-vector-pupil{transform:translate(var(--mote-look-x,0px),var(--mote-look-y,0px));transition:transform .15s ease}
+.vt-mote-vector-glitch,.vt-mote-vector-scan{opacity:.22;transition:opacity .25s}
+.vt-mote-state-working .vt-mote-vector-ring-outer{border-color:rgba(230,232,237,.6);animation-duration:7s}
+.vt-mote-state-working .vt-mote-vector-ring-inner{animation-duration:5s}
+.vt-mote-state-working .vt-mote-vector-aura{opacity:1;transform:scale(1.1)}
+.vt-mote-state-working .vt-mote-vector-scan{opacity:.95}
+.vt-mote-state-error .vt-mote-vector{transform:translateX(4px);filter:drop-shadow(-7px 0 rgba(255,255,255,.25))}
+.vt-mote-state-error .vt-mote-vector-glitch,.vt-mote-state-error .vt-mote-vector-scan{opacity:1}
+.vt-mote-state-idle .vt-mote-vector-aura{opacity:.2}
+.vt-mote-state-idle .vt-mote-vector-ring-outer{animation-duration:60s;opacity:.5}
+.vt-mote-state-idle .vt-mote-vector-ring-inner{opacity:.35}
+@keyframes vt-mote-ring-spin{to{transform:rotate(360deg)}}
+@media(max-width:900px){.vt-mote-hero{min-height:390px}.vt-mote-vector-stage{width:min(100%,390px)}.vt-mote-kit-label{top:2%;left:2%}}
+@media(max-width:600px){.vt-mote-hero{min-height:320px;margin-top:12px}.vt-mote-vector-stage{width:min(100%,320px)}.vt-mote-kit-label{font-size:8px}.vt-mote-data{font-size:8px!important}}
+@media(prefers-reduced-motion:reduce){.vt-mote-vector-ring{animation:none!important}.vt-mote-vector-stage,.vt-mote-vector,.vt-mote-vector-aura{transition:none!important}}
