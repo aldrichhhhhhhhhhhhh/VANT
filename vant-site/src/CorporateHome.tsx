@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type PointerEvent } from "react";
 import LegalPages from "./LegalPages";
 import MoteProductPage from "./MoteProductPage";
 import "./corporate.css";
@@ -16,7 +16,7 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   const [moteStatus, setMoteStatus] = useState("MOTE IS AWARE");
-  const handleMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
+  const handleMotePointer = (event: PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
