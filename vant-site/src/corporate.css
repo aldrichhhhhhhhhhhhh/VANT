@@ -202,3 +202,25 @@
 .vt-chat-mote-link:hover{background:rgba(167,131,61,.08);border-color:#a7833d}
 .vt-mote-version .vt-live-dot{width:5px;height:5px}
 @media(max-width:760px){.vt-mote-version{font-size:8px;flex-wrap:wrap}.vt-hero-actions{gap:12px}.vt-chat-mote-link{padding:13px 14px}}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap');
+@keyframes mx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes mx-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes mx-spin{to{transform:rotate(360deg)}}
+@keyframes mx-spinr{to{transform:rotate(-360deg)}}
+@keyframes mx-dash{to{stroke-dashoffset:-14}}
+@keyframes mx-jitter{0%,100%{transform:translateX(0)}15%{transform:translateX(-6px)}30%{transform:translateX(5px)}45%{transform:translateX(0)}60%{transform:translateX(4px)}75%{transform:translateX(-3px)}}
+@keyframes mx-ghost{0%,100%{transform:translate(8px,-3px)}50%{transform:translate(15px,3px)}}
+@keyframes mx-flick{0%,90%,100%{opacity:1}92%{opacity:.2}94%{opacity:.95}96%{opacity:.1}98%{opacity:.8}}
+@keyframes mx-twitch{0%,88%,100%{transform:translateX(0)}91%{transform:translateX(4px)}94%{transform:translateX(-4px)}97%{transform:translateX(2px)}}
+.mx-fl{animation:mx-float 4s ease-in-out infinite}.mx-pu{animation:mx-pulse 3s ease-in-out infinite}.mx-sp{transform-box:fill-box;transform-origin:center;animation:mx-spin 14s linear infinite}.mx-spr{transform-box:fill-box;transform-origin:center;animation:mx-spinr 24s linear infinite}.mx-ds{animation:mx-dash 1.2s linear infinite}.mx-jt{animation:mx-jitter .9s steps(1,end) infinite}.mx-jt2{animation:mx-jitter 1.3s steps(1,end) infinite reverse}.mx-gh{animation:mx-ghost 3.4s ease-in-out infinite}.mx-fk{animation:mx-flick 4.5s linear infinite}.mx-tw{animation:mx-twitch 3.2s linear infinite}
+.vt-mote-hero{height:520px;max-width:690px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#050608;border:1px solid #23262d;border-radius:14px;filter:none;animation:none;position:relative}
+.vt-mote-kit-svg{width:min(88%,420px);height:88%;overflow:visible;z-index:1}
+.vt-mote-kit-label,.vt-mote-data{position:absolute;z-index:2;font:10px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#9ba1ab}
+.vt-mote-kit-label{top:22px;left:24px}
+.vt-mote-data{bottom:22px}.mote-data-left{left:24px}.mote-data-right{right:24px;text-align:right}
+.vt-mote-data b{color:#f4f5f7;font-weight:500}
+.vt-mote-caption{position:absolute;bottom:58px;left:24px;right:24px;display:flex;justify-content:center;align-items:center;gap:8px;font:9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#9ba1ab;z-index:2}
+.vt-mote-hero .vt-live-dot{background:#d6d9de;box-shadow:0 0 10px rgba(244,245,247,.3)}
+@media(max-width:760px){.vt-mote-hero{height:390px;margin-top:5px}.vt-mote-kit-svg{width:95%;height:85%}.vt-mote-kit-label{top:15px;left:15px;font-size:8px}.vt-mote-data{bottom:14px;font-size:8px}.mote-data-left{left:14px}.mote-data-right{right:14px}.vt-mote-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.mx-fl,.mx-pu,.mx-sp,.mx-spr,.mx-ds,.mx-jt,.mx-jt2,.mx-gh,.mx-fk,.mx-tw{animation:none}}
