@@ -428,3 +428,10 @@
  @keyframes vt-mote-channel-orbit{from{transform:rotate(0deg) translateX(135px)}to{transform:rotate(360deg) translateX(135px)}}
 }
 @media(prefers-reduced-motion:reduce){.vt-mote-orbit-node,.vt-mote-orbit-node-card{animation:none!important}}
+
+.vt-mote-orbit-node-cowork,.vt-mote-orbit-node-cowork .vt-mote-orbit-node-card{animation-delay:0s}
+.vt-mote-orbit-node-integrations,.vt-mote-orbit-node-integrations .vt-mote-orbit-node-card{animation-delay:-5.33s}
+.vt-mote-orbit-node-safety,.vt-mote-orbit-node-safety .vt-mote-orbit-node-card{animation-delay:-10.66s}
+.vt-mote-orbit-node-deadlines,.vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card{animation-delay:-15.99s}
+.vt-mote-orbit-node-memory,.vt-mote-orbit-node-memory .vt-mote-orbit-node-card{animation-delay:-21.32s}
+.vt-mote-orbit-node-monitoring,.vt-mote-orbit-node-monitoring .vt-mote-orbit-node-card{animation-delay:-26.65s}
