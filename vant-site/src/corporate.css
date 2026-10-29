@@ -237,3 +237,8 @@
 .vt-mote-caption{bottom:4%;font:9px 'DM Sans',sans-serif;color:#77786f}
 .vt-mote-hero .vt-live-dot{background:#a7833d;box-shadow:0 0 10px rgba(167,131,61,.28)}
 @media(max-width:760px){.vt-mote-hero{background:transparent!important;border:0!important;height:390px}.vt-mote-kit-svg{width:95%;height:84%}.vt-mote-kit-label{top:15%;left:0;font-size:7px}.vt-mote-data{bottom:13%;font-size:7px;padding:8px}.mote-data-left{left:0}.mote-data-right{right:0}.vt-mote-caption{display:flex;font-size:7px;bottom:2%}}
+
+/* Canonical MOTE.EXE rendered mascot asset */
+.vt-mote-kit-image{display:block;position:relative;z-index:1;width:min(88%,470px);height:92%;object-fit:contain;overflow:visible;filter:drop-shadow(0 24px 22px rgba(25,23,17,.24));animation:vt-mote-hover 6s ease-in-out infinite}
+@media(max-width:760px){.vt-mote-kit-image{width:96%;height:84%}}
+@media(prefers-reduced-motion:reduce){.vt-mote-kit-image{animation:none}}
