@@ -16,8 +16,6 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   const [moteMood, setMoteMood] = useState<"calm" | "working" | "error" | "idle">("calm");
-  const [moteStatus, setMoteStatus] = useState("MOTE IS AWARE");
-  const [moteMessage, setMoteMessage] = useState("M-01 / CALM / AWARE");
 
   useEffect(() => {
     const states: Array<"calm" | "working" | "idle"> = ["calm", "working", "calm", "idle"];
@@ -26,8 +24,6 @@ function WindowScene() {
       index = (index + 1) % states.length;
       const next = states[index];
       setMoteMood((current) => current === "error" ? current : next);
-      setMoteMessage(next === "working" ? "M-01 / PROCESSING" : next === "idle" ? "M-01 / IDLE" : "M-01 / CALM / AWARE");
-      setMoteStatus(next === "working" ? "PROCESSING REQUEST" : next === "idle" ? "STANDING BY" : "MOTE IS AWARE");
     }, 6500);
     return () => window.clearInterval(interval);
   }, []);
@@ -49,17 +45,16 @@ function WindowScene() {
   const activateMote = () => {
     setMoteMood((current) => {
       const next = current === "working" ? "calm" : "working";
-      setMoteStatus(next === "working" ? "PROCESSING REQUEST" : "MOTE IS AWARE");
-      setMoteMessage(next === "working" ? "M-01 / PROCESSING" : "M-01 / CALM / AWARE");
       return next;
     });
   };
 
   return (
     <div className={`vt-scene vt-mote-hero vt-mote-state-${moteMood}`} onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE vector mascot. Move your cursor to engage MOTE or click to toggle its working state.">
-      <div className="vt-mote-kit-label">{moteMessage}</div>
       <div className="vt-mote-vector-stage" aria-hidden="true">
         <div className="vt-mote-vector-aura" />
+        <div className="vt-mote-orbit-path vt-mote-orbit-path-one" />
+        <div className="vt-mote-orbit-path vt-mote-orbit-path-two" />
         <div className="vt-mote-vector-ring vt-mote-vector-ring-outer" />
         <div className="vt-mote-vector-ring vt-mote-vector-ring-inner" />
         <svg className="vt-mote-vector" viewBox="0 0 240 250">
@@ -79,9 +74,24 @@ function WindowScene() {
           </g>
         </svg>
       </div>
-      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot" /> {moteStatus}</div>
-      <div className="vt-mote-data mote-data-right"><span className="vt-live-dot" /> SIGNAL: <b>STABLE</b></div>
-      <div className="vt-mote-caption"><span className="vt-live-dot" /> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
+      <div className="vt-mote-orbit-channels" aria-label="MOTE responsibility channels">
+        {[
+          ["cowork", "COWORK", "Task execution"],
+          ["integrations", "INTEGRATIONS", "Connected tools"],
+          ["safety", "SAFETY", "Permission checks"],
+          ["deadlines", "DEADLINES", "Time & priorities"],
+          ["memory", "MEMORY", "Context continuity"],
+          ["monitoring", "MONITORING", "Status & follow-up"],
+        ].map(([id, label, detail], index) => (
+          <div key={id} className={`vt-mote-orbit-node vt-mote-orbit-node-${id}`} style={{ animationDelay: `-${index * 5.3}s` }}>
+            <div className="vt-mote-orbit-node-card">
+              <span className="vt-mote-orbit-node-dot" />
+              <span className="vt-mote-orbit-node-copy"><b>{label}</b><small>{detail}</small></span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="vt-mote-caption"><span className="vt-live-dot" /> MOTE.EXE <span>·</span> WORKFLOW RESPONSIBILITY CHANNELS</div>
     </div>
   );
 }
