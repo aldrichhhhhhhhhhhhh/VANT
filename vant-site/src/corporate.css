@@ -196,3 +196,9 @@
 @keyframes vt-mote-blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.12)}}
 @media(max-width:760px){.vt-mote-hero{height:390px;margin-top:5px}.vt-mote-core-wrap{width:220px}.vt-mote-data{font-size:7px;padding:9px}.mote-data-left{left:1%;top:17%}.mote-data-right{right:1%;bottom:17%}.vt-mote-caption{font-size:7px;letter-spacing:.1em}.vt-mote-orbit-one{width:94%}.vt-mote-orbit-two{width:85%}.vt-mote-orbit-three{width:76%}}
 @media(prefers-reduced-motion:reduce){.vt-mote-hero,.vt-mote-core-wrap,.vt-mote-orbit,.vt-mote-eyes span{animation:none}}
+
+.vt-mote-version{display:flex;align-items:center;gap:10px;margin-top:23px;font-size:9px;letter-spacing:.16em;color:#77786f}
+.vt-chat-mote-link{display:inline-flex;align-items:center;border:1px solid rgba(167,131,61,.42);padding:14px 17px;color:#25261f!important;transition:background .2s,border-color .2s}
+.vt-chat-mote-link:hover{background:rgba(167,131,61,.08);border-color:#a7833d}
+.vt-mote-version .vt-live-dot{width:5px;height:5px}
+@media(max-width:760px){.vt-mote-version{font-size:8px;flex-wrap:wrap}.vt-hero-actions{gap:12px}.vt-chat-mote-link{padding:13px 14px}}
