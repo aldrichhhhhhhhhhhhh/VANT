@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import "./mote3d.css";
 
 const MODEL_URL = "https://d8j0ntlcm91z4.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/hf_20261029_072844_640afb7f-22ff-4e37-aeac-2eb6de2a17ba.glb";
 const FALLBACK_IMAGE = "https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png";
