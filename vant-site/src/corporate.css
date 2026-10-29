@@ -370,3 +370,20 @@
 .vt-mote-vector-eye{transform-origin:120px 137px;transition:transform .2s ease}
 .vt-mote-state-working .vt-mote-vector-eye{transform:translateY(2px) scaleY(.92)}
 .vt-mote-state-idle .vt-mote-vector-eye{transform:translateY(5px) scaleY(.72)}
+
+/* MOTE hero polish pass: let the character lead, keep the interface quiet */
+.vt-mote-vector-stage{width:min(100%,455px)}
+.vt-mote-vector-ring-outer{inset:12%;border-color:rgba(195,199,208,.19);animation-duration:46s}
+.vt-mote-vector-ring-inner{inset:21%;border-color:rgba(195,199,208,.24);border-left-color:transparent;border-right-color:transparent;animation-duration:27s}
+.vt-mote-vector-aura{inset:20%;background:radial-gradient(circle,rgba(225,228,235,.085),rgba(215,184,117,.025) 48%,transparent 72%);filter:blur(5px)}
+.vt-mote-vector{width:70%;filter:drop-shadow(0 12px 22px rgba(0,0,0,.08))}
+.vt-mote-vector-pupil{pointer-events:none}
+.vt-mote-kit-label,.vt-mote-data{background:rgba(250,249,245,.72);backdrop-filter:blur(8px);padding:10px 13px;border:1px solid rgba(174,145,86,.13);color:#8d8c87}
+.vt-mote-kit-label{top:8%;left:3%}
+.vt-mote-data.mote-data-left{left:2%;top:37%}
+.vt-mote-data.mote-data-right{right:2%;bottom:12%}
+.vt-mote-caption{letter-spacing:.13em}
+.vt-mote-state-working .vt-mote-vector-ring-outer{animation-duration:12s}
+.vt-mote-state-working .vt-mote-vector-ring-inner{animation-duration:8s}
+@media(max-width:900px){.vt-mote-vector-stage{width:min(100%,390px)}.vt-mote-kit-label{top:3%;left:2%}}
+@media(max-width:600px){.vt-mote-vector-stage{width:min(100%,320px)}.vt-mote-data.mote-data-left{top:23%;left:0}.vt-mote-data.mote-data-right{right:0;bottom:15%}}
