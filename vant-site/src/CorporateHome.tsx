@@ -15,35 +15,60 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 function WindowScene() {
+  const [moteMood, setMoteMood] = useState<"idle" | "curious" | "attentive" | "friendly">("idle");
   const [moteStatus, setMoteStatus] = useState("MOTE IS AWARE");
-  const [moteAcknowledged, setMoteAcknowledged] = useState(false);
+  const [moteMessage, setMoteMessage] = useState("M-01 / IDLE / AWARE");
+
+  useEffect(() => {
+    const moods: Array<"idle" | "curious" | "friendly"> = ["idle", "curious", "idle", "friendly"];
+    let index = 0;
+    const interval = window.setInterval(() => {
+      index = (index + 1) % moods.length;
+      setMoteMood((current) => current === "attentive" ? current : moods[index]);
+      setMoteMessage(moods[index] === "curious" ? "M-01 / CURIOUS" : moods[index] === "friendly" ? "M-01 / FRIENDLY" : "M-01 / IDLE / AWARE");
+      setMoteStatus(moods[index] === "curious" ? "SCANNING ENVIRONMENT" : moods[index] === "friendly" ? "READY TO HELP" : "MOTE IS AWARE");
+    }, 6200);
+    return () => window.clearInterval(interval);
+  }, []);
+
   const handleMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
     const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    event.currentTarget.style.setProperty("--mote-look-x", `${x * 7}px`);
-    event.currentTarget.style.setProperty("--mote-look-y", `${y * 5}px`);
-    if (!moteAcknowledged) setMoteStatus("TRACKING INPUT");
+    const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2));
+    const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2));
+    event.currentTarget.style.setProperty("--mote-look-x", `${x * 11}px`);
+    event.currentTarget.style.setProperty("--mote-look-y", `${y * 7}px`);
+    setMoteMood("attentive");
+    setMoteStatus("TRACKING YOUR MOVEMENT");
+    setMoteMessage("M-01 / ATTENTIVE");
   };
+
   const resetMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
     event.currentTarget.style.setProperty("--mote-look-x", "0px");
     event.currentTarget.style.setProperty("--mote-look-y", "0px");
-    if (!moteAcknowledged) setMoteStatus("MOTE IS AWARE");
+    setMoteMood("idle");
+    setMoteStatus("MOTE IS AWARE");
+    setMoteMessage("M-01 / IDLE / AWARE");
   };
+
   const activateMote = () => {
-    setMoteAcknowledged((current) => {
-      const next = !current;
-      setMoteStatus(next ? "HELLO. I'M MOTE." : "MOTE IS AWARE");
+    setMoteMood((current) => {
+      const next = current === "friendly" ? "curious" : "friendly";
+      setMoteStatus(next === "friendly" ? "HELLO. I'M MOTE." : "WHAT ARE WE EXPLORING?");
+      setMoteMessage(next === "friendly" ? "M-01 / FRIENDLY" : "M-01 / CURIOUS");
       return next;
     });
   };
+
   return (
-    <div className="vt-scene vt-mote-hero" onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE mascot. Move your pointer to wake Mote, or click to interact.">
-      <div className="vt-mote-kit-label">M-01 / {moteAcknowledged ? "RESPONDING" : "CALM / AWARE"}</div>
-      <img className="vt-mote-kit-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png" alt="MOTE.EXE — glossy black armored robotic mascot with angular ears and a sharp white visor" />
+    <div className={`vt-scene vt-mote-hero vt-mote-mood-${moteMood}`} onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE mascot. Mote blinks, tracks your cursor, changes moods, and responds when clicked.">
+      <div className="vt-mote-kit-label">{moteMessage}</div>
+      <div className="vt-mote-render-wrap">
+        <img className="vt-mote-kit-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png" alt="MOTE.EXE — glossy black armored robotic mascot with angular ears and a sharp white visor" />
+        <span className="vt-mote-blink-overlay" aria-hidden="true" />
+      </div>
       <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> {moteStatus}</div>
-      <div className="vt-mote-data mote-data-right">SIGNAL: <b>STABLE</b></div>
+      <div className="vt-mote-data mote-data-right"><span className="vt-live-dot"/> SIGNAL: <b>STABLE</b></div>
       <div className="vt-mote-caption"><span className="vt-live-dot"/> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
     </div>
   );
