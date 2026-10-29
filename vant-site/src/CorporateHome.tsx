@@ -16,23 +16,31 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function WindowScene() {
   const [moteStatus, setMoteStatus] = useState("MOTE IS AWARE");
-  const handleMotePointer = (event: PointerEvent<HTMLDivElement>) => {
+  const [moteAcknowledged, setMoteAcknowledged] = useState(false);
+  const handleMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
     event.currentTarget.style.setProperty("--mote-look-x", `${x * 7}px`);
     event.currentTarget.style.setProperty("--mote-look-y", `${y * 5}px`);
-    setMoteStatus("TRACKING INPUT");
+    if (!moteAcknowledged) setMoteStatus("TRACKING INPUT");
   };
   const resetMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
     event.currentTarget.style.setProperty("--mote-look-x", "0px");
     event.currentTarget.style.setProperty("--mote-look-y", "0px");
-    setMoteStatus("MOTE IS AWARE");
+    if (!moteAcknowledged) setMoteStatus("MOTE IS AWARE");
+  };
+  const activateMote = () => {
+    setMoteAcknowledged((current) => {
+      const next = !current;
+      setMoteStatus(next ? "HELLO. I'M MOTE." : "MOTE IS AWARE");
+      return next;
+    });
   };
   return (
-    <div className="vt-scene vt-mote-hero" onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} aria-label="Interactive MOTE.EXE mascot. Move your pointer to wake the guardian.">
-      <div className="vt-mote-kit-label">M-01 / CALM / AWARE</div>
+    <div className="vt-scene vt-mote-hero" onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE mascot. Move your pointer to wake Mote, or click to interact.">
+      <div className="vt-mote-kit-label">M-01 / {moteAcknowledged ? "RESPONDING" : "CALM / AWARE"}</div>
       <img className="vt-mote-kit-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png" alt="MOTE.EXE — glossy black armored robotic mascot with angular ears and a sharp white visor" />
       <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> {moteStatus}</div>
       <div className="vt-mote-data mote-data-right">SIGNAL: <b>STABLE</b></div>
