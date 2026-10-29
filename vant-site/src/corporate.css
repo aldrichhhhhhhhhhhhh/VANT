@@ -265,3 +265,42 @@
 .vt-mote-hero:hover .vt-mote-data{box-shadow:0 8px 26px rgba(167,131,61,.08);border-color:rgba(167,131,61,.65)}
 @media(max-width:760px){.vt-mote-hero .vt-mote-data{max-width:132px!important;padding:8px 9px!important;font-size:7px!important}.vt-mote-hero .mote-data-left{left:0!important;top:17%!important}.vt-mote-hero .mote-data-right{right:0!important;bottom:15%!important}}
 @media(prefers-reduced-motion:reduce){.vt-mote-hero .vt-mote-kit-image{transition:none}}
+
+/* Final layout guard: status cards must hug their content, never stretch to the scene height. */
+.vt-mote-hero .vt-mote-kit-label,
+.vt-mote-hero .vt-mote-data{
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
+  position:absolute!important;
+  box-sizing:border-box!important;
+  width:fit-content!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-height:none!important;
+  flex:0 0 auto!important;
+  align-self:auto!important;
+  line-height:1.45!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  padding:11px 13px!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  border-radius:0!important;
+}
+.vt-mote-hero .vt-mote-kit-label{top:23%!important;left:2%!important;right:auto!important;bottom:auto!important}
+.vt-mote-hero .mote-data-left{top:28%!important;left:2%!important;right:auto!important;bottom:auto!important}
+.vt-mote-hero .mote-data-right{top:auto!important;left:auto!important;right:2%!important;bottom:16%!important;text-align:right!important;align-items:center!important}
+.vt-mote-hero .vt-mote-data b{display:inline!important;margin:0!important}
+.vt-mote-hero[role="button"]{outline:none}
+.vt-mote-hero[role="button"]:focus-visible{outline:2px solid rgba(167,131,61,.65);outline-offset:4px}
+.vt-mote-hero .vt-mote-kit-image{pointer-events:none}
+@media(max-width:760px){
+  .vt-mote-hero .vt-mote-kit-label{top:15%!important;left:0!important;font-size:7px!important;padding:8px 9px!important}
+  .vt-mote-hero .vt-mote-data{font-size:7px!important;padding:8px 9px!important;gap:6px!important}
+  .vt-mote-hero .mote-data-left{left:0!important;top:22%!important}
+  .vt-mote-hero .mote-data-right{right:0!important;bottom:15%!important}
+}
