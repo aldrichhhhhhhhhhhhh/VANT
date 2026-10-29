@@ -527,3 +527,26 @@
 }
 .vt-mote-hero .vt-mote-caption .vt-live-dot,
 .vt-mote-hero .vt-mote-caption span{position:relative;z-index:1}
+
+
+/* Give the MOTE workflow caption its own calm, opaque backing so orbiting chips never obscure it. */
+.vt-mote-hero .vt-mote-caption{
+  z-index:12!important;
+  padding:10px 16px;
+  width:max-content;
+  max-width:calc(100% - 32px);
+  margin-inline:auto;
+  left:50%!important;
+  right:auto!important;
+  transform:translateX(-50%);
+  background:rgba(250,249,245,.96);
+  border:1px solid rgba(177,138,66,.24);
+  border-radius:2px;
+  box-shadow:0 6px 18px rgba(25,22,15,.10),0 1px 3px rgba(25,22,15,.06);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  text-shadow:none;
+}
+@media(max-width:600px){
+  .vt-mote-hero .vt-mote-caption{padding:7px 9px;max-width:calc(100% - 18px)}
+}
