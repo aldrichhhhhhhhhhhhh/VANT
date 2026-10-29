@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/mote-exe",
+      "destination": "/"
+    },
+    {
+      "source": "/mote-exe/:path*",
+      "destination": "/"
+    },
+    {
       "source": "/privacy",
       "destination": "/"
     },
