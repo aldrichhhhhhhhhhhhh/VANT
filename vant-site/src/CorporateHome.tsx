@@ -1,5 +1,6 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type PointerEvent } from "react";
 import LegalPages from "./LegalPages";
+import MoteProductPage from "./MoteProductPage";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
@@ -14,20 +15,61 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 function WindowScene() {
+  const [moteMood, setMoteMood] = useState<"idle" | "curious" | "attentive" | "friendly">("idle");
+  const [moteStatus, setMoteStatus] = useState("MOTE IS AWARE");
+  const [moteMessage, setMoteMessage] = useState("M-01 / IDLE / AWARE");
+
+  useEffect(() => {
+    const moods: Array<"idle" | "curious" | "friendly"> = ["idle", "curious", "idle", "friendly"];
+    let index = 0;
+    const interval = window.setInterval(() => {
+      index = (index + 1) % moods.length;
+      setMoteMood((current) => current === "attentive" ? current : moods[index]);
+      setMoteMessage(moods[index] === "curious" ? "M-01 / CURIOUS" : moods[index] === "friendly" ? "M-01 / FRIENDLY" : "M-01 / IDLE / AWARE");
+      setMoteStatus(moods[index] === "curious" ? "SCANNING ENVIRONMENT" : moods[index] === "friendly" ? "READY TO HELP" : "MOTE IS AWARE");
+    }, 6200);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const handleMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - 0.5) * 2));
+    const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - 0.5) * 2));
+    event.currentTarget.style.setProperty("--mote-look-x", `${x * 11}px`);
+    event.currentTarget.style.setProperty("--mote-look-y", `${y * 7}px`);
+    setMoteMood("attentive");
+    setMoteStatus("TRACKING YOUR MOVEMENT");
+    setMoteMessage("M-01 / ATTENTIVE");
+  };
+
+  const resetMotePointer = (event: React.PointerEvent<HTMLDivElement>) => {
+    event.currentTarget.style.setProperty("--mote-look-x", "0px");
+    event.currentTarget.style.setProperty("--mote-look-y", "0px");
+    setMoteMood("idle");
+    setMoteStatus("MOTE IS AWARE");
+    setMoteMessage("M-01 / IDLE / AWARE");
+  };
+
+  const activateMote = () => {
+    setMoteMood((current) => {
+      const next = current === "friendly" ? "curious" : "friendly";
+      setMoteStatus(next === "friendly" ? "HELLO. I'M MOTE." : "WHAT ARE WE EXPLORING?");
+      setMoteMessage(next === "friendly" ? "M-01 / FRIENDLY" : "M-01 / CURIOUS");
+      return next;
+    });
+  };
+
   return (
-    <div className="vt-scene vt-intelligence-scene" aria-label="Abstract gold and white intelligence streams forming a subtle V-shaped diamond around a secondary human silhouette">
-      <div className="vt-motion-halo halo-a" /><div className="vt-motion-halo halo-b" />
-      <div className="vt-geometry-plane plane-a" /><div className="vt-geometry-plane plane-b" /><div className="vt-geometry-plane plane-c" />
-      <div className="vt-v-stream stream-left"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
-      <div className="vt-v-stream stream-right"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
-      <div className="vt-diamond-orbit orbit-outer" /><div className="vt-diamond-orbit orbit-inner" />
-      <div className="vt-human-signal"><div className="signal-head"/><div className="signal-neck"/><div className="signal-shoulder"/><div className="signal-torso"/><div className="signal-arm signal-arm-left"/><div className="signal-arm signal-arm-right"/><div className="signal-pixel pixel-a"/><div className="signal-pixel pixel-b"/><div className="signal-pixel pixel-c"/><div className="signal-pixel pixel-d"/><div className="signal-pixel pixel-e"/><div className="signal-pixel pixel-f"/></div>
-      <div className="vt-network-node node-a"/><div className="vt-network-node node-b"/><div className="vt-network-node node-c"/><div className="vt-network-node node-d"/><div className="vt-network-node node-e"/><div className="vt-network-node node-f"/>
-      <div className="vt-signal-line line-a"/><div className="vt-signal-line line-b"/><div className="vt-signal-line line-c"/><div className="vt-signal-line line-d"/>
-      <div className="vt-fragment fragment-one"><span>INTENT DETECTED</span><i/><i/><i/></div>
-      <div className="vt-fragment fragment-two"><span>PATHWAY FOUND</span><b>↗</b><small>Signal aligned</small></div>
-      <div className="vt-fragment fragment-three"><span className="vt-live-dot"/> SYSTEMS IN MOTION</div>
-      <div className="vt-scene-caption"><span className="vt-live-dot" /> INTELLIGENCE, CONNECTED <span>·</span> POSSIBILITY, IN MOTION</div>
+    <div className={`vt-scene vt-mote-hero vt-mote-mood-${moteMood}`} onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE mascot. Mote blinks, tracks your cursor, changes moods, and responds when clicked.">
+      <div className="vt-mote-kit-label">{moteMessage}</div>
+      <div className="vt-mote-render-wrap">
+        <img className="vt-mote-kit-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png" alt="MOTE.EXE — glossy black armored robotic mascot with angular ears and a sharp white visor" />
+        <span className="vt-mote-blink-overlay" aria-hidden="true" />
+      </div>
+      <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> {moteStatus}</div>
+      <div className="vt-mote-data mote-data-right"><span className="vt-live-dot"/> SIGNAL: <b>STABLE</b></div>
+      <div className="vt-mote-caption"><span className="vt-live-dot"/> MOTE.EXE <span>·</span> YOUR WATCHFUL AI COMPANION</div>
     </div>
   );
 }
@@ -87,15 +129,17 @@ function CorporateHomeView() {
     <main id="top">
       <section className="vt-hero">
         <div className="vt-hero-copy">
-          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> INDEPENDENT TECHNOLOGY. CONNECTED POSSIBILITY.</div>
-          <h1>Intelligence<br />in <span>motion.</span></h1>
-          <p className="vt-hero-lede">We build technology that helps people work smarter, learn further, and move ideas into action.</p>
-          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#about">Discover VANT <Arrow diagonal /></a></div>
-          <div className="vt-hero-foot"><span className="vt-live-dot" /> A growing ecosystem of applications and intelligence</div>
+          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> OUR NEWEST INTELLIGENCE</div>
+          <h1>Mote<span>.exe</span></h1>
+          <p className="vt-hero-lede">Your personal AI Guardian — quietly watchful, ready to help, and built to bring intelligence wherever your work takes you.</p>
+          <div className="vt-mote-version">VERSION 1.0 <span className="vt-live-dot" /> INTRODUCING MOTE.EXE</div>
+          <div className="vt-hero-actions"><a className="vt-button-primary" href="/mote-exe">Read More <Arrow /></a><a className="vt-text-link vt-chat-mote-link" href="/mote-exe#interactive">Chat with Mote <Arrow diagonal /></a></div>
+          <div className="vt-hero-foot"><span className="vt-live-dot" /> A VANT Technologies intelligence companion</div>
         </div>
         <WindowScene />
         <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
       </section>
+
 
       <section id="about" className="vt-about vt-section">
         <div className="vt-section-kicker vt-reveal"><span>01</span> / ABOUT VANT TECHNOLOGIES</div>
@@ -133,6 +177,7 @@ function CorporateHomeView() {
 
 export default function CorporateHome() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  if (path === "/mote-exe" || path === "/mote") return <MoteProductPage />;
   if (path === "/privacy" || path === "/privacy-policy") return <LegalPages page="privacy" />;
   if (path === "/terms" || path === "/terms-of-service") return <LegalPages page="terms" />;
   return <CorporateHomeView />;

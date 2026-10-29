@@ -170,3 +170,171 @@
 @media(prefers-reduced-motion:reduce){
   .vt-site *{scroll-behavior:auto}
 }
+
+/* MOTE.EXE hero figure */
+.vt-mote-hero{height:520px;max-width:690px;display:grid;place-items:center;overflow:hidden;filter:none;animation:vt-scene-float 9s ease-in-out infinite}
+.vt-mote-grid{position:absolute;inset:5% 0 9%;background-image:linear-gradient(rgba(167,131,61,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(167,131,61,.09) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse at center,#000 0%,transparent 72%);opacity:.65}
+.vt-mote-core-wrap{position:absolute;width:clamp(220px,29vw,330px);aspect-ratio:1;display:grid;place-items:center;z-index:3;animation:vt-mote-hover 6s ease-in-out infinite}
+.vt-mote-aura{position:absolute;inset:-16%;border-radius:50%;background:radial-gradient(circle,rgba(167,131,61,.24),rgba(167,131,61,.06) 42%,transparent 70%);filter:blur(13px)}
+.vt-mote-core{position:relative;width:100%;height:100%;border-radius:48% 52% 50% 50%;background:radial-gradient(circle at 34% 23%,#34342f 0%,#191a17 23%,#090a09 55%,#020302 78%);border:1px solid rgba(215,184,117,.36);box-shadow:inset -22px -25px 45px rgba(0,0,0,.95),inset 12px 12px 25px rgba(255,255,255,.035),0 0 0 1px rgba(167,131,61,.09),0 24px 75px rgba(0,0,0,.22),0 0 75px rgba(167,131,61,.16);transform:rotate(-7deg)}
+.vt-mote-glint{position:absolute;top:10%;left:17%;width:35%;height:22%;border-radius:50%;background:linear-gradient(145deg,rgba(255,255,255,.11),transparent 70%);filter:blur(7px);transform:rotate(-32deg)}
+.vt-mote-eyes{position:absolute;top:42%;left:27%;right:27%;display:flex;justify-content:space-between;align-items:center}
+.vt-mote-eyes span{display:block;width:clamp(25px,3.2vw,39px);height:clamp(7px,1vw,11px);border-radius:100%;background:#d8b66e;box-shadow:0 0 9px rgba(231,192,104,.95),0 0 24px rgba(215,184,117,.72);transform:rotate(-8deg);animation:vt-mote-blink 7s infinite}
+.vt-mote-eyes span+span{transform:rotate(8deg)}
+.vt-mote-mouth{position:absolute;left:47%;top:57%;width:6%;height:2px;background:rgba(215,184,117,.45);border-radius:50%;opacity:.6}
+.vt-mote-orbit{position:absolute;z-index:1;left:50%;top:50%;border:1px solid rgba(167,131,61,.34);border-radius:50%;transform:translate(-50%,-50%) rotate(-24deg);pointer-events:none}
+.vt-mote-orbit-one{width:76%;height:33%;animation:vt-mote-orbit 18s linear infinite}
+.vt-mote-orbit-two{width:68%;height:46%;transform:translate(-50%,-50%) rotate(48deg);border-color:rgba(167,131,61,.24);animation:vt-mote-orbit 24s linear infinite reverse}
+.vt-mote-orbit-three{width:58%;height:60%;transform:translate(-50%,-50%) rotate(75deg);border-style:dashed;border-color:rgba(167,131,61,.17);animation:vt-mote-orbit 32s linear infinite}
+.vt-mote-data{position:absolute;z-index:4;display:flex;flex-direction:column;gap:7px;font-size:8px;letter-spacing:.15em;color:#77786f;padding:12px 14px;border-left:1px solid rgba(167,131,61,.42);background:rgba(248,247,243,.68);backdrop-filter:blur(8px)}
+.vt-mote-data b{font-weight:600;color:#3c3d35;font-size:9px}
+.vt-mote-data i{display:block;width:55px;height:2px;background:linear-gradient(90deg,#a7833d,transparent);margin-top:3px}
+.mote-data-left{left:0;top:24%}.mote-data-right{right:0;bottom:24%;text-align:right;border-left:0;border-right:1px solid rgba(167,131,61,.42);align-items:flex-end}
+.vt-mote-caption{position:absolute;bottom:5%;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:9px;font-size:9px;letter-spacing:.17em;color:#77786f}
+@keyframes vt-mote-hover{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-11px) rotate(2deg)}}
+@keyframes vt-mote-orbit{from{rotate:0deg}to{rotate:360deg}}
+@keyframes vt-mote-blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.12)}}
+@media(max-width:760px){.vt-mote-hero{height:390px;margin-top:5px}.vt-mote-core-wrap{width:220px}.vt-mote-data{font-size:7px;padding:9px}.mote-data-left{left:1%;top:17%}.mote-data-right{right:1%;bottom:17%}.vt-mote-caption{font-size:7px;letter-spacing:.1em}.vt-mote-orbit-one{width:94%}.vt-mote-orbit-two{width:85%}.vt-mote-orbit-three{width:76%}}
+@media(prefers-reduced-motion:reduce){.vt-mote-hero,.vt-mote-core-wrap,.vt-mote-orbit,.vt-mote-eyes span{animation:none}}
+
+.vt-mote-version{display:flex;align-items:center;gap:10px;margin-top:23px;font-size:9px;letter-spacing:.16em;color:#77786f}
+.vt-chat-mote-link{display:inline-flex;align-items:center;border:1px solid rgba(167,131,61,.42);padding:14px 17px;color:#25261f!important;transition:background .2s,border-color .2s}
+.vt-chat-mote-link:hover{background:rgba(167,131,61,.08);border-color:#a7833d}
+.vt-mote-version .vt-live-dot{width:5px;height:5px}
+@media(max-width:760px){.vt-mote-version{font-size:8px;flex-wrap:wrap}.vt-hero-actions{gap:12px}.vt-chat-mote-link{padding:13px 14px}}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap');
+@keyframes mx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes mx-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes mx-spin{to{transform:rotate(360deg)}}
+@keyframes mx-spinr{to{transform:rotate(-360deg)}}
+@keyframes mx-dash{to{stroke-dashoffset:-14}}
+@keyframes mx-jitter{0%,100%{transform:translateX(0)}15%{transform:translateX(-6px)}30%{transform:translateX(5px)}45%{transform:translateX(0)}60%{transform:translateX(4px)}75%{transform:translateX(-3px)}}
+@keyframes mx-ghost{0%,100%{transform:translate(8px,-3px)}50%{transform:translate(15px,3px)}}
+@keyframes mx-flick{0%,90%,100%{opacity:1}92%{opacity:.2}94%{opacity:.95}96%{opacity:.1}98%{opacity:.8}}
+@keyframes mx-twitch{0%,88%,100%{transform:translateX(0)}91%{transform:translateX(4px)}94%{transform:translateX(-4px)}97%{transform:translateX(2px)}}
+.mx-fl{animation:mx-float 4s ease-in-out infinite}.mx-pu{animation:mx-pulse 3s ease-in-out infinite}.mx-sp{transform-box:fill-box;transform-origin:center;animation:mx-spin 14s linear infinite}.mx-spr{transform-box:fill-box;transform-origin:center;animation:mx-spinr 24s linear infinite}.mx-ds{animation:mx-dash 1.2s linear infinite}.mx-jt{animation:mx-jitter .9s steps(1,end) infinite}.mx-jt2{animation:mx-jitter 1.3s steps(1,end) infinite reverse}.mx-gh{animation:mx-ghost 3.4s ease-in-out infinite}.mx-fk{animation:mx-flick 4.5s linear infinite}.mx-tw{animation:mx-twitch 3.2s linear infinite}
+.vt-mote-hero{height:520px;max-width:690px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#050608;border:1px solid #23262d;border-radius:14px;filter:none;animation:none;position:relative}
+.vt-mote-kit-svg{width:min(88%,420px);height:88%;overflow:visible;z-index:1}
+.vt-mote-kit-label,.vt-mote-data{position:absolute;z-index:2;font:10px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#9ba1ab}
+.vt-mote-kit-label{top:22px;left:24px}
+.vt-mote-data{bottom:22px}.mote-data-left{left:24px}.mote-data-right{right:24px;text-align:right}
+.vt-mote-data b{color:#f4f5f7;font-weight:500}
+.vt-mote-caption{position:absolute;bottom:58px;left:24px;right:24px;display:flex;justify-content:center;align-items:center;gap:8px;font:9px 'JetBrains Mono',monospace;letter-spacing:.12em;color:#9ba1ab;z-index:2}
+.vt-mote-hero .vt-live-dot{background:#d6d9de;box-shadow:0 0 10px rgba(244,245,247,.3)}
+@media(max-width:760px){.vt-mote-hero{height:390px;margin-top:5px}.vt-mote-kit-svg{width:95%;height:85%}.vt-mote-kit-label{top:15px;left:15px;font-size:8px}.vt-mote-data{bottom:14px;font-size:8px}.mote-data-left{left:14px}.mote-data-right{right:14px}.vt-mote-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.mx-fl,.mx-pu,.mx-sp,.mx-spr,.mx-ds,.mx-jt,.mx-jt2,.mx-gh,.mx-fk,.mx-tw{animation:none}}
+
+/* Hero integration: preserve the original ivory scene; replace only the mascot figure. */
+.vt-mote-hero{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden;isolation:isolate}
+.vt-mote-hero::before{content:"";position:absolute;inset:4% 0 7%;z-index:-2;background-image:linear-gradient(rgba(167,131,61,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(167,131,61,.075) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse at center,#000 0%,transparent 75%)}
+.vt-mote-hero::after{content:"";position:absolute;width:65%;height:68%;left:17%;top:10%;z-index:-1;border:1px solid rgba(167,131,61,.22);border-radius:50%;transform:rotate(-25deg);box-shadow:0 0 0 26px rgba(0,0,0,0),0 0 0 27px rgba(167,131,61,.09)}
+.vt-mote-kit-svg{width:min(88%,440px);height:92%;overflow:visible;z-index:1;filter:drop-shadow(0 24px 22px rgba(25,23,17,.24));animation:vt-mote-hover 6s ease-in-out infinite}
+.vt-mote-kit-label,.vt-mote-data{color:#77786f}
+.vt-mote-kit-label{top:23%;left:2%;padding:12px 14px;background:rgba(248,247,243,.82);border-left:1px solid rgba(167,131,61,.45);font:9px 'DM Sans',sans-serif;letter-spacing:.14em}
+.vt-mote-data{background:rgba(248,247,243,.82);padding:12px 14px;border-right:1px solid rgba(167,131,61,.42);font:9px 'DM Sans',sans-serif}
+.vt-mote-data b{color:#3c3d35}
+.vt-mote-caption{bottom:4%;font:9px 'DM Sans',sans-serif;color:#77786f}
+.vt-mote-hero .vt-live-dot{background:#a7833d;box-shadow:0 0 10px rgba(167,131,61,.28)}
+@media(max-width:760px){.vt-mote-hero{background:transparent!important;border:0!important;height:390px}.vt-mote-kit-svg{width:95%;height:84%}.vt-mote-kit-label{top:15%;left:0;font-size:7px}.vt-mote-data{bottom:13%;font-size:7px;padding:8px}.mote-data-left{left:0}.mote-data-right{right:0}.vt-mote-caption{display:flex;font-size:7px;bottom:2%}}
+
+/* Canonical MOTE.EXE rendered mascot asset */
+.vt-mote-kit-image{display:block;position:relative;z-index:1;width:min(88%,470px);height:92%;object-fit:contain;overflow:visible;filter:drop-shadow(0 24px 22px rgba(25,23,17,.24));animation:vt-mote-hover 6s ease-in-out infinite}
+@media(max-width:760px){.vt-mote-kit-image{width:96%;height:84%}}
+@media(prefers-reduced-motion:reduce){.vt-mote-kit-image{animation:none}}
+
+/* Dedicated MOTE.EXE product page shell */
+.vt-mote-product-page{min-height:100vh;background:#050607;color:#f4f5f7}
+.vt-mote-product-page .vt-header{position:relative;top:auto;background:#050607;border-bottom:1px solid rgba(255,255,255,.1)}
+.vt-mote-product-page .vt-header .vt-nav a{color:#d9dce2}
+.vt-mote-product-page .vt-header .vt-brand{color:#f4f5f7}
+.vt-mote-product-page .mote-section{scroll-margin-top:24px}
+.vt-mote-product-page .vt-footer{background:#050607;color:#aeb3bd;border-top:1px solid rgba(255,255,255,.1)}
+.vt-mote-product-page .vt-footer .vt-brand{color:#f4f5f7}
+@media(max-width:760px){.vt-mote-product-page .vt-header{padding-top:16px;padding-bottom:16px}.vt-mote-product-page .vt-header .vt-nav{display:flex;gap:16px}}
+
+/* Keep hero status panels compact; prevent grid/flex stretching. */
+.vt-mote-hero .vt-mote-data{box-sizing:border-box!important;width:max-content!important;max-width:175px!important;height:fit-content!important;min-height:0!important;max-height:82px!important;flex:0 0 auto!important;align-self:flex-start!important;line-height:1.45!important;white-space:nowrap!important;overflow:hidden!important;padding:12px 14px!important}
+.vt-mote-hero .mote-data-left{left:2%!important;top:28%!important;right:auto!important;bottom:auto!important}
+.vt-mote-hero .mote-data-right{right:2%!important;left:auto!important;top:auto!important;bottom:16%!important;align-items:flex-end!important}
+.vt-mote-hero .vt-mote-kit-label{box-sizing:border-box;width:max-content;max-width:190px;height:fit-content;min-height:0;line-height:1.4;padding:10px 13px}
+.vt-mote-hero .vt-mote-kit-image{transform:translate(var(--mote-look-x,0px),var(--mote-look-y,0px));transition:transform .18s ease-out;will-change:transform}
+.vt-mote-hero .vt-mote-caption{height:auto;min-height:0;white-space:nowrap;pointer-events:none}
+.vt-mote-hero{cursor:crosshair}
+.vt-mote-hero .vt-mote-data{transition:box-shadow .2s,border-color .2s}
+.vt-mote-hero:hover .vt-mote-data{box-shadow:0 8px 26px rgba(167,131,61,.08);border-color:rgba(167,131,61,.65)}
+@media(max-width:760px){.vt-mote-hero .vt-mote-data{max-width:132px!important;padding:8px 9px!important;font-size:7px!important}.vt-mote-hero .mote-data-left{left:0!important;top:17%!important}.vt-mote-hero .mote-data-right{right:0!important;bottom:15%!important}}
+@media(prefers-reduced-motion:reduce){.vt-mote-hero .vt-mote-kit-image{transition:none}}
+
+/* Final layout guard: status cards must hug their content, never stretch to the scene height. */
+.vt-mote-hero .vt-mote-kit-label,
+.vt-mote-hero .vt-mote-data{
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
+  position:absolute!important;
+  box-sizing:border-box!important;
+  width:fit-content!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-height:none!important;
+  flex:0 0 auto!important;
+  align-self:auto!important;
+  line-height:1.45!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  padding:11px 13px!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  border-radius:0!important;
+}
+.vt-mote-hero .vt-mote-kit-label{top:23%!important;left:2%!important;right:auto!important;bottom:auto!important}
+.vt-mote-hero .mote-data-left{top:28%!important;left:2%!important;right:auto!important;bottom:auto!important}
+.vt-mote-hero .mote-data-right{top:auto!important;left:auto!important;right:2%!important;bottom:16%!important;text-align:right!important;align-items:center!important}
+.vt-mote-hero .vt-mote-data b{display:inline!important;margin:0!important}
+.vt-mote-hero[role="button"]{outline:none}
+.vt-mote-hero[role="button"]:focus-visible{outline:2px solid rgba(167,131,61,.65);outline-offset:4px}
+.vt-mote-hero .vt-mote-kit-image{pointer-events:none}
+@media(max-width:760px){
+  .vt-mote-hero .vt-mote-kit-label{top:15%!important;left:0!important;font-size:7px!important;padding:8px 9px!important}
+  .vt-mote-hero .vt-mote-data{font-size:7px!important;padding:8px 9px!important;gap:6px!important}
+  .vt-mote-hero .mote-data-left{left:0!important;top:22%!important}
+  .vt-mote-hero .mote-data-right{right:0!important;bottom:15%!important}
+}
+
+/* MOTE.EXE alive-state polish: scattered telemetry, breathing, blinking and mood cues. */
+.vt-mote-hero .vt-mote-kit-label{top:8%!important;left:auto!important;right:3%!important;bottom:auto!important;z-index:5;box-shadow:0 8px 28px rgba(167,131,61,.06);animation:vt-mote-card-drift 7s ease-in-out infinite}
+.vt-mote-hero .mote-data-left{top:31%!important;left:0!important;right:auto!important;bottom:auto!important;z-index:5;animation:vt-mote-card-drift 8s ease-in-out infinite reverse}
+.vt-mote-hero .mote-data-right{top:auto!important;left:auto!important;right:0!important;bottom:18%!important;z-index:5;animation:vt-mote-card-drift 9s ease-in-out infinite}
+.vt-mote-hero .vt-mote-caption{left:10%!important;right:10%!important;bottom:3%!important;z-index:4;letter-spacing:.14em}
+.vt-mote-render-wrap{position:relative;z-index:2;display:grid;place-items:center;width:100%;height:100%;pointer-events:none;animation:vt-mote-breathe 5.4s ease-in-out infinite;transition:filter .35s ease}
+.vt-mote-hero .vt-mote-kit-image{position:relative;z-index:1;width:min(88%,470px);height:92%;object-fit:contain;overflow:visible;filter:drop-shadow(0 24px 22px rgba(25,23,17,.24));animation:none!important;transform:translate(var(--mote-look-x,0px),var(--mote-look-y,0px));transition:transform .22s ease-out,filter .35s ease;will-change:transform}
+.vt-mote-blink-overlay{position:absolute;z-index:3;left:25%;top:48%;width:50%;height:15%;opacity:0;pointer-events:none;clip-path:polygon(0 18%,50% 30%,100% 18%,100% 66%,50% 82%,0 66%);background:linear-gradient(180deg,#050607 0%,#101114 65%,#25262a 100%);transform:scaleY(.02);transform-origin:center;animation:vt-mote-blink 6.4s infinite}
+.vt-mote-hero.vt-mote-mood-curious .vt-mote-render-wrap{animation:vt-mote-curious 2.7s ease-in-out infinite}
+.vt-mote-hero.vt-mote-mood-curious .vt-mote-kit-image{filter:drop-shadow(0 27px 26px rgba(167,131,61,.24))}
+.vt-mote-hero.vt-mote-mood-attentive .vt-mote-render-wrap{animation:vt-mote-attentive 1.8s ease-in-out infinite}
+.vt-mote-hero.vt-mote-mood-attentive .vt-mote-kit-image{filter:drop-shadow(0 27px 28px rgba(167,131,61,.3))}
+.vt-mote-hero.vt-mote-mood-friendly .vt-mote-render-wrap{animation:vt-mote-friendly 3.2s ease-in-out infinite}
+.vt-mote-hero.vt-mote-mood-friendly .vt-mote-kit-label,.vt-mote-hero.vt-mote-mood-friendly .mote-data-left{border-color:rgba(167,131,61,.85)!important;box-shadow:0 8px 28px rgba(167,131,61,.14)}
+.vt-mote-hero .vt-mote-data,.vt-mote-hero .vt-mote-kit-label{transition:top .6s,left .6s,right .6s,bottom .6s,box-shadow .35s,border-color .35s,transform .5s}
+@keyframes vt-mote-breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.012)}}
+@keyframes vt-mote-blink{0%,43%,46%,100%{opacity:0;transform:scaleY(.02)}44%,45%{opacity:.96;transform:scaleY(1)}}
+@keyframes vt-mote-card-drift{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes vt-mote-curious{0%,100%{transform:translateY(0) rotate(0deg)}35%{transform:translateY(-8px) rotate(-1.5deg)}70%{transform:translateY(2px) rotate(1deg)}}
+@keyframes vt-mote-attentive{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.018)}}
+@keyframes vt-mote-friendly{0%,100%{transform:translateY(0) rotate(0deg)}30%{transform:translateY(-8px) rotate(1.2deg)}65%{transform:translateY(0) rotate(-1deg)}}
+@media(max-width:760px){
+ .vt-mote-hero .vt-mote-kit-label{top:5%!important;right:0!important;left:auto!important;font-size:7px!important;padding:8px 9px!important}
+ .vt-mote-hero .mote-data-left{top:24%!important;left:0!important;font-size:7px!important;max-width:150px!important;white-space:normal!important}
+ .vt-mote-hero .mote-data-right{right:0!important;bottom:16%!important;font-size:7px!important}
+ .vt-mote-hero .vt-mote-caption{left:2%!important;right:2%!important;bottom:2%!important;font-size:7px!important;letter-spacing:.07em}
+ .vt-mote-render-wrap{height:92%}
+ .vt-mote-hero .vt-mote-kit-image{width:98%;height:88%}
+ .vt-mote-blink-overlay{left:23%;width:54%;top:48%;height:15%}
+}
+@media(prefers-reduced-motion:reduce){
+ .vt-mote-hero .vt-mote-kit-label,.vt-mote-hero .mote-data-left,.vt-mote-hero .mote-data-right,.vt-mote-render-wrap,.vt-mote-blink-overlay{animation:none!important}
+}
