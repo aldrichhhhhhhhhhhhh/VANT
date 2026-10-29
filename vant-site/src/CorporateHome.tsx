@@ -69,9 +69,6 @@ function WindowScene() {
             <path d="M176 75 h23 M185 61 h15 M194 49 h8" />
             <path d="M32 166 h16" opacity=".45" />
           </g>
-          <g className="vt-mote-vector-scan" stroke="#aeb4bf" strokeWidth="1.2" strokeDasharray="2 5" opacity=".65">
-            <path d="M62 0 V34 M96 0 V72 M144 0 V72 M178 0 V34" />
-          </g>
         </svg>
       </div>
       <div className="vt-mote-orbit-channels" aria-label="MOTE responsibility channels">
