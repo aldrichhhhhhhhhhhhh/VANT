@@ -497,3 +497,21 @@
 .vt-mote-orbit-node-deadlines .vt-mote-orbit-node-card,
 .vt-mote-orbit-node-memory .vt-mote-orbit-node-card,
 .vt-mote-orbit-node-monitoring .vt-mote-orbit-node-card{translate:0 0!important}
+
+
+/* Keep MOTE's responsibility chips in front of the orbital graphics, with a clearer elevated surface. */
+.vt-mote-hero .vt-mote-orbit-path,
+.vt-mote-hero .vt-mote-vector-ring,
+.vt-mote-hero .vt-mote-vector-aura{z-index:0}
+.vt-mote-hero .vt-mote-vector-stage{z-index:2}
+.vt-mote-hero .vt-mote-orbit-channels{position:absolute;inset:0;z-index:8;pointer-events:none}
+.vt-mote-hero .vt-mote-orbit-node{z-index:8}
+.vt-mote-hero .vt-mote-orbit-node-card{
+  z-index:9;
+  background:rgba(255,254,250,.97);
+  border:1px solid rgba(177,138,66,.34);
+  box-shadow:0 12px 28px rgba(25,22,15,.14),0 3px 8px rgba(25,22,15,.08);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.vt-mote-hero .vt-mote-caption{z-index:5}
