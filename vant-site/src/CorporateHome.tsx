@@ -1,7 +1,6 @@
 import { useEffect, useState, type FormEvent, type PointerEvent } from "react";
 import LegalPages from "./LegalPages";
 import MoteProductPage from "./MoteProductPage";
-import Mote3D from "./Mote3D";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
@@ -65,7 +64,8 @@ function WindowScene() {
     <div className={`vt-scene vt-mote-hero vt-mote-mood-${moteMood}`} onPointerMove={handleMotePointer} onPointerLeave={resetMotePointer} onClick={activateMote} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activateMote(); } }} role="button" tabIndex={0} aria-label="Interactive MOTE.EXE mascot. Mote blinks, tracks your cursor, changes moods, and responds when clicked.">
       <div className="vt-mote-kit-label">{moteMessage}</div>
       <div className="vt-mote-render-wrap">
-        <Mote3D />
+        <img className="vt-mote-kit-image" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K9MRUnNrthw91dT4xb4arUxpDj/7d9a440a-e2e2-4c6b-a48b-984966f798e5.png" alt="MOTE.EXE — glossy black armored robotic mascot with angular ears and a sharp white visor" />
+        <span className="vt-mote-blink-overlay" aria-hidden="true" />
       </div>
       <div className="vt-mote-data mote-data-left"><span className="vt-live-dot"/> {moteStatus}</div>
       <div className="vt-mote-data mote-data-right"><span className="vt-live-dot"/> SIGNAL: <b>STABLE</b></div>
