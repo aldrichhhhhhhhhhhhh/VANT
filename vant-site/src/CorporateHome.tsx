@@ -87,11 +87,12 @@ function CorporateHomeView() {
     <main id="top">
       <section className="vt-hero">
         <div className="vt-hero-copy">
-          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> INDEPENDENT TECHNOLOGY. CONNECTED POSSIBILITY.</div>
-          <h1>Intelligence<br />in <span>motion.</span></h1>
-          <p className="vt-hero-lede">We build technology that helps people work smarter, learn further, and move ideas into action.</p>
-          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our ecosystem <Arrow /></a><a className="vt-text-link" href="#about">Discover VANT <Arrow diagonal /></a></div>
-          <div className="vt-hero-foot"><span className="vt-live-dot" /> A growing ecosystem of applications and intelligence</div>
+          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> OUR NEWEST INTELLIGENCE</div>
+          <h1>Mote<span>.exe</span></h1>
+          <p className="vt-hero-lede">Your personal AI Guardian — quietly watchful, ready to help, and built to bring intelligence wherever your work takes you.</p>
+          <div className="vt-mote-version">VERSION 1.0 <span className="vt-live-dot" /> INTRODUCING MOTE.EXE</div>
+          <div className="vt-hero-actions"><a className="vt-button-primary" href="#mote">Read More <Arrow /></a><a className="vt-text-link vt-chat-mote-link" href="#mote">Chat with Mote <Arrow diagonal /></a></div>
+          <div className="vt-hero-foot"><span className="vt-live-dot" /> A VANT Technologies intelligence companion</div>
         </div>
         <WindowScene />
         <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
