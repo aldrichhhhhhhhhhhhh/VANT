@@ -152,7 +152,7 @@ function CorporateHomeView() {
           <h1>Mote<span>.exe</span></h1>
           <p className="vt-hero-lede">Your personal AI Guardian — quietly watchful, ready to help, and built to bring intelligence wherever your work takes you.</p>
           <div className="vt-mote-version">VERSION 1.0 <span className="vt-live-dot" /> INTRODUCING MOTE.EXE</div>
-          <div className="vt-hero-actions"><a className="vt-button-primary" href="/mote-exe">Read More <Arrow /></a><a className="vt-text-link vt-chat-mote-link" href="/mote-exe#interactive">Chat with Mote <Arrow diagonal /></a></div>
+          <div className="vt-hero-actions"><a className="vt-button-primary" href="/mote-exe">Read More <Arrow /></a><a className="vt-text-link vt-chat-mote-link" href="/mote-exe">Chat with Mote <Arrow diagonal /></a></div>
           <div className="vt-hero-foot"><span className="vt-live-dot" /> A VANT Technologies intelligence companion</div>
         </div>
         <WindowScene />
