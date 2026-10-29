@@ -364,3 +364,9 @@
 @media(max-width:900px){.vt-mote-hero{min-height:390px}.vt-mote-vector-stage{width:min(100%,390px)}.vt-mote-kit-label{top:2%;left:2%}}
 @media(max-width:600px){.vt-mote-hero{min-height:320px;margin-top:12px}.vt-mote-vector-stage{width:min(100%,320px)}.vt-mote-kit-label{font-size:8px}.vt-mote-data{font-size:8px!important}}
 @media(prefers-reduced-motion:reduce){.vt-mote-vector-ring{animation:none!important}.vt-mote-vector-stage,.vt-mote-vector,.vt-mote-vector-aura{transition:none!important}}
+
+/* Keep the homepage mark aligned with the dedicated MOTE character page */
+.vt-mote-vector{width:75%;max-height:420px;overflow:visible}
+.vt-mote-vector-eye{transform-origin:120px 137px;transition:transform .2s ease}
+.vt-mote-state-working .vt-mote-vector-eye{transform:translateY(2px) scaleY(.92)}
+.vt-mote-state-idle .vt-mote-vector-eye{transform:translateY(5px) scaleY(.72)}
