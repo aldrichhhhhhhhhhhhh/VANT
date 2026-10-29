@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import LegalPages from "./LegalPages";
+import MoteSection from "./MoteSection";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
@@ -89,6 +90,7 @@ function CorporateHomeView() {
       <button className="vt-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
       <nav className={menuOpen ? "vt-nav vt-nav-open" : "vt-nav"} aria-label="Main navigation">
         <a href="#products" onClick={closeMenu}>Ecosystem</a>
+        <a href="#mote" onClick={closeMenu}>MOTE.EXE</a>
         <a href="#partners" onClick={closeMenu}>Partners</a>
         <a href="#about" onClick={closeMenu}>Our Thinking</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
@@ -124,6 +126,8 @@ function CorporateHomeView() {
           </div>
         </div>
       </section>
+
+      <MoteSection />
 
       <section id="about" className="vt-about vt-section">
         <div className="vt-section-kicker vt-reveal"><span>01</span> / ABOUT VANT TECHNOLOGIES</div>
