@@ -138,6 +138,7 @@ function MoteFigure() {
 
   return (
     <div
+      id="interactive"
       className={`mote-stage mote-mood-${mood}`}
       aria-label={`MOTE.EXE mascot, currently ${mood}. Move your cursor over MOTE or click to interact.`}
       role="button"
