@@ -1595,3 +1595,7 @@
 .vt-section-page-card b i{font-style:normal;color:#8793a1;margin-left:5px}
 .vt-section-page-footer{padding:24px clamp(22px,6.5vw,96px);display:flex;justify-content:space-between;border-top:1px solid rgba(31,34,39,.12);font:9px monospace;letter-spacing:.12em;color:#7b838d}
 @media(max-width:760px){.vt-section-page-header{height:70px;padding:0 21px}.vt-section-page-main{width:calc(100% - 42px);padding:76px 0 72px}.vt-section-page-main h1{font-size:clamp(48px,13vw,72px);margin-top:27px}.vt-section-page-grid{grid-template-columns:1fr}.vt-section-page-card{min-height:190px}.vt-section-page-rule{margin:42px 0 18px}.vt-section-page-footer{padding:20px 21px;gap:18px;flex-wrap:wrap}}
+
+
+.vt-home-v2 .vt-dropdown-intro-link{display:block;margin-top:12px;color:#242a32;text-decoration:none;font:600 21px/1.12 Manrope,sans-serif;letter-spacing:-.045em}
+.vt-home-v2 .vt-dropdown-intro-link:hover{color:#657487}
