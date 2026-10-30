@@ -1,11 +1,10 @@
-import { useEffect, useState, type FormEvent, type PointerEvent } from "react";
+import { useEffect, useState, type PointerEvent } from "react";
 import LegalPages from "./LegalPages";
 import MoteProductPage from "./MoteProductPage";
 import LibrariesPage from "./LibrariesPage";
 import ConnectPage from "./ConnectPage";
 import "./corporate.css";
 
-const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
 
 const products = [
   { number: "01", name: "VANT AI", label: "WORK PLATFORM", description: "Intelligence for the work that moves business forward.", detail: "A workspace for thinking, planning, analyzing, and getting meaningful work done.", href: "https://vant-ai.vercel.app/", tone: "violet", tags: ["AI workspace", "Projects", "CoWork"] },
@@ -95,34 +94,6 @@ function WindowScene() {
   );
 }
 
-function WaitlistForm() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  async function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setStatus("loading");
-    try {
-      const response = await fetch(WAITLIST_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email: email.trim(), source: "VANT Technologies website" }),
-      });
-      if (!response.ok) throw new Error("Submission failed");
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  }
-  if (status === "success") return <p className="vt-form-success">✓ You're on the list. Thank you for your interest.</p>;
-  return <form className="vt-waitlist-form" onSubmit={submit}>
-    <label className="vt-sr-only" htmlFor="vt-email">Email address</label>
-    <input id="vt-email" type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email address" />
-    <button type="submit" disabled={status === "loading"}>{status === "loading" ? "Sending…" : "Request early access"} <Arrow /></button>
-    {status === "error" && <p className="vt-form-error">We couldn't send your request right now. Please try again shortly.</p>}
-  </form>;
-}
-
 function CorporateHomeView() {
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
@@ -149,31 +120,30 @@ function CorporateHomeView() {
     </header>
 
     <main id="top">
-      <section className="vt-hero">
+      <section className="vt-hero vt-hero-v2">
         <div className="vt-hero-copy">
-          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> OUR NEWEST INTELLIGENCE</div>
-          <h1>Mote<span>.exe</span></h1>
-          <p className="vt-hero-lede">Your personal AI Guardian — quietly watchful, ready to help, and built to bring intelligence wherever your work takes you.</p>
-          <div className="vt-mote-version">VERSION 1.0 <span className="vt-live-dot" /> INTRODUCING MOTE.EXE</div>
-          <div className="vt-hero-actions"><a className="vt-button-primary" href="/mote-exe">Read More <Arrow /></a><a className="vt-text-link vt-chat-mote-link" href="/mote-exe">Chat with Mote <Arrow diagonal /></a></div>
-          <div className="vt-hero-foot"><span className="vt-live-dot" /> A VANT Technologies intelligence companion</div>
+          <div className="vt-eyebrow"><span className="vt-eyebrow-line" /> VANT TECHNOLOGIES / INTELLIGENCE IN MOTION</div>
+          <h1>Technology for<br /><span>what comes next.</span></h1>
+          <p className="vt-hero-lede">We build intelligent applications that help people work with clarity, learn with confidence, and turn ambitious ideas into meaningful progress.</p>
+          <div className="vt-hero-actions"><a className="vt-button-primary" href="#products">Explore our products <Arrow /></a><a className="vt-text-link" href="/connect">Talk to our team <Arrow diagonal /></a></div>
+          <div className="vt-hero-foot"><span className="vt-live-dot" /> INDEPENDENT TECHNOLOGY / BUILT WITH PURPOSE</div>
         </div>
         <WindowScene />
-        <div className="vt-hero-bottom"><span>01 / A NEW WAY FORWARD</span><span>SCROLL TO EXPLORE ↓</span></div>
+        <div className="vt-hero-bottom"><span>01 / A TECHNOLOGY COMPANY</span><span>SCROLL TO EXPLORE ↓</span></div>
       </section>
 
 
       <section id="about" className="vt-about vt-section">
         <div className="vt-section-kicker vt-reveal"><span>01</span> / ABOUT VANT TECHNOLOGIES</div>
         <div className="vt-about-grid">
-          <h2 className="vt-reveal">Technology should move <em>people forward.</em></h2>
+          <h2 className="vt-reveal">We build for <em>real progress.</em></h2>
           <div className="vt-about-copy vt-reveal"><p>VANT Technologies is building a connected ecosystem of intelligent applications and technology experiences for the way people work, learn, and build.</p><p>We believe the best technology does more than answer a question. It helps turn intent into progress — with tools designed around real needs and real possibilities.</p><a className="vt-inline-link" href="#journey">The thinking behind VANT <Arrow /></a></div>
         </div>
         <div className="vt-principles vt-reveal"><div><span>01</span><strong>Useful by design</strong><p>Built around real problems, not technology for its own sake.</p></div><div><span>02</span><strong>Intelligence with purpose</strong><p>AI and software applied where they can make a meaningful difference.</p></div><div><span>03</span><strong>Open to possibility</strong><p>Our products, partnerships, and ideas are designed to grow.</p></div></div>
       </section>
 
       <section id="products" className="vt-products vt-section">
-        <div className="vt-section-heading vt-reveal"><div><div className="vt-section-kicker"><span>02</span> / THE APPLICATIONS</div><h2>Built by VANT.<br /><em>Made for momentum.</em></h2></div><p>Different experiences. One shared belief: technology should help you do more with what matters.</p></div>
+        <div className="vt-section-heading vt-reveal"><div><div className="vt-section-kicker"><span>02</span> / THE APPLICATIONS</div><h2>Built by VANT.<br /><em>Made for momentum.</em></h2></div><p>A connected ecosystem of products for work, learning, and the ideas still taking shape.</p></div>
         <div className="vt-product-list">{products.map(product => <article key={product.number} className={"vt-product vt-product-" + product.tone + " vt-reveal"}>
           <div className="vt-product-copy"><div className="vt-product-meta"><span>{product.number}</span><span>{product.label}</span></div><h3>{product.name}</h3><h4>{product.description}</h4><p>{product.detail}</p><div className="vt-tags">{product.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="vt-product-link" href={product.href}>{product.number === "01" ? "Explore VANT AI" : "Discover VANT Education"} <Arrow diagonal /></a></div>
           <div className="vt-product-visual">{product.number === "01" ? <div className="vt-app-window"><div className="vt-app-top"><span className="vt-mini-mark">V</span><span>VANT WORKSPACE</span><span className="vt-app-status">● READY</span></div><div className="vt-app-layout"><div className="vt-app-sidebar"><i/><i/><i/><i/><i/></div><div className="vt-app-main"><small>YOUR WORKSPACE</small><strong>Good work starts<br/>with a clear next step.</strong><div className="vt-app-prompt">What would you like to move forward today? <span>↗</span></div><div className="vt-app-mini-grid"><div><small>PROJECTS</small><b>03 active</b></div><div><small>AI ASSISTANCE</small><b>Ready when you are</b></div></div></div></div></div> : <div className="vt-education-visual"><div className="vt-study-orb">V<span>EDU</span></div><div className="vt-study-card study-card-a"><small>STUDY SESSION</small><b>Biology · Cell structure</b><span>＋ 12 flashcards ready</span></div><div className="vt-study-card study-card-b"><small>YOUR LEARNING PATH</small><b>One step at a time.</b><div className="vt-study-bars"><i/><i/><i/><i/><i/></div></div><div className="vt-edu-label">LEARN WITH INTENTION</div></div>}</div>
