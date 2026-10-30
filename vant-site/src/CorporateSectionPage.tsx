@@ -80,16 +80,22 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <div className="vt-section-page-rule" />
       {slug === "research" ? <div className="vt-research-hub">
         <section className="vt-research-intro">
-          <div className="vt-news-section-heading"><span>01 / THE RESEARCH SPACE</span><span>IDEAS · PERSPECTIVES · KNOWLEDGE</span></div>
-          <h2>Explore the ideas behind what comes next.</h2>
-          <p>VANT Research is a developing space for perspectives on intelligent technology, thoughtful design, and the changing ways people work and learn.</p>
+          <div className="vt-news-section-heading"><span>01 / RESEARCH & DEVELOPMENT</span><span>INTELLIGENCE · SYSTEMS · ENGINEERING</span></div>
+          <div className="vt-research-hero-grid">
+            <div className="vt-research-hero-copy"><span className="vt-research-overline">VANT RESEARCH DIVISION <i> / EST. 2026</i></span><h2>Engineering what comes next.</h2><p>Exploring the systems, methods, and ideas shaping intelligent technology. From human-centered AI to applied engineering, this is where we examine the principles behind what we build.</p><div className="vt-research-hero-index"><span>RESEARCH AREAS <b>03</b></span><span>KNOWLEDGE BASE <b>V.01</b></span></div></div>
+            <div className="vt-research-blueprint" aria-label="Abstract engineering schematic">
+              <div className="vt-blueprint-top"><span>VNT / SYS-001</span><span>FIG. 01 — SYSTEM MAP</span></div>
+              <svg viewBox="0 0 420 300" role="img" aria-label="Abstract connected systems schematic"><defs><pattern id="vtResearchGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(196,210,224,.13)" strokeWidth="1"/></pattern></defs><rect width="420" height="300" fill="url(#vtResearchGrid)"/><g fill="none" stroke="#aebdca" strokeWidth="1.2"><circle cx="210" cy="145" r="66"/><circle cx="210" cy="145" r="48" strokeDasharray="4 5"/><path d="M210 24V79 M210 211V276 M70 145H144 M276 145H350 M111 46L164 99 M256 191L309 244 M309 46L256 99 M164 191L111 244"/><rect x="181" y="116" width="58" height="58"/><path d="M190 145h40M210 126v38M70 145h28m252 0h-28M210 24v18m0 216v18"/></g><g fill="#d7e0e8" fontSize="9" fontFamily="monospace" letterSpacing="1"><text x="210" y="12" textAnchor="middle">INPUT</text><text x="210" y="294" textAnchor="middle">OUTPUT</text><text x="18" y="149">DATA</text><text x="354" y="149">MODEL</text><text x="210" y="151" textAnchor="middle" fontSize="11">VANT</text><text x="20" y="282">FIG 001-A</text><text x="340" y="282">NTS / 01</text></g></svg>
+              <div className="vt-blueprint-bottom"><span>CONCEPTUAL SYSTEMS DIAGRAM</span><span>NOT TO SCALE</span></div>
+            </div>
+          </div>
         </section>
         <section className="vt-research-themes">
-          <div className="vt-news-section-heading"><span>02 / RESEARCH THEMES</span><span>EDITORIAL PERSPECTIVES</span></div>
+          <div className="vt-news-section-heading"><span>02 / RESEARCH DOMAINS</span><span>TECHNICAL NOTES · CONCEPTS</span></div>
           <div className="vt-research-grid">
-            <a className="vt-research-card" href="/research?document=research-human-capability" data-vant-document-id="research-human-capability"><span className="vt-research-symbol">⌘</span><small>HUMAN + INTELLIGENCE</small><h3>AI and human capability</h3><p>How intelligent tools can extend human ability while keeping people at the center of decisions.</p><b>Read perspective <i>↗</i></b></a>
-            <a className="vt-research-card" href="/research?document=research-thoughtful-design" data-vant-document-id="research-thoughtful-design"><span className="vt-research-symbol">◇</span><small>DESIGN + RESPONSIBILITY</small><h3>Thoughtful technology by design</h3><p>Why clarity, usefulness, and responsibility should shape intelligent product experiences.</p><b>Read perspective <i>↗</i></b></a>
-            <a className="vt-research-card" href="/research?document=research-future-learning" data-vant-document-id="research-future-learning"><span className="vt-research-symbol">⌁</span><small>WORK + LEARNING</small><h3>The future of work and learning</h3><p>Exploring how adaptable AI experiences can support different goals and ways of learning.</p><b>Read perspective <i>↗</i></b></a>
+            <a className="vt-research-card" href="/research?document=research-human-capability" data-vant-document-id="research-human-capability"><span className="vt-research-card-index">R&D / 001</span><span className="vt-research-symbol">⌘</span><small>COMPUTATIONAL SYSTEMS</small><h3>AI and human capability</h3><p>How intelligent tools can extend human ability while keeping people at the center of decisions.</p><b>Open research note <i>↗</i></b></a>
+            <a className="vt-research-card" href="/research?document=research-thoughtful-design" data-vant-document-id="research-thoughtful-design"><span className="vt-research-card-index">R&D / 002</span><span className="vt-research-symbol">◇</span><small>HUMAN FACTORS ENGINEERING</small><h3>Thoughtful technology by design</h3><p>Why clarity, usefulness, and responsibility should shape intelligent product experiences.</p><b>Read perspective <i>↗</i></b></a>
+            <a className="vt-research-card" href="/research?document=research-future-learning" data-vant-document-id="research-future-learning"><span className="vt-research-card-index">R&D / 003</span><span className="vt-research-symbol">⌁</span><small>ADAPTIVE SYSTEMS</small><h3>The future of work and learning</h3><p>Exploring how adaptable AI experiences can support different goals and ways of learning.</p><b>Read perspective <i>↗</i></b></a>
           </div>
           <p className="vt-research-disclaimer">These are VANT editorial perspectives and developing research themes, not peer-reviewed studies or published scientific findings.</p>
         </section>
