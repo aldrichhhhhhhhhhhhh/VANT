@@ -140,6 +140,7 @@ function CorporateHomeView() {
         <a href="#about" onClick={closeMenu}>About</a>
         <a href="#products" onClick={closeMenu}>Products <span className="vt-nav-caret">⌄</span></a>
         <a href="#partners" onClick={closeMenu}>Powered by VANT</a>
+        <a href="#libraries" onClick={closeMenu}>Libraries</a>
         <a href="#journey" onClick={closeMenu}>Our Journey</a>
         <a className="vt-nav-cta" href="#contact" onClick={closeMenu}>Let's connect <Arrow diagonal /></a>
       </nav>
@@ -188,7 +189,33 @@ function CorporateHomeView() {
         <div className="vt-section-kicker vt-reveal"><span>04</span> / THE JOURNEY</div><div className="vt-journey-grid"><h2 className="vt-reveal">Not a finish line.<br /><em>A direction.</em></h2><div className="vt-journey-copy vt-reveal"><p>VANT is being built with a long view: create useful products, learn from the people who use them, and grow through thoughtful technology and collaboration.</p><div className="vt-journey-stages"><div><span>NOW</span><p>Building and refining core applications</p></div><div><span>NEXT</span><p>Growing the ecosystem and listening to users</p></div><div><span>ALWAYS</span><p>Exploring new ways technology can help</p></div></div><small>Our roadmap evolves as products develop and opportunities become real.</small></div></div>
       </section>
 
-      <section id="contact" className="vt-contact vt-section"><div className="vt-contact-glow"/><div className="vt-section-kicker vt-reveal"><span>05</span> / THE NEXT CONVERSATION</div><div className="vt-contact-grid"><div className="vt-reveal"><h2>Have something<br />in <em>mind?</em></h2><p>Whether you're exploring our products, considering a collaboration, or curious about what we're building, we'd like to hear from you.</p><a className="vt-contact-email" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM <Arrow diagonal /></a></div><div className="vt-access-card vt-reveal"><span className="vt-access-label">STAY CLOSE TO WHAT'S NEXT</span><h3>Be part of the next chapter.</h3><p>Request early access and follow the evolution of VANT's applications.</p><WaitlistForm/><small>Product access and availability may vary by application.</small></div></div></section>
+      <section id="libraries" className="vt-libraries vt-section">
+        <div className="vt-section-heading vt-reveal">
+          <div><div className="vt-section-kicker"><span>05</span> / THE VANT LIBRARIES</div><h2>Knowledge for<br /><em>what comes next.</em></h2></div>
+          <p>A growing collection of resources, guides, and ideas from across the VANT ecosystem — made to help people work, learn, and explore.</p>
+        </div>
+        <div className="vt-library-grid">
+          <a className="vt-library-card vt-library-featured vt-reveal" href="#contact">
+            <span className="vt-library-index">01 / KNOWLEDGE BASE</span><span className="vt-library-symbol">⌘</span>
+            <h3>VANT Knowledge</h3><p>Product guides, practical documentation, and resources to help you get more from VANT.</p><span className="vt-library-link">EXPLORE LIBRARY <Arrow diagonal /></span>
+          </a>
+          <a className="vt-library-card vt-reveal" href="#products">
+            <span className="vt-library-index">02 / LEARNING</span><span className="vt-library-symbol">✳</span>
+            <h3>VANT Education</h3><p>Study resources, learning guides, and tools designed to make knowledge easier to work with.</p><span className="vt-library-link">EXPLORE LIBRARY <Arrow diagonal /></span>
+          </a>
+          <a className="vt-library-card vt-reveal" href="#journey">
+            <span className="vt-library-index">03 / COMPANY</span><span className="vt-library-symbol">V</span>
+            <h3>VANT Technologies</h3><p>Company updates, product announcements, release notes, and the thinking behind our work.</p><span className="vt-library-link">EXPLORE LIBRARY <Arrow diagonal /></span>
+          </a>
+          <a className="vt-library-card vt-reveal" href="#partners">
+            <span className="vt-library-index">04 / IDEAS & RESEARCH</span><span className="vt-library-symbol">⌁</span>
+            <h3>VANT Research</h3><p>Perspectives on AI, emerging technology, and the ideas shaping tomorrow's experiences.</p><span className="vt-library-link">EXPLORE LIBRARY <Arrow diagonal /></span>
+          </a>
+        </div>
+        <p className="vt-library-note vt-reveal"><span className="vt-live-dot" /> THE LIBRARIES ARE GROWING — MORE RESOURCES WILL BE ADDED OVER TIME.</p>
+      </section>
+
+      <section id="contact" className="vt-contact vt-section"><div className="vt-contact-glow"/><div className="vt-section-kicker vt-reveal"><span>06</span> / THE NEXT CONVERSATION</div><div className="vt-contact-grid"><div className="vt-reveal"><h2>Have something<br />in <em>mind?</em></h2><p>Whether you're exploring our products, considering a collaboration, or curious about what we're building, we'd like to hear from you.</p><a className="vt-contact-email" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM <Arrow diagonal /></a></div><div className="vt-access-card vt-reveal"><span className="vt-access-label">STAY CLOSE TO WHAT'S NEXT</span><h3>Be part of the next chapter.</h3><p>Request early access and follow the evolution of VANT's applications.</p><WaitlistForm/><small>Product access and availability may vary by application.</small></div></div></section>
     </main>
     <footer className="vt-footer"><a className="vt-brand" href="#top"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.</p><div className="vt-footer-links"><a href="#about">About</a><a href="#products">Applications</a><a href="#partners">Partnerships</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div><span className="vt-copyright">© {new Date().getFullYear()} VANT TECHNOLOGIES</span></footer>
   </div>;
