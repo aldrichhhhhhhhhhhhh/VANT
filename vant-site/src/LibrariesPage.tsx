@@ -13,7 +13,7 @@ export default function LibrariesPage() {
   return <div className="vt-site vt-libraries-page">
     <header className="vt-header">
       <a className="vt-brand" href="/" aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
-      <nav className="vt-nav" aria-label="Libraries navigation"><a href="/">Home</a><a className="vt-nav-cta" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">Contact <span className="vt-arrow">↗</span></a></nav>
+      <nav className="vt-nav" aria-label="Libraries navigation"><a href="/">Home</a><a className="vt-nav-cta" href="/connect">Contact <span className="vt-arrow">↗</span></a></nav>
     </header>
     <main className="vt-libraries-main">
       <section className="vt-libraries-hero">
