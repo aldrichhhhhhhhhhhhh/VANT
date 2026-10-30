@@ -944,3 +944,20 @@
 @media(prefers-reduced-motion:reduce){
   .vt-mote-product-page .mp-capability{transition:none}
 }
+
+
+/* VANT Libraries — public resource hub preview */
+.vt-libraries{position:relative;background:linear-gradient(180deg,#0b0c09,#080907);border-top:1px solid var(--vt-line);border-bottom:1px solid var(--vt-line)}
+.vt-library-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:48px}
+.vt-library-card{position:relative;display:flex;min-height:270px;flex-direction:column;align-items:flex-start;padding:28px;border:1px solid rgba(235,226,203,.14);background:linear-gradient(145deg,rgba(255,255,255,.035),transparent 68%),#0d0f0c;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.vt-library-card:hover{transform:translateY(-4px);border-color:rgba(215,184,117,.55);background:linear-gradient(145deg,rgba(215,184,117,.08),transparent 68%),#10110e}
+.vt-library-featured{background:linear-gradient(145deg,rgba(215,184,117,.09),transparent 68%),#10110d}
+.vt-library-index{color:#9a9688;font:9px/1.5 "DM Sans",sans-serif;letter-spacing:.14em}
+.vt-library-symbol{display:grid;place-items:center;width:42px;height:42px;margin:28px 0 20px;border:1px solid rgba(215,184,117,.35);border-radius:50%;color:var(--vt-gold);font:20px Manrope,sans-serif}
+.vt-library-card h3{margin:0;color:var(--vt-text);font:500 clamp(21px,2.2vw,28px)/1.2 Manrope,sans-serif;letter-spacing:-.04em}
+.vt-library-card p{max-width:430px;margin:12px 0 24px;color:var(--vt-muted);font-size:12px;line-height:1.8}
+.vt-library-link{margin-top:auto;color:var(--vt-gold);font-size:9px;letter-spacing:.12em}
+.vt-library-note{display:flex;align-items:center;gap:10px;margin:28px 0 0;color:#888578;font-size:9px;letter-spacing:.12em}
+.vt-library-note .vt-live-dot{flex:0 0 6px}
+@media(max-width:600px){.vt-library-grid{grid-template-columns:1fr;margin-top:30px}.vt-library-card{min-height:230px;padding:23px}.vt-library-symbol{margin:22px 0 16px}}
+@media(prefers-reduced-motion:reduce){.vt-library-card{transition:none}.vt-library-card:hover{transform:none}}
