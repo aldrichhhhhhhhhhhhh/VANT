@@ -95,7 +95,7 @@ export default function MoteProductPage() {
         </a>
         <nav className="vt-nav" aria-label="MOTE navigation">
           <a href="/">Home</a>
-          <a className="vt-nav-cta" href="#interactive">Meet MOTE <span aria-hidden="true">↗</span></a>
+          <a className="vt-nav-cta" href="#mote-console">Meet MOTE <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
       <main id="top">
@@ -126,7 +126,7 @@ export default function MoteProductPage() {
           <div className="mp-console-panel vt-reveal">
             <div className="mp-console-top"><span>M-01 / VANT GPT CHANNEL</span><span><i /> GUEST MODE</span></div>
             <form className="mp-prompt-form" onSubmit={handleDemoSubmit}>
-              <label htmlFor="mote-demo-prompt">MESSAGE MOTE</label>
+              <label htmlFor="mote-demo-prompt">MESSAGE VANT GPT</label>
               <div className="mp-prompt-row"><input id="mote-demo-prompt" value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder="Ask VANT GPT..." maxLength={400} disabled={!authReady || isSending} /><button type="submit" aria-label="Send prompt" disabled={!prompt.trim() || !authReady || isSending}>{isSending ? "…" : "↗"}</button></div>
               <p>{!authReady ? "Starting secure guest session…" : "Guest access only · Daily message allowance applies."}</p>
             </form>
