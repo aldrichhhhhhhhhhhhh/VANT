@@ -35,7 +35,7 @@ const pages: Record<string, PageData> = {
     {title:"VANT Education",description:"Learning tools for study resources, practice, and progress.",href:"/education",eyebrow:"LEARNING"},
     {title:"MOTE.EXE",description:"A watchful AI companion within the VANT ecosystem.",href:"/mote-exe",eyebrow:"INTELLIGENCE"}
   ]},
-  perspectives: { number:"02.1", kicker:"RESEARCH / PERSPECTIVES", title:"Technology perspectives", lead:"A developing space for VANT's thinking on intelligent technology, thoughtful design, and the future of work and learning.", items:[{title:"Explore VANT Libraries",description:"Browse the knowledge and resources currently available.",href:"/libraries",eyebrow:"EXPLORE"}]},
+  perspectives: { number:"02.1", kicker:"RESEARCH & DEVELOPMENT / ENGINEERING", title:"Engineering what comes next.", lead:"Explore the systems, methods, and architecture behind VANT—from multi-agent orchestration to intelligent products designed around people.", items:[{title:"VANT CoWork architecture",description:"A technical case study on specialized agents, task coordination, persistence, and human-reviewed execution.",href:"/research?document=research-cowork-architecture",eyebrow:"ENGINEERING / 004"},{title:"VANT Research",description:"Explore the wider research domains and technical perspectives behind VANT.",href:"/research",eyebrow:"RESEARCH"}]},
   "our-approach": { number:"03.1", kicker:"POLICY / RESPONSIBILITY", title:"Our approach", lead:"We believe useful technology should be designed thoughtfully, communicate clearly, and respect the people who use it.", items:[{title:"Privacy",description:"Read our privacy policy.",href:"/privacy",eyebrow:"PRIVACY"},{title:"Terms & policies",description:"Review the terms governing our services.",href:"/terms",eyebrow:"TERMS"}]},
   mission: { number:"04.1", kicker:"COMMITMENTS / PURPOSE", title:"Our mission", lead:"We build intelligent technology that moves people forward. We believe AI and thoughtful design can make work more capable, learning more personal, and ambitious ideas more achievable.", items:[{title:"Our vision",description:"The future we are working toward.",href:"/vision",eyebrow:"DIRECTION"},{title:"About VANT",description:"Learn more about the company behind the ecosystem.",href:"/company",eyebrow:"COMPANY"}]},
   vision: { number:"04.2", kicker:"COMMITMENTS / DIRECTION", title:"Our vision", lead:"A future where technology expands human possibility — with purpose, responsibility, and room for everyone to grow.", items:[{title:"Our mission",description:"The purpose that guides what we build.",href:"/mission",eyebrow:"PURPOSE"},{title:"Our approach",description:"How we think about responsible technology.",href:"/our-approach",eyebrow:"RESPONSIBILITY"}]},
@@ -78,7 +78,7 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <h1>{data.title}</h1>
       <p className="vt-section-page-lead">{data.lead}</p>
       <div className="vt-section-page-rule" />
-      {slug === "research" ? <div className="vt-research-hub">
+      {(slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
         <section className="vt-research-intro">
           <div className="vt-news-section-heading"><span>01 / RESEARCH & DEVELOPMENT</span><span>INTELLIGENCE · SYSTEMS · ENGINEERING</span></div>
           <div className="vt-research-hero-grid">
