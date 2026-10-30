@@ -64,6 +64,20 @@ export default function ConnectPage() {
         <p className="vt-connect-kicker"><span className="vt-live-dot" /> VANT TECHNOLOGIES / CONTACT</p>
         <h1>Every conversation<br/>has a <em>starting point.</em></h1>
         <p>Choose the right channel and we’ll make sure your message is directed to the right place.</p>
+        <div className="vt-connect-float" aria-hidden="true">
+          <span className="vt-connect-float-avatar">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 21a8 8 0 0 0-16 0" /><circle cx="12" cy="8" r="4" /></svg>
+          </span>
+          <span className="vt-connect-float-message">
+            <small>YOUR MESSAGE</small>
+            <strong>Hello, VANT Team.</strong>
+            <span>Let’s start a conversation.</span>
+          </span>
+          <span className="vt-connect-float-send">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13" /><path d="m22 2-7 20-4-9-9-4 20-7Z" /></svg>
+          </span>
+          <i className="vt-connect-float-orbit" />
+        </div>
       </section>
       <section className="vt-connect-grid" aria-label="Contact options">
         <article className="vt-connect-card vt-connect-support">
