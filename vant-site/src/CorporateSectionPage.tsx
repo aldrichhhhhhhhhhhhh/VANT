@@ -78,7 +78,26 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <h1>{data.title}</h1>
       <p className="vt-section-page-lead">{data.lead}</p>
       <div className="vt-section-page-rule" />
-      {slug === "news" ? <div className="vt-newsroom">
+      {slug === "research" ? <div className="vt-research-hub">
+        <section className="vt-research-intro">
+          <div className="vt-news-section-heading"><span>01 / THE RESEARCH SPACE</span><span>IDEAS · PERSPECTIVES · KNOWLEDGE</span></div>
+          <h2>Explore the ideas behind what comes next.</h2>
+          <p>VANT Research is a developing space for perspectives on intelligent technology, thoughtful design, and the changing ways people work and learn.</p>
+        </section>
+        <section className="vt-research-themes">
+          <div className="vt-news-section-heading"><span>02 / RESEARCH THEMES</span><span>EDITORIAL PERSPECTIVES</span></div>
+          <div className="vt-research-grid">
+            <a className="vt-research-card" href="/research?document=research-human-capability" data-vant-document-id="research-human-capability"><span className="vt-research-symbol">⌘</span><small>HUMAN + INTELLIGENCE</small><h3>AI and human capability</h3><p>How intelligent tools can extend human ability while keeping people at the center of decisions.</p><b>Read perspective <i>↗</i></b></a>
+            <a className="vt-research-card" href="/research?document=research-thoughtful-design" data-vant-document-id="research-thoughtful-design"><span className="vt-research-symbol">◇</span><small>DESIGN + RESPONSIBILITY</small><h3>Thoughtful technology by design</h3><p>Why clarity, usefulness, and responsibility should shape intelligent product experiences.</p><b>Read perspective <i>↗</i></b></a>
+            <a className="vt-research-card" href="/research?document=research-future-learning" data-vant-document-id="research-future-learning"><span className="vt-research-symbol">⌁</span><small>WORK + LEARNING</small><h3>The future of work and learning</h3><p>Exploring how adaptable AI experiences can support different goals and ways of learning.</p><b>Read perspective <i>↗</i></b></a>
+          </div>
+          <p className="vt-research-disclaimer">These are VANT editorial perspectives and developing research themes, not peer-reviewed studies or published scientific findings.</p>
+        </section>
+        <section className="vt-research-library">
+          <div><span className="vt-research-library-kicker">03 / KNOWLEDGE COLLECTION</span><h2>Continue exploring.</h2><p>Find product knowledge, learning resources, company materials, and future research publications in VANT Libraries.</p></div>
+          <a href="/libraries?document=library-research" data-vant-document-id="library-research">Open VANT Research collection <span>↗</span></a>
+        </section>
+      </div> : slug === "news" ? <div className="vt-newsroom">
         <section className="vt-news-feature" id="news-latest">
           <div className="vt-news-section-heading"><span>01 / THE NEWSROOM</span><span>STORIES & ANNOUNCEMENTS</span></div>
           <h2>Latest updates</h2><p>Stories, product spotlights, and developments from across the VANT ecosystem.</p>
