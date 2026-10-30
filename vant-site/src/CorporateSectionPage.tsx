@@ -173,6 +173,7 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
           </section>
           <div className="vt-company-blog-signoff"><strong>VANT TECHNOLOGIES</strong><span>We build intelligent technology that moves people forward.</span></div>
           <div className="vt-company-blog-end"><span>END OF CHAPTER 01</span><a href="/company-profile">Continue to the Company Profile ↗</a></div>
+        </div>
       </article> : (slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
         <section className="vt-research-intro">
           <div className="vt-news-section-heading"><span>01 / RESEARCH & DEVELOPMENT</span><span>INTELLIGENCE · SYSTEMS · ENGINEERING</span></div>
