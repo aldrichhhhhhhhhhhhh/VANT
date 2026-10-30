@@ -1696,3 +1696,23 @@
 .vt-document-related>span:first-child{display:block}.vt-document-related b{font-size:13px;font-weight:500;color:#69798a}
 .vt-document-footer{display:none}
 @media(max-width:640px){.vt-document-backdrop{padding:10px;align-items:center}.vt-document-window{max-height:92dvh;padding:12px;gap:12px;border-radius:14px}.vt-document-toolbar{min-height:28px}.vt-document-brand{font-size:11px}.vt-document-preview{font-size:8px}.vt-document-paper{padding:14px 13px 12px}.vt-document-paper h2{margin:19px 0 12px;font-size:24px}.vt-document-rule{margin:19px 0 16px}.vt-document-summary{font-size:13px}.vt-document-content{padding:12px}.vt-document-content p{font-size:11px}.vt-document-related{font-size:9px;letter-spacing:.02em}}
+
+/* VANT Research hub — editorial knowledge layout */
+.vt-research-hub{display:flex;flex-direction:column;gap:76px}
+.vt-research-intro h2,.vt-research-library h2{max-width:760px;margin:25px 0 14px;color:#252c34;font:600 clamp(32px,4.4vw,52px)/1.08 Manrope,sans-serif;letter-spacing:-.06em}
+.vt-research-intro>p,.vt-research-library p{max-width:700px;margin:0;color:#687482;font-size:15px;line-height:1.8}
+.vt-research-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.vt-research-card{min-height:330px;padding:23px;border:1px solid #d3d9df;background:linear-gradient(150deg,#f4f5f6,#e9edf0);color:#29323c;text-decoration:none;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+.vt-research-card:hover{transform:translateY(-4px);border-color:#aab5c0;box-shadow:0 15px 34px rgba(44,54,65,.08)}
+.vt-research-symbol{width:48px;height:48px;display:grid;place-items:center;margin-bottom:26px;border:1px solid #c6ced6;background:rgba(255,255,255,.58);color:#68798b;font-size:22px}
+.vt-research-card>small,.vt-research-library-kicker{font:9px monospace;letter-spacing:.14em;color:#84909d}
+.vt-research-card h3{margin:14px 0 10px;color:#29323c;font-size:21px;line-height:1.2;letter-spacing:-.045em}
+.vt-research-card p{margin:0 0 22px;color:#6b7682;font-size:12px;line-height:1.75}
+.vt-research-card b{margin-top:auto;color:#536273;font-size:11px;font-weight:600}.vt-research-card b i{margin-left:5px;color:#8492a0;font-style:normal}
+.vt-research-disclaimer{margin:18px 0 0;color:#8a949f;font-size:11px;line-height:1.7}
+.vt-research-library{display:flex;align-items:end;justify-content:space-between;gap:30px;padding:30px;border:1px solid #d1d7de;background:linear-gradient(130deg,#eff1f3,#e6eaee)}
+.vt-research-library h2{margin:15px 0 10px;font-size:clamp(28px,3.5vw,40px)}
+.vt-research-library p{max-width:540px;font-size:13px}
+.vt-research-library>a{flex:none;display:flex;align-items:center;gap:26px;padding:15px 17px;border:1px solid #c5cdd5;background:#f8f9f8;color:#526173;text-decoration:none;font-size:11px;transition:background .18s}
+.vt-research-library>a:hover{background:#e4e9ed}
+@media(max-width:760px){.vt-research-hub{gap:54px}.vt-research-grid{grid-template-columns:1fr}.vt-research-card{min-height:270px}.vt-research-library{align-items:stretch;flex-direction:column;padding:22px}.vt-research-library>a{justify-content:space-between}}
