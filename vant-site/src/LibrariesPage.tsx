@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import VANTDocumentViewer from "./VANTDocumentViewer";
 import "./corporate.css";
 
 const libraries = [
@@ -10,7 +11,7 @@ const libraries = [
 
 export default function LibrariesPage() {
   useEffect(() => { document.title = "VANT Libraries — Knowledge for what's next"; }, []);
-  return <div className="vt-site vt-libraries-page">
+  return <VANTDocumentViewer><div className="vt-site vt-libraries-page">
     <header className="vt-header">
       <a className="vt-brand" href="/" aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
       <nav className="vt-nav" aria-label="Libraries navigation"><a href="/">Home</a><a className="vt-nav-cta" href="/connect">Contact <span className="vt-arrow">↗</span></a></nav>
@@ -25,7 +26,7 @@ export default function LibrariesPage() {
       <section className="vt-libraries-collections" aria-label="VANT library collections">
         {libraries.map((library) => <article className="vt-libraries-collection" id={library.title === "VANT Technologies" ? "vant-technologies" : library.title === "VANT Education" ? "vant-education" : undefined} key={library.number}>
           <div className="vt-libraries-collection-top"><span>{library.number} / {library.category}</span><span>{library.status}</span></div>
-          <div className="vt-libraries-collection-body"><span className="vt-libraries-symbol">{library.symbol}</span><div><h2>{library.title}</h2><p>{library.description}</p></div><span className="vt-libraries-arrow">↗</span></div>
+          <div className="vt-libraries-collection-body"><span className="vt-libraries-symbol">{library.symbol}</span><div><h2>{library.title}</h2><p>{library.description}</p></div><span className="vt-libraries-arrow">↗</span></div><a className="vt-library-open" href={"/libraries?document=" + (library.title === "VANT Knowledge" ? "library-knowledge" : library.title === "VANT Education" ? "library-education" : library.title === "VANT Technologies" ? "library-company" : "library-research")} data-vant-document-id={library.title === "VANT Knowledge" ? "library-knowledge" : library.title === "VANT Education" ? "library-education" : library.title === "VANT Technologies" ? "library-company" : "library-research"}>Open collection <span>↗</span></a>
         </article>)}
       </section>
       <p className="vt-libraries-footnote">THE COLLECTIONS ARE BEING BUILT. INDIVIDUAL RESOURCES WILL APPEAR HERE AS THEY ARE PUBLISHED.</p>
