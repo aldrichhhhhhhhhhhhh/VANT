@@ -1861,3 +1861,17 @@
 @media(max-width:1100px){.vt-library-workspace{grid-template-columns:205px minmax(0,1fr)}.vt-library-main{grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr)}.vt-library-reader-paper{padding:25px}}
 @media(max-width:820px){.vt-libraries-main-workspace{padding-top:48px}.vt-library-workspace{grid-template-columns:180px minmax(0,1fr)}.vt-library-main{grid-template-columns:1fr}.vt-library-results{border-right:0;border-bottom:1px solid #dce0df}.vt-library-result-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px}.vt-library-result{border:1px solid #e0e4e2;margin-top:10px;padding:12px 8px}.vt-library-reader{min-height:430px}}
 @media(max-width:600px){.vt-libraries-main-workspace{padding:36px 16px 52px}.vt-libraries-hero-compact h1{font-size:43px}.vt-libraries-hero-compact .vt-libraries-intro{font-size:13px}.vt-library-workspace{grid-template-columns:1fr}.vt-library-sidebar{padding:15px;border-right:0;border-bottom:1px solid #d7dcda}.vt-library-sidebar-heading{padding-bottom:11px}.vt-library-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin-top:12px}.vt-library-category-group>button,.vt-library-categories>button{min-height:39px;padding:0 7px;font-size:10px}.vt-library-category-group>button>span{gap:5px}.vt-library-category-group>button i{display:none}.vt-library-subcategories{grid-column:1/-1;padding-left:9px}.vt-library-sidebar-note{display:none}.vt-library-results{padding:18px 13px}.vt-library-result-list{grid-template-columns:1fr}.vt-library-result{padding:12px 7px}.vt-library-reader-toolbar{min-height:48px;padding:0 14px}.vt-library-reader-brand{font-size:10px}.vt-library-reader-paper{padding:22px 17px}.vt-library-reader-paper h2{margin-top:20px;font-size:29px}.vt-library-reader-summary{font-size:13px}.vt-library-reader-paper footer{font-size:7px}}
+
+/* Libraries identity: quiet, restrained editorial masthead */
+.vt-libraries-main-workspace{padding-top:34px;padding-bottom:64px}
+.vt-libraries-hero-compact{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid #dedfd9}
+.vt-libraries-hero-compact .vt-libraries-kicker{margin:0 0 13px;font-size:8px;letter-spacing:.16em;color:#7c8790}
+.vt-libraries-hero-compact .vt-live-dot{width:5px;height:5px;background:#8797a2;box-shadow:none}
+.vt-libraries-hero-compact h1{max-width:900px;margin:0;font-size:clamp(30px,3.5vw,46px);line-height:1.08;letter-spacing:-.055em;font-weight:500;color:#252b30}
+.vt-libraries-hero-compact h1 em{color:#7d8b98;font-style:normal;font-weight:400}
+.vt-libraries-hero-compact .vt-libraries-intro{max-width:620px;margin:10px 0 0;color:#77818a;font-size:12px;line-height:1.65}
+.vt-library-workspace{box-shadow:0 10px 32px rgba(31,39,45,.035);border-color:#dfe2de}
+.vt-library-sidebar{background:#eff1ed}
+.vt-library-reader-toolbar{background:#202a33}
+.vt-library-reader-paper{background:#fcfcfa}
+@media(max-width:600px){.vt-libraries-main-workspace{padding-top:25px;padding-bottom:42px}.vt-libraries-hero-compact{padding-bottom:17px;margin-bottom:16px}.vt-libraries-hero-compact h1{font-size:32px}.vt-libraries-hero-compact .vt-libraries-intro{font-size:11px}}
