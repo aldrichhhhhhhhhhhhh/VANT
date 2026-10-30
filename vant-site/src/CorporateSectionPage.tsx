@@ -145,7 +145,7 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
           </div>
         </section>
         <section className="vt-profile-closing"><span>VANT TECHNOLOGIES</span><h2>We build intelligent technology that moves people forward.</h2><a href="/company-story">Read our Company Story ↗</a></section>
-      </div> :       {slug === "company-story" ? <section className="vt-story-episodes">
+      </div> : slug === "company-story" ? <section className="vt-story-episodes">
         <div className="vt-story-episodes-heading"><div><span>THE COMPANY JOURNAL</span><h2>Every journey has a beginning.</h2><p>Read the story one chapter at a time. Each published episode opens in VANT Document Viewer.</p></div><small>VANT JOURNAL / VOL. 01</small></div>
         <div className="vt-story-episode-grid">
           <a className="vt-story-episode-card vt-story-episode-featured" href="/company-story?document=company-story-inception" data-vant-document-id="company-story-inception">
