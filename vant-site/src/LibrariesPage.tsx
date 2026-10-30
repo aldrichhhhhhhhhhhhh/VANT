@@ -32,5 +32,5 @@ export default function LibrariesPage() {
       <p className="vt-libraries-footnote">THE COLLECTIONS ARE BEING BUILT. INDIVIDUAL RESOURCES WILL APPEAR HERE AS THEY ARE PUBLISHED.</p>
     </main>
     <footer className="vt-footer"><a className="vt-brand" href="/"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.</p><span className="vt-copyright">© {new Date().getFullYear()} VANT TECHNOLOGIES</span></footer>
-  </div>;
+  </div></VANTDocumentViewer>;
 }
