@@ -31,6 +31,54 @@
     {
       "source": "/support",
       "destination": "/"
+    },
+    {
+      "source": "/news",
+      "destination": "/"
+    },
+    {
+      "source": "/research",
+      "destination": "/"
+    },
+    {
+      "source": "/policy",
+      "destination": "/"
+    },
+    {
+      "source": "/commitments",
+      "destination": "/"
+    },
+    {
+      "source": "/company",
+      "destination": "/"
+    },
+    {
+      "source": "/products",
+      "destination": "/"
+    },
+    {
+      "source": "/perspectives",
+      "destination": "/"
+    },
+    {
+      "source": "/our-approach",
+      "destination": "/"
+    },
+    {
+      "source": "/mission",
+      "destination": "/"
+    },
+    {
+      "source": "/vision",
+      "destination": "/"
+    },
+    {
+      "source": "/partnerships",
+      "destination": "/"
+    },
+    {
+      "source": "/education",
+      "destination": "/"
     }
   ]
 }
