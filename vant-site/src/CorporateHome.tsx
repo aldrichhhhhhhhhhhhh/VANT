@@ -116,9 +116,19 @@ function CorporateHomeView() {
     <main id="top">
       <section id="mission" className="vt-mission-block vt-section">
         <div className="vt-section-kicker vt-reveal"><span>01</span> / OUR MISSION & VISION</div>
-        <div className="vt-mission-grid">
-          <article className="vt-reveal"><span className="vt-block-index">OUR MISSION</span><h2>Make technology<br /><em>move people forward.</em></h2><p>We build intelligent applications and technology experiences that help people work with clarity, learn with confidence, and turn ideas into meaningful progress.</p></article>
-          <article className="vt-vision-card vt-reveal"><span className="vt-block-index">OUR VISION</span><h3>A more capable future, built with purpose.</h3><p>We envision a connected ecosystem where thoughtful technology expands what people and businesses can achieve — responsibly, accessibly, and with room to grow.</p><span className="vt-vision-mark">V.</span></article>
+        <div className="vt-mission-statement vt-reveal">
+          <p><strong>We build intelligent technology that moves people forward.</strong> We believe AI and thoughtful design can make work more capable, learning more personal, and ambitious ideas more achievable. <em>Our vision is a future where technology expands human possibility — with purpose, responsibility, and room for everyone to grow.</em></p>
+          <div className="vt-mission-labels"><span>OUR MISSION</span><span>OUR VISION</span></div>
+        </div>
+        <div className="vt-mission-art" aria-label="Abstract visual collection representing ideas, research, and technology">
+          <div className="vt-art-tile vt-art-one"><span className="vt-art-orbit"/><span className="vt-art-orbit"/><span className="vt-art-orbit"/></div>
+          <div className="vt-art-tile vt-art-two"><span className="vt-art-sun"/><span className="vt-art-grid"/></div>
+          <div className="vt-art-tile vt-art-three"><span className="vt-art-lines"/></div>
+          <div className="vt-art-tile vt-art-four"><span className="vt-art-circles"><i/><i/><i/><i/><i/><i/><i/></span></div>
+          <div className="vt-art-tile vt-art-five"><span className="vt-art-fragments"><i/><i/><i/><i/></span></div>
+          <div className="vt-art-tile vt-art-six"><span className="vt-art-symbol">V</span></div>
+          <div className="vt-art-tile vt-art-seven"><span className="vt-art-wave"/></div>
+          <div className="vt-art-tile vt-art-eight"><span className="vt-art-crosses">＋　＋<br/>　＋　＋</span></div>
         </div>
       </section>
 
