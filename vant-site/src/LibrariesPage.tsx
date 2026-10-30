@@ -23,7 +23,7 @@ export default function LibrariesPage() {
         <div className="vt-libraries-meta"><span>VANT LIBRARIES</span><span>01 — 04 / COLLECTIONS</span></div>
       </section>
       <section className="vt-libraries-collections" aria-label="VANT library collections">
-        {libraries.map((library) => <article className="vt-libraries-collection" key={library.number}>
+        {libraries.map((library) => <article className="vt-libraries-collection" id={library.title === "VANT Technologies" ? "vant-technologies" : library.title === "VANT Education" ? "vant-education" : undefined} key={library.number}>
           <div className="vt-libraries-collection-top"><span>{library.number} / {library.category}</span><span>{library.status}</span></div>
           <div className="vt-libraries-collection-body"><span className="vt-libraries-symbol">{library.symbol}</span><div><h2>{library.title}</h2><p>{library.description}</p></div><span className="vt-libraries-arrow">↗</span></div>
         </article>)}
