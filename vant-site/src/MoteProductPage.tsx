@@ -1,30 +1,78 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { supabase } from "./supabase";
 import MoteSection from "./MoteSection";
 import "./corporate.css";
 
 export default function MoteProductPage() {
   const [prompt, setPrompt] = useState("");
-  const [demoAnswer, setDemoAnswer] = useState("");
-  const [submittedPrompt, setSubmittedPrompt] = useState("");
+  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([]);
+  const [answer, setAnswer] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [authReady, setAuthReady] = useState(false);
+  const [chatError, setChatError] = useState("");
 
-  function handleDemoSubmit(event: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      try {
+        const { data } = await supabase.auth.getSession();
+        let session = data.session;
+        // MOTE is guest-only. Never reuse a signed-in VANT account session.
+        if (session && session.user.is_anonymous !== true) {
+          await supabase.auth.signOut();
+          session = null;
+        }
+        if (!session) {
+          const { data: guest, error } = await supabase.auth.signInAnonymously();
+          if (error) throw error;
+          session = guest.session;
+        }
+        if (!session?.access_token) throw new Error("Guest access could not be started. Please refresh and try again.");
+      } catch (error) {
+        if (active) setChatError(error instanceof Error ? error.message : "Guest access is temporarily unavailable.");
+      } finally {
+        if (active) setAuthReady(true);
+      }
+    })();
+    return () => { active = false; };
+  }, []);
+
+  async function handleDemoSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const question = prompt.trim();
-    if (!question) return;
-    setSubmittedPrompt(question);
-    const normalized = question.toLowerCase();
-    if (normalized.includes("vant")) {
-      setDemoAnswer("VANT is the platform behind MOTE, bringing AI tools and workflows together for work and learning. Explore the VANT homepage to see the wider ecosystem.");
-    } else if (normalized.includes("task") || normalized.includes("cowork") || normalized.includes("workflow")) {
-      setDemoAnswer("MOTE is designed to help bring context and coordination to work. In this preview, this is an illustrative response; task execution is not connected to a live AI engine yet.");
-    } else if (normalized.includes("security") || normalized.includes("safe") || normalized.includes("permission")) {
-      setDemoAnswer("Trust starts with clear permissions and user control. The live security and approval capabilities should be confirmed in the VANT product before being represented as active.");
-    } else if (normalized.includes("who") || normalized.includes("found")) {
-      setDemoAnswer("MOTE.EXE is VANT Technologies’ digital guardian character. Visit the VANT homepage to learn more about the team and platform.");
-    } else {
-      setDemoAnswer("Thanks for the signal. This console is currently a product preview with sample responses, not a live AI chat. The next step is connecting it to VANT’s supported AI experience.");
-    }
+    if (!question || isSending || !authReady) return;
+    const nextMessages = [...messages, { role: "user" as const, content: question }];
+    setMessages(nextMessages);
     setPrompt("");
+    setAnswer("");
+    setChatError("");
+    setIsSending(true);
+    try {
+      const { data } = await supabase.auth.getSession();
+      const token = data.session?.access_token;
+      if (!token || data.session?.user.is_anonymous !== true) {
+        throw new Error("Your guest session expired. Refresh the page to start a new guest session.");
+      }
+      const response = await fetch("/api/mote-chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ messages: nextMessages }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (payload.error === "guest_limit_reached") throw new Error("You've reached today's guest message limit. Please come back after the daily reset.");
+        throw new Error(payload.message || payload.detail || "VANT GPT couldn't respond just now. Please try again.");
+      }
+      const text = payload?.content?.find?.((part: { type?: string; text?: string }) => part?.type === "text")?.text
+        || payload?.choices?.[0]?.message?.content;
+      if (typeof text !== "string" || !text.trim()) throw new Error("VANT GPT returned an empty response. Please try again.");
+      setAnswer(text.trim());
+      setMessages([...nextMessages, { role: "assistant", content: text.trim() }]);
+    } catch (error) {
+      setChatError(error instanceof Error ? error.message : "VANT GPT is temporarily unavailable.");
+    } finally {
+      setIsSending(false);
+    }
   }
 
   useEffect(() => {
@@ -76,14 +124,16 @@ export default function MoteProductPage() {
             </div>
           </div>
           <div className="mp-console-panel vt-reveal">
-            <div className="mp-console-top"><span>M-01 / INPUT CHANNEL</span><span><i /> DEMO MODE</span></div>
+            <div className="mp-console-top"><span>M-01 / VANT GPT CHANNEL</span><span><i /> GUEST MODE</span></div>
             <form className="mp-prompt-form" onSubmit={handleDemoSubmit}>
               <label htmlFor="mote-demo-prompt">MESSAGE MOTE</label>
-              <div className="mp-prompt-row"><input id="mote-demo-prompt" value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder="Ask about VANT or workflows..." maxLength={400} /><button type="submit" aria-label="Send prompt" disabled={!prompt.trim()}>↗</button></div>
-              <p>Enter a question to preview the interaction. Responses below are sample responses, not live AI output.</p>
+              <div className="mp-prompt-row"><input id="mote-demo-prompt" value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder="Ask VANT GPT..." maxLength={400} disabled={!authReady || isSending} /><button type="submit" aria-label="Send prompt" disabled={!prompt.trim() || !authReady || isSending}>{isSending ? "…" : "↗"}</button></div>
+              <p>{!authReady ? "Starting secure guest session…" : "Guest access only · Daily message allowance applies."}</p>
             </form>
-            {demoAnswer && <div className="mp-demo-response" role="status" aria-live="polite"><span>YOU / {submittedPrompt}</span><p>{demoAnswer}</p></div>}
-            <div className="mp-console-foot"><span>LOCAL PREVIEW</span><span>LIVE ENGINE NOT CONNECTED</span></div>
+            {isSending && <div className="mp-demo-response" role="status"><span>MOTE / THINKING</span><p>VANT GPT is working on your question…</p></div>}
+            {answer && <div className="mp-demo-response" role="status" aria-live="polite"><span>VANT GPT / RESPONSE</span><p>{answer}</p></div>}
+            {chatError && <div className="mp-demo-response mp-chat-error" role="alert"><span>CHANNEL NOTICE</span><p>{chatError}</p></div>}
+            <div className="mp-console-foot"><span>{authReady ? "GUEST SESSION ACTIVE" : "INITIALIZING GUEST SESSION"}</span><span>POWERED BY VANT GPT</span></div>
           </div>
         </section>
 
