@@ -101,6 +101,22 @@ function CorporateHomeView() {
     document.querySelectorAll(".vt-reveal").forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    if (!activeDropdown) return;
+    const handleOutsidePointer = (event: PointerEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!target?.closest(".vt-nav-group")) setActiveDropdown("");
+    };
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveDropdown("");
+    };
+    document.addEventListener("pointerdown", handleOutsidePointer);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("pointerdown", handleOutsidePointer);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [activeDropdown]);
   const closeMenu = () => { setMenuOpen(false); setActiveDropdown(""); };
   const toggleDropdown = (name: string) => setActiveDropdown(current => current === name ? "" : name);
   return <div className="vt-site vt-home-v2">
