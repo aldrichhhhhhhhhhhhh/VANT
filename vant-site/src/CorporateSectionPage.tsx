@@ -1,5 +1,6 @@
 import React from "react";
 import VANTDocumentViewer from "./VANTDocumentViewer";
+import VANTJamboard from "./VANTJamboard";
 import "./corporate.css";
 
 type Item = { title: string; description: string; href: string; eyebrow?: string };
@@ -54,7 +55,7 @@ const newsStories: Record<string, NewsStory> = {
 export default function CorporateSectionPage({ slug }: { slug: string }) {
   const story = newsStories[slug];
   const data = pages[slug];
-  if (story) return <VANTDocumentViewer><div className="vt-section-page vt-news-story-page">
+  if (story) return <VANTJamboard><VANTDocumentViewer><div className="vt-section-page vt-news-story-page">
     <header className="vt-section-page-header"><a className="vt-section-page-brand" href="/"><span className="vt-section-page-mark">V</span><span>VANT <small>TECHNOLOGIES</small></span></a><a className="vt-section-page-home" href="/news">← Back to news</a></header>
     <main className="vt-section-page-main vt-news-story-main">
       <div className="vt-section-page-kicker">NEWSROOM / {story.category}</div>
@@ -66,9 +67,9 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div><a className="vt-news-patch-open" href="/news?document=patch-notes" data-vant-document-id="patch-notes">Open patch notes <span>↗</span></a></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/news">More news ↗</a></footer>
-  </div></VANTDocumentViewer>;
+  </div></VANTDocumentViewer></VANTJamboard>;
   if (!data) return null;
-  return <VANTDocumentViewer><div className="vt-section-page">
+  return <VANTJamboard><VANTDocumentViewer><div className="vt-section-page">
     <header className="vt-section-page-header">
       <a className="vt-section-page-brand" href="/"><span className="vt-section-page-mark">V</span><span>VANT <small>TECHNOLOGIES</small></span></a>
       <a className="vt-section-page-home" href="/">Back to homepage ↗</a>
@@ -97,6 +98,8 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
             <a className="vt-research-card" href="/research?document=research-thoughtful-design" data-vant-document-id="research-thoughtful-design"><span className="vt-research-card-index">R&D / 002</span><span className="vt-research-symbol">◇</span><small>HUMAN FACTORS ENGINEERING</small><h3>Thoughtful technology by design</h3><p>Why clarity, usefulness, and responsibility should shape intelligent product experiences.</p><b>Read perspective <i>↗</i></b></a>
             <a className="vt-research-card" href="/research?document=research-future-learning" data-vant-document-id="research-future-learning"><span className="vt-research-card-index">R&D / 003</span><span className="vt-research-symbol">⌁</span><small>ADAPTIVE SYSTEMS</small><h3>The future of work and learning</h3><p>Exploring how adaptable AI experiences can support different goals and ways of learning.</p><b>Read perspective <i>↗</i></b></a>
             <a className="vt-research-card vt-research-card-featured" href="/research?document=research-cowork-architecture" data-vant-document-id="research-cowork-architecture"><span className="vt-research-card-index">ENGINEERING / 004</span><span className="vt-research-symbol">⎇</span><small>MULTI-AGENT ORCHESTRATION</small><h3>Inside VANT CoWork</h3><p>Explore the architecture behind specialized agents, task coordination, persistent profiles, and human-reviewed execution.</p><b>Explore system architecture <i>↗</i></b></a>
+            <a className="vt-research-card vt-research-card-featured vt-research-card-jam" href="/research?jamboard=vant-semantic-architecture" data-vant-jamboard-id="vant-semantic-architecture"><span className="vt-research-card-index">SYSTEMS / 001 · JAMBOARD</span><span className="vt-research-symbol">◎</span><small>SHARED INTELLIGENCE LAYER</small><h3>VANT Semantic Architecture</h3><p>Explore the proposed central intelligence layer connecting context, reasoning, memory, orchestration, capabilities, and interfaces.</p><b>Open in VANT / Jamboard <i>↗</i></b></a>
+            <a className="vt-research-card vt-research-card-jam" href="/research?jamboard=vant-cowork-architecture" data-vant-jamboard-id="vant-cowork-architecture"><span className="vt-research-card-index">SYSTEMS / 002 · JAMBOARD</span><span className="vt-research-symbol">⎇</span><small>MULTI-AGENT WORKFLOW</small><h3>CoWork orchestration map</h3><p>Inspect the conceptual flow from task planning through specialist agents, integration, and human review.</p><b>Open in VANT / Jamboard <i>↗</i></b></a>
           </div>
           <p className="vt-research-disclaimer">These are VANT editorial perspectives and developing research themes, not peer-reviewed studies or published scientific findings.</p>
         </section>
@@ -119,5 +122,5 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div><a className="vt-news-patch-open" href="/news?document=patch-notes" data-vant-document-id="patch-notes">Open patch notes <span>↗</span></a></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/connect">Connect with VANT ↗</a></footer>
-  </div></VANTDocumentViewer>;
+  </div></VANTDocumentViewer></VANTJamboard>;
 }
