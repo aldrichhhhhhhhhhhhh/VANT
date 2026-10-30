@@ -101,7 +101,64 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <h1>{data.title}</h1>
       <p className="vt-section-page-lead">{data.lead}</p>
       <div className="vt-section-page-rule" />
-      {(slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
+      {slug === "company-story" ? <article className="vt-company-blog">
+        <aside className="vt-company-blog-index">
+          <span>IN THIS STORY</span>
+          <a href="#story-founder">01 / Who built VANT</a>
+          <a href="#story-beginnings">02 / The beginning</a>
+          <a href="#story-journey">03 / The journey</a>
+          <a href="#story-roadmap">04 / The roadmap</a>
+          <a href="#story-future">05 / What comes next</a>
+        </aside>
+        <div className="vt-company-blog-body">
+          <div className="vt-company-blog-byline"><span>VANT TECHNOLOGIES</span><span>COMPANY JOURNAL</span><span>OUR STORY</span></div>
+          <p className="vt-company-blog-intro">Every company begins with an idea. VANT began with a belief that intelligent technology should help people do more meaningful work, learn with greater confidence, and turn ambitious ideas into something real.</p>
+          <section id="story-founder">
+            <span className="vt-company-blog-number">01 / THE PEOPLE</span>
+            <h2>Built with a founder's conviction.</h2>
+            <p>VANT is a founder-led technology initiative shaped through hands-on product thinking, design, and development. It is being built from the ground up: starting with a clear problem to solve, testing ideas through working experiences, and improving the platform as those ideas become more concrete.</p>
+            <p>The work is not limited to a single application. The ambition is to create a connected technology company where products, learning resources, research, and responsible practices reinforce one another.</p>
+          </section>
+          <section id="story-beginnings">
+            <span className="vt-company-blog-number">02 / THE BEGINNING</span>
+            <h2>One question became a bigger vision.</h2>
+            <p>The starting point was a practical question: what if AI could become a useful workspace rather than just a place to ask questions? A place where people could think through problems, organize projects, work with information, and move from an idea to a finished task.</p>
+            <p>That question shaped the first direction for VANT: an AI work platform designed for both business and learning. As the concept developed, the vision expanded beyond chat into tools, projects, collaborative workflows, integrations, and persistent context.</p>
+          </section>
+          <section id="story-journey">
+            <span className="vt-company-blog-number">03 / THE JOURNEY</span>
+            <h2>From a single product to a connected ecosystem.</h2>
+            <p>VANT's journey has been an iterative process of designing, building, testing, and refining. The work has grown into several connected experiences, each with a distinct purpose:</p>
+            <ul className="vt-company-blog-list">
+              <li><b>VANT AI Work Platform</b><span>An AI workspace for projects, tools, information, and everyday workflows.</span></li>
+              <li><b>VANT Education</b><span>Learning experiences that help turn notes into study resources and support practice and planning.</span></li>
+              <li><b>MOTE.EXE</b><span>A watchful intelligence companion and a recognizable identity within the VANT ecosystem.</span></li>
+              <li><b>VANT Libraries & Research</b><span>A growing knowledge space for product documentation, technical perspectives, and company materials.</span></li>
+            </ul>
+            <p>These are not separate ambitions. They are parts of a wider effort to make intelligent technology more useful, understandable, and connected.</p>
+          </section>
+          <section id="story-roadmap">
+            <span className="vt-company-blog-number">04 / THE ROADMAP</span>
+            <h2>Build carefully. Connect meaningfully. Improve continuously.</h2>
+            <p>Our roadmap is guided by a few enduring priorities: strengthen the foundations of our products, make the experience coherent across the ecosystem, improve reliability and security, and create useful ways for people and organizations to learn, work, and collaborate with VANT.</p>
+            <div className="vt-company-roadmap">
+              <div><i>01</i><b>Strengthen the foundations</b><span>Product quality, reliability, usability, and security.</span></div>
+              <div><i>02</i><b>Connect the experiences</b><span>A more coherent relationship across work, learning, and MOTE.</span></div>
+              <div><i>03</i><b>Grow knowledge and research</b><span>Clear documentation, useful learning resources, and technical perspectives.</span></div>
+              <div><i>04</i><b>Build with people</b><span>Partnerships, feedback, and opportunities to create practical value.</span></div>
+            </div>
+            <p className="vt-company-blog-note">This roadmap describes strategic direction, not a fixed release schedule. Priorities may evolve as products develop and we learn from the people who use them.</p>
+          </section>
+          <section id="story-future">
+            <span className="vt-company-blog-number">05 / WHAT COMES NEXT</span>
+            <h2>Technology that moves people forward.</h2>
+            <p>We aim to build a company that makes intelligent technology more approachable and more capable — technology that supports work, makes learning more personal, and gives ambitious ideas a better chance of becoming reality.</p>
+            <p>There is still much to build. The direction remains clear: move with purpose, take responsibility for what we create, and keep people at the center of the work.</p>
+            <blockquote>We build intelligent technology that moves people forward.</blockquote>
+          </section>
+          <div className="vt-company-blog-end"><span>END OF STORY</span><a href="/company-profile">Continue to the Company Profile ↗</a></div>
+        </div>
+      </article> : (slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
         <section className="vt-research-intro">
           <div className="vt-news-section-heading"><span>01 / RESEARCH & DEVELOPMENT</span><span>INTELLIGENCE · SYSTEMS · ENGINEERING</span></div>
           <div className="vt-research-hero-grid">
@@ -140,7 +197,7 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
         {data.items.map((item) => <a className="vt-section-page-card" href={item.href} key={item.title}>
           <span>{item.eyebrow}</span><h2>{item.title}</h2><p>{item.description}</p><b>Explore <i>↗</i></b>
         </a>)}
-      </div>}
+      </div>)}
       {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div><a className="vt-news-patch-open" href="/news?document=patch-notes" data-vant-document-id="patch-notes">Open patch notes <span>↗</span></a></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/connect">Connect with VANT ↗</a></footer>
