@@ -283,7 +283,7 @@ function CorporateHomeView() {
 export default function CorporateHome() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   const sectionSlug = path.slice(1);
-  const sectionRoutes = ["news","research","policy","commitments","company","products","perspectives","our-approach","mission","vision","partnerships","education","news-vant-ecosystem","news-vant-education","news-mote-exe"];
+  const sectionRoutes = ["news","research","policy","about-us","company-story","company-profile","business-theory","commitments","company","products","perspectives","our-approach","mission","vision","partnerships","education","news-vant-ecosystem","news-vant-education","news-mote-exe"];
   if (sectionRoutes.includes(sectionSlug)) return <CorporateSectionPage slug={sectionSlug} />;
   if (path === "/mote-exe" || path === "/mote") return <MoteProductPage />;
   if (path === "/libraries") return <LibrariesPage />;
