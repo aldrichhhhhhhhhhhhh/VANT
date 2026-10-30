@@ -84,11 +84,12 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
           <div className="vt-news-story-grid">{Object.entries(newsStories).map(([storySlug, item])=><a className="vt-news-story-card" href={"/" + storySlug} key={storySlug}><span className="vt-news-story-card-icon">{item.icon}</span><span className="vt-news-story-card-category">{item.category}</span><h3>{item.title}</h3><p>{item.summary}</p><b>Read story <i>↗</i></b><small>RELATED LIBRARY · {item.library}</small></a>)}</div>
         </section>
         <section className="vt-news-section" id="news-company"><div className="vt-news-section-heading"><span>02 / COMPANY JOURNAL</span><span>VANT TECHNOLOGIES</span></div><h2>Company news</h2><p>Milestones, partnerships, launches, and news about the people and ideas behind VANT.</p><a className="vt-news-library-link" href="/libraries#vant-technologies">Explore the VANT Technologies collection in Libraries <span>↗</span></a></section>
-      </div><div className="vt-section-page-grid">
+      </div> : <div className="vt-section-page-grid">
         {data.items.map((item) => <a className="vt-section-page-card" href={item.href} key={item.title}>
           <span>{item.eyebrow}</span><h2>{item.title}</h2><p>{item.description}</p><b>Explore <i>↗</i></b>
         </a>)}
       </div>}
+      {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/connect">Connect with VANT ↗</a></footer>
   </div>;
