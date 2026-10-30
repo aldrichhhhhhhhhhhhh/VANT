@@ -1009,3 +1009,107 @@
 .vt-connect-footnote{max-width:850px;margin:24px 0 0;color:#89877c;font-size:9px;line-height:1.8}
 @media(max-width:850px){.vt-connect-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.vt-connect-main{padding-top:62px}.vt-connect-hero h1{font-size:clamp(44px,12vw,62px)}.vt-connect-card{padding:24px 20px}.vt-connect-overline{margin-top:32px}.vt-connect-topics>div{grid-template-columns:1fr;gap:5px}.vt-connect-card h2{font-size:37px}}
+
+
+/* VANT Technologies — warm ivory visual system (MOTE remains intentionally dark) */
+.vt-site{
+  --vt-bg:#eeece4;
+  --vt-panel:#f8f7f2;
+  --vt-text:#1b1b17;
+  --vt-muted:#77756b;
+  --vt-gold:#a8894c;
+  --vt-line:rgba(35,34,28,.15);
+  background:#eeece4;
+  color:#1b1b17;
+}
+.vt-site .vt-header{
+  background:rgba(238,236,228,.92);
+  border-bottom-color:rgba(35,34,28,.12);
+}
+.vt-site .vt-nav{color:#5f5d54}
+.vt-site .vt-nav-cta{color:#292820}
+.vt-site .vt-hero{
+  background:#eeece4;
+  color:#1b1b17;
+}
+.vt-site .vt-hero::before{
+  background-image:linear-gradient(rgba(35,34,28,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(35,34,28,.025) 1px,transparent 1px);
+}
+.vt-site .vt-eyebrow,.vt-site .vt-section-kicker{color:#777263}
+.vt-site .vt-hero-lede{color:#626158}
+.vt-site .vt-text-link,.vt-site .vt-inline-link{color:#25251f!important}
+.vt-site .vt-hero-foot,.vt-site .vt-hero-bottom{color:#77756b}
+.vt-site .vt-scene-grid{background:radial-gradient(ellipse at center,rgba(168,137,76,.13),transparent 64%)}
+.vt-site .vt-data-card{background:rgba(250,249,244,.92);border-color:rgba(125,99,48,.25);box-shadow:0 18px 50px rgba(40,36,25,.12)}
+.vt-site .vt-card-label,.vt-site .vt-data-card small{color:#77756b}
+.vt-site .vt-data-card strong{color:#26251f}
+.vt-site .vt-float-chip{background:rgba(250,249,244,.94);color:#66552f;border-color:rgba(168,137,76,.35)}
+.vt-site .vt-scene-caption{color:#77756b}
+.vt-site .vt-about,.vt-site .vt-partners,.vt-site .vt-contact{
+  background:#eeece4;
+  color:#1b1b17;
+}
+.vt-site .vt-products,.vt-site .vt-journey{
+  background:#e9e7df;
+  color:#1b1b17;
+}
+.vt-site .vt-section-heading>p{color:#66645b}
+.vt-site .vt-product,.vt-site .vt-product-gold{
+  background:#f8f7f2;
+  border-color:rgba(35,34,28,.14);
+  color:#1b1b17;
+}
+.vt-site .vt-product h3{color:#1b1b17}
+.vt-site .vt-product h4{color:#4f4d44}
+.vt-site .vt-product-copy>p{color:#69675e}
+.vt-site .vt-product-meta{color:#77756b}
+.vt-site .vt-tags span{border-color:rgba(35,34,28,.16);color:#5e5c53}
+.vt-site .vt-product-link{color:#292820!important}
+.vt-site .vt-product-visual,.vt-site .vt-product-gold .vt-product-visual{
+  background:radial-gradient(ellipse at 50% 50%,rgba(168,137,76,.12),transparent 62%),linear-gradient(135deg,#f1efe7,#e7e4da);
+}
+.vt-site .vt-app-window{background:rgba(250,249,244,.96);border-color:rgba(125,99,48,.3);box-shadow:0 30px 70px rgba(35,34,28,.14)}
+.vt-site .vt-app-top{border-bottom-color:rgba(35,34,28,.12);color:#77756b}
+.vt-site .vt-app-sidebar{border-right-color:rgba(35,34,28,.1)}
+.vt-site .vt-app-main>strong{color:#24231e}
+.vt-site .vt-app-prompt{border-color:rgba(168,137,76,.3);color:#77756b}
+.vt-site .vt-app-mini-grid>div{background:rgba(35,34,28,.045)}
+.vt-site .vt-app-mini-grid b{color:#4e4c43}
+.vt-site .vt-study-card{background:rgba(250,249,244,.96);border-color:rgba(168,137,76,.3);box-shadow:0 15px 35px rgba(35,34,28,.12)}
+.vt-site .vt-study-card b{color:#24231e}
+.vt-site .vt-study-card span{color:#77756b}
+.vt-site .vt-journey-copy>p{color:#66645b}
+.vt-site .vt-journey-stages{border-color:rgba(35,34,28,.16)}
+.vt-site .vt-journey-stages>div{border-color:rgba(35,34,28,.14)}
+.vt-site .vt-journey-stages p{color:#4f4d44}
+.vt-site .vt-journey-copy>small{color:#77756b}
+.vt-site .vt-contact-glow{opacity:.55}
+.vt-site .vt-partner-card{background:#f8f7f2;color:#1b1b17;border:1px solid rgba(35,34,28,.14)}
+.vt-site .vt-partner-card::after{border-color:rgba(168,137,76,.15);box-shadow:0 0 0 30px rgba(168,137,76,.035),0 0 0 60px rgba(168,137,76,.025)}
+.vt-site .vt-partner-status{color:#77756b}
+.vt-site .vt-partner-wordmark{color:#24231e}
+.vt-site .vt-partner-wordmark span{color:#9a7b3e}
+.vt-site .vt-partner-card>p{color:#66645b}
+.vt-site .vt-partner-divider{background:rgba(35,34,28,.14)}
+.vt-site .vt-partner-bottom{color:#66645b}
+.vt-site .vt-partner-bottom a{color:#66552f}
+.vt-site .vt-disclaimer{color:#77756b}
+.vt-site .vt-footer{
+  background:#eeece4;
+  color:#24231e;
+  border-top:1px solid rgba(35,34,28,.14);
+}
+.vt-site .vt-footer-links a,.vt-site .vt-footer p,.vt-site .vt-copyright{color:#77756b}
+.vt-site .vt-libraries-page,.vt-site .vt-connect-page{background:#eeece4;color:#1b1b17}
+.vt-site .vt-connect-page{background:#eeece4}
+.vt-site .vt-connect-card{background:#f8f7f2}
+.vt-site .vt-connect-support{background:#f8f7f2;color:#1b1b17;border-color:rgba(35,34,28,.15)}
+.vt-site .vt-connect-support .vt-connect-card-top{color:#77756b}
+.vt-site .vt-connect-support .vt-connect-description{color:#69675e}
+.vt-site .vt-connect-topics>div{border-top-color:rgba(35,34,28,.13)}
+.vt-site .vt-connect-topics b{color:#3e3c34}
+.vt-site .vt-connect-topics span{color:#77756b}
+.vt-site .vt-connect-address{color:#77756b}
+@media(max-width:900px){
+  .vt-site .vt-header{background:rgba(238,236,228,.97)}
+}
