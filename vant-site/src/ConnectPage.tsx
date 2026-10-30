@@ -53,11 +53,12 @@ export default function ConnectPage() {
   const subject = encodeURIComponent("VANT Technologies — Talk to the Team");
   const body = encodeURIComponent("Hello VANT Team,\n\nI’m reaching out regarding:\n\n[Please describe your question or concern]\n\nRelevant product/account (if applicable):\n\nThank you.");
   const mailto = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+  const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SUPPORT_EMAIL)}&su=${subject}&body=${body}`;
 
   return <div className="vt-site vt-connect-page">
     <header className="vt-header">
       <a className="vt-brand" href="/" aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
-      <nav className="vt-nav" aria-label="Connect navigation"><a href="/">Home</a><a href="/libraries">Libraries</a><a className="vt-nav-cta" href={mailto}>Talk to the Team <Arrow diagonal /></a></nav>
+      <nav className="vt-nav" aria-label="Connect navigation"><a href="/">Home</a><a href="/libraries">Libraries</a><a className="vt-nav-cta" href={gmailCompose} target="_blank" rel="noopener noreferrer">Talk to the Team <Arrow diagonal /></a></nav>
     </header>
     <main className="vt-connect-main">
       <section className="vt-connect-hero">
@@ -92,8 +93,9 @@ export default function ConnectPage() {
             <div><b>Business & partnerships</b><span>Company inquiries, collaborations, vendors, and enterprise discussions.</span></div>
             <div><b>Privacy & other concerns</b><span>Data requests, accessibility, feedback, and matters needing personal attention.</span></div>
           </div>
-          <a className="vt-connect-primary" href={mailto}>Email VANT Support <Arrow diagonal /></a>
+          <a className="vt-connect-primary" href={gmailCompose} target="_blank" rel="noopener noreferrer">Open Gmail to contact VANT <Arrow diagonal /></a>
           <small className="vt-connect-address">{SUPPORT_EMAIL}</small>
+          <a className="vt-connect-email-fallback" href={mailto}>Prefer another email app? Use your default email app.</a>
         </article>
         <article className="vt-connect-card vt-connect-access">
           <div className="vt-connect-card-top"><span>02 / UPCOMING LAUNCH</span><span className="vt-connect-icon">＋</span></div>
