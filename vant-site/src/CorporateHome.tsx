@@ -284,7 +284,7 @@ function CorporateHomeView() {
 }
 export default function CorporateHome() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
-  const sectionSlug = path.replace(/^\\//, "");
+  const sectionSlug = path.slice(1);
   const sectionRoutes = ["news","research","policy","commitments","company","products","perspectives","our-approach","mission","vision","partnerships","education"];
   if (sectionRoutes.includes(sectionSlug)) return <CorporateSectionPage slug={sectionSlug} />;
   if (path === "/mote-exe" || path === "/mote") return <MoteProductPage />;
