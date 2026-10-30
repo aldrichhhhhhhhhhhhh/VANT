@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 type LegalPagesProps = { page: "privacy" | "terms" };
-const SUPPORT_EMAIL = "VANT.CLIENSUPPORT@GMAIL.COM";
+const SUPPORT_EMAIL = "VantTech.Support@gmail.com";
 const UPDATED = "October 13, 2026";
 
 function LegalLayout({ title, children }: { title: string; children: React.ReactNode }) {
@@ -19,9 +19,9 @@ function LegalLayout({ title, children }: { title: string; children: React.React
           <h1 className="font-display text-4xl md:text-5xl font-medium tracking-tight mb-3">{title}</h1>
           <p className="text-white/35 text-xs font-mono mb-10">Last updated: {UPDATED}</p>
           <div className="space-y-8 text-white/65 text-sm md:text-base leading-7">{children}</div>
-          <div className="mt-12 pt-6 border-t border-white/10 text-sm text-white/45">Questions? Contact <a className="text-violet-300 hover:text-violet-200 underline underline-offset-4" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM</a>.</div>
+          <div className="mt-12 pt-6 border-t border-white/10 text-sm text-white/45">Questions? Contact <a className="text-violet-300 hover:text-violet-200 underline underline-offset-4" href="mailto:VantTech.Support@gmail.com">VantTech.Support@gmail.com</a>.</div>
         </div>
-        <footer className="flex gap-6 justify-center text-xs text-white/30 mt-8"><a className="hover:text-white/70" href="/privacy">Privacy</a><a className="hover:text-white/70" href="/terms">Terms</a><a className="hover:text-white/70" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">Contact</a></footer>
+        <footer className="flex gap-6 justify-center text-xs text-white/30 mt-8"><a className="hover:text-white/70" href="/privacy">Privacy</a><a className="hover:text-white/70" href="/terms">Terms</a><a className="hover:text-white/70" href="mailto:VantTech.Support@gmail.com">Contact</a></footer>
       </div>
     </main>
   );
@@ -39,7 +39,7 @@ export default function LegalPages({ page }: LegalPagesProps) {
         <section><h2 className="text-white text-xl font-medium mb-2">5. Retention and security</h2><p>Information may remain in the services that process it or in your browser until it is deleted, subject to the applicable provider's systems and policies. We take reasonable steps appropriate to a developing website, but no website, transmission, or storage method can be guaranteed completely secure. Avoid sending confidential or highly sensitive information through the site.</p></section>
         <section><h2 className="text-white text-xl font-medium mb-2">6. Your choices and requests</h2><p>You can clear this website's local storage through your browser settings. To ask us to access, correct, or delete information you have submitted, contact us at the email below and describe your request. We may need enough information to locate the submission and may be unable to remove copies controlled by an independent service provider; where relevant, we can direct you to that provider's own process.</p></section>
         <section><h2 className="text-white text-xl font-medium mb-2">7. Children and changes</h2><p>The website is intended for a general audience interested in VANT's products and is not designed to solicit information from children. We may revise this policy as the site develops. We will post the revised version here and update the date above.</p></section>
-        <section><h2 className="text-white text-xl font-medium mb-2">8. Contact</h2><p>For privacy questions or requests, email <a className="text-violet-300 underline underline-offset-4" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM</a>.</p></section>
+        <section><h2 className="text-white text-xl font-medium mb-2">8. Contact</h2><p>For privacy questions or requests, email <a className="text-violet-300 underline underline-offset-4" href="mailto:VantTech.Support@gmail.com">VantTech.Support@gmail.com</a>.</p></section>
       </LegalLayout>
     );
   }
@@ -54,7 +54,7 @@ export default function LegalPages({ page }: LegalPagesProps) {
       <section><h2 className="text-white text-xl font-medium mb-2">6. Disclaimers</h2><p>The website and its content are provided on an “as is” and “as available” basis, to the extent permitted by law. We do not guarantee that the website will always be available, error-free, secure, or current, or that descriptions of future functionality will be realized. Nothing in these terms excludes a right or protection that cannot legally be excluded.</p></section>
       <section><h2 className="text-white text-xl font-medium mb-2">7. Limitation of liability</h2><p>To the extent permitted by applicable law, VANT will not be liable for indirect, incidental, special, consequential, or punitive damages, or for loss of data, profits, or business arising from use of or inability to use this website. These terms do not limit liability where such limitation is prohibited by law.</p></section>
       <section><h2 className="text-white text-xl font-medium mb-2">8. Changes and termination</h2><p>We may update, suspend, or discontinue any part of the website at any time. We may revise these terms by posting an updated version here and changing the date above. Continued use after an update means you accept the revised terms, to the extent permitted by law.</p></section>
-      <section><h2 className="text-white text-xl font-medium mb-2">9. Contact</h2><p>Questions about these terms can be sent to <a className="text-violet-300 underline underline-offset-4" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM</a>.</p></section>
+      <section><h2 className="text-white text-xl font-medium mb-2">9. Contact</h2><p>Questions about these terms can be sent to <a className="text-violet-300 underline underline-offset-4" href="mailto:VantTech.Support@gmail.com">VantTech.Support@gmail.com</a>.</p></section>
     </LegalLayout>
   );
 }
