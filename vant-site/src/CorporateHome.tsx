@@ -167,7 +167,7 @@ function CorporateHomeView() {
         <div className={activeDropdown === "research" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "research"} onClick={() => toggleDropdown("research")}>Research <span>⌄</span></button>
           <div className="vt-nav-dropdown">
-            <div className="vt-dropdown-intro"><small>EXPLORE IDEAS</small><strong>Research & knowledge</strong><p>Perspectives, learning resources, and the thinking behind our technology.</p></div>
+            <div className="vt-dropdown-intro"><small>EXPLORE IDEAS</small><a className="vt-dropdown-intro-link" href="/research" onClick={closeMenu}>Research & knowledge ↗</a><p>Perspectives, learning resources, and the thinking behind our technology.</p></div>
             <div className="vt-dropdown-links">
               <a href="/libraries" onClick={closeMenu}><b>VANT Libraries</b><small>Documentation, resources, and research</small></a>
               <a href="/perspectives" onClick={closeMenu}><b>Technology perspectives</b><small>Ideas shaping what comes next</small></a>
@@ -177,7 +177,7 @@ function CorporateHomeView() {
         <div className={activeDropdown === "policy" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "policy"} onClick={() => toggleDropdown("policy")}>Policy <span>⌄</span></button>
           <div className="vt-nav-dropdown">
-            <div className="vt-dropdown-intro"><small>TRUST & RESPONSIBILITY</small><strong>Our policies</strong><p>Clear principles for protecting people, supporting safe use, and building trust in our technology.</p></div>
+            <div className="vt-dropdown-intro"><small>TRUST & RESPONSIBILITY</small><a className="vt-dropdown-intro-link" href="/policy" onClick={closeMenu}>Our policies ↗</a><p>Clear principles for protecting people, supporting safe use, and building trust in our technology.</p></div>
             <div className="vt-dropdown-links">
               <a href="/privacy" onClick={closeMenu}><b>Privacy</b><small>How we approach personal information</small></a>
               <a href="/terms" onClick={closeMenu}><b>Terms & policies</b><small>Terms governing our services</small></a>
@@ -189,7 +189,7 @@ function CorporateHomeView() {
         <div className={activeDropdown === "company" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "company"} onClick={() => toggleDropdown("company")}>Company <span>⌄</span></button>
           <div className="vt-nav-dropdown">
-            <div className="vt-dropdown-intro"><small>ABOUT VANT</small><strong>People & purpose</strong><p>Discover the principles, ambitions, and relationships shaping VANT Technologies.</p></div>
+            <div className="vt-dropdown-intro"><small>ABOUT VANT</small><a className="vt-dropdown-intro-link" href="/company" onClick={closeMenu}>People & purpose ↗</a><p>Discover the principles, ambitions, and relationships shaping VANT Technologies.</p></div>
             <div className="vt-dropdown-links">
               <a href="/mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
               <a href="/vision" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
@@ -200,7 +200,7 @@ function CorporateHomeView() {
         <div className={activeDropdown === "products" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "products"} onClick={() => toggleDropdown("products")}>Products <span>⌄</span></button>
           <div className="vt-nav-dropdown">
-            <div className="vt-dropdown-intro"><small>THE VANT ECOSYSTEM</small><strong>Products & experiences</strong><p>Purpose-built experiences for work, learning, and a more capable relationship with AI.</p></div>
+            <div className="vt-dropdown-intro"><small>THE VANT ECOSYSTEM</small><a className="vt-dropdown-intro-link" href="/products" onClick={closeMenu}>Products & experiences ↗</a><p>Purpose-built experiences for work, learning, and a more capable relationship with AI.</p></div>
             <div className="vt-dropdown-links">
               <a href="https://vant-ai.vercel.app/" onClick={closeMenu}><b>VANT AI Work Platform</b><small>Intelligence for work and teams</small></a>
               <a href="/education" onClick={closeMenu}><b>VANT Education</b><small>Tools for learning and progress</small></a>
