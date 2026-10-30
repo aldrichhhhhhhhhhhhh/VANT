@@ -7,6 +7,28 @@ type Item = { title: string; description: string; href: string; eyebrow?: string
 type PageData = { number: string; kicker: string; title: string; lead: string; items: Item[] };
 
 const pages: Record<string, PageData> = {
+  "about-us": { number:"04", kicker:"VANT TECHNOLOGIES / ABOUT US", title:"About Us", lead:"The people, purpose, principles, and ideas behind VANT Technologies — from the journey that brought us here to the future we aim to build.", items:[
+    {title:"Company Story",description:"Discover who built VANT, our journey from day one, the roadmap ahead, and what we aim to make possible in the future.",href:"/company-story",eyebrow:"OUR JOURNEY"},
+    {title:"Company Profile",description:"Get to know VANT Technologies through our company information, mission, vision, commitments, and principles.",href:"/company-profile",eyebrow:"WHO WE ARE"},
+    {title:"Business Theory",description:"Explore how ideas move beyond concepts and become functional, useful realities.",href:"/business-theory",eyebrow:"IDEAS INTO REALITY"}
+  ]},
+  "company-story": { number:"04.1", kicker:"ABOUT US / OUR JOURNEY", title:"Company Story", lead:"Who built VANT, how the journey began, the milestones that shaped our work, and the roadmap guiding what comes next.", items:[
+    {title:"Who built VANT",description:"Meet the founder and the people, skills, and ideas contributing to VANT Technologies.",href:"/connect",eyebrow:"THE PEOPLE"},
+    {title:"Our journey from day one",description:"Follow the origins, experiments, decisions, and milestones behind VANT.",href:"/news",eyebrow:"OUR HISTORY"},
+    {title:"The roadmap",description:"Explore the direction, priorities, and planned stages of VANT's development.",href:"/libraries",eyebrow:"WHAT'S NEXT"},
+    {title:"Our future ambitions",description:"Understand what VANT aims to build and the possibilities we want to help unlock.",href:"/vision",eyebrow:"THE FUTURE"}
+  ]},
+  "company-profile": { number:"04.2", kicker:"ABOUT US / COMPANY INFORMATION", title:"Company Profile", lead:"An overview of VANT Technologies — the organization, the purpose behind our work, and the commitments and principles intended to guide it.", items:[
+    {title:"Company information",description:"An introduction to VANT Technologies, its focus, ecosystem, and areas of work.",href:"/about-us",eyebrow:"OVERVIEW"},
+    {title:"Mission & vision",description:"Why we build intelligent technology and the future we want it to help make possible.",href:"/mission",eyebrow:"PURPOSE & DIRECTION"},
+    {title:"Our commitments",description:"The responsibilities and standards we aim to uphold as we build and grow.",href:"/our-approach",eyebrow:"RESPONSIBILITY"},
+    {title:"Our principles",description:"The values and practical principles that inform our decisions and product experiences.",href:"/our-approach",eyebrow:"HOW WE WORK"}
+  ]},
+  "business-theory": { number:"04.3", kicker:"ABOUT US / IDEAS INTO REALITY", title:"Business Theory", lead:"Ideas become valuable when they can be tested, built, used, and improved. Explore how VANT thinks about moving concepts into functional real-world solutions.", items:[
+    {title:"From idea to problem",description:"Start with a real need, understand who experiences it, and define the outcome worth pursuing.",href:"/libraries",eyebrow:"01 / DISCOVER"},
+    {title:"From concept to system",description:"Shape the idea into a workable model, product experience, and technical approach.",href:"/research",eyebrow:"02 / DESIGN"},
+    {title:"From system to reality",description:"Build, test, learn from use, and refine the solution based on practical feedback.",href:"/products",eyebrow:"03 / BUILD"}
+  ]},
   news: { number:"01", kicker:"VANT TECHNOLOGIES / NEWSROOM", title:"News & updates", lead:"What we're building. What's changing. What's next. Follow product releases, patch notes, company announcements, and milestones across VANT Technologies.", items:[
     {title:"Latest updates",description:"The newest releases, announcements, and developments from across VANT Technologies.",href:"#news-latest",eyebrow:"LATEST"},
     {title:"Patch notes",description:"A clear record of product changes, new features, improvements, and fixes.",href:"#news-patches",eyebrow:"PRODUCT UPDATES"},
