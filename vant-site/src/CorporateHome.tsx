@@ -185,15 +185,14 @@ function CorporateHomeView() {
             </div>
           </div>
         </div>
-        <a href="/commitments" onClick={closeMenu}>Commitments</a>
-        <div className={activeDropdown === "company" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
-          <button type="button" aria-expanded={activeDropdown === "company"} onClick={() => toggleDropdown("company")}>Company <span>⌄</span></button>
+        <div className={activeDropdown === "about" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
+          <button type="button" aria-expanded={activeDropdown === "about"} onClick={() => toggleDropdown("about")}>About Us <span>⌄</span></button>
           <div className="vt-nav-dropdown">
-            <div className="vt-dropdown-intro"><small>ABOUT VANT</small><a className="vt-dropdown-intro-link" href="/company" onClick={closeMenu}>People & purpose ↗</a><p>Discover the principles, ambitions, and relationships shaping VANT Technologies.</p></div>
+            <div className="vt-dropdown-intro"><small>ABOUT VANT TECHNOLOGIES</small><a className="vt-dropdown-intro-link" href="/about-us" onClick={closeMenu}>Who we are ↗</a><p>Discover the people, purpose, principles, and ideas behind VANT — from our beginnings to what we aim to build next.</p></div>
             <div className="vt-dropdown-links">
-              <a href="/mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
-              <a href="/vision" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
-              <a href="/partnerships" onClick={closeMenu}><b>Partnerships</b><small>Build something meaningful together</small></a>
+              <a href="/company-story" onClick={closeMenu}><b>Company Story</b><small>Who built VANT, our journey, roadmap, and future ambitions</small></a>
+              <a href="/company-profile" onClick={closeMenu}><b>Company Profile</b><small>Company information, mission, vision, commitments, and principles</small></a>
+              <a href="/business-theory" onClick={closeMenu}><b>Business Theory</b><small>Turning ideas into functional, real-world solutions</small></a>
             </div>
           </div>
         </div>
@@ -270,8 +269,7 @@ function CorporateHomeView() {
       <div className="vt-mega-columns">
         <div><h4>Research</h4><a href="/libraries">Research library</a><a href="/perspectives">Perspectives</a></div>
         <div><h4>Policy</h4><a href="/libraries">Our approach</a><a href="/privacy">Privacy</a></div>
-        <div><h4>Commitments</h4><a href="/mission">Our mission</a><a href="/vision">Our vision</a></div>
-        <div><h4>Company</h4><a href="/company">About VANT</a><a href="/partnerships">Partnerships</a><a href="/connect">Contact</a></div>
+        <div><h4>About Us</h4><a href="/company-story">Company Story</a><a href="/company-profile">Company Profile</a><a href="/business-theory">Business Theory</a></div>
         <div><h4>Products</h4><a href="https://vant-ai.vercel.app/">VANT AI Work Platform</a><a href="/education">VANT Education</a><a href="/mote-exe">MOTE.EXE</a></div>
         <div><h4>Models</h4><a href="/libraries">VANT intelligence</a><a href="/mote-exe">MOTE.EXE</a></div>
         <div><h4>Solutions</h4><a href="https://vant-ai.vercel.app/">Work platform</a><a href="/connect">Learning technology</a></div>
