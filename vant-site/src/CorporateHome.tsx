@@ -105,7 +105,8 @@ function CorporateHomeView() {
     if (!activeDropdown) return;
     const handleOutsidePointer = (event: PointerEvent) => {
       const target = event.target as HTMLElement | null;
-      if (!target?.closest(".vt-nav-group")) setActiveDropdown("");
+      const openGroup = document.querySelector(".vt-nav-group-open");
+      if (!target || !openGroup?.contains(target)) setActiveDropdown("");
     };
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActiveDropdown("");
@@ -120,6 +121,46 @@ function CorporateHomeView() {
   const closeMenu = () => { setMenuOpen(false); setActiveDropdown(""); };
   const toggleDropdown = (name: string) => setActiveDropdown(current => current === name ? "" : name);
   return <div className="vt-site vt-home-v2">
+    <style>{`
+      .vt-home-v2 .vt-nav-group { position: relative; }
+      .vt-home-v2 .vt-nav-dropdown {
+        top: calc(100% + 10px);
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 8px);
+      }
+      .vt-home-v2 .vt-nav-group-open > .vt-nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+      }
+      .vt-home-v2 .vt-nav-group:not(.vt-nav-group-open) > .vt-nav-dropdown {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .vt-home-v2 .vt-nav-products-dropdown,
+      .vt-home-v2 .vt-nav-group-open > .vt-nav-products-dropdown {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 8px);
+      }
+      .vt-home-v2 .vt-nav-group-open > .vt-nav-products-dropdown {
+        transform: translate(-50%, 0);
+      }
+      @media (max-width: 760px) {
+        .vt-home-v2 .vt-nav-dropdown,
+        .vt-home-v2 .vt-nav-group-open > .vt-nav-dropdown,
+        .vt-home-v2 .vt-nav-products-dropdown,
+        .vt-home-v2 .vt-nav-group-open > .vt-nav-products-dropdown {
+          top: auto;
+          left: auto;
+          right: auto;
+          transform: none;
+        }
+      }
+    `}</style>
     <header className="vt-header vt-header-editorial">
       <a className="vt-brand" href="#top" onClick={closeMenu} aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
       <button className="vt-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
