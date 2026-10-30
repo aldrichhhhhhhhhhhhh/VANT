@@ -12,7 +12,7 @@ const pages: Record<string, PageData> = {
     {title:"Company Profile",description:"Get to know VANT Technologies through our company information, mission, vision, commitments, and principles.",href:"/company-profile",eyebrow:"WHO WE ARE"},
     {title:"Business Theory",description:"Explore how ideas move beyond concepts and become functional, useful realities.",href:"/business-theory",eyebrow:"IDEAS INTO REALITY"}
   ]},
-  "company-story": { number:"04.1", kicker:"ABOUT US / COMPANY JOURNAL", title:"From Searching for Direction to Building What Comes Next.", lead:"Chapter 01 — INCEPTION. The story of how a small experiment became the beginning of VANT Technologies.", items:[
+  "company-story": { number:"04.1", kicker:"ABOUT US / COMPANY JOURNAL", title:"The VANT Story", lead:"A chapter-by-chapter account of the ideas, setbacks, experiments, and ambitions shaping VANT Technologies. Open an episode in the VANT Document Viewer.", items:[
     {title:"Who built VANT",description:"Meet the founder and the people, skills, and ideas contributing to VANT Technologies.",href:"/connect",eyebrow:"THE PEOPLE"},
     {title:"Our journey from day one",description:"Follow the origins, experiments, decisions, and milestones behind VANT.",href:"/news",eyebrow:"OUR HISTORY"},
     {title:"The roadmap",description:"Explore the direction, priorities, and planned stages of VANT's development.",href:"/libraries",eyebrow:"WHAT'S NEXT"},
@@ -101,80 +101,27 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <h1>{data.title}</h1>
       <p className="vt-section-page-lead">{data.lead}</p>
       <div className="vt-section-page-rule" />
-      {slug === "company-story" ? <article className="vt-company-blog">
-        <aside className="vt-company-blog-index">
-          <span>IN THIS STORY</span>
-          <a href="#story-before">01 / Before VANT</a>
-          <a href="#story-beginnings">02 / The beginning</a>
-          <a href="#story-building">03 / The decision</a>
-          <a href="#story-learning">04 / Learning</a>
-          <a href="#story-ecosystem">05 / The ecosystem</a>
-          <a href="#story-next">06 / What comes next</a>
-          <a href="#story-not-over">07 / The journey continues</a>
-        </aside>
-        <div className="vt-company-blog-body">
-
-          <div className="vt-company-blog-chapter"><span>CHAPTER 01</span><i>INCEPTION</i></div>
-          <div className="vt-company-blog-byline"><span>VANT TECHNOLOGIES</span><span>THE COMPANY JOURNAL</span><span>FOUNDER'S ACCOUNT</span></div>
-          <h2 className="vt-company-blog-headline">From Searching for Direction to Building What Comes Next.</h2>
-          <p className="vt-company-blog-deck">I didn't start with a company. I started as someone trying to find his direction, carrying a few ideas, a lot of questions, and the hope of building something that could help people.</p>
-          <section id="story-before">
-            <span className="vt-company-blog-number">01 / BEFORE VANT</span><h2>I was still trying to find my place.</h2>
-            <p>Before VANT existed, I was just a person working in a logistics company, trying to figure out what I was meant to do. I had ideas — plenty of them — and jumped from one business idea to another. I tried some. They didn't work out the way I hoped.</p>
-            <p>My salary had to stretch across the month, covering loans and everyday expenses. There were times when making it to the next payday was already a challenge. I wanted the freedom to build something of my own, help people, and hopefully become successful by doing something meaningful.</p>
-            <p>I didn't have a clear answer about what came next. I only knew I wanted to create something that mattered.</p>
-          </section>
-          <section id="story-beginnings">
-            <span className="vt-company-blog-number">02 / THE ACCIDENTAL BEGINNING</span><h2>It started with a spreadsheet problem.</h2>
-            <p>The beginning wasn't a business plan. I accidentally came across Google Apps Script and became curious about what I could make with it.</p>
-            <p>I started experimenting with an extension that could help anyone create spreadsheet formulas without already knowing how formulas worked. I called it <strong>AI Sheets Helper</strong>.</p>
-            <p>The idea came from a frustration I understood myself. I wanted people to describe what they needed and get help turning that thought into a working formula, without feeling they had to become spreadsheet experts first.</p>
-            <p>Then I started asking a bigger question: what if that same approach could help people do more than work with spreadsheets? What if there could be a place to think through problems, organize information, work on projects, and bring ideas to life?</p>
-            <p>That growing vision became the foundation for VANT AI Work Platform.</p>
-          </section>
-          <section id="story-building">
-            <span className="vt-company-blog-number">03 / THE DECISION TO BUILD</span><h2>The idea wouldn't leave me alone.</h2>
-            <p>At first, I wasn't sure VANT would ever become what I imagined. But the idea kept coming back. It stayed with me while I was working, handling everyday responsibilities, and trying to make ends meet.</p>
-            <p>Eventually, I decided to stop wondering what it could become and start building it. Most of the development happened around my day job — after work, during whatever hours I could find, and whenever I had enough energy to keep going.</p>
-            <p>There were days when the financial pressure was especially difficult. There were even days when I went without eating. I share that because it was part of the reality, not because hardship is something to romanticize or a requirement for building something worthwhile.</p>
-            <p>I had doubts. I wondered whether I could make the vision real. But I kept taking the next problem as it came, and little by little, the idea began to take shape.</p>
-          </section>
-          <section id="story-learning">
-            <span className="vt-company-blog-number">04 / LEARNING WHILE BUILDING</span><h2>I had to learn the things I didn't know.</h2>
-            <p>I didn't begin with a background in software development. There was a time when I didn't even know what JSON was. I honestly thought JSON sounded like someone's name.</p>
-            <p>Building VANT meant learning while doing. Every feature introduced something new. Every error sent me searching for an explanation. I worked through debugging, backend issues, LaTeX and KaTeX rendering, and problems that sometimes seemed to create two more problems as soon as I fixed one.</p>
-            <p>Resources were limited, too. I couldn't pay for every tool or service I wanted, so I made use of free tiers and whatever resources were available. I had to experiment, read, test, break things, fix them, and try again.</p>
-            <p>That experience taught me that you don't need to know everything before you begin. Sometimes, you learn what you need by building, asking questions, and staying with a problem long enough to understand it.</p>
-          </section>
-          <section id="story-ecosystem">
-            <span className="vt-company-blog-number">05 / THE VISION EXPANDS</span><h2>One experiment became a wider ecosystem.</h2>
-            <p>As the original idea developed, VANT grew beyond a single tool. The ambition became to create connected experiences that could support different people and different kinds of work.</p>
-            <ul className="vt-company-blog-list">
-              <li><b>VANT AI Work Platform</b><span>An AI workspace designed to help people work with information, organize projects, and handle everyday tasks.</span></li>
-              <li><b>VANT Education</b><span>Learning-focused tools to help students turn their materials into study resources and practice activities.</span></li>
-              <li><b>MOTE.EXE</b><span>An AI identity within the VANT ecosystem, representing a more integrated way of interacting with intelligent technology.</span></li>
-              <li><b>VANT Libraries & Research</b><span>A knowledge space for people who want to explore ideas, learn, and understand the thinking behind what we build.</span></li>
-            </ul>
-            <p>These experiences are different parts of a larger goal: making technology more useful, approachable, and capable of helping people move forward.</p>
-          </section>
-          <section id="story-next">
-            <span className="vt-company-blog-number">06 / WHAT COMES NEXT</span><h2>The ambition reaches beyond an application.</h2>
-            <p>I don't see VANT as just another AI application. The long-term ambition is to explore what it would take to develop our own core intelligence and processing capabilities — technological foundations that could support future generations of intelligent systems.</p>
-            <p>These are ambitions, not accomplishments we are claiming today. There is still a great deal to learn, research, develop, and prove. The immediate work is to strengthen what exists, connect our experiences, improve reliability, and keep building with purpose.</p>
-            <p>I also hope VANT can become a place where people with ideas, curiosity, and the willingness to build can find opportunities to contribute. I know what it feels like to have an idea and not know where to begin.</p>
-          </section>
-          <section id="story-not-over">
-            <span className="vt-company-blog-number">07 / THE JOURNEY CONTINUES</span><h2>This is not a story about having everything figured out.</h2>
-            <p>I still have a day job. I still have responsibilities. I still have a lot to learn. I don't know exactly how far this journey will take us, and I can't promise that every idea will succeed.</p>
-            <p>But I know why I started. I wanted to build something that could make everyday work easier, make learning more accessible, and give ideas a better chance of becoming reality.</p>
-            <p>Maybe you're working a job that doesn't feel like your destination. Maybe you're struggling financially, learning something unfamiliar, or wondering whether your idea is worth pursuing. I can't promise the road will be easy, but you don't need to have your entire future figured out before taking the first step.</p>
-            <p>I started with a small experiment and a lot of uncertainty.</p><p><strong>That experiment became VANT. And this is only the beginning.</strong></p>
-            <blockquote>VANT was built by someone who was still searching for his direction. Now, he is building something he hopes will help others find theirs.</blockquote>
-          </section>
-          <div className="vt-company-blog-signoff"><strong>VANT TECHNOLOGIES</strong><span>We build intelligent technology that moves people forward.</span></div>
-          <div className="vt-company-blog-end"><span>END OF CHAPTER 01</span><a href="/company-profile">Continue to the Company Profile ↗</a></div>
+      {slug === "company-story" ? <section className="vt-story-episodes">
+        <div className="vt-story-episodes-heading"><div><span>THE COMPANY JOURNAL</span><h2>Every journey has a beginning.</h2><p>Read the story one chapter at a time. Each published episode opens in VANT Document Viewer.</p></div><small>VANT JOURNAL / VOL. 01</small></div>
+        <div className="vt-story-episode-grid">
+          <a className="vt-story-episode-card vt-story-episode-featured" href="/company-story?document=company-story-inception" data-vant-document-id="company-story-inception">
+            <div className="vt-story-episode-card-top"><span>CHAPTER 01</span><i>INCEPTION</i></div>
+            <div className="vt-story-episode-art"><span>V</span><i>01</i><b>THE BEGINNING</b></div>
+            <div className="vt-story-episode-copy"><small>THE FOUNDER'S JOURNEY</small><h2>From Searching for Direction to Building What Comes Next.</h2><p>A small experiment, an unfamiliar world of software development, and the determination to build something that could help people.</p><strong>READ CHAPTER <i>↗</i></strong></div>
+          </a>
+          <div className="vt-story-episode-card vt-story-episode-upcoming">
+            <div className="vt-story-episode-card-top"><span>CHAPTER 02</span><i>COMING NEXT</i></div>
+            <div className="vt-story-episode-art"><span>02</span><b>THE NEXT CHAPTER</b></div>
+            <div className="vt-story-episode-copy"><small>THE STORY CONTINUES</small><h2>What happens after the beginning?</h2><p>The next episode will continue the journey as VANT grows, changes, and takes shape.</p><strong>NOT YET PUBLISHED</strong></div>
+          </div>
+          <div className="vt-story-episode-card vt-story-episode-upcoming">
+            <div className="vt-story-episode-card-top"><span>CHAPTER 03</span><i>COMING SOON</i></div>
+            <div className="vt-story-episode-art"><span>03</span><b>BUILDING WHAT COMES NEXT</b></div>
+            <div className="vt-story-episode-copy"><small>THE VANT JOURNEY</small><h2>A vision still being built.</h2><p>Future chapters will document the people, products, lessons, and ambitions ahead.</p><strong>NOT YET PUBLISHED</strong></div>
+          </div>
         </div>
-      </article> : (slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
+        <div className="vt-story-episodes-foot"><span>ONE JOURNEY. MANY CHAPTERS.</span><span>VANT TECHNOLOGIES · COMPANY JOURNAL</span></div>
+      </section> : (slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
         <section className="vt-research-intro">
           <div className="vt-news-section-heading"><span>01 / RESEARCH & DEVELOPMENT</span><span>INTELLIGENCE · SYSTEMS · ENGINEERING</span></div>
           <div className="vt-research-hero-grid">
