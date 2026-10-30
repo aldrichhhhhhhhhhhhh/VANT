@@ -1612,3 +1612,17 @@
 
 .vt-home-v2 .vt-dropdown-intro-link{display:block;margin-top:12px;color:#242a32;text-decoration:none;font:600 21px/1.12 Manrope,sans-serif;letter-spacing:-.045em}
 .vt-home-v2 .vt-dropdown-intro-link:hover{color:#657487}
+
+/* VANT Newsroom — cool grey editorial accents */
+.vt-newsroom{display:flex;flex-direction:column;gap:76px}
+.vt-news-feature,.vt-news-section{scroll-margin-top:32px}
+.vt-news-section-heading{display:flex;justify-content:space-between;gap:18px;padding-bottom:14px;border-bottom:1px solid #cbd0d6;color:#7c8794;font:9px monospace;letter-spacing:.16em}
+.vt-newsroom h2{margin:24px 0 12px;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.06em;font-weight:600;color:#252b32}
+.vt-newsroom section>p{max-width:690px;margin:0;color:#68727e;font-size:15px;line-height:1.75}
+.vt-news-empty{margin-top:26px;padding:22px 24px;border:1px solid #d8dce1;background:#f0f1f2;color:#737e8a;font-size:12px;letter-spacing:.015em}
+.vt-news-patch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}
+.vt-news-patch-grid article{min-height:170px;padding:22px;border:1px solid #d4d9df;background:linear-gradient(145deg,#f2f3f4,#e9ecef)}
+.vt-news-patch-grid article>span{font:9px monospace;letter-spacing:.15em;color:#84909d}
+.vt-news-patch-grid h3{margin:26px 0 8px;font-size:19px;letter-spacing:-.035em;color:#303842}
+.vt-news-patch-grid article p{margin:0;color:#707b87;font-size:12px;line-height:1.65}
+@media(max-width:760px){.vt-newsroom{gap:54px}.vt-news-section-heading{font-size:8px}.vt-news-patch-grid{grid-template-columns:1fr}.vt-news-patch-grid article{min-height:145px}}
