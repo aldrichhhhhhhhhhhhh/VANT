@@ -38,9 +38,16 @@ export default function VANTDocumentViewer({children}:{children:ReactNode}) {
   };
   return <div className="vt-document-system" onClick={handleClick}>{children}{active ? <div className="vt-document-backdrop" onMouseDown={(event)=>{if(event.target===event.currentTarget)close();}}>
     <section className="vt-document-window" role="dialog" aria-modal="true" aria-labelledby="vt-document-title">
-      <header className="vt-document-toolbar"><div className="vt-document-brand"><span className="vt-document-brand-mark">V</span><span>VANT <small>/ DOCUMENT VIEWER</small></span></div><div className="vt-document-actions"><span className="vt-document-type">{active.kind}</span><button type="button" className="vt-document-close" onClick={close} aria-label="Close document">×</button></div></header>
-      <div className="vt-document-scroll"><div className="vt-document-paper"><div className="vt-document-eyebrow">VANT TECHNOLOGIES <span> / </span> {active.kind}</div><div className="vt-document-symbol">V.</div><h2 id="vt-document-title">{active.title}</h2><p className="vt-document-summary">{active.summary}</p><div className="vt-document-meta"><span>{active.date}</span><span>VANT / DOCUMENT VIEWER</span></div><article className="vt-document-body">{active.body.map((paragraph,index)=><p key={index}>{paragraph}</p>)}</article><a className="vt-document-related" href={active.relatedHref}><span><small>RELATED RESOURCE</small><b>{active.relatedLabel}</b></span><span>↗</span></a></div></div>
-      <footer className="vt-document-footer"><span>VANT TECHNOLOGIES</span><span>READ · EXPLORE · CONTINUE</span></footer>
+      <header className="vt-document-toolbar"><div className="vt-document-brand">VANT <span>/ DOCUMENT VIEWER</span></div><span className="vt-document-preview">PREVIEW</span></header>
+      <div className="vt-document-paper">
+        <div className="vt-document-paper-top"><span>{active.kind} · 01</span><button type="button" className="vt-document-close" onClick={close} aria-label="Close document">×</button></div>
+        <h2 id="vt-document-title">{active.title}</h2>
+        <div className="vt-document-byline">{active.date}</div>
+        <div className="vt-document-rule" />
+        <p className="vt-document-summary">{active.summary}</p>
+        <section className="vt-document-content"><div className="vt-document-content-label">DOCUMENT CONTENT</div>{active.body.map((paragraph,index)=><p key={index}>{paragraph}</p>)}</section>
+        <a className="vt-document-related" href={active.relatedHref}><span>RELATED RESOURCE · {active.relatedLabel}</span><b>↗</b></a>
+      </div>
     </section>
   </div> : null}</div>;
 }
