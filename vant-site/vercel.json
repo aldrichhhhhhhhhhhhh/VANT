@@ -79,6 +79,22 @@
     {
       "source": "/education",
       "destination": "/"
+    },
+    {
+      "source": "/about-us",
+      "destination": "/"
+    },
+    {
+      "source": "/company-story",
+      "destination": "/"
+    },
+    {
+      "source": "/company-profile",
+      "destination": "/"
+    },
+    {
+      "source": "/business-theory",
+      "destination": "/"
     }
   ],
   "headers": [
