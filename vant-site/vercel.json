@@ -15,6 +15,22 @@
     {
       "source": "/terms",
       "destination": "/"
+    },
+    {
+      "source": "/libraries",
+      "destination": "/"
+    },
+    {
+      "source": "/connect",
+      "destination": "/"
+    },
+    {
+      "source": "/contact",
+      "destination": "/"
+    },
+    {
+      "source": "/support",
+      "destination": "/"
     }
   ]
 }
