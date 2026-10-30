@@ -60,16 +60,16 @@ export default function MoteProductPage() {
             <p className="mp-intro">MOTE is the guardian identity for the VANT ecosystem: a clear signal for awareness, coordination, and thoughtful control around the work you do.</p>
           </div>
           <div className="mp-capability-grid">
-            <article className="mp-capability vt-reveal"><span className="mp-index">A / 01</span><span className="mp-line-icon" aria-hidden="true">◎</span><h3>Awareness</h3><p>Keep tasks, context, and the next thing that needs attention in view.</p></article>
-            <article className="mp-capability vt-reveal"><span className="mp-index">A / 02</span><span className="mp-line-icon" aria-hidden="true">⌘</span><h3>Coordination</h3><p>Bring structure to workflows and help connect work across the VANT ecosystem.</p></article>
-            <article className="mp-capability vt-reveal"><span className="mp-index">A / 03</span><span className="mp-line-icon" aria-hidden="true">◇</span><h3>Guardrails</h3><p>Keep permissions, approvals, and user control central as connected capabilities evolve.</p></article>
+            <article className="mp-capability vt-reveal"><span className="mp-index">A / 01</span><span className="mp-line-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="17" /><circle cx="24" cy="24" r="9" /><path d="M24 3v8M45 24h-8M24 45v-8M3 24h8M24 24l11-11" /><circle cx="35" cy="13" r="2.5" /></svg></span><h3>Awareness</h3><p>Keep tasks, context, and the next thing that needs attention in view.</p></article>
+            <article className="mp-capability vt-reveal"><span className="mp-index">A / 02</span><span className="mp-line-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="10" cy="24" r="4" /><circle cx="38" cy="10" r="4" /><circle cx="38" cy="38" r="4" /><path d="M14 22l20-10M14 26l20 10M24 17v14" /><circle cx="24" cy="24" r="4" /></svg></span><h3>Coordination</h3><p>Bring structure to workflows and help connect work across the VANT ecosystem.</p></article>
+            <article className="mp-capability vt-reveal"><span className="mp-index">A / 03</span><span className="mp-line-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4l16 6v12c0 10-6.8 17.3-16 22-9.2-4.7-16-12-16-22V10l16-6Z" /><path d="m16 24 5 5 11-12" /></svg></span><h3>Guardrails</h3><p>Keep permissions, approvals, and user control central as connected capabilities evolve.</p></article>
           </div>
           <p className="mp-footnote">These describe MOTE’s design direction. Specific capabilities depend on the features currently available in VANT.</p>
         </section>
 
         <section className="mote-product-section mp-console" id="mote-console">
           <div className="mp-console-copy vt-reveal">
-            <p className="mp-kicker">02 / OPEN A CHANNEL</p><h2>Got a task or idea<br /><em>in your mind?</em></h2>
+            <p className="mp-kicker">02 / OPEN A CHANNEL</p><h2>Got a task or<br />idea in your mind?</h2>
             <p className="mp-intro">Send MOTE a signal. Try a question about VANT, workflows, or the guardian concept.</p>
             <div className="mp-suggestions" aria-label="Suggested prompts">
               {["What is VANT?", "How can MOTE help with workflows?", "How should MOTE handle security?"].map((item) => <button type="button" key={item} onClick={() => setPrompt(item)}>{item}<span aria-hidden="true">↗</span></button>)}
