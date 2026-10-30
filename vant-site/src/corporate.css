@@ -1903,3 +1903,38 @@
 .vt-library-related-list button b{color:#34414b;font-size:11px;line-height:1.4;font-weight:600}
 .vt-library-related-list button i{position:absolute;right:12px;top:12px;color:#8396a5;font-style:normal}
 @media(max-width:600px){.vt-library-document-meta{gap:7px 13px;font-size:7px}.vt-library-document-meta span+span:before{left:-7px}.vt-library-related-list{grid-template-columns:1fr}.vt-library-related{margin-top:30px}}
+
+/* VANT Libraries — publication-grade reading tools */
+.vt-library-reading-track{height:3px;background:#e7eaeb;position:relative;z-index:2}
+.vt-library-reading-track span{display:block;height:100%;background:#8199a9;transition:width .12s linear}
+.vt-library-publication-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px}
+.vt-library-status{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid #dce2df;background:#f4f6f3;color:#687c86;font:8px monospace;letter-spacing:.08em;text-transform:uppercase}
+.vt-library-status:before{content:"";width:5px;height:5px;border-radius:50%;background:#84999f}
+.vt-library-status.is-draft{background:#f5f2ea;border-color:#e7dfca;color:#8b7954}
+.vt-library-status.is-draft:before{background:#b69b62}
+.vt-library-status.is-in-review{background:#eef3f6;border-color:#d5e1e8;color:#5f7e91}
+.vt-library-status.is-in-review:before{background:#719ab2}
+.vt-library-status.is-archived{background:#f0f0ef;color:#92999a}
+.vt-library-reading-label{color:#9aa3a7;font:8px monospace;letter-spacing:.1em}
+.vt-library-toc{max-width:790px;margin:27px 0 30px;padding:15px 17px;border:1px solid #e1e5e2;background:#f5f6f3}
+.vt-library-toc>div,.vt-library-panel-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#778792;font:8px monospace;letter-spacing:.12em}
+.vt-library-toc>div small,.vt-library-panel-heading small{font:inherit;color:#a0a9ad}
+.vt-library-toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 18px;list-style:none;padding:0;margin:13px 0 0}
+.vt-library-toc button{display:flex;align-items:flex-start;gap:9px;padding:3px 0;border:0;background:none;text-align:left;color:#667781;font-size:10px;line-height:1.5;cursor:pointer}
+.vt-library-toc button:hover{color:#263b49}
+.vt-library-toc button:first-letter{font-family:monospace}
+.vt-library-toc button span{flex:1}
+.vt-library-document-panels{max-width:790px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:38px}
+.vt-library-history,.vt-library-editorial{padding:17px;border:1px solid #e1e5e2;background:#f7f8f5}
+.vt-library-revision{display:grid;grid-template-columns:auto 1fr;gap:7px 11px;align-items:center;margin-top:17px}
+.vt-library-revision b{color:#40525d;font:600 11px monospace}
+.vt-library-revision span{color:#929da3;font:8px monospace}
+.vt-library-revision p{grid-column:1/-1;margin:0;color:#697780;font-size:10px;line-height:1.65}
+.vt-library-panel-note{margin:14px 0 0;color:#9aa3a7;font-size:9px;line-height:1.65}
+.vt-library-editorial ol{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:10px}
+.vt-library-editorial li{display:flex;align-items:center;gap:9px;color:#8b969c;font-size:10px;line-height:1.4}
+.vt-library-editorial li i{width:18px;height:18px;display:grid;place-items:center;border:1px solid #d8dfdc;border-radius:50%;font:8px monospace;font-style:normal}
+.vt-library-editorial li.is-done{color:#526a70}
+.vt-library-editorial li.is-done i{background:#e8efeb;border-color:#cbd9d2;color:#5d8072}
+.vt-library-reader-section[id]{scroll-margin-top:28px}
+@media(max-width:650px){.vt-library-toc ol{grid-template-columns:1fr}.vt-library-document-panels{grid-template-columns:1fr}.vt-library-publication-row{margin-top:10px}.vt-library-toc{padding:13px;margin:22px 0}.vt-library-history,.vt-library-editorial{padding:14px}}
