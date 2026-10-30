@@ -1151,3 +1151,20 @@
   .vt-connect-float{bottom:30px;min-height:104px;padding:14px}
 }
 @media(prefers-reduced-motion:reduce){.vt-connect-float{animation:none}}
+
+
+/* VANT Homepage V2 — editorial, company-first visual hierarchy */
+.vt-site .vt-hero-v2{min-height:min(760px,calc(100svh - 82px));background:#eeece4;color:#1b1b17;grid-template-columns:minmax(320px,1fr) minmax(380px,.95fr);gap:clamp(28px,5vw,76px);padding-top:88px}
+.vt-site .vt-hero-v2::before{background-image:linear-gradient(rgba(35,34,28,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(35,34,28,.035) 1px,transparent 1px);mask-image:linear-gradient(90deg,black,black 48%,transparent 100%)}
+.vt-site .vt-hero-v2 .vt-eyebrow{color:#77756b}
+.vt-site .vt-hero-v2 h1{max-width:720px;font-size:clamp(58px,7.4vw,108px);line-height:.98;letter-spacing:-.085em;color:#1b1b17}
+.vt-site .vt-hero-v2 h1 span{color:#9a7b3e}
+.vt-site .vt-hero-v2 .vt-hero-lede{max-width:490px;color:#66645b;font-size:clamp(16px,1.4vw,19px);line-height:1.8}
+.vt-site .vt-hero-v2 .vt-text-link{color:#49473f!important}
+.vt-site .vt-hero-v2 .vt-hero-foot{color:#77756b}
+.vt-site .vt-hero-v2 .vt-hero-bottom{color:#77756b;border-top-color:rgba(35,34,28,.16)}
+.vt-site .vt-hero-v2 .vt-scene{background:#08090b;border:1px solid rgba(168,137,76,.28);box-shadow:0 28px 75px rgba(35,34,28,.16)}
+.vt-site .vt-about{background:#f8f7f2}.vt-site .vt-products{background:#eeece4}.vt-site .vt-partners{background:#f8f7f2}.vt-site .vt-journey{background:#eeece4}.vt-site .vt-contact{background:#f8f7f2}
+.vt-site .vt-hero-v2 .vt-button-primary{background:#a8894c;color:#fff!important}.vt-site .vt-hero-v2 .vt-button-primary .vt-arrow{color:#fff}
+@media(max-width:900px){.vt-site .vt-hero-v2{grid-template-columns:1fr;padding-top:58px}.vt-site .vt-hero-v2 .vt-scene{min-height:420px}}
+@media(max-width:600px){.vt-site .vt-hero-v2{padding-top:46px}.vt-site .vt-hero-v2 .vt-scene{min-height:340px}}
