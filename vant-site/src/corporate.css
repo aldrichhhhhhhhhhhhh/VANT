@@ -1960,3 +1960,8 @@
   .vt-connect-float{bottom:14px}
   .vt-connect-grid{margin-top:18px}
 }
+
+
+/* Connect support CTA — explicit email-app fallback */
+.vt-connect-email-fallback{display:inline-block;align-self:flex-start;margin-top:12px;color:#b8c2ce;text-decoration:underline;text-decoration-color:rgba(184,194,206,.35);text-underline-offset:3px;font-size:10px;line-height:1.6}
+.vt-connect-email-fallback:hover{color:#f3f1e9;text-decoration-color:currentColor}
