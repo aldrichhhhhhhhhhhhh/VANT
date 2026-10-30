@@ -1788,3 +1788,9 @@
 .vt-jamboard-info-panel small{display:block;max-width:850px;color:#8fa1b0;font-size:10px;line-height:1.55}
 .vt-jamboard-info-panel .vt-jamboard-status{flex:none}
 @media(max-width:700px){.vt-jamboard-window{height:100dvh}.vt-jamboard-canvas{padding:12px}.vt-jamboard-controls .vt-jamboard-exit{margin-left:2px;padding:0 8px}.vt-jamboard-info-panel{align-items:flex-start;flex-direction:column;gap:8px;padding:12px 15px}.vt-jamboard-info-panel h2{font-size:16px}.vt-jamboard-info-panel small{font-size:9px}}
+
+/* Detailed CoWork architecture board: tall, scrollable engineering map */
+.vt-jamboard-canvas:has(.vt-jamboard-svg-tall){align-items:flex-start;justify-content:center;overflow:auto}
+.vt-jamboard-canvas-inner:has(.vt-jamboard-svg-tall){width:min(100%,1500px);max-width:none;flex:none}
+.vt-jamboard-svg-tall{width:100%;height:auto;max-height:none;overflow:visible}
+@media(max-width:700px){.vt-jamboard-canvas-inner:has(.vt-jamboard-svg-tall){width:1180px;max-width:none}.vt-jamboard-canvas:has(.vt-jamboard-svg-tall){justify-content:flex-start;align-items:flex-start}}
