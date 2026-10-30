@@ -1965,3 +1965,49 @@
 /* Connect support CTA — explicit email-app fallback */
 .vt-connect-email-fallback{display:inline-block;align-self:flex-start;margin-top:12px;color:#b8c2ce;text-decoration:underline;text-decoration-color:rgba(184,194,206,.35);text-underline-offset:3px;font-size:10px;line-height:1.6}
 .vt-connect-email-fallback:hover{color:#f3f1e9;text-decoration-color:currentColor}
+
+
+/* Company Story — long-form editorial journal layout */
+.vt-company-blog{display:grid;grid-template-columns:210px minmax(0,760px);justify-content:center;gap:clamp(34px,6vw,92px);align-items:start;margin-top:4px}
+.vt-company-blog-index{position:sticky;top:34px;display:flex;flex-direction:column;gap:16px;padding-top:7px}
+.vt-company-blog-index>span{font:9px monospace;letter-spacing:.17em;color:#929ba5;margin-bottom:5px}
+.vt-company-blog-index a{color:#77818c;text-decoration:none;font-size:11px;line-height:1.55;transition:color .2s}
+.vt-company-blog-index a:hover{color:#202832}
+.vt-company-blog-body{min-width:0}
+.vt-company-blog-byline{display:flex;flex-wrap:wrap;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid #d9dcdf;color:#87919c;font:9px monospace;letter-spacing:.13em}
+.vt-company-blog-intro{margin:30px 0 54px!important;color:#38424d!important;font-size:clamp(20px,2.3vw,27px)!important;line-height:1.55!important;letter-spacing:-.035em}
+.vt-company-blog-body section{padding:0 0 48px;margin:0 0 46px;border-bottom:1px solid #d9dcdf;scroll-margin-top:32px}
+.vt-company-blog-number{display:block;margin-bottom:18px;color:#8793a1;font:9px monospace;letter-spacing:.16em}
+.vt-company-blog-body section h2{margin:0 0 18px;color:#202832;font-size:clamp(27px,3vw,38px);line-height:1.12;letter-spacing:-.055em;font-weight:600}
+.vt-company-blog-body section p{margin:0 0 16px;color:#626d79;font-size:15px;line-height:1.9}
+.vt-company-blog-list{list-style:none;margin:25px 0;padding:0;border-top:1px solid #d9dcdf}
+.vt-company-blog-list li{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid #d9dcdf}
+.vt-company-blog-list b{color:#303a45;font-size:13px;font-weight:650}
+.vt-company-blog-list span{color:#697480;font-size:12px;line-height:1.7}
+.vt-company-roadmap{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin:28px 0}
+.vt-company-roadmap>div{display:grid;grid-template-columns:30px 1fr;gap:4px 12px;padding:17px 0;border-top:1px solid #d9dcdf}
+.vt-company-roadmap i{grid-row:span 2;color:#98a2ad;font:10px monospace;font-style:normal}
+.vt-company-roadmap b{color:#303a45;font-size:12px;font-weight:650}
+.vt-company-roadmap span{color:#737e89;font-size:11px;line-height:1.65}
+.vt-company-blog-note{padding:13px 16px;background:#eef0f1;color:#78838e!important;font-size:11px!important;line-height:1.7!important}
+.vt-company-blog-body blockquote{margin:30px 0 0;padding:4px 0 4px 22px;border-left:2px solid #aab4bf;color:#303a45;font-size:clamp(22px,2.6vw,31px);line-height:1.45;letter-spacing:-.04em}
+.vt-company-blog-end{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:5px}
+.vt-company-blog-end span{color:#9aa3ac;font:9px monospace;letter-spacing:.16em}
+.vt-company-blog-end a{color:#35414e;text-decoration:none;font-size:12px;font-weight:600}
+.vt-company-blog-end a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){
+  .vt-company-blog{grid-template-columns:1fr;gap:28px}
+  .vt-company-blog-index{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 20px;padding:14px 16px;border:1px solid #d9dcdf;background:#f2f2ee}
+  .vt-company-blog-index>span{grid-column:1/-1;margin:0}
+  .vt-company-blog-intro{margin:22px 0 42px!important}
+}
+@media(max-width:600px){
+  .vt-company-blog-index{grid-template-columns:1fr 1fr;gap:10px 14px}
+  .vt-company-blog-index a{font-size:10px}
+  .vt-company-blog-byline{gap:9px 14px;font-size:8px}
+  .vt-company-blog-body section{padding-bottom:34px;margin-bottom:34px}
+  .vt-company-blog-body section p{font-size:14px;line-height:1.8}
+  .vt-company-blog-list li{grid-template-columns:1fr;gap:5px}
+  .vt-company-roadmap{grid-template-columns:1fr}
+  .vt-company-blog-end{align-items:flex-start;flex-direction:column}
+}
