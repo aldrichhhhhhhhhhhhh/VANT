@@ -2025,3 +2025,37 @@
 .vt-company-blog-index{max-height:calc(100vh - 60px);overflow:auto}
 @media(max-width:900px){.vt-company-blog-index{max-height:none}.vt-company-blog-headline{margin-top:25px}}
 @media(max-width:600px){.vt-company-blog-chapter{margin-bottom:17px}.vt-company-blog-headline{font-size:35px;line-height:1.08}.vt-company-blog-deck{margin-bottom:38px;font-size:15px}.vt-company-blog-signoff{margin-top:30px}}
+
+
+/* Company Journal — episodic chapter cards */
+.vt-story-episodes{padding:12px 0 48px}
+.vt-story-episodes-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin:18px 0 30px}
+.vt-story-episodes-heading>div>span{font:10px monospace;letter-spacing:.16em;color:#77838e}
+.vt-story-episodes-heading h2{margin:12px 0 8px;color:#202832;font-size:clamp(25px,3vw,36px);letter-spacing:-.045em}
+.vt-story-episodes-heading p{max-width:620px;margin:0;color:#697580;font-size:14px;line-height:1.7}
+.vt-story-episodes-heading>small{flex-shrink:0;color:#8b959d;font:10px monospace;letter-spacing:.12em}
+.vt-story-episode-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.vt-story-episode-card{display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #dfe2e3;border-radius:15px;background:#fbfaf6;color:inherit;text-decoration:none;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+a.vt-story-episode-card:hover{transform:translateY(-4px);border-color:#aeb8c0;box-shadow:0 16px 35px rgba(24,32,40,.08)}
+.vt-story-episode-card-top{display:flex;justify-content:space-between;gap:10px;padding:16px 17px 13px;color:#64717c;font:9px monospace;letter-spacing:.13em}
+.vt-story-episode-card-top i{font-style:normal}
+.vt-story-episode-art{position:relative;display:flex;min-height:174px;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#394651 0,#202a33 46%,#141a20 100%);color:#f4f3ed}
+.vt-story-episode-art:before,.vt-story-episode-art:after{position:absolute;content:"";border:1px solid rgba(232,238,240,.22);border-radius:50%;width:180px;height:180px}
+.vt-story-episode-art:after{width:240px;height:240px;border-style:dashed;opacity:.55}
+.vt-story-episode-art>span{position:relative;z-index:1;font:300 74px/1 Georgia,serif;letter-spacing:-.08em;color:#f2f0e8}
+.vt-story-episode-art>i{position:absolute;right:18px;top:16px;color:#d0d8dd;font:10px monospace;font-style:normal}
+.vt-story-episode-art>b{position:absolute;bottom:15px;left:17px;color:#c5cfd5;font:9px monospace;letter-spacing:.16em}
+.vt-story-episode-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:19px 19px 21px}
+.vt-story-episode-copy>small{color:#7a8791;font:9px monospace;letter-spacing:.13em}
+.vt-story-episode-copy h2{margin:11px 0 9px;color:#202832;font-size:20px;line-height:1.2;letter-spacing:-.035em}
+.vt-story-episode-copy p{margin:0 0 23px;color:#6b7781;font-size:12px;line-height:1.7}
+.vt-story-episode-copy strong{margin-top:auto;color:#3c4852;font:9px monospace;letter-spacing:.13em}
+.vt-story-episode-copy strong i{font-style:normal}
+.vt-story-episode-upcoming{background:#f3f2ed}
+.vt-story-episode-upcoming .vt-story-episode-art{background:linear-gradient(145deg,#dfe2df,#c9d0d1);color:#34414a}
+.vt-story-episode-upcoming .vt-story-episode-art:before,.vt-story-episode-upcoming .vt-story-episode-art:after{border-color:rgba(45,57,65,.18)}
+.vt-story-episode-upcoming .vt-story-episode-art>span{color:#56636d;font-size:65px}
+.vt-story-episode-upcoming .vt-story-episode-art>b{color:#65727b}
+.vt-story-episodes-foot{display:flex;justify-content:space-between;gap:14px;margin-top:23px;padding-top:14px;border-top:1px solid #dfe2e3;color:#8a949c;font:9px monospace;letter-spacing:.13em}
+@media(max-width:850px){.vt-story-episode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vt-story-episode-card:last-child{grid-column:span 2}}
+@media(max-width:560px){.vt-story-episodes-heading{display:block}.vt-story-episodes-heading>small{display:block;margin-top:15px}.vt-story-episode-grid{grid-template-columns:1fr;gap:13px}.vt-story-episode-card:last-child{grid-column:auto}.vt-story-episode-art{min-height:150px}.vt-story-episodes-foot{flex-direction:column}}
