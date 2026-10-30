@@ -124,11 +124,16 @@ function CorporateHomeView() {
     <style>{`
       .vt-home-v2 .vt-nav-group { position: relative; }
       .vt-home-v2 .vt-nav-dropdown {
-        top: calc(100% + 10px);
-        left: 50%;
-        right: auto;
+        top: calc(100% + 10px); left: 50%; right: auto;
+        width: min(814px, calc(100vw - 48px));
+        grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr);
+        align-items: stretch; gap: 10px; padding: 16px;
         transform: translate(-50%, 8px);
       }
+      .vt-home-v2 .vt-dropdown-intro { grid-row: 1; min-height: 216px; padding: 28px; }
+      .vt-home-v2 .vt-dropdown-links { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+      .vt-home-v2 .vt-dropdown-links > a { flex: 1; min-height: 64px; }
+      .vt-home-v2 .vt-nav-dropdown > a { min-height: 80px; }
       .vt-home-v2 .vt-nav-group-open > .vt-nav-dropdown {
         opacity: 1;
         visibility: visible;
@@ -140,24 +145,16 @@ function CorporateHomeView() {
         visibility: hidden;
         pointer-events: none;
       }
-      .vt-home-v2 .vt-nav-products-dropdown,
-      .vt-home-v2 .vt-nav-group-open > .vt-nav-products-dropdown {
-        left: 50%;
-        right: auto;
-        transform: translate(-50%, 8px);
-      }
-      .vt-home-v2 .vt-nav-group-open > .vt-nav-products-dropdown {
-        transform: translate(-50%, 0);
-      }
+
       @media (max-width: 760px) {
+        .vt-home-v2 .vt-dropdown-intro { min-height: 110px; padding: 18px; }
+        .vt-home-v2 .vt-dropdown-links { gap: 7px; }
         .vt-home-v2 .vt-nav-dropdown,
         .vt-home-v2 .vt-nav-group-open > .vt-nav-dropdown,
         .vt-home-v2 .vt-nav-products-dropdown,
         .vt-home-v2 .vt-nav-group-open > .vt-nav-products-dropdown {
-          top: auto;
-          left: auto;
-          right: auto;
-          transform: none;
+          top: auto; left: auto; right: auto; width: 100%;
+          transform: none; grid-template-columns: 1fr; padding: 8px;
         }
       }
     `}</style>
@@ -170,33 +167,44 @@ function CorporateHomeView() {
           <button type="button" aria-expanded={activeDropdown === "research"} onClick={() => toggleDropdown("research")}>Research <span>⌄</span></button>
           <div className="vt-nav-dropdown">
             <div className="vt-dropdown-intro"><small>EXPLORE IDEAS</small><strong>Research & knowledge</strong><p>Perspectives, learning resources, and the thinking behind our technology.</p></div>
-            <a href="/libraries" onClick={closeMenu}><b>VANT Libraries</b><small>Documentation, resources, and research</small></a>
-            <a href="/libraries" onClick={closeMenu}><b>Technology perspectives</b><small>Ideas shaping what comes next</small></a>
+            <div className="vt-dropdown-links">
+              <a href="/libraries" onClick={closeMenu}><b>VANT Libraries</b><small>Documentation, resources, and research</small></a>
+              <a href="/libraries" onClick={closeMenu}><b>Technology perspectives</b><small>Ideas shaping what comes next</small></a>
+            </div>
           </div>
         </div>
         <div className={activeDropdown === "policy" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "policy"} onClick={() => toggleDropdown("policy")}>Policy <span>⌄</span></button>
-          <div className="vt-nav-dropdown vt-nav-dropdown-compact">
-            <a href="/privacy" onClick={closeMenu}><b>Privacy</b><small>How we approach personal information</small></a>
-            <a href="/terms" onClick={closeMenu}><b>Terms & policies</b><small>Terms governing our services</small></a>
-            <a href="/connect" onClick={closeMenu}><b>Help & security</b><small>Get support from our team</small></a>
+          <div className="vt-nav-dropdown">
+            <div className="vt-dropdown-intro"><small>TRUST & RESPONSIBILITY</small><strong>Our policies</strong><p>Clear principles for protecting people, supporting safe use, and building trust in our technology.</p></div>
+            <div className="vt-dropdown-links">
+              <a href="/privacy" onClick={closeMenu}><b>Privacy</b><small>How we approach personal information</small></a>
+              <a href="/terms" onClick={closeMenu}><b>Terms & policies</b><small>Terms governing our services</small></a>
+              <a href="/connect" onClick={closeMenu}><b>Help & security</b><small>Get support from our team</small></a>
+            </div>
           </div>
         </div>
         <a href="#mission" onClick={closeMenu}>Commitments</a>
         <div className={activeDropdown === "company" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "company"} onClick={() => toggleDropdown("company")}>Company <span>⌄</span></button>
-          <div className="vt-nav-dropdown vt-nav-dropdown-compact">
-            <a href="#mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
-            <a href="#learn" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
-            <a href="/connect" onClick={closeMenu}><b>Partnerships</b><small>Build something meaningful together</small></a>
+          <div className="vt-nav-dropdown">
+            <div className="vt-dropdown-intro"><small>ABOUT VANT</small><strong>People & purpose</strong><p>Discover the principles, ambitions, and relationships shaping VANT Technologies.</p></div>
+            <div className="vt-dropdown-links">
+              <a href="#mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
+              <a href="#learn" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
+              <a href="/connect" onClick={closeMenu}><b>Partnerships</b><small>Build something meaningful together</small></a>
+            </div>
           </div>
         </div>
         <div className={activeDropdown === "products" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "products"} onClick={() => toggleDropdown("products")}>Products <span>⌄</span></button>
-          <div className="vt-nav-dropdown vt-nav-products-dropdown">
-            <a href="https://vant-ai.vercel.app/" onClick={closeMenu}><b>VANT AI Work Platform</b><small>Intelligence for work and teams</small></a>
-            <a href="/connect" onClick={closeMenu}><b>VANT Education</b><small>Tools for learning and progress</small></a>
-            <a href="/mote-exe" onClick={closeMenu}><b>MOTE.EXE</b><small>Your VANT intelligence companion</small></a>
+          <div className="vt-nav-dropdown">
+            <div className="vt-dropdown-intro"><small>THE VANT ECOSYSTEM</small><strong>Products & experiences</strong><p>Purpose-built experiences for work, learning, and a more capable relationship with AI.</p></div>
+            <div className="vt-dropdown-links">
+              <a href="https://vant-ai.vercel.app/" onClick={closeMenu}><b>VANT AI Work Platform</b><small>Intelligence for work and teams</small></a>
+              <a href="/connect" onClick={closeMenu}><b>VANT Education</b><small>Tools for learning and progress</small></a>
+              <a href="/mote-exe" onClick={closeMenu}><b>MOTE.EXE</b><small>Your VANT intelligence companion</small></a>
+            </div>
           </div>
         </div>
         <a className="vt-nav-sellspace" href="https://sellspace-corporate.vercel.app/" target="_blank" rel="noreferrer" onClick={closeMenu}><span className="vt-sellspace-dot"/> SELLSPACE</a>
