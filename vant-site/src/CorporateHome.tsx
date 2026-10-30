@@ -92,6 +92,7 @@ function WindowScene() {
 
 function CorporateHomeView() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState("");
   useEffect(() => {
     document.title = "VANT Technologies — Intelligence in motion";
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -100,15 +101,48 @@ function CorporateHomeView() {
     document.querySelectorAll(".vt-reveal").forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => { setMenuOpen(false); setActiveDropdown(""); };
+  const toggleDropdown = (name: string) => setActiveDropdown(current => current === name ? "" : name);
   return <div className="vt-site vt-home-v2">
-    <header className="vt-header">
+    <header className="vt-header vt-header-editorial">
       <a className="vt-brand" href="#top" onClick={closeMenu} aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
       <button className="vt-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
-      <nav className={menuOpen ? "vt-nav vt-nav-open" : "vt-nav"} aria-label="Main navigation">
-        <a href="#mission" onClick={closeMenu}>Mission & Vision</a>
-        <a href="#products" onClick={closeMenu}>Products</a>
-        <a href="#learn" onClick={closeMenu}>Learn more</a>
+      <nav className={menuOpen ? "vt-nav vt-nav-open vt-nav-editorial" : "vt-nav vt-nav-editorial"} aria-label="Main navigation">
+        <a className="vt-nav-news" href="/libraries" onClick={closeMenu}>News</a>
+        <div className={activeDropdown === "research" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
+          <button type="button" aria-expanded={activeDropdown === "research"} onClick={() => toggleDropdown("research")}>Research <span>⌄</span></button>
+          <div className="vt-nav-dropdown">
+            <div className="vt-dropdown-intro"><small>EXPLORE IDEAS</small><strong>Research & knowledge</strong><p>Perspectives, learning resources, and the thinking behind our technology.</p></div>
+            <a href="/libraries" onClick={closeMenu}><b>VANT Libraries</b><small>Documentation, resources, and research</small></a>
+            <a href="/libraries" onClick={closeMenu}><b>Technology perspectives</b><small>Ideas shaping what comes next</small></a>
+          </div>
+        </div>
+        <div className={activeDropdown === "policy" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
+          <button type="button" aria-expanded={activeDropdown === "policy"} onClick={() => toggleDropdown("policy")}>Policy <span>⌄</span></button>
+          <div className="vt-nav-dropdown vt-nav-dropdown-compact">
+            <a href="/privacy" onClick={closeMenu}><b>Privacy</b><small>How we approach personal information</small></a>
+            <a href="/terms" onClick={closeMenu}><b>Terms & policies</b><small>Terms governing our services</small></a>
+            <a href="/connect" onClick={closeMenu}><b>Help & security</b><small>Get support from our team</small></a>
+          </div>
+        </div>
+        <a href="#mission" onClick={closeMenu}>Commitments</a>
+        <div className={activeDropdown === "company" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
+          <button type="button" aria-expanded={activeDropdown === "company"} onClick={() => toggleDropdown("company")}>Company <span>⌄</span></button>
+          <div className="vt-nav-dropdown vt-nav-dropdown-compact">
+            <a href="#mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
+            <a href="#learn" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
+            <a href="/connect" onClick={closeMenu}><b>Partnerships</b><small>Build something meaningful together</small></a>
+          </div>
+        </div>
+        <div className={activeDropdown === "products" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
+          <button type="button" aria-expanded={activeDropdown === "products"} onClick={() => toggleDropdown("products")}>Products <span>⌄</span></button>
+          <div className="vt-nav-dropdown vt-nav-products-dropdown">
+            <a href="https://vant-ai.vercel.app/" onClick={closeMenu}><b>VANT AI Work Platform</b><small>Intelligence for work and teams</small></a>
+            <a href="/connect" onClick={closeMenu}><b>VANT Education</b><small>Tools for learning and progress</small></a>
+            <a href="/mote-exe" onClick={closeMenu}><b>MOTE.EXE</b><small>Your VANT intelligence companion</small></a>
+          </div>
+        </div>
+        <a className="vt-nav-sellspace" href="https://sellspace-corporate.vercel.app/" target="_blank" rel="noreferrer" onClick={closeMenu}><span className="vt-sellspace-dot"/> SELLSPACE</a>
         <a className="vt-nav-cta" href="/connect" onClick={closeMenu}>Let's connect <Arrow diagonal /></a>
       </nav>
     </header>
