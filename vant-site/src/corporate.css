@@ -1417,3 +1417,67 @@
 @media(max-width:900px){
  .vt-site .vt-menu-toggle{color:#d3dae2}
 }
+
+
+/* MOTE hero atmosphere — dimensional graphite, not a flat black panel */
+.vt-home-v2 .vt-mote-feature{
+  background:
+    radial-gradient(ellipse at 73% 48%,rgba(112,129,149,.22),transparent 29%),
+    radial-gradient(ellipse at 52% 105%,rgba(74,87,103,.16),transparent 48%),
+    linear-gradient(125deg,#11151a 0%,#171d24 48%,#0c1015 100%);
+}
+.vt-home-v2 .vt-mote-feature::before{
+  background-image:
+    linear-gradient(rgba(205,215,226,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(205,215,226,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse at 68% 48%,black 0%,rgba(0,0,0,.75) 42%,transparent 83%);
+}
+.vt-home-v2 .vt-mote-feature::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.42;
+  background:
+    radial-gradient(ellipse at 74% 45%,transparent 0 20%,rgba(170,187,205,.08) 20.2% 20.35%,transparent 20.6% 28%,rgba(170,187,205,.06) 28.2% 28.35%,transparent 28.6%),
+    linear-gradient(115deg,transparent 0 49.8%,rgba(184,194,206,.035) 50%,transparent 50.2%);
+}
+.vt-home-v2 .vt-mote-feature .vt-scene{
+  background:radial-gradient(ellipse at 55% 48%,rgba(119,139,161,.11),transparent 58%);
+  border-radius:50%;
+}
+.vt-home-v2 .vt-mote-feature .vt-scene-grid{
+  background:radial-gradient(ellipse at center,rgba(151,169,190,.18),rgba(91,108,129,.06) 42%,transparent 70%);
+  filter:blur(18px);
+}
+.vt-home-v2 .vt-mote-feature .vt-mote-vector-aura{
+  background:radial-gradient(circle,rgba(211,220,230,.17),rgba(130,148,169,.08) 48%,transparent 72%);
+}
+.vt-home-v2 .vt-mote-feature .vt-mote-vector-ring{
+  border-color:rgba(184,198,214,.24);
+}
+.vt-home-v2 .vt-mote-feature .vt-mote-vector-ring-inner{
+  border-color:rgba(184,198,214,.32);
+  border-left-color:transparent;border-right-color:transparent;
+}
+.vt-home-v2 .vt-mote-feature .vt-mote-orbit-node-card{
+  border-color:rgba(137,153,173,.38);
+  box-shadow:0 12px 30px rgba(0,0,0,.24),0 0 28px rgba(131,150,173,.08);
+}
+.vt-home-v2 .vt-mote-feature .vt-mote-orbit-node-dot{
+  background:#7eaa98;
+  box-shadow:0 0 10px rgba(126,170,152,.28);
+}
+.vt-home-v2 .vt-mote-feature .vt-mote-caption{
+  background:rgba(224,230,237,.96);
+  border-color:rgba(154,170,189,.5);
+  color:#4e5966;
+  box-shadow:0 8px 22px rgba(0,0,0,.2);
+}
+.vt-home-v2 .vt-mote-feature .vt-live-dot{
+  background:#8db6a2;
+  box-shadow:0 0 10px rgba(141,182,162,.35);
+}
+.vt-home-v2 .vt-mote-feature .vt-hero-foot{color:#a5afbb}
