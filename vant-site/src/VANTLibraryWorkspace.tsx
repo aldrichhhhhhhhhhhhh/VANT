@@ -121,7 +121,10 @@ const docs:LibraryDoc[]=[
 {heading:"Required disclosures",paragraphs:["For each technology, document its purpose, provider, duration, data involved, and available user controls. Do not claim that a cookie banner, consent mechanism, or analytics opt-out exists unless it has been implemented and verified."]}
 ]}
 ];
-type PublicationState="Draft"|"In Review"|"Published"|"Archived";\ntype Revision={version:string;date:string;note:string};\ntype EditorialStage={label:string;done:boolean};\nconst documentMeta:Record<string,{version:string;updated:string;author:string;related:string[];status:PublicationState;history:Revision[];workflow:EditorialStage[]} >={
+type PublicationState="Draft"|"In Review"|"Published"|"Archived";
+type Revision={version:string;date:string;note:string};
+type EditorialStage={label:string;done:boolean};
+const documentMeta:Record<string,{version:string;updated:string;author:string;related:string[];status:PublicationState;history:Revision[];workflow:EditorialStage[]} >={
 "news-ecosystem":{version:"1.0",updated:"30 OCT 2026",author:"VANT TECHNOLOGIES",related:["news-education","engineering-platform","engineering-mote"],status:"Published",history:[{version:"1.0",date:"30 OCT 2026",note:"Initial structured Library publication record."}],workflow:[{label:"Content prepared",done:true},{label:"Technical and editorial review",done:true},{label:"Publication approval",done:true},{label:"Published to Library",done:true}]},
 "news-education":{version:"1.0",updated:"30 OCT 2026",author:"VANT EDUCATION",related:["news-ecosystem","guide-product","engineering-platform"],status:"Published",history:[{version:"1.0",date:"30 OCT 2026",note:"Initial structured Library publication record."}],workflow:[{label:"Content prepared",done:true},{label:"Technical and editorial review",done:true},{label:"Publication approval",done:true},{label:"Published to Library",done:true}]},
 "architecture-semantic":{version:"1.0",updated:"30 OCT 2026",author:"VANT RESEARCH DIVISION",related:["architecture-cowork","engineering-ai-engine","engineering-platform"],status:"Published",history:[{version:"1.0",date:"30 OCT 2026",note:"Initial structured Library publication record."}],workflow:[{label:"Content prepared",done:true},{label:"Technical and editorial review",done:true},{label:"Publication approval",done:true},{label:"Published to Library",done:true}]},
