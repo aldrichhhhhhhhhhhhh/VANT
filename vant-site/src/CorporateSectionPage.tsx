@@ -42,8 +42,30 @@ const pages: Record<string, PageData> = {
   education: { number:"06.1", kicker:"PRODUCTS / LEARNING", title:"VANT Education", lead:"Learning tools designed to turn notes into study resources, support practice, and help learners plan their progress.", items:[{title:"Talk to our team",description:"Get in touch for product information and early access updates.",href:"/connect",eyebrow:"GET IN TOUCH"}]}
 };
 
+
+type NewsStory = { category: string; title: string; summary: string; body: string[]; library: string; icon: string };
+const newsStories: Record<string, NewsStory> = {
+  "news-vant-ecosystem": { category:"COMPANY / FEATURE", title:"Building an ecosystem for work and learning", summary:"An introduction to VANT's connected approach to intelligent products, work, and education.", body:["VANT Technologies is building a connected ecosystem of intelligent products for work, learning, and everyday progress.","The ecosystem brings together the VANT AI Work Platform, VANT Education, and MOTE.EXE—each with a distinct role in helping people think, create, organize, and learn.","This story is part of our company overview and will evolve as the ecosystem develops."], library:"VANT Technologies", icon:"⌘" },
+  "news-vant-education": { category:"PRODUCT / SPOTLIGHT", title:"Making learning more personal with VANT Education", summary:"A look at the study tools being developed to help learners turn notes into structured resources.", body:["VANT Education is designed to help learners work with their study materials in more useful ways.","Its planned toolset includes notes summarization, study-guide generation, flashcards, practice quizzes, study planning, and assignment tracking.","The aim is to make learning more structured and personal, while keeping the learner in control of their progress."], library:"VANT Education", icon:"✳" },
+  "news-mote-exe": { category:"PRODUCT / SPOTLIGHT", title:"Meet MOTE.EXE, a watchful presence in the VANT ecosystem", summary:"Discover the role and identity of VANT's guardian assistant concept.", body:["MOTE.EXE is the guardian and assistant identity within the VANT ecosystem.","Designed with a serious, watchful presence, MOTE represents a focused interface between people and intelligent workflows.","Its identity and experiences will continue to develop alongside the products it supports."], library:"VANT Technologies", icon:"◉" }
+};
+
 export default function CorporateSectionPage({ slug }: { slug: string }) {
+  const story = newsStories[slug];
   const data = pages[slug];
+  if (story) return <div className="vt-section-page vt-news-story-page">
+    <header className="vt-section-page-header"><a className="vt-section-page-brand" href="/"><span className="vt-section-page-mark">V</span><span>VANT <small>TECHNOLOGIES</small></span></a><a className="vt-section-page-home" href="/news">← Back to news</a></header>
+    <main className="vt-section-page-main vt-news-story-main">
+      <div className="vt-section-page-kicker">NEWSROOM / {story.category}</div>
+      <div className="vt-news-story-icon" aria-hidden="true">{story.icon}</div>
+      <h1>{story.title}</h1><p className="vt-section-page-lead">{story.summary}</p>
+      <div className="vt-news-story-meta"><span>VANT TECHNOLOGIES</span><span>EDITORIAL</span></div>
+      <article className="vt-news-story-body">{story.body.map((paragraph,i)=><p key={i}>{paragraph}</p>)}</article>
+      <a className="vt-news-library-link" href={story.library === "VANT Education" ? "/libraries#vant-education" : "/libraries#vant-technologies"}>Explore related resources in VANT Libraries <span>↗</span></a>
+      {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div></section> : null}
+    </main>
+    <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/news">More news ↗</a></footer>
+  </div>;
   if (!data) return null;
   return <div className="vt-section-page">
     <header className="vt-section-page-header">
@@ -57,29 +79,12 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <div className="vt-section-page-rule" />
       {slug === "news" ? <div className="vt-newsroom">
         <section className="vt-news-feature" id="news-latest">
-          <div className="vt-news-section-heading"><span>01 / THE NEWSROOM</span><span>VANT TECHNOLOGIES</span></div>
-          <h2>Latest updates</h2>
-          <p>Product releases, company announcements, and developments from across the VANT ecosystem.</p>
-          <div className="vt-news-empty">New updates will be published here.</div>
+          <div className="vt-news-section-heading"><span>01 / THE NEWSROOM</span><span>STORIES & ANNOUNCEMENTS</span></div>
+          <h2>Latest updates</h2><p>Stories, product spotlights, and developments from across the VANT ecosystem.</p>
+          <div className="vt-news-story-grid">{Object.entries(newsStories).map(([storySlug, item])=><a className="vt-news-story-card" href={"/" + storySlug} key={storySlug}><span className="vt-news-story-card-icon">{item.icon}</span><span className="vt-news-story-card-category">{item.category}</span><h3>{item.title}</h3><p>{item.summary}</p><b>Read story <i>↗</i></b><small>RELATED LIBRARY · {item.library}</small></a>)}</div>
         </section>
-        <section className="vt-news-section" id="news-patches">
-          <div className="vt-news-section-heading"><span>02 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div>
-          <h2>Patch notes</h2>
-          <p>Versioned records of new features, improvements, fixes, and other product changes.</p>
-          <div className="vt-news-patch-grid">
-            <article><span>RELEASES</span><h3>New features</h3><p>Product capabilities and experiences as they become available.</p></article>
-            <article><span>IMPROVEMENTS</span><h3>What got better</h3><p>Interface, usability, reliability, and performance refinements.</p></article>
-            <article><span>FIXES</span><h3>Resolved issues</h3><p>Bug fixes and corrections, documented clearly.</p></article>
-          </div>
-          <div className="vt-news-empty">No public patch notes have been published yet.</div>
-        </section>
-        <section className="vt-news-section" id="news-company">
-          <div className="vt-news-section-heading"><span>03 / COMPANY JOURNAL</span><span>VANT TECHNOLOGIES</span></div>
-          <h2>Company news</h2>
-          <p>Milestones, partnerships, launches, and news about the people and ideas behind VANT.</p>
-          <div className="vt-news-empty">Company announcements will appear here.</div>
-        </section>
-      </div> : <div className="vt-section-page-grid">
+        <section className="vt-news-section" id="news-company"><div className="vt-news-section-heading"><span>02 / COMPANY JOURNAL</span><span>VANT TECHNOLOGIES</span></div><h2>Company news</h2><p>Milestones, partnerships, launches, and news about the people and ideas behind VANT.</p><a className="vt-news-library-link" href="/libraries#vant-technologies">Explore the VANT Technologies collection in Libraries <span>↗</span></a></section>
+      </div><div className="vt-section-page-grid">
         {data.items.map((item) => <a className="vt-section-page-card" href={item.href} key={item.title}>
           <span>{item.eyebrow}</span><h2>{item.title}</h2><p>{item.description}</p><b>Explore <i>↗</i></b>
         </a>)}
