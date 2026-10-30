@@ -878,3 +878,69 @@
 @media(prefers-reduced-motion:reduce){
   .vt-mote-product-page .mp-suggestions button,.vt-mote-product-page .mp-ecosystem-item{transition:none}
 }
+
+
+/* MOTE capability iconography and console headline balance */
+.vt-mote-product-page .mp-line-icon{
+  display:grid;
+  place-items:center;
+  width:58px;
+  height:58px;
+  margin:25px 0 18px;
+  border:1px solid rgba(145,185,217,.24);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(145,185,217,.12),rgba(145,185,217,.015) 72%);
+  color:#91b9d9;
+}
+.vt-mote-product-page .mp-line-icon svg{
+  width:31px;
+  height:31px;
+  stroke:currentColor;
+  stroke-width:1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 7px rgba(145,185,217,.22));
+}
+.vt-mote-product-page .mp-capability{
+  position:relative;
+  overflow:hidden;
+  transition:transform .28s ease,border-color .28s ease,background .28s ease;
+}
+.vt-mote-product-page .mp-capability::after{
+  content:"";
+  position:absolute;
+  right:-35px;
+  bottom:-55px;
+  width:150px;
+  height:150px;
+  border:1px solid rgba(145,185,217,.08);
+  border-radius:50%;
+  box-shadow:0 0 0 18px rgba(145,185,217,.018),0 0 0 38px rgba(145,185,217,.012);
+  pointer-events:none;
+}
+.vt-mote-product-page .mp-capability:hover{
+  transform:translateY(-4px);
+  border-color:rgba(145,185,217,.42);
+  background:linear-gradient(145deg,rgba(145,185,217,.065),transparent 68%),#08090c;
+}
+.vt-mote-product-page .mp-console{
+  grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);
+  gap:clamp(42px,5vw,76px);
+}
+.vt-mote-product-page .mp-console-copy h2{
+  max-width:570px;
+  font-size:clamp(40px,4.35vw,62px);
+  line-height:1.02;
+  letter-spacing:-.06em;
+  text-wrap:balance;
+}
+@media(max-width:900px){
+  .vt-mote-product-page .mp-console-copy h2{font-size:clamp(42px,7vw,58px)}
+}
+@media(max-width:600px){
+  .vt-mote-product-page .mp-console-copy h2{font-size:clamp(38px,10vw,50px)}
+  .vt-mote-product-page .mp-line-icon{margin:18px 0 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-mote-product-page .mp-capability{transition:none}
+}
