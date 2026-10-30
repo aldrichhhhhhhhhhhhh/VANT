@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap');
 
 .vt-site{--vt-bg:#070807;--vt-panel:#10120f;--vt-text:#f3f1e9;--vt-muted:#a09f95;--vt-gold:#d7b875;--vt-line:rgba(235,226,203,.13);background:var(--vt-bg);color:var(--vt-text);font-family:'DM Sans',sans-serif;overflow:hidden}
 .vt-site *{box-sizing:border-box}.vt-site a{color:inherit;text-decoration:none}.vt-site button,.vt-site input{font:inherit}.vt-site a:focus-visible,.vt-site button:focus-visible,.vt-site input:focus-visible{outline:2px solid var(--vt-gold);outline-offset:4px}
@@ -203,7 +204,6 @@
 .vt-mote-version .vt-live-dot{width:5px;height:5px}
 @media(max-width:760px){.vt-mote-version{font-size:8px;flex-wrap:wrap}.vt-hero-actions{gap:12px}.vt-chat-mote-link{padding:13px 14px}}
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap');
 @keyframes mx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @keyframes mx-pulse{0%,100%{opacity:.55}50%{opacity:1}}
 @keyframes mx-spin{to{transform:rotate(360deg)}}
