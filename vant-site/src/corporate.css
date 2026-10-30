@@ -1741,3 +1741,15 @@
 .vt-research-library{background:linear-gradient(125deg,#e8edf1,#f1f3f4);border-color:#c8d1d9}
 .vt-research-library-kicker{color:#75899b}
 @media(max-width:760px){.vt-research-hero-grid{grid-template-columns:1fr}.vt-research-hero-copy,.vt-research-blueprint{min-height:310px}.vt-research-hero-copy h2{font-size:38px}.vt-research-blueprint svg{max-height:245px}.vt-research-hero-index{gap:16px;flex-wrap:wrap}}
+
+/* Featured engineering case study: VANT CoWork */
+.vt-research-card-featured{grid-column:1/-1;min-height:250px;padding:28px 30px;background-color:#1c2630;background-image:linear-gradient(rgba(174,193,210,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(174,193,210,.065) 1px,transparent 1px);background-size:20px 20px;border-color:#344453;color:#edf2f6}
+.vt-research-card-featured:hover{border-color:#8193a4;box-shadow:0 18px 38px rgba(22,31,40,.16)}
+.vt-research-card-featured .vt-research-card-index{color:#a7b7c6}
+.vt-research-card-featured .vt-research-symbol{margin:18px 0 18px;background:rgba(224,233,240,.08);border-color:#506171;color:#d3dee7}
+.vt-research-card-featured>small{color:#a7b8c8}
+.vt-research-card-featured h3{max-width:600px;color:#f0f3f6;font-size:26px}
+.vt-research-card-featured p{max-width:720px;color:#bac6d1;font-size:13px}
+.vt-research-card-featured b{color:#dce5ec}
+.vt-research-card-featured b i{color:#aab9c7}
+@media(max-width:760px){.vt-research-card-featured{grid-column:auto;padding:22px;min-height:290px}.vt-research-card-featured h3{font-size:22px}}
