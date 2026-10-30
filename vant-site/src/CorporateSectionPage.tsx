@@ -104,11 +104,13 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       {slug === "company-story" ? <article className="vt-company-blog">
         <aside className="vt-company-blog-index">
           <span>IN THIS STORY</span>
-          <a href="#story-founder">01 / Who built VANT</a>
+          <a href="#story-before">01 / Before VANT</a>
           <a href="#story-beginnings">02 / The beginning</a>
-          <a href="#story-journey">03 / The journey</a>
-          <a href="#story-roadmap">04 / The roadmap</a>
-          <a href="#story-future">05 / What comes next</a>
+          <a href="#story-building">03 / The decision</a>
+          <a href="#story-learning">04 / Learning</a>
+          <a href="#story-ecosystem">05 / The ecosystem</a>
+          <a href="#story-next">06 / What comes next</a>
+          <a href="#story-not-over">07 / The journey continues</a>
         </aside>
         <div className="vt-company-blog-body">
 
