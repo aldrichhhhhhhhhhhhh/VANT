@@ -101,7 +101,51 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <h1>{data.title}</h1>
       <p className="vt-section-page-lead">{data.lead}</p>
       <div className="vt-section-page-rule" />
-      {slug === "company-story" ? <section className="vt-story-episodes">
+      {slug === "company-profile" ? <div className="vt-company-profile">
+        <section className="vt-profile-overview">
+          <div className="vt-profile-section-label"><span>01 / COMPANY OVERVIEW</span><span>VANT TECHNOLOGIES</span></div>
+          <div className="vt-profile-overview-grid">
+            <div><h2>Intelligent technology, built to move people forward.</h2></div>
+            <div><p>VANT Technologies is building an AI work platform and a connected ecosystem of experiences for work, learning, and exploration.</p><p>Our focus is on making intelligent technology useful in everyday contexts — helping people work with information, organize their efforts, develop ideas, and make learning more accessible.</p><p>We are an evolving technology company. Our products, research, and long-term ambitions will continue to develop as we learn, build, and grow.</p></div>
+          </div>
+        </section>
+        <section className="vt-profile-purpose">
+          <div className="vt-profile-section-label"><span>02 / PURPOSE & DIRECTION</span><span>MISSION · VISION</span></div>
+          <div className="vt-profile-purpose-grid">
+            <article><small>OUR MISSION</small><h2>We build intelligent technology that moves people forward.</h2><p>We believe AI and thoughtful design can make work more capable, learning more personal, and ambitious ideas more achievable.</p></article>
+            <article><small>OUR VISION</small><h2>A future where technology expands human possibility.</h2><p>With purpose, responsibility, and room for everyone to grow.</p></article>
+          </div>
+        </section>
+        <section className="vt-profile-ecosystem">
+          <div className="vt-profile-section-label"><span>03 / THE VANT ECOSYSTEM</span><span>CONNECTED EXPERIENCES</span></div>
+          <h2>Different experiences. A shared direction.</h2>
+          <p className="vt-profile-section-lead">The VANT ecosystem brings together products and knowledge initiatives designed around different needs.</p>
+          <div className="vt-profile-product-grid">
+            <a href="https://vant-ai.vercel.app/"><span>01 / WORK</span><h3>VANT AI Work Platform</h3><p>An AI workspace designed to help people think through tasks, work with information, organize projects, and get everyday work done.</p><b>Explore platform ↗</b></a>
+            <a href="/education"><span>02 / LEARNING</span><h3>VANT Education</h3><p>Learning-focused tools designed to help students turn notes into study resources, practice, and plan their progress.</p><b>Explore education ↗</b></a>
+            <a href="/mote-exe"><span>03 / INTELLIGENCE</span><h3>MOTE.EXE</h3><p>An AI identity within the VANT ecosystem, representing a focused and watchful interface for intelligent experiences.</p><b>Meet MOTE ↗</b></a>
+            <a href="/libraries"><span>04 / KNOWLEDGE</span><h3>VANT Libraries & Research</h3><p>A knowledge space for product resources, learning materials, company information, and developing research perspectives.</p><b>Explore libraries ↗</b></a>
+          </div>
+        </section>
+        <section className="vt-profile-commitments">
+          <div className="vt-profile-section-label"><span>04 / OUR COMMITMENTS</span><span>WHAT WE AIM TO UPHOLD</span></div>
+          <h2>Build with purpose. Communicate with clarity. Keep people in the picture.</h2>
+          <div className="vt-profile-commitment-grid">
+            <article><b>01</b><h3>Human possibility</h3><p>We aim to create technology that helps people develop their capabilities and move their ideas forward.</p></article>
+            <article><b>02</b><h3>Thoughtful responsibility</h3><p>We aim to consider the impact of what we build and approach intelligent technology with care.</p></article>
+            <article><b>03</b><h3>Useful by design</h3><p>We aim to make our products understandable, practical, and grounded in real needs.</p></article>
+            <article><b>04</b><h3>Open to learning</h3><p>We aim to keep questioning, researching, improving, and learning from the people who use our work.</p></article>
+          </div>
+        </section>
+        <section className="vt-profile-principles">
+          <div className="vt-profile-section-label"><span>05 / OUR PRINCIPLES</span><span>HOW WE APPROACH THE WORK</span></div>
+          <div className="vt-profile-principles-grid">
+            <h2>Principles that guide the way we build.</h2>
+            <ul><li><b>Start with the problem.</b> Understand the need before choosing the technology.</li><li><b>Keep people in control.</b> Design experiences that support human judgment and direction.</li><li><b>Make complexity clearer.</b> Use thoughtful design to make powerful tools easier to understand.</li><li><b>Build, test, and improve.</b> Treat progress as an ongoing process of learning and refinement.</li><li><b>Be honest about the work.</b> Communicate capabilities, limitations, and future ambitions clearly.</li></ul>
+          </div>
+        </section>
+        <section className="vt-profile-closing"><span>VANT TECHNOLOGIES</span><h2>We build intelligent technology that moves people forward.</h2><a href="/company-story">Read our Company Story ↗</a></section>
+      </div> :       {slug === "company-story" ? <section className="vt-story-episodes">
         <div className="vt-story-episodes-heading"><div><span>THE COMPANY JOURNAL</span><h2>Every journey has a beginning.</h2><p>Read the story one chapter at a time. Each published episode opens in VANT Document Viewer.</p></div><small>VANT JOURNAL / VOL. 01</small></div>
         <div className="vt-story-episode-grid">
           <a className="vt-story-episode-card vt-story-episode-featured" href="/company-story?document=company-story-inception" data-vant-document-id="company-story-inception">
