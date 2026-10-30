@@ -1367,3 +1367,53 @@
  .vt-home-v2 .vt-mote-feature .vt-scene{height:340px;min-height:0}
  .vt-home-v2 .vt-mote-feature .vt-hero-bottom{font-size:7px;letter-spacing:.1em}
 }
+
+
+/* VANT identity update — retire gold; use graphite, ivory and cool silver */
+.vt-site{
+  --vt-gold:#b8c2ce;
+  --vt-line:rgba(184,194,206,.18);
+}
+.vt-site a:focus-visible,.vt-site button:focus-visible,.vt-site input:focus-visible{outline-color:#b8c2ce}
+.vt-site .vt-brand-mark{border-color:rgba(184,194,206,.58);color:#c4ccd5}
+.vt-site .vt-nav>a:hover,.vt-site .vt-nav-caret,.vt-site .vt-arrow{color:#c4ccd5}
+.vt-site .vt-nav-cta{border-color:rgba(184,194,206,.38)}
+.vt-site .vt-nav-cta:hover{background:rgba(184,194,206,.09);border-color:#b8c2ce}
+.vt-site .vt-button-primary{background:#c3cbd4;color:#111419!important}
+.vt-site .vt-button-primary:hover{background:#e0e5eb}
+.vt-site .vt-eyebrow-line{background:#aeb9c6}
+.vt-site .vt-section-kicker,.vt-site .vt-eyebrow{color:#aeb6c0}
+.vt-home-v2 .vt-mission-statement>p em,.vt-home-v2 .vt-mission-grid h2 em,.vt-home-v2 .vt-learn-heading h2 em{color:#737f8d}
+.vt-home-v2 .vt-mission-labels span,.vt-home-v2 .vt-block-index,.vt-home-v2 .vt-learn-card>span{color:#737f8d;border-color:#9aa6b4}
+.vt-home-v2 .vt-vision-mark{color:rgba(115,127,141,.09)}
+.vt-home-v2 .vt-card-symbol{border-color:rgba(115,127,141,.38);color:#737f8d}
+.vt-home-v2 .vt-product-card h3 em,.vt-home-v2 .vt-product-card h3 span{color:#8793a1}
+.vt-home-v2 .vt-learn-card b{color:inherit}
+.vt-home-v2 .vt-mega-contact{border-color:rgba(184,194,206,.35);color:#d3dae2}
+.vt-home-v2 .vt-mega-columns h4{color:#d3dae2}
+.vt-home-v2 .vt-mega-footer-bottom a{color:#c4ccd5}
+.vt-home-v2 .vt-mote-feature{
+  background:radial-gradient(ellipse at 76% 48%,rgba(150,165,181,.12),transparent 34%),linear-gradient(115deg,#090a0c 0%,#0c0e11 62%,#11151a 100%);
+}
+.vt-home-v2 .vt-mote-feature h1 span{color:#b8c2ce}
+.vt-home-v2 .vt-mote-feature .vt-mote-version{color:#a6afb9}
+.vt-home-v2 .vt-mote-feature .vt-button-primary{background:#c3cbd4;color:#111419!important}
+.vt-home-v2 .vt-mote-feature .vt-button-primary:hover{background:#e0e5eb}
+.vt-home-v2 .vt-mote-feature .vt-live-dot{background:#b8c2ce;box-shadow:0 0 10px rgba(184,194,206,.4)}
+.vt-home-v2 .vt-mote-feature .vt-eyebrow{color:#b8c2ce}
+.vt-home-v2 .vt-mote-feature .vt-eyebrow-line{background:#b8c2ce}
+.vt-home-v2 .vt-product-card-mote .vt-card-symbol{border-color:#778390;color:#d2d9e1}
+.vt-home-v2 .vt-product-card-mote .vt-product-link .vt-arrow{color:#c4ccd5}
+.vt-home-v2 .vt-learn-future .vt-learn-card>span{color:#b8c2ce}
+.vt-connect-page .vt-connect-kicker,.vt-connect-page .vt-connect-overline,.vt-connect-page .vt-connect-icon{color:#7d8997}
+.vt-connect-page .vt-connect-primary{background:#c3cbd4;color:#111419}
+.vt-connect-page .vt-connect-primary:hover{background:#e0e5eb}
+.vt-connect-page .vt-connect-float{border-color:rgba(184,194,206,.3)}
+.vt-connect-page .vt-connect-float-avatar{border-color:rgba(184,194,206,.4);color:#7d8997}
+.vt-connect-page .vt-connect-float-send{background:#7d8997}
+.vt-connect-page .vt-connect-float-message small{color:#7d8997}
+.vt-libraries-page .vt-libraries-kicker,.vt-libraries-page .vt-libraries-hero h1 em,.vt-libraries-page .vt-libraries-symbol,.vt-libraries-page .vt-libraries-arrow{color:#7d8997}
+.vt-libraries-page .vt-libraries-collection h2{color:#242832}
+@media(max-width:900px){
+ .vt-site .vt-menu-toggle{color:#d3dae2}
+}
