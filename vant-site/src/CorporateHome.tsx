@@ -3,6 +3,7 @@ import LegalPages from "./LegalPages";
 import MoteProductPage from "./MoteProductPage";
 import LibrariesPage from "./LibrariesPage";
 import ConnectPage from "./ConnectPage";
+import CorporateSectionPage from "./CorporateSectionPage";
 import "./corporate.css";
 
 
@@ -162,14 +163,14 @@ function CorporateHomeView() {
       <a className="vt-brand" href="#top" onClick={closeMenu} aria-label="VANT Technologies home"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a>
       <button className="vt-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
       <nav className={menuOpen ? "vt-nav vt-nav-open vt-nav-editorial" : "vt-nav vt-nav-editorial"} aria-label="Main navigation">
-        <a className="vt-nav-news" href="/libraries" onClick={closeMenu}>News</a>
+        <a className="vt-nav-news" href="/news" onClick={closeMenu}>News</a>
         <div className={activeDropdown === "research" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "research"} onClick={() => toggleDropdown("research")}>Research <span>⌄</span></button>
           <div className="vt-nav-dropdown">
             <div className="vt-dropdown-intro"><small>EXPLORE IDEAS</small><strong>Research & knowledge</strong><p>Perspectives, learning resources, and the thinking behind our technology.</p></div>
             <div className="vt-dropdown-links">
               <a href="/libraries" onClick={closeMenu}><b>VANT Libraries</b><small>Documentation, resources, and research</small></a>
-              <a href="/libraries" onClick={closeMenu}><b>Technology perspectives</b><small>Ideas shaping what comes next</small></a>
+              <a href="/perspectives" onClick={closeMenu}><b>Technology perspectives</b><small>Ideas shaping what comes next</small></a>
             </div>
           </div>
         </div>
@@ -184,15 +185,15 @@ function CorporateHomeView() {
             </div>
           </div>
         </div>
-        <a href="#mission" onClick={closeMenu}>Commitments</a>
+        <a href="/commitments" onClick={closeMenu}>Commitments</a>
         <div className={activeDropdown === "company" ? "vt-nav-group vt-nav-group-open" : "vt-nav-group"}>
           <button type="button" aria-expanded={activeDropdown === "company"} onClick={() => toggleDropdown("company")}>Company <span>⌄</span></button>
           <div className="vt-nav-dropdown">
             <div className="vt-dropdown-intro"><small>ABOUT VANT</small><strong>People & purpose</strong><p>Discover the principles, ambitions, and relationships shaping VANT Technologies.</p></div>
             <div className="vt-dropdown-links">
-              <a href="#mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
-              <a href="#learn" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
-              <a href="/connect" onClick={closeMenu}><b>Partnerships</b><small>Build something meaningful together</small></a>
+              <a href="/mission" onClick={closeMenu}><b>Our mission & vision</b><small>What VANT Technologies stands for</small></a>
+              <a href="/vision" onClick={closeMenu}><b>Our future</b><small>Where we're heading</small></a>
+              <a href="/partnerships" onClick={closeMenu}><b>Partnerships</b><small>Build something meaningful together</small></a>
             </div>
           </div>
         </div>
@@ -202,7 +203,7 @@ function CorporateHomeView() {
             <div className="vt-dropdown-intro"><small>THE VANT ECOSYSTEM</small><strong>Products & experiences</strong><p>Purpose-built experiences for work, learning, and a more capable relationship with AI.</p></div>
             <div className="vt-dropdown-links">
               <a href="https://vant-ai.vercel.app/" onClick={closeMenu}><b>VANT AI Work Platform</b><small>Intelligence for work and teams</small></a>
-              <a href="/connect" onClick={closeMenu}><b>VANT Education</b><small>Tools for learning and progress</small></a>
+              <a href="/education" onClick={closeMenu}><b>VANT Education</b><small>Tools for learning and progress</small></a>
               <a href="/mote-exe" onClick={closeMenu}><b>MOTE.EXE</b><small>Your VANT intelligence companion</small></a>
             </div>
           </div>
@@ -267,11 +268,11 @@ function CorporateHomeView() {
     <footer className="vt-mega-footer">
       <div className="vt-mega-footer-top"><a className="vt-brand" href="#top"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.<br />Building technology for what comes next.</p><a className="vt-mega-contact" href="/connect">Connect with VANT <Arrow diagonal /></a></div>
       <div className="vt-mega-columns">
-        <div><h4>Research</h4><a href="/libraries">Research library</a><a href="/libraries">Perspectives</a></div>
+        <div><h4>Research</h4><a href="/libraries">Research library</a><a href="/perspectives">Perspectives</a></div>
         <div><h4>Policy</h4><a href="/libraries">Our approach</a><a href="/privacy">Privacy</a></div>
-        <div><h4>Commitments</h4><a href="#mission">Our mission</a><a href="#mission">Our vision</a></div>
-        <div><h4>Company</h4><a href="#mission">About VANT</a><a href="/connect">Partnerships</a><a href="/connect">Contact</a></div>
-        <div><h4>Products</h4><a href="https://vant-ai.vercel.app/">VANT AI Work Platform</a><a href="/connect">VANT Education</a><a href="/mote-exe">MOTE.EXE</a></div>
+        <div><h4>Commitments</h4><a href="/mission">Our mission</a><a href="/vision">Our vision</a></div>
+        <div><h4>Company</h4><a href="/company">About VANT</a><a href="/partnerships">Partnerships</a><a href="/connect">Contact</a></div>
+        <div><h4>Products</h4><a href="https://vant-ai.vercel.app/">VANT AI Work Platform</a><a href="/education">VANT Education</a><a href="/mote-exe">MOTE.EXE</a></div>
         <div><h4>Models</h4><a href="/libraries">VANT intelligence</a><a href="/mote-exe">MOTE.EXE</a></div>
         <div><h4>Solutions</h4><a href="https://vant-ai.vercel.app/">Work platform</a><a href="/connect">Learning technology</a></div>
         <div><h4>Help & Security</h4><a href="/connect">Help center</a><a href="/connect">Contact support</a></div>
@@ -283,6 +284,9 @@ function CorporateHomeView() {
 }
 export default function CorporateHome() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  const sectionSlug = path.replace(/^\\//, "");
+  const sectionRoutes = ["news","research","policy","commitments","company","products","perspectives","our-approach","mission","vision","partnerships","education"];
+  if (sectionRoutes.includes(sectionSlug)) return <CorporateSectionPage slug={sectionSlug} />;
   if (path === "/mote-exe" || path === "/mote") return <MoteProductPage />;
   if (path === "/libraries") return <LibrariesPage />;
   if (path === "/connect" || path === "/contact" || path === "/support") return <ConnectPage />;
