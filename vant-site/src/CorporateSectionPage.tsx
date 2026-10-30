@@ -197,7 +197,7 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
         {data.items.map((item) => <a className="vt-section-page-card" href={item.href} key={item.title}>
           <span>{item.eyebrow}</span><h2>{item.title}</h2><p>{item.description}</p><b>Explore <i>↗</i></b>
         </a>)}
-      </div>)}
+      </div>}
       {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div><a className="vt-news-patch-open" href="/news?document=patch-notes" data-vant-document-id="patch-notes">Open patch notes <span>↗</span></a></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/connect">Connect with VANT ↗</a></footer>
