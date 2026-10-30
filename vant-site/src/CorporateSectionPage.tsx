@@ -5,9 +5,10 @@ type Item = { title: string; description: string; href: string; eyebrow?: string
 type PageData = { number: string; kicker: string; title: string; lead: string; items: Item[] };
 
 const pages: Record<string, PageData> = {
-  news: { number:"01", kicker:"LATEST FROM VANT", title:"News & updates", lead:"Announcements, product updates, and important developments from VANT Technologies.", items:[
-    {title:"VANT Libraries",description:"Explore knowledge, resources, and research from across the VANT ecosystem.",href:"/libraries",eyebrow:"KNOWLEDGE"},
-    {title:"Technology perspectives",description:"Ideas and perspectives on useful, responsible intelligent technology.",href:"/perspectives",eyebrow:"PERSPECTIVES"}
+  news: { number:"01", kicker:"VANT TECHNOLOGIES / NEWSROOM", title:"News & updates", lead:"What we're building. What's changing. What's next. Follow product releases, patch notes, company announcements, and milestones across VANT Technologies.", items:[
+    {title:"Latest updates",description:"The newest releases, announcements, and developments from across VANT Technologies.",href:"#news-latest",eyebrow:"LATEST"},
+    {title:"Patch notes",description:"A clear record of product changes, new features, improvements, and fixes.",href:"#news-patches",eyebrow:"PRODUCT UPDATES"},
+    {title:"Company news",description:"Milestones, partnerships, launches, and important updates from the company.",href:"#news-company",eyebrow:"ANNOUNCEMENTS"}
   ]},
   research: { number:"02", kicker:"IDEAS & KNOWLEDGE", title:"Research", lead:"A place for the ideas, learning resources, and technical perspectives informing what we build.", items:[
     {title:"VANT Libraries",description:"A growing collection of product knowledge, learning resources, and company materials.",href:"/libraries",eyebrow:"LIBRARY"},
@@ -54,11 +55,35 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <h1>{data.title}</h1>
       <p className="vt-section-page-lead">{data.lead}</p>
       <div className="vt-section-page-rule" />
-      <div className="vt-section-page-grid">
+      {slug === "news" ? <div className="vt-newsroom">
+        <section className="vt-news-feature" id="news-latest">
+          <div className="vt-news-section-heading"><span>01 / THE NEWSROOM</span><span>VANT TECHNOLOGIES</span></div>
+          <h2>Latest updates</h2>
+          <p>Product releases, company announcements, and developments from across the VANT ecosystem.</p>
+          <div className="vt-news-empty">New updates will be published here.</div>
+        </section>
+        <section className="vt-news-section" id="news-patches">
+          <div className="vt-news-section-heading"><span>02 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div>
+          <h2>Patch notes</h2>
+          <p>Versioned records of new features, improvements, fixes, and other product changes.</p>
+          <div className="vt-news-patch-grid">
+            <article><span>RELEASES</span><h3>New features</h3><p>Product capabilities and experiences as they become available.</p></article>
+            <article><span>IMPROVEMENTS</span><h3>What got better</h3><p>Interface, usability, reliability, and performance refinements.</p></article>
+            <article><span>FIXES</span><h3>Resolved issues</h3><p>Bug fixes and corrections, documented clearly.</p></article>
+          </div>
+          <div className="vt-news-empty">No public patch notes have been published yet.</div>
+        </section>
+        <section className="vt-news-section" id="news-company">
+          <div className="vt-news-section-heading"><span>03 / COMPANY JOURNAL</span><span>VANT TECHNOLOGIES</span></div>
+          <h2>Company news</h2>
+          <p>Milestones, partnerships, launches, and news about the people and ideas behind VANT.</p>
+          <div className="vt-news-empty">Company announcements will appear here.</div>
+        </section>
+      </div> : <div className="vt-section-page-grid">
         {data.items.map((item) => <a className="vt-section-page-card" href={item.href} key={item.title}>
           <span>{item.eyebrow}</span><h2>{item.title}</h2><p>{item.description}</p><b>Explore <i>↗</i></b>
         </a>)}
-      </div>
+      </div>}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/connect">Connect with VANT ↗</a></footer>
   </div>;
