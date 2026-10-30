@@ -141,6 +141,7 @@ function CorporateHomeView() {
         <a href="#about" onClick={closeMenu}>About</a>
         <a href="#products" onClick={closeMenu}>Products <span className="vt-nav-caret">⌄</span></a>
         <a href="#partners" onClick={closeMenu}>Powered by VANT</a>
+        <a href="/libraries" onClick={closeMenu}>Libraries</a>
         <a href="#journey" onClick={closeMenu}>Our Journey</a>
         <a className="vt-nav-cta" href="#contact" onClick={closeMenu}>Let's connect <Arrow diagonal /></a>
       </nav>
