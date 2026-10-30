@@ -1716,3 +1716,28 @@
 .vt-research-library>a{flex:none;display:flex;align-items:center;gap:26px;padding:15px 17px;border:1px solid #c5cdd5;background:#f8f9f8;color:#526173;text-decoration:none;font-size:11px;transition:background .18s}
 .vt-research-library>a:hover{background:#e4e9ed}
 @media(max-width:760px){.vt-research-hub{gap:54px}.vt-research-grid{grid-template-columns:1fr}.vt-research-card{min-height:270px}.vt-research-library{align-items:stretch;flex-direction:column;padding:22px}.vt-research-library>a{justify-content:space-between}}
+
+/* Research division — scientific / engineering visual language */
+.vt-research-hub{gap:70px}
+.vt-research-hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);gap:22px;margin-top:28px}
+.vt-research-hero-copy{min-height:370px;padding:clamp(25px,4vw,42px);display:flex;flex-direction:column;justify-content:center;background:#1a222b;color:#eef2f5;border:1px solid #313d49}
+.vt-research-overline{font:9px monospace;letter-spacing:.16em;color:#aab8c6}.vt-research-overline i{font-style:normal;color:#778797}
+.vt-research-hero-copy h2{max-width:530px;margin:27px 0 18px;color:#f1f3f4;font:600 clamp(36px,4.6vw,55px)/1.03 Manrope,sans-serif;letter-spacing:-.065em}
+.vt-research-hero-copy>p{max-width:500px;margin:0;color:#b2bdc8;font-size:14px;line-height:1.85}
+.vt-research-hero-index{display:flex;gap:28px;margin-top:34px;padding-top:17px;border-top:1px solid #3a4652}
+.vt-research-hero-index span{display:flex;gap:10px;align-items:center;color:#8d9baa;font:8px monospace;letter-spacing:.1em}.vt-research-hero-index b{color:#d5dee6;font-size:10px;font-weight:500}
+.vt-research-blueprint{min-height:370px;padding:17px 18px 13px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#202b36;border:1px solid #344352;color:#d7e0e8}
+.vt-blueprint-top,.vt-blueprint-bottom{display:flex;justify-content:space-between;gap:10px;color:#a8b7c5;font:8px monospace;letter-spacing:.12em}
+.vt-research-blueprint svg{display:block;width:100%;max-height:285px;overflow:visible}
+.vt-blueprint-bottom{padding-top:12px;border-top:1px solid rgba(196,210,224,.18);color:#8d9eae}
+.vt-research-themes .vt-news-section-heading{margin-bottom:0}
+.vt-research-card{position:relative;min-height:350px;padding:22px;background-color:#f0f2f4;background-image:linear-gradient(rgba(113,132,150,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(113,132,150,.055) 1px,transparent 1px);background-size:18px 18px;border-color:#cbd3db}
+.vt-research-card-index{align-self:flex-end;color:#8997a5;font:9px monospace;letter-spacing:.12em}
+.vt-research-symbol{margin:18px 0 24px;background:rgba(255,255,255,.7);border-color:#c4ced8;color:#5f7183}
+.vt-research-card>small{color:#778898}
+.vt-research-card h3{color:#26313c}
+.vt-research-card p{color:#64717e}
+.vt-research-disclaimer{padding-left:14px;border-left:2px solid #aebbc7;color:#7c8996}
+.vt-research-library{background:linear-gradient(125deg,#e8edf1,#f1f3f4);border-color:#c8d1d9}
+.vt-research-library-kicker{color:#75899b}
+@media(max-width:760px){.vt-research-hero-grid{grid-template-columns:1fr}.vt-research-hero-copy,.vt-research-blueprint{min-height:310px}.vt-research-hero-copy h2{font-size:38px}.vt-research-blueprint svg{max-height:245px}.vt-research-hero-index{gap:16px;flex-wrap:wrap}}
