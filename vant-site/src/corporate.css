@@ -1307,3 +1307,12 @@
  .vt-home-v2 .vt-art-circles{grid-template-columns:repeat(3,10px);gap:6px}
  .vt-home-v2 .vt-art-circles i{width:10px;height:10px}
 }
+
+
+/* Mission statement scale refinement — calmer editorial hierarchy */
+.vt-home-v2 .vt-mission-statement{max-width:1320px;margin:clamp(38px,4.5vw,58px) auto clamp(42px,4.5vw,58px)}
+.vt-home-v2 .vt-mission-statement>p{max-width:1160px;font-size:clamp(27px,3.05vw,43px);line-height:1.24;letter-spacing:-.045em}
+@media(max-width:600px){
+ .vt-home-v2 .vt-mission-statement{margin:30px auto 36px}
+ .vt-home-v2 .vt-mission-statement>p{font-size:clamp(25px,7vw,32px);line-height:1.25;letter-spacing:-.04em}
+}
