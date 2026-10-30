@@ -2011,3 +2011,17 @@
   .vt-company-roadmap{grid-template-columns:1fr}
   .vt-company-blog-end{align-items:flex-start;flex-direction:column}
 }
+
+
+/* Company Story — Chapter 01: INCEPTION */
+.vt-company-blog-chapter{display:flex;align-items:center;gap:13px;margin:0 0 22px}
+.vt-company-blog-chapter span{color:#f8f7f2;background:#252d34;padding:7px 10px;font:9px monospace;letter-spacing:.14em}
+.vt-company-blog-chapter i{color:#64727e;font:italic 11px Georgia,serif;letter-spacing:.2em}
+.vt-company-blog-headline{max-width:760px;margin:35px 0 14px;color:#202832;font-size:clamp(34px,4.4vw,56px);line-height:1.04;letter-spacing:-.065em;font-weight:550}
+.vt-company-blog-deck{max-width:700px;margin:0 0 54px;color:#65717c;font-size:clamp(16px,1.8vw,20px);line-height:1.8}
+.vt-company-blog-signoff{display:flex;flex-direction:column;gap:7px;margin:42px 0 30px;padding:23px 0;border-top:1px solid #d9dcdf;border-bottom:1px solid #d9dcdf}
+.vt-company-blog-signoff strong{color:#303a45;font:700 10px monospace;letter-spacing:.16em}
+.vt-company-blog-signoff span{color:#7b8791;font-size:12px}
+.vt-company-blog-index{max-height:calc(100vh - 60px);overflow:auto}
+@media(max-width:900px){.vt-company-blog-index{max-height:none}.vt-company-blog-headline{margin-top:25px}}
+@media(max-width:600px){.vt-company-blog-chapter{margin-bottom:17px}.vt-company-blog-headline{font-size:35px;line-height:1.08}.vt-company-blog-deck{margin-bottom:38px;font-size:15px}.vt-company-blog-signoff{margin-top:30px}}
