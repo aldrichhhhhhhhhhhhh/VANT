@@ -1,4 +1,5 @@
 import React from "react";
+import VANTDocumentViewer from "./VANTDocumentViewer";
 import "./corporate.css";
 
 type Item = { title: string; description: string; href: string; eyebrow?: string };
@@ -53,7 +54,7 @@ const newsStories: Record<string, NewsStory> = {
 export default function CorporateSectionPage({ slug }: { slug: string }) {
   const story = newsStories[slug];
   const data = pages[slug];
-  if (story) return <div className="vt-section-page vt-news-story-page">
+  if (story) return <VANTDocumentViewer><div className="vt-section-page vt-news-story-page">
     <header className="vt-section-page-header"><a className="vt-section-page-brand" href="/"><span className="vt-section-page-mark">V</span><span>VANT <small>TECHNOLOGIES</small></span></a><a className="vt-section-page-home" href="/news">← Back to news</a></header>
     <main className="vt-section-page-main vt-news-story-main">
       <div className="vt-section-page-kicker">NEWSROOM / {story.category}</div>
@@ -62,12 +63,12 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       <div className="vt-news-story-meta"><span>VANT TECHNOLOGIES</span><span>EDITORIAL</span></div>
       <article className="vt-news-story-body">{story.body.map((paragraph,i)=><p key={i}>{paragraph}</p>)}</article>
       <a className="vt-news-library-link" href={story.library === "VANT Education" ? "/libraries#vant-education" : "/libraries#vant-technologies"}>Explore related resources in VANT Libraries <span>↗</span></a>
-      {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div></section> : null}
+      {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div><a className="vt-news-patch-open" href="/news?document=patch-notes" data-vant-document-id="patch-notes">Open patch notes <span>↗</span></a></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/news">More news ↗</a></footer>
-  </div>;
+  </div></VANTDocumentViewer>;
   if (!data) return null;
-  return <div className="vt-section-page">
+  return <VANTDocumentViewer><div className="vt-section-page">
     <header className="vt-section-page-header">
       <a className="vt-section-page-brand" href="/"><span className="vt-section-page-mark">V</span><span>VANT <small>TECHNOLOGIES</small></span></a>
       <a className="vt-section-page-home" href="/">Back to homepage ↗</a>
@@ -81,7 +82,7 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
         <section className="vt-news-feature" id="news-latest">
           <div className="vt-news-section-heading"><span>01 / THE NEWSROOM</span><span>STORIES & ANNOUNCEMENTS</span></div>
           <h2>Latest updates</h2><p>Stories, product spotlights, and developments from across the VANT ecosystem.</p>
-          <div className="vt-news-story-grid">{Object.entries(newsStories).map(([storySlug, item])=><a className="vt-news-story-card" href={"/" + storySlug} key={storySlug}><span className="vt-news-story-card-icon">{item.icon}</span><span className="vt-news-story-card-category">{item.category}</span><h3>{item.title}</h3><p>{item.summary}</p><b>Read story <i>↗</i></b><small>RELATED LIBRARY · {item.library}</small></a>)}</div>
+          <div className="vt-news-story-grid">{Object.entries(newsStories).map(([storySlug, item])=><a className="vt-news-story-card" href={"/news?document=" + storySlug} data-vant-document-id={storySlug} key={storySlug}><span className="vt-news-story-card-icon">{item.icon}</span><span className="vt-news-story-card-category">{item.category}</span><h3>{item.title}</h3><p>{item.summary}</p><b>Read story <i>↗</i></b><small>RELATED LIBRARY · {item.library}</small></a>)}</div>
         </section>
         <section className="vt-news-section" id="news-company"><div className="vt-news-section-heading"><span>02 / COMPANY JOURNAL</span><span>VANT TECHNOLOGIES</span></div><h2>Company news</h2><p>Milestones, partnerships, launches, and news about the people and ideas behind VANT.</p><a className="vt-news-library-link" href="/libraries#vant-technologies">Explore the VANT Technologies collection in Libraries <span>↗</span></a></section>
       </div> : <div className="vt-section-page-grid">
@@ -92,5 +93,5 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
       {slug === "news" ? <section className="vt-news-patches" id="news-patches"><div className="vt-news-section-heading"><span>03 / PRODUCT CHANGELOG</span><span>RELEASE NOTES</span></div><h2>Patch notes</h2><p>Versioned records of product changes, new features, improvements, and fixes.</p><div className="vt-news-empty">No public patch notes have been published yet.</div></section> : null}
     </main>
     <footer className="vt-section-page-footer"><span>© {new Date().getFullYear()} VANT TECHNOLOGIES</span><a href="/connect">Connect with VANT ↗</a></footer>
-  </div>;
+  </div></VANTDocumentViewer>;
 }
