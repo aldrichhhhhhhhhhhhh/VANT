@@ -12,9 +12,9 @@ export default function LibrariesPage() {
     </header>
     <main className="vt-libraries-main vt-libraries-main-workspace">
       <section className="vt-libraries-hero vt-libraries-hero-compact">
-        <p className="vt-libraries-kicker"><span className="vt-live-dot" /> THE VANT KNOWLEDGE ECOSYSTEM</p>
-        <h1>Knowledge for <em>what comes next.</em></h1>
-        <p className="vt-libraries-intro">Explore VANT news, architectures, engineering notes, policies, and practical resources in one searchable library.</p>
+        <p className="vt-libraries-kicker"><span className="vt-live-dot" /> VANT TECHNOLOGIES LIBRARY</p>
+        <h1>VANT Technologies <em>Library.</em></h1>
+        <p className="vt-libraries-intro">A considered collection of ideas, systems, updates, and resources from across VANT.</p>
       </section>
       <VANTLibraryWorkspace />
     </main>
