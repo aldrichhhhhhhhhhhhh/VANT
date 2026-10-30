@@ -1938,3 +1938,25 @@
 .vt-library-editorial li.is-done i{background:#e8efeb;border-color:#cbd9d2;color:#5d8072}
 .vt-library-reader-section[id]{scroll-margin-top:28px}
 @media(max-width:650px){.vt-library-toc ol{grid-template-columns:1fr}.vt-library-document-panels{grid-template-columns:1fr}.vt-library-publication-row{margin-top:10px}.vt-library-toc{padding:13px;margin:22px 0}.vt-library-history,.vt-library-editorial{padding:14px}}
+
+
+/* Connect page — compact editorial heading to bring contact cards into view */
+.vt-connect-main{padding-top:clamp(42px,5vw,64px)}
+.vt-connect-hero{min-height:250px;padding-bottom:30px}
+.vt-connect-hero h1{font-size:clamp(28px,3.75vw,44px);line-height:1.02;letter-spacing:-.065em;margin-top:18px}
+.vt-connect-hero>p:last-child{margin-top:14px;font-size:12px;line-height:1.7}
+.vt-connect-grid{margin-top:20px}
+@media(max-width:900px){
+  .vt-connect-main{padding-top:48px}
+  .vt-connect-hero{min-height:0;padding-bottom:160px}
+  .vt-connect-hero h1{font-size:clamp(30px,5.2vw,40px)}
+  .vt-connect-float{bottom:18px}
+}
+@media(max-width:600px){
+  .vt-connect-main{padding-top:34px}
+  .vt-connect-hero{padding-bottom:145px}
+  .vt-connect-hero h1{font-size:clamp(27px,8vw,32px);margin-top:14px}
+  .vt-connect-hero>p:last-child{font-size:11px;margin-top:10px}
+  .vt-connect-float{bottom:14px}
+  .vt-connect-grid{margin-top:18px}
+}
