@@ -12,7 +12,7 @@ const pages: Record<string, PageData> = {
     {title:"Company Profile",description:"Get to know VANT Technologies through our company information, mission, vision, commitments, and principles.",href:"/company-profile",eyebrow:"WHO WE ARE"},
     {title:"Business Theory",description:"Explore how ideas move beyond concepts and become functional, useful realities.",href:"/business-theory",eyebrow:"IDEAS INTO REALITY"}
   ]},
-  "company-story": { number:"04.1", kicker:"ABOUT US / OUR JOURNEY", title:"Company Story", lead:"Who built VANT, how the journey began, the milestones that shaped our work, and the roadmap guiding what comes next.", items:[
+  "company-story": { number:"04.1", kicker:"ABOUT US / COMPANY JOURNAL", title:"From Searching for Direction to Building What Comes Next.", lead:"Chapter 01 — INCEPTION. The story of how a small experiment became the beginning of VANT Technologies.", items:[
     {title:"Who built VANT",description:"Meet the founder and the people, skills, and ideas contributing to VANT Technologies.",href:"/connect",eyebrow:"THE PEOPLE"},
     {title:"Our journey from day one",description:"Follow the origins, experiments, decisions, and milestones behind VANT.",href:"/news",eyebrow:"OUR HISTORY"},
     {title:"The roadmap",description:"Explore the direction, priorities, and planned stages of VANT's development.",href:"/libraries",eyebrow:"WHAT'S NEXT"},
@@ -111,53 +111,66 @@ export default function CorporateSectionPage({ slug }: { slug: string }) {
           <a href="#story-future">05 / What comes next</a>
         </aside>
         <div className="vt-company-blog-body">
-          <div className="vt-company-blog-byline"><span>VANT TECHNOLOGIES</span><span>COMPANY JOURNAL</span><span>OUR STORY</span></div>
-          <p className="vt-company-blog-intro">Every company begins with an idea. VANT began with a belief that intelligent technology should help people do more meaningful work, learn with greater confidence, and turn ambitious ideas into something real.</p>
-          <section id="story-founder">
-            <span className="vt-company-blog-number">01 / THE PEOPLE</span>
-            <h2>Built with a founder's conviction.</h2>
-            <p>VANT is a founder-led technology initiative shaped through hands-on product thinking, design, and development. It is being built from the ground up: starting with a clear problem to solve, testing ideas through working experiences, and improving the platform as those ideas become more concrete.</p>
-            <p>The work is not limited to a single application. The ambition is to create a connected technology company where products, learning resources, research, and responsible practices reinforce one another.</p>
+
+          <div className="vt-company-blog-chapter"><span>CHAPTER 01</span><i>INCEPTION</i></div>
+          <div className="vt-company-blog-byline"><span>VANT TECHNOLOGIES</span><span>THE COMPANY JOURNAL</span><span>FOUNDER'S ACCOUNT</span></div>
+          <h2 className="vt-company-blog-headline">From Searching for Direction to Building What Comes Next.</h2>
+          <p className="vt-company-blog-deck">I didn't start with a company. I started as someone trying to find his direction, carrying a few ideas, a lot of questions, and the hope of building something that could help people.</p>
+          <section id="story-before">
+            <span className="vt-company-blog-number">01 / BEFORE VANT</span><h2>I was still trying to find my place.</h2>
+            <p>Before VANT existed, I was just a person working in a logistics company, trying to figure out what I was meant to do. I had ideas — plenty of them — and jumped from one business idea to another. I tried some. They didn't work out the way I hoped.</p>
+            <p>My salary had to stretch across the month, covering loans and everyday expenses. There were times when making it to the next payday was already a challenge. I wanted the freedom to build something of my own, help people, and hopefully become successful by doing something meaningful.</p>
+            <p>I didn't have a clear answer about what came next. I only knew I wanted to create something that mattered.</p>
           </section>
           <section id="story-beginnings">
-            <span className="vt-company-blog-number">02 / THE BEGINNING</span>
-            <h2>One question became a bigger vision.</h2>
-            <p>The starting point was a practical question: what if AI could become a useful workspace rather than just a place to ask questions? A place where people could think through problems, organize projects, work with information, and move from an idea to a finished task.</p>
-            <p>That question shaped the first direction for VANT: an AI work platform designed for both business and learning. As the concept developed, the vision expanded beyond chat into tools, projects, collaborative workflows, integrations, and persistent context.</p>
+            <span className="vt-company-blog-number">02 / THE ACCIDENTAL BEGINNING</span><h2>It started with a spreadsheet problem.</h2>
+            <p>The beginning wasn't a business plan. I accidentally came across Google Apps Script and became curious about what I could make with it.</p>
+            <p>I started experimenting with an extension that could help anyone create spreadsheet formulas without already knowing how formulas worked. I called it <strong>AI Sheets Helper</strong>.</p>
+            <p>The idea came from a frustration I understood myself. I wanted people to describe what they needed and get help turning that thought into a working formula, without feeling they had to become spreadsheet experts first.</p>
+            <p>Then I started asking a bigger question: what if that same approach could help people do more than work with spreadsheets? What if there could be a place to think through problems, organize information, work on projects, and bring ideas to life?</p>
+            <p>That growing vision became the foundation for VANT AI Work Platform.</p>
           </section>
-          <section id="story-journey">
-            <span className="vt-company-blog-number">03 / THE JOURNEY</span>
-            <h2>From a single product to a connected ecosystem.</h2>
-            <p>VANT's journey has been an iterative process of designing, building, testing, and refining. The work has grown into several connected experiences, each with a distinct purpose:</p>
+          <section id="story-building">
+            <span className="vt-company-blog-number">03 / THE DECISION TO BUILD</span><h2>The idea wouldn't leave me alone.</h2>
+            <p>At first, I wasn't sure VANT would ever become what I imagined. But the idea kept coming back. It stayed with me while I was working, handling everyday responsibilities, and trying to make ends meet.</p>
+            <p>Eventually, I decided to stop wondering what it could become and start building it. Most of the development happened around my day job — after work, during whatever hours I could find, and whenever I had enough energy to keep going.</p>
+            <p>There were days when the financial pressure was especially difficult. There were even days when I went without eating. I share that because it was part of the reality, not because hardship is something to romanticize or a requirement for building something worthwhile.</p>
+            <p>I had doubts. I wondered whether I could make the vision real. But I kept taking the next problem as it came, and little by little, the idea began to take shape.</p>
+          </section>
+          <section id="story-learning">
+            <span className="vt-company-blog-number">04 / LEARNING WHILE BUILDING</span><h2>I had to learn the things I didn't know.</h2>
+            <p>I didn't begin with a background in software development. There was a time when I didn't even know what JSON was. I honestly thought JSON sounded like someone's name.</p>
+            <p>Building VANT meant learning while doing. Every feature introduced something new. Every error sent me searching for an explanation. I worked through debugging, backend issues, LaTeX and KaTeX rendering, and problems that sometimes seemed to create two more problems as soon as I fixed one.</p>
+            <p>Resources were limited, too. I couldn't pay for every tool or service I wanted, so I made use of free tiers and whatever resources were available. I had to experiment, read, test, break things, fix them, and try again.</p>
+            <p>That experience taught me that you don't need to know everything before you begin. Sometimes, you learn what you need by building, asking questions, and staying with a problem long enough to understand it.</p>
+          </section>
+          <section id="story-ecosystem">
+            <span className="vt-company-blog-number">05 / THE VISION EXPANDS</span><h2>One experiment became a wider ecosystem.</h2>
+            <p>As the original idea developed, VANT grew beyond a single tool. The ambition became to create connected experiences that could support different people and different kinds of work.</p>
             <ul className="vt-company-blog-list">
-              <li><b>VANT AI Work Platform</b><span>An AI workspace for projects, tools, information, and everyday workflows.</span></li>
-              <li><b>VANT Education</b><span>Learning experiences that help turn notes into study resources and support practice and planning.</span></li>
-              <li><b>MOTE.EXE</b><span>A watchful intelligence companion and a recognizable identity within the VANT ecosystem.</span></li>
-              <li><b>VANT Libraries & Research</b><span>A growing knowledge space for product documentation, technical perspectives, and company materials.</span></li>
+              <li><b>VANT AI Work Platform</b><span>An AI workspace designed to help people work with information, organize projects, and handle everyday tasks.</span></li>
+              <li><b>VANT Education</b><span>Learning-focused tools to help students turn their materials into study resources and practice activities.</span></li>
+              <li><b>MOTE.EXE</b><span>An AI identity within the VANT ecosystem, representing a more integrated way of interacting with intelligent technology.</span></li>
+              <li><b>VANT Libraries & Research</b><span>A knowledge space for people who want to explore ideas, learn, and understand the thinking behind what we build.</span></li>
             </ul>
-            <p>These are not separate ambitions. They are parts of a wider effort to make intelligent technology more useful, understandable, and connected.</p>
+            <p>These experiences are different parts of a larger goal: making technology more useful, approachable, and capable of helping people move forward.</p>
           </section>
-          <section id="story-roadmap">
-            <span className="vt-company-blog-number">04 / THE ROADMAP</span>
-            <h2>Build carefully. Connect meaningfully. Improve continuously.</h2>
-            <p>Our roadmap is guided by a few enduring priorities: strengthen the foundations of our products, make the experience coherent across the ecosystem, improve reliability and security, and create useful ways for people and organizations to learn, work, and collaborate with VANT.</p>
-            <div className="vt-company-roadmap">
-              <div><i>01</i><b>Strengthen the foundations</b><span>Product quality, reliability, usability, and security.</span></div>
-              <div><i>02</i><b>Connect the experiences</b><span>A more coherent relationship across work, learning, and MOTE.</span></div>
-              <div><i>03</i><b>Grow knowledge and research</b><span>Clear documentation, useful learning resources, and technical perspectives.</span></div>
-              <div><i>04</i><b>Build with people</b><span>Partnerships, feedback, and opportunities to create practical value.</span></div>
-            </div>
-            <p className="vt-company-blog-note">This roadmap describes strategic direction, not a fixed release schedule. Priorities may evolve as products develop and we learn from the people who use them.</p>
+          <section id="story-next">
+            <span className="vt-company-blog-number">06 / WHAT COMES NEXT</span><h2>The ambition reaches beyond an application.</h2>
+            <p>I don't see VANT as just another AI application. The long-term ambition is to explore what it would take to develop our own core intelligence and processing capabilities — technological foundations that could support future generations of intelligent systems.</p>
+            <p>These are ambitions, not accomplishments we are claiming today. There is still a great deal to learn, research, develop, and prove. The immediate work is to strengthen what exists, connect our experiences, improve reliability, and keep building with purpose.</p>
+            <p>I also hope VANT can become a place where people with ideas, curiosity, and the willingness to build can find opportunities to contribute. I know what it feels like to have an idea and not know where to begin.</p>
           </section>
-          <section id="story-future">
-            <span className="vt-company-blog-number">05 / WHAT COMES NEXT</span>
-            <h2>Technology that moves people forward.</h2>
-            <p>We aim to build a company that makes intelligent technology more approachable and more capable — technology that supports work, makes learning more personal, and gives ambitious ideas a better chance of becoming reality.</p>
-            <p>There is still much to build. The direction remains clear: move with purpose, take responsibility for what we create, and keep people at the center of the work.</p>
-            <blockquote>We build intelligent technology that moves people forward.</blockquote>
+          <section id="story-not-over">
+            <span className="vt-company-blog-number">07 / THE JOURNEY CONTINUES</span><h2>This is not a story about having everything figured out.</h2>
+            <p>I still have a day job. I still have responsibilities. I still have a lot to learn. I don't know exactly how far this journey will take us, and I can't promise that every idea will succeed.</p>
+            <p>But I know why I started. I wanted to build something that could make everyday work easier, make learning more accessible, and give ideas a better chance of becoming reality.</p>
+            <p>Maybe you're working a job that doesn't feel like your destination. Maybe you're struggling financially, learning something unfamiliar, or wondering whether your idea is worth pursuing. I can't promise the road will be easy, but you don't need to have your entire future figured out before taking the first step.</p>
+            <p>I started with a small experiment and a lot of uncertainty.</p><p><strong>That experiment became VANT. And this is only the beginning.</strong></p>
+            <blockquote>VANT was built by someone who was still searching for his direction. Now, he is building something he hopes will help others find theirs.</blockquote>
           </section>
-          <div className="vt-company-blog-end"><span>END OF STORY</span><a href="/company-profile">Continue to the Company Profile ↗</a></div>
-        </div>
+          <div className="vt-company-blog-signoff"><strong>VANT TECHNOLOGIES</strong><span>We build intelligent technology that moves people forward.</span></div>
+          <div className="vt-company-blog-end"><span>END OF CHAPTER 01</span><a href="/company-profile">Continue to the Company Profile ↗</a></div>
       </article> : (slug === "research" || slug === "perspectives") ? <div className="vt-research-hub">
         <section className="vt-research-intro">
           <div className="vt-news-section-heading"><span>01 / RESEARCH & DEVELOPMENT</span><span>INTELLIGENCE · SYSTEMS · ENGINEERING</span></div>
