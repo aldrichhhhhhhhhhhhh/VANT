@@ -37,7 +37,7 @@ function LibraryHeader() {
 }
 
 export default function Libraries() {
-  const path = window.location.pathname.replace(/\\/+$/, "") || "/libraries";
+  const path = window.location.pathname.replace(/\/+$/, "") || "/libraries";
   const isArticle = path === "/libraries/beyond-automation";
   useEffect(() => {
     document.title = isArticle
