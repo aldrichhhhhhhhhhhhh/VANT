@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import LegalPages from "./LegalPages";
+import Libraries from "./Libraries";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
@@ -80,6 +81,7 @@ function CorporateHomeView() {
         <a href="#products" onClick={closeMenu}>Products <span className="vt-nav-caret">⌄</span></a>
         <a href="#partners" onClick={closeMenu}>Powered by VANT</a>
         <a href="#journey" onClick={closeMenu}>Our Journey</a>
+        <a href="/libraries" onClick={closeMenu}>Libraries</a>
         <a className="vt-nav-cta" href="#contact" onClick={closeMenu}>Let's connect <Arrow diagonal /></a>
       </nav>
     </header>
@@ -127,7 +129,7 @@ function CorporateHomeView() {
 
       <section id="contact" className="vt-contact vt-section"><div className="vt-contact-glow"/><div className="vt-section-kicker vt-reveal"><span>05</span> / THE NEXT CONVERSATION</div><div className="vt-contact-grid"><div className="vt-reveal"><h2>Have something<br />in <em>mind?</em></h2><p>Whether you're exploring our products, considering a collaboration, or curious about what we're building, we'd like to hear from you.</p><a className="vt-contact-email" href="mailto:VANT.CLIENSUPPORT@GMAIL.COM">VANT.CLIENSUPPORT@GMAIL.COM <Arrow diagonal /></a></div><div className="vt-access-card vt-reveal"><span className="vt-access-label">STAY CLOSE TO WHAT'S NEXT</span><h3>Be part of the next chapter.</h3><p>Request early access and follow the evolution of VANT's applications.</p><WaitlistForm/><small>Product access and availability may vary by application.</small></div></div></section>
     </main>
-    <footer className="vt-footer"><a className="vt-brand" href="#top"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.</p><div className="vt-footer-links"><a href="#about">About</a><a href="#products">Applications</a><a href="#partners">Partnerships</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div><span className="vt-copyright">© {new Date().getFullYear()} VANT TECHNOLOGIES</span></footer>
+    <footer className="vt-footer"><a className="vt-brand" href="#top"><span className="vt-brand-mark">V</span><span>VANT <i>TECHNOLOGIES</i></span></a><p>Intelligence in motion.</p><div className="vt-footer-links"><a href="#about">About</a><a href="#products">Applications</a><a href="#partners">Partnerships</a><a href="/libraries">Libraries</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div><span className="vt-copyright">© {new Date().getFullYear()} VANT TECHNOLOGIES</span></footer>
   </div>;
 }
 
@@ -135,5 +137,6 @@ export default function CorporateHome() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/privacy" || path === "/privacy-policy") return <LegalPages page="privacy" />;
   if (path === "/terms" || path === "/terms-of-service") return <LegalPages page="terms" />;
+  if (path === "/libraries" || path === "/libraries/beyond-automation") return <Libraries />;
   return <CorporateHomeView />;
 }

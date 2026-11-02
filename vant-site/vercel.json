@@ -7,6 +7,14 @@
     {
       "source": "/terms",
       "destination": "/"
+    },
+    {
+      "source": "/libraries",
+      "destination": "/"
+    },
+    {
+      "source": "/libraries/:path*",
+      "destination": "/"
     }
   ]
 }
