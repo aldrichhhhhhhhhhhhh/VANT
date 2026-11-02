@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./libraries.css";
 
 const publication = {
@@ -38,9 +39,11 @@ function LibraryHeader() {
 export default function Libraries() {
   const path = window.location.pathname.replace(/\\/+$/, "") || "/libraries";
   const isArticle = path === "/libraries/beyond-automation";
-  document.title = isArticle
-    ? "Beyond Automation — VANT Libraries"
-    : "VANT Libraries — Research & Publications";
+  useEffect(() => {
+    document.title = isArticle
+      ? "Beyond Automation — VANT Libraries"
+      : "VANT Libraries — Research & Publications";
+  }, [isArticle]);
 
   return <div className="vl-site">
     <LibraryHeader />
