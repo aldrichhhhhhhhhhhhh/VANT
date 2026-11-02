@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import LegalPages from "./LegalPages";
 import Libraries from "./Libraries";
 import MoteHome from "./MoteHome";
+import MoteHome from "./MoteHome";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
@@ -139,6 +140,7 @@ export default function CorporateHome() {
   if (path === "/privacy" || path === "/privacy-policy") return <LegalPages page="privacy" />;
   if (path === "/terms" || path === "/terms-of-service") return <LegalPages page="terms" />;
   if (path === "/libraries" || path === "/libraries/beyond-automation") return <Libraries />;
+  if (path === "/mote" || path === "/mote.exe") return <MoteHome />;
   if (path === "/mote" || path === "/mote.exe") return <MoteHome />;
   return <CorporateHomeView />;
 }
