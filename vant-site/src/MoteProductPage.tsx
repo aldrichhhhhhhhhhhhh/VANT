@@ -185,7 +185,7 @@ export default function MoteProductPage() {
         </section>
 
         <section className="mote-product-section mp-ecosystem" id="ecosystem">
-          <div className="mp-ecosystem-copy vt-reveal"><p className="mp-kicker">04 / PART OF A BIGGER SYSTEM</p><h2>A personality<br /><em>in the system.</em></h2><p className="mp-intro">MOTE is the guardian identity. VANT is the platform where the work, tools, and intelligence come together.</p></div>
+          <div className="mp-ecosystem-copy vt-reveal"><p className="mp-kicker">05 / PART OF A BIGGER SYSTEM</p><h2>A personality<br /><em>in the system.</em></h2><p className="mp-intro">MOTE is the guardian identity. VANT is the platform where the work, tools, and intelligence come together.</p></div>
           <div className="mp-ecosystem-grid">
             <a href="/#products" className="mp-ecosystem-item vt-reveal"><span>01 / INTELLIGENCE</span><h3>VANT AI</h3><p>Explore the AI experience behind the platform.</p><b>EXPLORE VANT ↗</b></a>
             <a href="/#products" className="mp-ecosystem-item vt-reveal"><span>02 / WORKFLOW</span><h3>CoWork</h3><p>Discover the workflow-focused side of VANT.</p><b>EXPLORE VANT ↗</b></a>
@@ -194,7 +194,7 @@ export default function MoteProductPage() {
         </section>
 
         <section className="mote-product-section mp-final-cta">
-          <p className="mp-kicker">05 / YOUR NEXT MOVE</p><h2>Ready when<br /><em>you are.</em></h2><p>Meet the intelligence behind the work. Explore VANT and see where your next idea can go.</p>
+          <p className="mp-kicker">06 / YOUR NEXT MOVE</p><h2>Ready when<br /><em>you are.</em></h2><p>Meet the intelligence behind the work. Explore VANT and see where your next idea can go.</p>
           <div className="mp-cta-row"><a className="mp-primary-cta" href="/#products">Explore VANT AI <span>↗</span></a><a className="mp-secondary-cta" href="#mote-console">Ask MOTE a question</a></div>
         </section>
       </main>
