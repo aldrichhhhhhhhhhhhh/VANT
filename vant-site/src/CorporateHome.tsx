@@ -2,7 +2,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import LegalPages from "./LegalPages";
 import Libraries from "./Libraries";
 import MoteHome from "./MoteHome";
-import MoteHome from "./MoteHome";
 import "./corporate.css";
 
 const WAITLIST_ENDPOINT = "https://formspree.io/f/xeaqydzd";
