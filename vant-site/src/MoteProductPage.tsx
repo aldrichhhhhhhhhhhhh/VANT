@@ -149,6 +149,41 @@ export default function MoteProductPage() {
           </div>
         </section>
 
+        <section className="mote-product-section mp-mycelium" id="mycelium">
+          <div className="mp-section-head vt-reveal">
+            <p className="mp-kicker">04 / THE MYCELIUM STRUCTURE · COWORK M.A.A.</p>
+            <h2>A network of agents.<br /><em>One final confirmation.</em></h2>
+            <p className="mp-intro">CoWork M.A.A. is designed as a living network of specialist agents. Mycelium gives that network its structure; MOTE.EXE brings the work together and confirms when the shared result is coherent and ready for the next step.</p>
+          </div>
+
+          <div className="mp-mycelium-map vt-reveal" role="img" aria-label="Mycelium network architecture. Rooms and channels, shared task board, negotiation aligner, persistent memory, agent registry, and messaging runtime connect specialist agents. MOTE.EXE reviews the combined work and confirms readiness before the human approval and execution gate.">
+            <div className="mp-mycelium-topline"><span>COORDINATION NETWORK / 01</span><span>VANT COWORK M.A.A.</span></div>
+            <div className="mp-mycelium-nodes">
+              <article className="mp-mycelium-node"><span>01 / CONTEXT</span><b>Rooms &amp; Channels</b><small>Shared spaces for focused collaboration</small></article>
+              <article className="mp-mycelium-node"><span>02 / WORK</span><b>Task Board</b><small>Ownership, task state, and handoffs</small></article>
+              <article className="mp-mycelium-node"><span>03 / ALIGNMENT</span><b>Negotiation Aligner</b><small>Resolve overlaps and surface disagreement</small></article>
+              <article className="mp-mycelium-node"><span>04 / MEMORY</span><b>Persistent Memory</b><small>Context storage and semantic retrieval</small></article>
+              <article className="mp-mycelium-node"><span>05 / PARTICIPANTS</span><b>Agent Registry</b><small>Specialist roles and team membership</small></article>
+              <article className="mp-mycelium-node"><span>06 / MESSAGING</span><b>Message &amp; Session Runtime</b><small>Agent communication and model sessions</small></article>
+            </div>
+            <div className="mp-mycelium-converge" aria-hidden="true"><span /><span /><span /><span /><span /><span /></div>
+            <div className="mp-mycelium-mote">
+              <div className="mp-mycelium-orb"><span>M</span></div>
+              <div className="mp-mycelium-mote-copy"><span>MOTE.EXE / FINAL CONFIRMATION</span><b>Coherence. Readiness. Accountability.</b><small>Reviews the combined work, checks for unresolved conflicts and missing context, and confirms whether the result is ready to proceed.</small></div>
+              <div className="mp-mycelium-status"><i /> CONFIRMATION LAYER</div>
+            </div>
+            <div className="mp-mycelium-gate"><span>HUMAN APPROVAL / EXECUTION GATE</span><b>Confirmed work moves forward within the user's permissions.</b></div>
+            <div className="mp-mycelium-foot"><span>SHARED CONTEXT</span><span>BOUNDED NEGOTIATION</span><span>TRACEABLE HANDOFFS</span><span>PERMISSION-AWARE EXECUTION</span></div>
+          </div>
+
+          <div className="mp-mycelium-explainer">
+            <article><span>01</span><div><b>The network collaborates</b><p>Planner, Researcher, Data Analyst, Challenger, Connector, Integrator, and user-created agents contribute within defined roles and shared task context.</p></div></article>
+            <article><span>02</span><div><b>MOTE checks the whole picture</b><p>MOTE reviews the integrated result, task status, evidence, handoffs, and unresolved disagreements—not just one agent's response.</p></div></article>
+            <article><span>03</span><div><b>Confirmation is not a permission bypass</b><p>MOTE can confirm readiness or return work for revision. User permissions and human approval remain in force for consequential external actions.</p></div></article>
+          </div>
+          <p className="mp-footnote">Architecture concept: the Mycelium structure describes CoWork M.A.A.'s coordination model. MOTE's confirmation role does not imply that every component is already deployed or that MOTE can override user authorization.</p>
+        </section>
+
         <section className="mote-product-section mp-ecosystem" id="ecosystem">
           <div className="mp-ecosystem-copy vt-reveal"><p className="mp-kicker">04 / PART OF A BIGGER SYSTEM</p><h2>A personality<br /><em>in the system.</em></h2><p className="mp-intro">MOTE is the guardian identity. VANT is the platform where the work, tools, and intelligence come together.</p></div>
           <div className="mp-ecosystem-grid">
