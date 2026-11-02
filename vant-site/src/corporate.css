@@ -2059,3 +2059,158 @@ a.vt-story-episode-card:hover{transform:translateY(-4px);border-color:#aeb8c0;bo
 .vt-story-episodes-foot{display:flex;justify-content:space-between;gap:14px;margin-top:23px;padding-top:14px;border-top:1px solid #dfe2e3;color:#8a949c;font:9px monospace;letter-spacing:.13em}
 @media(max-width:850px){.vt-story-episode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vt-story-episode-card:last-child{grid-column:span 2}}
 @media(max-width:560px){.vt-story-episodes-heading{display:block}.vt-story-episodes-heading>small{display:block;margin-top:15px}.vt-story-episode-grid{grid-template-columns:1fr;gap:13px}.vt-story-episode-card:last-child{grid-column:auto}.vt-story-episode-art{min-height:150px}.vt-story-episodes-foot{flex-direction:column}}
+
+
+/* MOTE.EXE — warm ivory identity pass, based on production reference a61e88c.
+   Preserve the existing mascot, interactions, guest chat, and page structure. */
+.vt-mote-product-page{
+  --mote-paper:#f5f2e9;
+  --mote-paper-light:#fbf9f3;
+  --mote-paper-deep:#e9e3d6;
+  --mote-ink:#24251f;
+  --mote-muted:#6d6b62;
+  --mote-gold:#a7833d;
+  background:var(--mote-paper)!important;
+  color:var(--mote-ink)!important;
+}
+.vt-mote-product-page .vt-header{
+  background:rgba(251,249,243,.96)!important;
+  border-bottom:1px solid rgba(42,40,32,.13)!important;
+}
+.vt-mote-product-page .vt-header .vt-brand{color:var(--mote-ink)!important}
+.vt-mote-product-page .vt-header .vt-nav a{color:#55564f!important}
+.vt-mote-product-page .vt-header .vt-nav .vt-nav-cta{color:#25261f!important;border-color:rgba(167,131,61,.55)!important}
+.vt-mote-product-page .vt-footer{
+  background:#e8e2d6!important;
+  color:#6d6b62!important;
+  border-top:1px solid rgba(42,40,32,.13)!important;
+}
+.vt-mote-product-page .vt-footer .vt-brand{color:var(--mote-ink)!important}
+.vt-mote-product-page .vt-footer a{color:#55564f!important}
+
+/* MOTE introduction: warm light field around the dark character. */
+.vt-mote-product-page .mote-section{
+  background:
+    radial-gradient(ellipse at 76% 48%,rgba(201,174,119,.28),transparent 42%),
+    linear-gradient(115deg,#fbf9f3 0%,#f4f0e6 60%,#eae3d5 100%)!important;
+  border-top:1px solid rgba(42,40,32,.12)!important;
+  border-bottom:1px solid rgba(42,40,32,.12)!important;
+  color:var(--mote-ink)!important;
+}
+.vt-mote-product-page .mote-section:before{
+  background:
+    radial-gradient(ellipse at 76% 48%,rgba(167,131,61,.10),transparent 44%),
+    linear-gradient(110deg,transparent 40%,rgba(255,255,255,.28),transparent 72%)!important;
+}
+.vt-mote-product-page .mote-section-top{border-bottom-color:rgba(42,40,32,.14)!important}
+.vt-mote-product-page .mote-section .vt-section-kicker,
+.vt-mote-product-page .mote-live-label,
+.vt-mote-product-page .mote-overline,
+.vt-mote-product-page .mote-coordinate,
+.vt-mote-product-page .mote-footerline{color:#817a6c!important}
+.vt-mote-product-page .mote-live-label i{background:#a7833d!important;box-shadow:0 0 12px rgba(167,131,61,.35)!important}
+.vt-mote-product-page .mote-copy h2{color:#24251f!important}
+.vt-mote-product-page .mote-copy h2 em{color:#a7833d!important}
+.vt-mote-product-page .mote-description{color:#66665e!important}
+.vt-mote-product-page .mote-specs{border-top-color:rgba(42,40,32,.16)!important}
+.vt-mote-product-page .mote-specs div{border-bottom-color:rgba(42,40,32,.14)!important}
+.vt-mote-product-page .mote-specs span{color:#8a8376!important}
+.vt-mote-product-page .mote-specs b{color:#33342e!important}
+.vt-mote-product-page .mote-link{color:#35362f!important;border-bottom-color:rgba(167,131,61,.65)!important}
+.vt-mote-product-page .mote-link:hover{border-bottom-color:#a7833d!important}
+.vt-mote-product-page .mote-visual{
+  background:linear-gradient(145deg,rgba(255,255,255,.55),rgba(255,255,255,.12)),#eee9de!important;
+  border:1px solid rgba(42,40,32,.14)!important;
+  box-shadow:0 24px 60px rgba(48,42,29,.08)!important;
+}
+.vt-mote-product-page .mote-stage{background:transparent!important}
+.vt-mote-product-page .mote-stage:before,
+.vt-mote-product-page .mote-stage:after{background:linear-gradient(90deg,transparent,rgba(167,131,61,.25),transparent)!important}
+.vt-mote-product-page .mote-aura{background:radial-gradient(circle,rgba(167,131,61,.18),rgba(167,131,61,.045) 45%,transparent 70%)!important}
+.vt-mote-product-page .mote-ring{border-color:rgba(167,131,61,.30)!important}
+.vt-mote-product-page .mote-ring-inner{border-color:rgba(167,131,61,.23)!important;border-left-color:transparent!important;border-bottom-color:rgba(167,131,61,.58)!important}
+.vt-mote-product-page .mote-coordinate{color:#817a6c!important}
+.vt-mote-product-page .mote-visual-caption{border-top-color:rgba(42,40,32,.13)!important;color:#827b6e!important}
+.vt-mote-product-page .mote-visual-caption span:first-child{color:#36372f!important}
+.vt-mote-product-page .mote-interact-hint{color:#8b7957!important}
+.vt-mote-product-page .mote-speech{
+  background:rgba(35,36,32,.96)!important;
+  color:#fbf9f3!important;
+  border-color:rgba(167,131,61,.48)!important;
+  box-shadow:0 14px 38px rgba(40,35,25,.20)!important;
+}
+.vt-mote-product-page .mote-prompt{
+  background:rgba(251,249,243,.96)!important;
+  color:#3b3b34!important;
+  border-color:rgba(167,131,61,.35)!important;
+  box-shadow:0 8px 24px rgba(40,35,25,.08)!important;
+}
+.vt-mote-product-page .mote-prompt:hover,
+.vt-mote-product-page .mote-prompt:focus-visible{
+  background:#fffdf7!important;color:#24251f!important;border-color:#a7833d!important;
+}
+.vt-mote-product-page .mote-prompt:before{color:#a7833d!important}
+.vt-mote-product-page .mote-footerline{border-top-color:rgba(42,40,32,.14)!important}
+
+/* Content sections use a quiet paper palette; console remains a deliberate dark tool panel. */
+.vt-mote-product-page .mote-product-section{
+  background:#f7f4ec!important;
+  color:#24251f!important;
+  border-top:1px solid rgba(42,40,32,.10);
+}
+.vt-mote-product-page .mote-product-section:nth-of-type(even){background:#eee9de!important}
+.vt-mote-product-page .mp-kicker{color:#96743a!important}
+.vt-mote-product-page .mp-section-head h2,
+.vt-mote-product-page .mp-console-copy h2,
+.vt-mote-product-page .mp-ecosystem-copy h2,
+.vt-mote-product-page .mp-final-cta h2{color:#24251f!important}
+.vt-mote-product-page .mp-section-head h2 em,
+.vt-mote-product-page .mp-console-copy h2 em,
+.vt-mote-product-page .mp-ecosystem-copy h2 em,
+.vt-mote-product-page .mp-final-cta h2 em{color:#a7833d!important}
+.vt-mote-product-page .mp-intro{color:#68675f!important}
+.vt-mote-product-page .mp-capability{
+  background:linear-gradient(145deg,rgba(255,255,255,.72),rgba(255,255,255,.22)),#f1ede3!important;
+  border-color:rgba(42,40,32,.14)!important;
+}
+.vt-mote-product-page .mp-capability h3,
+.vt-mote-product-page .mp-workflow-step h3,
+.vt-mote-product-page .mp-ecosystem-item h3{color:#292a24!important}
+.vt-mote-product-page .mp-capability p,
+.vt-mote-product-page .mp-workflow-step p,
+.vt-mote-product-page .mp-ecosystem-item p{color:#706e65!important}
+.vt-mote-product-page .mp-index,
+.vt-mote-product-page .mp-footnote{color:#898274!important}
+.vt-mote-product-page .mp-line-icon{color:#a7833d!important}
+.vt-mote-product-page .mp-workflow{background:#eee9de!important}
+.vt-mote-product-page .mp-workflow-track{border-top-color:rgba(42,40,32,.16)!important}
+.vt-mote-product-page .mp-workflow-step{border-bottom-color:rgba(42,40,32,.14)!important}
+.vt-mote-product-page .mp-workflow-step>span{color:#a7833d!important}
+.vt-mote-product-page .mp-workflow-step>i{color:#8c8068!important}
+.vt-mote-product-page .mp-ecosystem{background:#f7f4ec!important}
+.vt-mote-product-page .mp-ecosystem-item{border-color:rgba(42,40,32,.15)!important;background:rgba(255,255,255,.34)!important}
+.vt-mote-product-page .mp-ecosystem-item>span,
+.vt-mote-product-page .mp-ecosystem-item>b{color:#98763d!important}
+.vt-mote-product-page .mp-final-cta{background:#e8e1d3!important}
+.vt-mote-product-page .mp-final-cta>p:not(.mp-kicker){color:#68665d!important}
+
+/* Keep the guest chat console dark as a focused, high-contrast interaction surface. */
+.vt-mote-product-page .mp-console{
+  background:radial-gradient(ellipse at 88% 48%,rgba(145,185,217,.09),transparent 46%),#20221f!important;
+}
+.vt-mote-product-page .mp-console-copy h2{color:#f6f3eb!important}
+.vt-mote-product-page .mp-console-copy h2 em{color:#d2b477!important}
+.vt-mote-product-page .mp-console-copy .mp-intro{color:#d0cdc3!important}
+.vt-mote-product-page .mp-console-panel{background:rgba(8,9,10,.88)!important}
+.vt-mote-product-page .mp-suggestions button{color:#d5d2c9!important;border-color:rgba(255,255,255,.18)!important}
+.vt-mote-product-page .mp-suggestions button:hover{border-color:#d2b477!important;color:#fff!important}
+.vt-mote-product-page .mp-suggestions button span,
+.vt-mote-product-page .mp-prompt-form label,
+.vt-mote-product-page .mp-demo-response span{color:#d2b477!important}
+.vt-mote-product-page .mp-prompt-row button{background:#d2b477!important;border-color:#d2b477!important;color:#20221f!important}
+.vt-mote-product-page .mp-demo-response{border-color:rgba(210,180,119,.25)!important}
+.vt-mote-product-page .mp-console-foot{border-top-color:rgba(255,255,255,.12)!important}
+@media(max-width:760px){
+  .vt-mote-product-page .mote-section{background:linear-gradient(150deg,#fbf9f3,#eee8dc)!important}
+  .vt-mote-product-page .mote-visual{background:#eee9de!important}
+}
