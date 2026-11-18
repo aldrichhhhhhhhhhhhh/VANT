@@ -72,17 +72,17 @@ export default function Libraries() {
       : isDecision
         ? "VANT V2 Feature Completion Standard — VANT Libraries"
         : "VANT Libraries — Research & Publications";
-  }, [isArticle]);
+  }, [isArticle, isDecision]);
 
   return <div className="vl-site">
     <LibraryHeader />
     {(isArticle || isDecision) ? <main className="vl-main vl-article-page">
       <a className="vl-back" href="/libraries">← Back to VANT Libraries</a>
-      <div className="vl-eyebrow">VANT LIBRARIES <span>/</span> RESEARCH &amp; PUBLICATIONS</div>
+      <div className="vl-eyebrow">VANT LIBRARIES <span>/</span> {isDecision ? "PRODUCT &amp; ENGINEERING" : "RESEARCH &amp; PUBLICATIONS"}</div>
       <div className="vl-article-topline"><span>PUBLICATION RECORD · {activePublication.id}</span><span>{activePublication.edition}</span></div>
       <h1>{activePublication.title}</h1>
       <p className="vl-subtitle">{activePublication.subtitle}</p>
-      <div className="vl-author-row"><div className="vl-avatar">KU</div><div><strong>{activePublication.author}</strong><span>{activePublication.affiliation}</span></div></div>
+      <div className="vl-author-row"><div className="vl-avatar">{isDecision ? "V" : "KU"}</div><div><strong>{activePublication.author}</strong><span>{activePublication.affiliation}</span></div></div>
       <div className="vl-meta-grid">
         <div><small>COLLECTION</small><strong>{activePublication.category}</strong></div>
         <div><small>DOCUMENT TYPE</small><strong>{activePublication.type}</strong></div>
@@ -97,8 +97,8 @@ export default function Libraries() {
         <ol>{activePublication.contents.map(item => <li key={item}>{item}</li>)}</ol>
       </section>
       <section className="vl-keywords"><div className="vl-section-label">KEYWORDS</div><div className="vl-tags">{activePublication.keywords.map(word => <span key={word}>{word}</span>)}</div></section>
-      <section className="vl-author-note"><div className="vl-section-label">AUTHOR NOTE</div><p>Karl Aldrich Uy is an independent researcher and the Founder and Chief Technology Officer of VANT Technologies, a technology venture based in the Philippines focused on developing AI-enabled work experiences and tools. His interests lie at the intersection of artificial intelligence, organizational operations, human-computer collaboration, and the changing nature of professional work. His perspective brings together an interest in the practical realities of operational environments and the opportunities created by designing and building technology products. He is particularly interested in how intelligent systems can support better decision-making, improve productivity, and expand access to knowledge while preserving human agency, accountability, and meaningful participation. His writing examines the broader philosophical, social, and organizational implications of technological change, with particular attention to the opportunities and constraints facing developing economies. The views expressed in this article are his own and do not necessarily represent the views of VANT Technologies.</p></section>
-      <div className="vl-copyright"><strong>© 2026 Karl Aldrich Uy. All rights reserved.</strong><span>Published by VANT Technologies.</span></div>
+      {!isDecision && <section className="vl-author-note"><div className="vl-section-label">AUTHOR NOTE</div><p>Karl Aldrich Uy is an independent researcher and the Founder and Chief Technology Officer of VANT Technologies, a technology venture based in the Philippines focused on developing AI-enabled work experiences and tools. His interests lie at the intersection of artificial intelligence, organizational operations, human-computer collaboration, and the changing nature of professional work. His perspective brings together an interest in the practical realities of operational environments and the opportunities created by designing and building technology products. He is particularly interested in how intelligent systems can support better decision-making, improve productivity, and expand access to knowledge while preserving human agency, accountability, and meaningful participation. His writing examines the broader philosophical, social, and organizational implications of technological change, with particular attention to the opportunities and constraints facing developing economies. The views expressed in this article are his own and do not necessarily represent the views of VANT Technologies.</p></section>}
+      <div className="vl-copyright"><strong>{isDecision ? "© 2026 VANT Technologies. Internal publication." : "© 2026 Karl Aldrich Uy. All rights reserved."}</strong><span>Published by VANT Technologies.</span></div>
       <div className="vl-file-note"><span className="vl-file-icon">PDF</span><div className="vl-file-details"><strong>Full-text PDF edition</strong><p>Read or download the complete PDF report.</p></div><a className="vl-download-link" href={isDecision ? "/documents/vant-v2-feature-completion-standard.pdf" : "/documents/beyond-automation-v1.pdf"} download={isDecision ? "vant-v2-feature-completion-standard.pdf" : "beyond-automation-v1.pdf"}>Download PDF <span>↓</span></a></div>
     </main> : <main className="vl-main">
       <div className="vl-eyebrow">VANT TECHNOLOGIES <span>/</span> KNOWLEDGE &amp; DOCUMENTATION</div>
