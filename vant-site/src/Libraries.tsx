@@ -29,6 +29,31 @@ const publication = {
   ]
 };
 
+
+const decisionPublication = {
+  id: "ENG-001",
+  title: "VANT V2 Sets a New Standard for Feature Completion",
+  subtitle: "A quality-first delivery standard for building one complete feature at a time",
+  author: "VANT Technologies",
+  affiliation: "Product & Engineering",
+  category: "Product & Engineering",
+  type: "Internal Decision Report",
+  edition: "November 2026",
+  abstract: [
+    "VANT V2 will follow a one-feature-at-a-time completion model. The team will not begin a second product feature simply because the first one has a visible interface or appears close to finished. Work advances only when the active feature meets its agreed scope, quality, validation, and stabilization requirements.",
+    "The delivery cycle is Define, Design, Build, Validate, Stabilize, and Lock. A feature is complete only when its agreed experience works end to end, data and permissions behave correctly, error handling is meaningful, validation evidence exists, known defects are resolved, and documentation supports future maintenance.",
+    "Shared foundations may be built when the active feature genuinely depends on them, but must remain scoped to what is needed for that feature. The next step is to confirm the first VANT V2 feature and define its blueprint before implementation begins."
+  ],
+  keywords: ["VANT V2", "Feature Completion", "Product Engineering", "Quality Assurance", "Software Development", "Delivery Standard"],
+  contents: [
+    "The decision and its rationale",
+    "The six-stage feature delivery cycle",
+    "What qualifies as complete",
+    "The boundary for shared foundations",
+    "The next step for VANT V2"
+  ]
+};
+
 function LibraryHeader() {
   return <header className="vl-header">
     <a className="vl-brand" href="/"> <span>V</span> VANT <small>TECHNOLOGIES</small></a>
@@ -39,45 +64,53 @@ function LibraryHeader() {
 export default function Libraries() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/libraries";
   const isArticle = path === "/libraries/beyond-automation";
+  const isDecision = path === "/libraries/vant-v2-feature-completion";
+  const activePublication = isDecision ? decisionPublication : publication;
   useEffect(() => {
     document.title = isArticle
       ? "Beyond Automation — VANT Libraries"
-      : "VANT Libraries — Research & Publications";
-  }, [isArticle]);
+      : isDecision
+        ? "VANT V2 Feature Completion Standard — VANT Libraries"
+        : "VANT Libraries — Research & Publications";
+  }, [isArticle, isDecision]);
 
   return <div className="vl-site">
     <LibraryHeader />
-    {isArticle ? <main className="vl-main vl-article-page">
+    {(isArticle || isDecision) ? <main className="vl-main vl-article-page">
       <a className="vl-back" href="/libraries">← Back to VANT Libraries</a>
-      <div className="vl-eyebrow">VANT LIBRARIES <span>/</span> RESEARCH &amp; PUBLICATIONS</div>
-      <div className="vl-article-topline"><span>PUBLICATION RECORD · {publication.id}</span><span>{publication.edition}</span></div>
-      <h1>{publication.title}</h1>
-      <p className="vl-subtitle">{publication.subtitle}</p>
-      <div className="vl-author-row"><div className="vl-avatar">KU</div><div><strong>{publication.author}</strong><span>{publication.affiliation}</span></div></div>
+      <div className="vl-eyebrow">VANT LIBRARIES <span>/</span> {isDecision ? "PRODUCT &amp; ENGINEERING" : "RESEARCH &amp; PUBLICATIONS"}</div>
+      <div className="vl-article-topline"><span>PUBLICATION RECORD · {activePublication.id}</span><span>{activePublication.edition}</span></div>
+      <h1>{activePublication.title}</h1>
+      <p className="vl-subtitle">{activePublication.subtitle}</p>
+      <div className="vl-author-row"><div className="vl-avatar">{isDecision ? "V" : "KU"}</div><div><strong>{activePublication.author}</strong><span>{activePublication.affiliation}</span></div></div>
       <div className="vl-meta-grid">
-        <div><small>COLLECTION</small><strong>{publication.category}</strong></div>
-        <div><small>DOCUMENT TYPE</small><strong>{publication.type}</strong></div>
-        <div><small>EDITION</small><strong>{publication.edition}</strong></div>
+        <div><small>COLLECTION</small><strong>{activePublication.category}</strong></div>
+        <div><small>DOCUMENT TYPE</small><strong>{activePublication.type}</strong></div>
+        <div><small>EDITION</small><strong>{activePublication.edition}</strong></div>
       </div>
       <section className="vl-abstract">
         <div className="vl-section-label">ABSTRACT</div>
-        {publication.abstract.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+        {activePublication.abstract.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
       </section>
       <section className="vl-contents">
         <div className="vl-section-label">IN THIS ARTICLE</div>
-        <ol>{publication.contents.map(item => <li key={item}>{item}</li>)}</ol>
+        <ol>{activePublication.contents.map(item => <li key={item}>{item}</li>)}</ol>
       </section>
-      <section className="vl-keywords"><div className="vl-section-label">KEYWORDS</div><div className="vl-tags">{publication.keywords.map(word => <span key={word}>{word}</span>)}</div></section>
-      <section className="vl-author-note"><div className="vl-section-label">AUTHOR NOTE</div><p>Karl Aldrich Uy is an independent researcher and the Founder and Chief Technology Officer of VANT Technologies, a technology venture based in the Philippines focused on developing AI-enabled work experiences and tools. His interests lie at the intersection of artificial intelligence, organizational operations, human-computer collaboration, and the changing nature of professional work. His perspective brings together an interest in the practical realities of operational environments and the opportunities created by designing and building technology products. He is particularly interested in how intelligent systems can support better decision-making, improve productivity, and expand access to knowledge while preserving human agency, accountability, and meaningful participation. His writing examines the broader philosophical, social, and organizational implications of technological change, with particular attention to the opportunities and constraints facing developing economies. The views expressed in this article are his own and do not necessarily represent the views of VANT Technologies.</p></section>
-      <div className="vl-copyright"><strong>© 2026 Karl Aldrich Uy. All rights reserved.</strong><span>Published by VANT Technologies.</span></div>
-      <div className="vl-file-note"><span className="vl-file-icon">PDF</span><div className="vl-file-details"><strong>Full-text PDF edition</strong><p>Read or download the complete 16-page article.</p></div><a className="vl-download-link" href="/documents/beyond-automation-v1.pdf" download="beyond-automation-v1.pdf">Download PDF <span>↓</span></a></div>
+      <section className="vl-keywords"><div className="vl-section-label">KEYWORDS</div><div className="vl-tags">{activePublication.keywords.map(word => <span key={word}>{word}</span>)}</div></section>
+      {!isDecision && <section className="vl-author-note"><div className="vl-section-label">AUTHOR NOTE</div><p>Karl Aldrich Uy is an independent researcher and the Founder and Chief Technology Officer of VANT Technologies, a technology venture based in the Philippines focused on developing AI-enabled work experiences and tools. His interests lie at the intersection of artificial intelligence, organizational operations, human-computer collaboration, and the changing nature of professional work. His perspective brings together an interest in the practical realities of operational environments and the opportunities created by designing and building technology products. He is particularly interested in how intelligent systems can support better decision-making, improve productivity, and expand access to knowledge while preserving human agency, accountability, and meaningful participation. His writing examines the broader philosophical, social, and organizational implications of technological change, with particular attention to the opportunities and constraints facing developing economies. The views expressed in this article are his own and do not necessarily represent the views of VANT Technologies.</p></section>}
+      <div className="vl-copyright"><strong>{isDecision ? "© 2026 VANT Technologies. Internal publication." : "© 2026 Karl Aldrich Uy. All rights reserved."}</strong><span>Published by VANT Technologies.</span></div>
+      <div className="vl-file-note"><span className="vl-file-icon">PDF</span><div className="vl-file-details"><strong>Full-text PDF edition</strong><p>Read or download the complete PDF report.</p></div><a className="vl-download-link" href={isDecision ? "/documents/vant-v2-feature-completion-standard.pdf" : "/documents/beyond-automation-v1.pdf"} download={isDecision ? "vant-v2-feature-completion-standard.pdf" : "beyond-automation-v1.pdf"}>Download PDF <span>↓</span></a></div>
     </main> : <main className="vl-main">
       <div className="vl-eyebrow">VANT TECHNOLOGIES <span>/</span> KNOWLEDGE &amp; DOCUMENTATION</div>
       <div className="vl-hero"><div><p className="vl-kicker">THE VANT LIBRARIES</p><h1>Ideas worth<br/><em>keeping.</em></h1></div><p className="vl-hero-copy">A growing collection of research, technical documentation, and perspectives exploring the systems and ideas shaping tomorrow.</p></div>
-      <div className="vl-collection-head"><div><span className="vl-section-label">COLLECTION 01</span><h2>Research &amp; Publications</h2></div><span className="vl-count">01 PUBLICATION</span></div>
+      <div className="vl-collection-head"><div><span className="vl-section-label">COLLECTION 01</span><h2>Research &amp; Publications</h2></div><span className="vl-count">02 PUBLICATIONS</span></div>
       <article className="vl-publication-card">
         <div className="vl-card-index">BA-001 <span>·</span> NOV 2026</div>
         <div className="vl-card-body"><div className="vl-card-category">ARTIFICIAL INTELLIGENCE &amp; SOCIETY</div><h3>{publication.title}</h3><p className="vl-card-subtitle">{publication.subtitle}</p><p className="vl-card-abstract">{publication.abstract[0]}</p><div className="vl-card-footer"><div><strong>{publication.author}</strong><span>{publication.type} · Version 1.0</span></div><a href="/libraries/beyond-automation">View publication <span>↗</span></a></div></div>
+      </article>
+      <article className="vl-publication-card">
+        <div className="vl-card-index">ENG-001 <span>·</span> NOV 2026</div>
+        <div className="vl-card-body"><div className="vl-card-category">PRODUCT &amp; ENGINEERING</div><h3>VANT V2 Sets a New Standard for Feature Completion</h3><p className="vl-card-subtitle">A quality-first delivery standard for building one complete feature at a time</p><p className="vl-card-abstract">VANT V2 will follow a one-feature-at-a-time completion model. Work advances only when the active feature meets its agreed scope, quality, validation, and stabilization requirements.</p><div className="vl-card-footer"><div><strong>VANT Technologies</strong><span>Internal Decision Report · November 2026</span></div><a href="/libraries/vant-v2-feature-completion">View report <span>↗</span></a></div></div>
       </article>
       <div className="vl-library-note"><span>V</span><p>VANT Libraries is an evolving public archive. New research and technical materials will be added as they are prepared for publication.</p></div>
     </main>}
